@@ -38,6 +38,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/',
+          editUrl: 'https://github.com/RooVetGit/Roo-Code-Docs/edit/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
