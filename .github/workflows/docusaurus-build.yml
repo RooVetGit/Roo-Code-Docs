@@ -1,0 +1,48 @@
+name: Docusaurus Build Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build Docusaurus Site
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build site
+      run: npm run build
+      
+    - name: Update PR Status
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const { owner, repo, number } = context.issue;
+          const { sha } = context.payload.pull_request.head;
+          
+          await github.rest.checks.create({
+            owner,
+            repo,
+            name: 'Docusaurus Build',
+            head_sha: sha,
+            status: 'completed',
+            conclusion: 'success',
+            output: {
+              title: 'Build Successful',
+              summary: 'The Docusaurus site built successfully'
+            }
+          });
