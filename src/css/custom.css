@@ -40,3 +40,43 @@
 .footer__link-item[href="/tutorial"] {
   display: none;
 }
+
+/* Video Grid Styles */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  border-radius: var(--ifm-card-border-radius);
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-info {
+  margin-top: 0.75rem;
+}
+
+.video-title {
+  font-weight: 500;
+  color: var(--ifm-heading-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+  max-height: 2.8em; /* 2 lines * 1.4 line-height */
+}
