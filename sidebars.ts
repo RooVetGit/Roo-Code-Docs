@@ -31,6 +31,7 @@ const sidebars: SidebarsConfig = {
         'advanced-usage/custom-instructions',
         'advanced-usage/large-projects',
         'advanced-usage/prompt-engineering',
+        'advanced-usage/model-temperature',
         'advanced-usage/checkpoints',
         'advanced-usage/mcp',
         'advanced-usage/rate-limits-costs',
