@@ -69,8 +69,6 @@ Roo Code supports a wide range of API providers, including:
 *   Requesty
 *   VS Code Language Model API
 
-See [Configuring Your AI Provider and Model](#configuring-your-ai-provider-and-model) for details on setting up each provider.
-
 ### How do I get an API key?
 
 Each API provider has its own process for obtaining an API key.  See the [Setting Up Your First AI Provider](getting-started/connecting-api-provider) for links to the relevant documentation for each provider.

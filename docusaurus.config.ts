@@ -47,6 +47,19 @@ const config: Config = {
     ],
   ],
 
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        language: ["en"],
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        docsRouteBasePath: "/",
+      },
+    ],
+  ],
+
   themeConfig: {
     image: 'img/roo-code-logo-white.png',
     navbar: {
