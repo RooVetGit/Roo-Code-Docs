@@ -97,6 +97,32 @@ const config: Config = {
             },
           ],
         },
+        {
+          title: 'GitHub',
+          items: [
+            {
+              label: 'Issues',
+              href: 'https://github.com/RooVetGit/Roo-Code/issues',
+            },
+            {
+              label: 'Feature Requests',
+              href: 'https://github.com/RooVetGit/Roo-Code/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop',
+            },
+          ],
+        },
+        {
+          title: 'Download',
+          items: [
+            {
+              label: 'VS Code Marketplace',
+              href: 'https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline',
+            },
+            {
+              label: 'Open VSX Registry',
+              href: 'https://open-vsx.org/extension/RooVeterinaryInc/roo-cline',
+            },
+          ],
+        },
       ],
     },
     prism: {
