@@ -36,6 +36,7 @@ const sidebars: SidebarsConfig = {
         'advanced-usage/checkpoints',
         'advanced-usage/mcp',
         'advanced-usage/rate-limits-costs',
+        'advanced-usage/enhance-prompt',
         'advanced-usage/code-actions',
         'advanced-usage/experimental-features',
         'advanced-usage/local-models',
