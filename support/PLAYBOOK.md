@@ -12,7 +12,6 @@ Note: This is a living document and a starter for 10. Please suggest improvement
 * Post your availability in #support channel
 * Share your Reddit username for support flair  
 * Review FAQs in Discord #faq channel
-* Fork documentation repo: https://github.com/RooVetGit/Roo-Code-Docs
 
 ## 3. Support Thread Management
 
