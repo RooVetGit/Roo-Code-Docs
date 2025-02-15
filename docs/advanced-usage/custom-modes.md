@@ -1,6 +1,6 @@
 # Custom Modes
 
-Roo Code allows you to create **custom modes** to tailor its behavior to specific tasks or workflows. Custom modes let you define:
+Roo Code allows you to create **custom modes** that can be either global (available across all projects) or project-specific (defined within a single project). These modes let you tailor Roo's behavior to specific tasks or workflows by defining:
 
 *   **A unique name and slug:** For easy identification.
 *   **A role definition:** A description of the mode's purpose and expertise.
@@ -36,21 +36,33 @@ Roo Code will guide you through the process.
 1.  **Open the Prompts Tab:** Click the notebook icon in the Roo Code top menu bar.
 2.  **Click "Create New Mode":**  Use the "+" button to add a new mode.
 3.  **Fill in the Fields:**  Enter the mode's name, role definition, custom instructions, and select the allowed tool groups.
-4. **Add File Restrictions:** For the "edit" group, you can optionally specify a regular expression to restrict file access.
-5.  **Click "Create Mode":**  Save your new mode.
+4.  **Click "Create Mode":**  Save your new mode.
+
+Note: Adding/editing file type restrictions is not yet supported in the prompts tab UI.
 
 ### 3. Manual Configuration (Advanced)
 
-For advanced users, you can directly edit the `cline_custom_modes.json` file:
+Custom modes can be configured in two locations:
+
+1. **Global Configuration:**
+   - Located at `~/Library/Application Support/Cursor/User/globalStorage/rooveterinaryinc.roo-cline/settings/cline_custom_modes.json`
+   - These modes are available across all projects
+
+2. **Project-Specific Configuration:**
+   - Located in `.roomodes` file in your project's root directory
+   - These modes are only available within that specific project
+   - Project-specific modes take precedence over global modes with the same slug
+
+To edit either configuration:
 
 1.  **Open the Prompts Tab:** Click the notebook icon in the Roo Code top menu bar.
-2.  **Open the Settings File:** Click the code icon (`<>`) in the top right corner of the "Prompts" tab.  This will open the `cline_custom_modes.json` file in a VS Code editor.
+2.  **Open the Settings File:** Click the code icon (`<>`) in the top right corner of the "Prompts" tab.
 3.  **Edit the JSON:** Add or modify mode configurations within the `customModes` array, following the format described below.
 4.  **Save the File:** Roo Code will automatically detect the changes.
 
 ## Custom Mode Configuration (JSON Format)
 
-The `cline_custom_modes.json` file uses a JSON format. Here's an example:
+Both global and project-specific configuration files use the same JSON format. Here's an example:
 
 ```json
 {
