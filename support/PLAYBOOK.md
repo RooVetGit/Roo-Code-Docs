@@ -6,7 +6,6 @@ Note: This is a living document and a starter for 10. Please suggest improvement
 
 * Primary mission: Help users succeed with Roo Code through responsive, clear support
 * Focus on high-impact items that affect multiple users
-* [Proposal] Use GitHub issues (https://github.com/RooVetGit/Roo-Code-Docs/issues) for tracking and aligning on support team priority projects
 
 ## 2. Onboarding
 
@@ -23,6 +22,7 @@ Goal: Ensure every user gets timely help and issues are properly tracked
 
 * Monitor #support channel actively
 * Tag threads appropriately (Bug, Feature Request, General Help)
+* Help users as best possible, posting back to support-team channel for team support
 * Follow up for context or closure permission
 * Reference FAQ entries when answering common questions
 
@@ -42,10 +42,5 @@ Goal: Ensure every user gets timely help and issues are properly tracked
 * Cross-reference with support threads
 * Maintain clear status updates
 
-## 5. Documentation Enhancement
-
-> Better documentation = fewer support issues
-
 Pending:
-* Documentation improvement plan
 * Process refinements based on team feedback
