@@ -4,13 +4,55 @@ sidebar_label: Welcome
 
 # Welcome to Roo Code!
 
-This is the documentation for Roo Code. Let's get you set up and ready to build.
+Roo Code is an AI-powered autonomous coding agent that lives in your editor, designed to help you code faster and smarter. Whether you're starting a new project, maintaining existing code, or learning new technologies, Roo Code is your intelligent coding companion.
 
-Click the **Next** button below to begin.
+## What Can Roo Code Do?
 
----
+- 🚀 **Generate Code** from natural language descriptions
+- 🔧 **Refactor & Debug** existing code
+- 📝 **Write & Update** documentation
+- 🤔 **Answer Questions** about your codebase
+- 🔄 **Automate** repetitive tasks
+- 🏗️ **Create** new files and projects
 
-## Need Help?
+## Quick Start
 
-*   **Discord:** [Join our Discord server](https://discord.gg/roocode) to chat with other users and the Roo Code team.
-*   **Reddit:** [Visit our subreddit](https://www.reddit.com/r/RooCode) to discuss Roo Code and share your experiences.
+1. [Install Roo Code](getting-started/installing)
+2. [Connect Your AI Provider](getting-started/connecting-api-provider)
+3. [Try Your First Task](getting-started/your-first-task)
+
+## Key Features
+
+### Multiple Modes
+Roo Code adapts to your needs with specialized [modes](basic-usage/modes):
+- **Code Mode:** For general-purpose coding tasks
+- **Architect Mode:** For planning and technical leadership
+- **Ask Mode:** For answering questions and providing information
+
+### Smart Tools
+Roo Code comes with powerful [tools](basic-usage/using-tools) that can:
+- Read and write files in your project
+- Execute commands in your VS Code terminal
+- Perform web browsing (if enabled)
+- Use external tools via MCP (Model Context Protocol)
+
+### Customization
+Make Roo Code work your way with:
+- [Custom Instructions](advanced-usage/custom-instructions) for personalized behavior
+- [Custom Modes](advanced-usage/custom-modes) for specialized tasks
+- [Local Models](advanced-usage/local-models) for offline use
+- [Auto-Approval Settings](advanced-usage/auto-approving-actions) for faster workflows
+
+## Resources
+
+### Documentation
+- [Basic Usage Guide](basic-usage/the-chat-interface)
+- [Advanced Features](advanced-usage/auto-approving-actions)
+- [Frequently Asked Questions](faq)
+
+### Community
+- **Discord:** [Join our Discord server](https://discord.gg/roocode) for real-time help and discussions
+- **Reddit:** [Visit our subreddit](https://www.reddit.com/r/RooCode) to share experiences and tips
+- **GitHub:** Report [issues](https://github.com/RooVetGit/Roo-Code/issues) or request [features](https://github.com/RooVetGit/Roo-Code/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop)
+
+Ready to get started? Click the **Next** button below to begin your journey with Roo Code!
