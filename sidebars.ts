@@ -44,6 +44,7 @@ const sidebars: SidebarsConfig = {
     },
     'faq',
     'tutorial-videos',
+    'community',
   ],
 };
 
