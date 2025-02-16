@@ -6,18 +6,22 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  statuses: write
+  contents: read
+
 jobs:
   build:
     name: Build Docusaurus Site
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '20'
         cache: 'npm'
         
     - name: Install dependencies
@@ -26,23 +30,17 @@ jobs:
     - name: Build site
       run: npm run build
       
-    - name: Update PR Status
+    - name: Update Status
       if: github.event_name == 'pull_request'
-      uses: actions/github-script@v6
+      uses: actions/github-script@v7
       with:
         script: |
-          const { owner, repo, number } = context.issue;
           const { sha } = context.payload.pull_request.head;
           
-          await github.rest.checks.create({
-            owner,
-            repo,
-            name: 'Docusaurus Build',
-            head_sha: sha,
-            status: 'completed',
-            conclusion: 'success',
-            output: {
-              title: 'Build Successful',
-              summary: 'The Docusaurus site built successfully'
-            }
+          await github.rest.repos.createCommitStatus({
+            ...context.repo,
+            sha: sha,
+            state: 'success',
+            description: 'Docusaurus site built successfully',
+            context: 'Docusaurus Build'
           });
