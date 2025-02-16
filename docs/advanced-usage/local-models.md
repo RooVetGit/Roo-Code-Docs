@@ -73,8 +73,8 @@ Roo Code currently supports two main local model providers:
       
 
 4.  **Configure Roo Code:**
-    *   Open the Roo Code sidebar (🚀 icon).
-    *   Click the settings gear icon (⚙️).
+    *   Open the Roo Code sidebar (<Codicon name="rocket" /> icon).
+    *   Click the settings gear icon (<Codicon name="gear" />).
     *   Select "ollama" as the API Provider.
     *   Enter the Model name from the previous step (e.g., `your_model_name`).
     *   (Optional) You can configure the base URL if you're running Ollama on a different machine. The default is `http://localhost:11434`.
@@ -89,8 +89,8 @@ Roo Code currently supports two main local model providers:
     *   Select your downloaded model.
     *   Click **"Start Server"**.
 4.  **Configure Roo Code:**
-    *   Open the Roo Code sidebar (🚀 icon).
-    *   Click the settings gear icon (⚙️).
+    *   Open the Roo Code sidebar (<Codicon name="rocket" /> icon).
+    *   Click the settings gear icon (<Codicon name="gear" />).
     *   Select "lmstudio" as the API Provider.
     *   Enter the Model ID.  This should be the name of the model file you loaded in LM Studio (e.g., `codellama-7b.Q4_0.gguf`).  LM Studio shows a list of "Currently loaded models" in its UI.
     *   (Optional) You can configure the base URL if you're running LM Studio on a different machine. The default is `http://localhost:1234`.

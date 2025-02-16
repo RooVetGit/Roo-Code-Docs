@@ -1,6 +1,6 @@
 # The Chat Interface
 
-The Roo Code chat interface is your primary way of interacting with it. It's located in the Roo Code panel, which you can open by clicking the Roo Code icon (🚀) in the VS Code Activity Bar.
+The Roo Code chat interface is your primary way of interacting with it. It's located in the Roo Code panel, which you can open by clicking the Roo Code icon (<Codicon name="rocket" />) in the VS Code Activity Bar.
 
 ## Components of the Chat Interface
 

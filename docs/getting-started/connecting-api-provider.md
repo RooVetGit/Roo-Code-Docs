@@ -28,7 +28,7 @@ Choose one of these options and follow the instructions below to obtain an API k
 
 ## Configuring Roo Code in VS Code
 
-1.  **Open the Roo Code Sidebar:** Click the Roo Code icon (🚀) in the VS Code Activity Bar.  You should see the welcome screen.
+1.  **Open the Roo Code Sidebar:** Click the Roo Code icon (<Codicon name="rocket" />) in the VS Code Activity Bar.  You should see the welcome screen.
 
 2.  **Select your API Provider:** In the "API Provider" dropdown, choose your API provider.
 

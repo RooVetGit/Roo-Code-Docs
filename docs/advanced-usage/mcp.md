@@ -11,7 +11,7 @@ The Model Context Protocol (MCP) is a standard for extending Roo Code's capabili
 
 ## MCP Server Status
 
-You can view and manage your MCP server connections by clicking the server icon in the top navigation bar.
+You can view and manage your MCP server connections by clicking the <Codicon name="server" /> icon in the top navigation bar.
 
 ## Finding and Installing MCP Servers
 
@@ -71,7 +71,7 @@ Roo Code provides two settings to control the use of MCP servers, to help you ma
 
 If you don't want to use MCP servers at all, you can disable them completely:
 
-1. Open the Roo Code Settings (gear icon ⚙️)
+1. Open the Roo Code Settings (<Codicon name="gear" />)
 2. Find the "Enable MCP Servers" setting
 3. Uncheck the box
 
@@ -83,7 +83,7 @@ Roo Code can be asked to assist in creating new MCP servers. This is a powerful 
 
 To disable MCP server creation:
 
-1. Open the Roo Code Settings (gear icon ⚙️)
+1. Open the Roo Code Settings (<Codicon name="gear" />)
 2. Find the "Enable MCP Server Creation" setting
 3. Uncheck the box
 

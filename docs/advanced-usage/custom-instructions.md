@@ -12,7 +12,7 @@ These instructions are added to every prompt, regardless of the active mode.  Th
 
 **How to set them:**
 
-1.  Open the Roo Code panel (rocket icon 🚀).
+1.  Open the Roo Code panel (<Codicon name="rocket" />).
 2.  Click the "Prompts" button in the top menu bar.
 3.  Find the "Custom Instructions for All Modes" section.
 4.  Enter your instructions in the text area.
@@ -24,7 +24,7 @@ These instructions are added only when a specific mode is active.  They allow yo
 
 **How to set them:**
 
-1.  Open the Roo Code panel (rocket icon 🚀).
+1.  Open the Roo Code panel (<Codicon name="rocket" />).
 2.  Click the "Prompts" button in the top menu bar.
 3.  Select the mode you want to customize from the dropdown.
 4.  Find the "Mode-specific Custom Instructions" section.

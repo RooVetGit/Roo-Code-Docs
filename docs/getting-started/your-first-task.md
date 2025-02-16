@@ -8,7 +8,7 @@ Now that you've [configured your AI provider and model](./connecting-api-provide
 
 ## Step 1: Open the Roo Code Panel
 
-If the Roo Code panel isn't already visible, click the Roo Code icon (🚀) in the VS Code Activity Bar (the vertical bar on the side of the window). This will open the Roo Code chat interface.  If you don't see the icon, make sure the extension is installed and enabled.
+If the Roo Code panel isn't already visible, click the Roo Code icon (<Codicon name="rocket" />) in the VS Code Activity Bar (the vertical bar on the side of the window). This will open the Roo Code chat interface.  If you don't see the icon, make sure the extension is installed and enabled.
 
 ## Step 2: Type Your Task
 
@@ -22,7 +22,7 @@ You don't need to use any special commands or syntax at this point.  Just write 
 
 ## Step 3: Send Your Task
 
-Press Enter, or click the Send icon (a paper plane) to the right of the input box.
+Press Enter, or click the Send icon (<Codicon name="send" />) to the right of the input box.
 
 ## Step 4: Review and Approve Actions
 
