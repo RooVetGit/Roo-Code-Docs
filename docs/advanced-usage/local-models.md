@@ -78,7 +78,7 @@ Roo Code currently supports two main local model providers:
     *   Select "ollama" as the API Provider.
     *   Enter the Model name from the previous step (e.g., `your_model_name`).
     *   (Optional) You can configure the base URL if you're running Ollama on a different machine. The default is `http://localhost:11434`.
-    *   (Optional) Configure Model context size in Advance settings, so Roo Code knows how to manage its sliding window.
+    *   (Optional) Configure Model context size in Advanced settings, so Roo Code knows how to manage its sliding window.
 
 ## Setting Up LM Studio
 
