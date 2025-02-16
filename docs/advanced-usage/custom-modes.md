@@ -88,3 +88,8 @@ Both global and project-specific configuration files use the same JSON format. H
     }
   ]
 }
+```
+
+## Community Gallery
+
+Ready to explore more? Check out the [Custom Modes Gallery](../community#custom-modes-gallery) to discover and share custom modes created by the community!
