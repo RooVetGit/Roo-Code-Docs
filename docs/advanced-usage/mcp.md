@@ -61,3 +61,32 @@ The file uses a JSON format:
     }
   }
 }
+```
+
+## Disabling MCP Features
+
+Roo Code provides two settings to control the use of MCP servers, to help you manage token usage and security:
+
+### 1. Disable MCP Servers Entirely
+
+If you don't want to use MCP servers at all, you can disable them completely:
+
+1. Open the Roo Code Settings (gear icon ⚙️)
+2. Find the "Enable MCP Servers" setting
+3. Uncheck the box
+
+This will prevent Roo Code from connecting to any MCP servers, and the `use_mcp_tool` and `access_mcp_resource` tools will not be available. This is the most secure option if you don't intend to use MCP.
+
+### 2. Disable MCP Server Creation
+
+Roo Code can be asked to assist in creating new MCP servers. This is a powerful feature, but it also consumes more tokens and could potentially introduce security risks if used improperly.
+
+To disable MCP server creation:
+
+1. Open the Roo Code Settings (gear icon ⚙️)
+2. Find the "Enable MCP Server Creation" setting
+3. Uncheck the box
+
+With this option disabled, Roo Code will not attempt to create new MCP servers. You can still use existing, manually configured servers.
+
+By default, both of these options are enabled.
