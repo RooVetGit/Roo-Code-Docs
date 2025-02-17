@@ -56,7 +56,7 @@ Custom modes can be configured by directly editing JSON files. There are two loc
 To edit either configuration:
 
 1.  **Open the Prompts Tab:** Click the notebook icon in the Roo Code top menu bar.
-2.  **Open the Settings File:** Click the code icon (`<>`) in the top right corner of the "Prompts" tab.  (This will allow you to edit either the Global or project-specifc configuration file. You can also edit a project-specific configuration, by manually creating/opening the `.roomodes` file in your project's root directory.)
+2.  **Open the Settings File:** Click the code icon (`<>`) in the top right corner of the "Prompts" tab.  (This will allow you to edit either the Global or project-specific configuration file. You can also edit a project-specific configuration, by manually creating/opening the `.roomodes` file in your project's root directory.)
 3.  **Edit the JSON:** Add or modify mode configurations within the `customModes` array, following the format described below.
 4.  **Save the File:** Roo Code will automatically detect the changes.
 
