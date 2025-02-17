@@ -143,7 +143,7 @@ Here are some examples:
 {
   "customModes": [
     {
-      "slug": "code",  // Overrides the global "code" mode
+      "slug": "code"
       "name": "Code (Project-Specific)",
       "roleDefinition": "You are Roo, a highly skilled software engineer.  In this project, you have limited file access.",
       "groups": [
