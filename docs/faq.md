@@ -34,7 +34,7 @@ Roo Code can help with a variety of coding tasks, including:
 
 ### Is Roo Code free to use?
 
-The Roo Code extension itself is free and open-source. However, Roo Code relies on external API providers (like Anthropic, OpenAI, OpenRouter, etc.) for its AI capabilities.  These providers typically charge for API usage based on the number of tokens processed.  You will need to create an account and obtain an API key from your chosen provider.  See [Setting Up Your First AI Provider](getting-started/connecting-api-provider) for details.
+The Roo Code extension itself is free and open-source. However, Roo Code relies on external API providers (like [Anthropic](providers/anthropic), [OpenAI](providers/openai), [OpenRouter](providers/openrouter), etc.) for its AI capabilities.  These providers typically charge for API usage based on the number of tokens processed.  You will need to create an account and obtain an API key from your chosen provider.  See [Setting Up Your First AI Provider](getting-started/connecting-api-provider) for details.
 
 ### What are the risks of using Roo Code?
 
@@ -54,44 +54,44 @@ See the [Installation Guide](getting-started/installing) for detailed instructio
 
 Roo Code supports a wide range of API providers, including:
 
-*   Anthropic (Claude)
-*   OpenAI (GPT models)
-*   OpenRouter (access to multiple models)
-*   Google Gemini
-*   Glama
-*   AWS Bedrock
-*   GCP Vertex AI
-*   Ollama (local models)
-*   LM Studio (local models)
-*   DeepSeek
-*   Mistral
-*   Unbound
-*   Requesty
-*   VS Code Language Model API
+*   [Anthropic (Claude)](/providers/anthropic)
+*   [OpenAI (GPT models)](/providers/openai)
+*   [OpenRouter (access to multiple models)](/providers/openrouter)
+*   [Google Gemini](/providers/gemini)
+*   [Glama](/providers/glama)
+*   [AWS Bedrock](/providers/bedrock)
+*   [GCP Vertex AI](/providers/vertex)
+*   [Ollama (local models)](/providers/ollama)
+*   [LM Studio (local models)](/providers/lmstudio)
+*   [DeepSeek](/providers/deepseek)
+*   [Mistral](/providers/mistral)
+*   [Unbound](/providers/unbound)
+*   [Requesty](/providers/requesty)
+*   [VS Code Language Model API](/providers/vscode-lm)
 
 ### How do I get an API key?
 
-Each API provider has its own process for obtaining an API key.  See the [Setting Up Your First AI Provider](getting-started/connecting-api-provider) for links to the relevant documentation for each provider.
+Each API provider has its own process for obtaining an API key.  See the [Setting Up Your First AI Provider](/getting-started/connecting-api-provider) for links to the relevant documentation for each provider.
 
 ### Can I use Roo Code with local models?
 
-Yes, Roo Code supports running models locally using Ollama and LM Studio.  See [Using Local Models](advanced-usage/local-models) for instructions.
+Yes, Roo Code supports running models locally using [Ollama](/providers/ollama) and [LM Studio](/providers/lmstudio).  See [Using Local Models](/advanced-usage/local-models) for instructions.
 
 ## Usage
 
 ### How do I start a new task?
 
-Open the Roo Code panel (<Codicon name="rocket" />) and type your task in the chat box. Be clear and specific about what you want Roo Code to do. See [Typing Your Requests](basic-usage/typing-your-requests) for best practices.
+Open the Roo Code panel (<Codicon name="rocket" />) and type your task in the chat box. Be clear and specific about what you want Roo Code to do. See [Typing Your Requests](/basic-usage/typing-your-requests) for best practices.
 
 ### What are modes in Roo Code?
 
-[Modes](basic-usage/modes) are different personas that Roo Code can adopt, each with a specific focus and set of capabilities. The built-in modes are:
+[Modes](/basic-usage/modes) are different personas that Roo Code can adopt, each with a specific focus and set of capabilities. The built-in modes are:
 
 *   **Code:** For general-purpose coding tasks.
 *   **Architect:** For planning and technical leadership.
 *   **Ask:** For answering questions and providing information.
 
-You can also create [Custom Modes](advanced-usage/custom-modes).
+You can also create [Custom Modes](/advanced-usage/custom-modes).
 
 ### How do I switch between modes?
 
@@ -99,11 +99,11 @@ Use the dropdown menu in the chat input area to select a different mode, or use 
 
 ### What are tools and how do I use them?
 
-[Tools](basic-usage/using-tools) are how Roo Code interacts with your system.  Roo Code automatically selects and uses the appropriate tools to complete your tasks. You don't need to call tools directly. You will be prompted to approve or reject each tool use.
+[Tools](/basic-usage/using-tools) are how Roo Code interacts with your system.  Roo Code automatically selects and uses the appropriate tools to complete your tasks. You don't need to call tools directly. You will be prompted to approve or reject each tool use.
 
 ### What are context mentions?
 
-[Context mentions](basic-usage/context-mentions) are a way to provide Roo Code with specific information about your project, such as files, folders, or problems. Use the "@" symbol followed by the item you want to mention (e.g., `@/src/file.ts`, `@problems`).
+[Context mentions](/basic-usage/context-mentions) are a way to provide Roo Code with specific information about your project, such as files, folders, or problems. Use the "@" symbol followed by the item you want to mention (e.g., `@/src/file.ts`, `@problems`).
 
 ### Can Roo Code access the internet?
 
@@ -127,16 +127,16 @@ Yes, you can customize Roo Code in several ways:
 *   **Settings:** Adjust various settings, such as auto-approval, diff editing, and more.
 
 ### Does Roo Code have any auto approval settings?
-Yes, Roo Code has a few settings that when enabled will automatically approve actions. Find out more [here](advanced-usage/auto-approving-actions)
+Yes, Roo Code has a few settings that when enabled will automatically approve actions. Find out more [here](/advanced-usage/auto-approving-actions).
 
 ## Advanced Features
 
 ### Can I use Roo offline?
-Yes, if you use a [local model](advanced-usage/local-models).
+Yes, if you use a [local model](/advanced-usage/local-models).
 
 ### What is MCP (Model Context Protocol)?
 
-[MCP](advanced-usage/mcp) is a protocol that allows Roo Code to communicate with external servers, extending its capabilities with custom tools and resources.
+[MCP](/advanced-usage/mcp) is a protocol that allows Roo Code to communicate with external servers, extending its capabilities with custom tools and resources.
 
 ### Can I create my own MCP servers?
 
