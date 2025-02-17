@@ -52,3 +52,10 @@
 |--------------------------------------------------------------------------------|-|---------------------------------------------------------------------------|-|-----------------------------------------------------------------------|
 | Design, implement & manage cloud infrastructure and services for applications. | | Lead technical projects and guide development teams in best practices.    | | Write & maintain Python code for various applications & tasks.        |
 | `AWS`, `Azure`, `Terraform`                                                    | | `Coding Standards`, `Architecture`                                        | | `Python`, `Flask`, `Django`                                           |
+
+---
+
+| [Code Documentor](modes/code_documentor.md)                                    | | [Unittest Writer](modes/unittest_writer.md)                               | |                                                                       |
+|--------------------------------------------------------------------------------|-|---------------------------------------------------------------------------|-|-----------------------------------------------------------------------|
+| Document code files into markdown files, adds comments to function & methods.  | | Write unittest in relevant language according to blackbox best practices. | |                                                                       |
+| `Comments`, `Markdown`, `Documentation`                                        | | `JUnit`, `Playwrite`, `Unittest`                                          | |                                                                       |
