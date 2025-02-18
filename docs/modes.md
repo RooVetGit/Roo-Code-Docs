@@ -55,7 +55,7 @@
 
 ---
 
-| [Code Documentor](modes/code_documentor.md)                                    | | [Unittest Writer](modes/unittest_writer.md)                               | |                                                                       |
+| [Code Documentor](modes/code_documentor.md)                                    | | [Unittest Writer](modes/unittest_writer.md)                               | | [Vibe nlp to Code](modes/vibe_nlp_2_code.md)                          |
 |--------------------------------------------------------------------------------|-|---------------------------------------------------------------------------|-|-----------------------------------------------------------------------|
-| Document code files into markdown files, adds comments to function & methods.  | | Write unittest in relevant language according to blackbox best practices. | |                                                                       |
-| `Comments`, `Markdown`, `Documentation`                                        | | `JUnit`, `Playwrite`, `Unittest`                                          | |                                                                       |
+| Document code files into markdown files, adds comments to function & methods.  | | Write unittest in relevant language according to blackbox best practices. | | transforming natural language descriptions into working code          |
+| `Comments`, `Markdown`, `Documentation`                                        | | `JUnit`, `Playwrite`, `Unittest`                                          | | `nlp`, `code`                                                         |
