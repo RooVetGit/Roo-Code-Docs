@@ -21,8 +21,8 @@ Different tasks benefit from different temperature settings.  For example:
 
 You can adjust the temperature in the Roo Code settings:
 
-1.  **Open the Roo Code Panel:** Click the Roo Code icon (🚀) in the VS Code Activity Bar.
-2.  **Open Settings:** Click the gear icon (⚙️) in the top right corner of the Roo Code panel.
+1.  **Open the Roo Code Panel:** Click the Roo Code icon (<Codicon name="rocket" />) in the VS Code Activity Bar.
+2.  **Open Settings:** Click the <Codicon name="gear" /> icon in the top right corner of the Roo Code panel.
 3.  **Find the Temperature Setting:** In the settings panel, you'll find a "Use custom temperature" setting within the API configuration section.
 4.  **Enter the Temperature Value:** Check the box and enter the temperature value you want to use. The range is typically from 0.0 to 1.0, but this may depend on the specific model and provider.
 

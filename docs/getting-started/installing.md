@@ -22,7 +22,7 @@ This is the easiest and recommended method for most users.
 4.  **Install:** Find "Roo Code" in the search results (by RooVeterinaryInc). Click the **Install** button.
 5.  **Reload (if required):**  VS Code may prompt you to reload.  If so, click the **Reload** button.
 
-Once installed, you'll see the Roo Code icon (a rocket 🚀) in the Activity Bar.  Click it to open the Roo Code panel.
+Once installed, you'll see the Roo Code icon (<Codicon name="rocket" />) in the Activity Bar.  Click it to open the Roo Code panel.
 
 ## 2. Installation from the Open VSX Registry
 

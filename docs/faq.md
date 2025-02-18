@@ -81,7 +81,7 @@ Yes, Roo Code supports running models locally using Ollama and LM Studio.  See [
 
 ### How do I start a new task?
 
-Open the Roo Code panel (rocket icon 🚀) and type your task in the chat box. Be clear and specific about what you want Roo Code to do. See [Typing Your Requests](basic-usage/typing-your-requests) for best practices.
+Open the Roo Code panel (<Codicon name="rocket" />) and type your task in the chat box. Be clear and specific about what you want Roo Code to do. See [Typing Your Requests](basic-usage/typing-your-requests) for best practices.
 
 ### What are modes in Roo Code?
 

@@ -27,7 +27,7 @@ At the top of the Auto-Approve Toolbar is a toggle to enable/disable auto-approv
 
 ## Advanced Configuration (Settings)
 
-You can also find these auto-approval options in the Roo Code settings panel (gear icon ⚙️ in the top right corner).  The settings panel provides the same functionality as the auto-approve menu, but in a different location.  The auto-approve menu is generally the quickest way to change these settings.
+You can also find these auto-approval options in the Roo Code settings panel (<Codicon name="gear" /> in the top right corner).  The settings panel provides the same functionality as the auto-approve menu, but in a different location.  The auto-approve menu is generally the quickest way to change these settings.
 
 ## Security Considerations
 

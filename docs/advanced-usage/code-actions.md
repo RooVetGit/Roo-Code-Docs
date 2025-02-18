@@ -61,7 +61,7 @@ Each code action gives you two options:
 
 You can customize the prompts used for each Code Action by modifying the "Support Prompts" in the **Prompts** tab.  This allows you to fine-tune the instructions given to the AI model and tailor the responses to your specific needs.
 
-1.  **Open the Prompts Tab:** Click the notebook icon in the Roo Code top menu bar.
+1.  **Open the Prompts Tab:** Click the <Codicon name="notebook" /> icon in the Roo Code top menu bar.
 2. **Find "Support Prompts":** You will see the support prompts, including "Enhance Prompt", "Explain Code", "Fix Code", and "Improve Code".
 3. **Edit the Prompts:**  Modify the text in the text area for the prompt you want to customize. You can use placeholders like `${filePath}` and `${selectedText}` to include information about the current file and selection.
 4. **Click "Done":** Save your changes.

@@ -8,7 +8,7 @@ Roo Code includes experimental features that are still under development.  These
 
 To enable or disable experimental features:
 
-1.  Open the Roo Code settings (gear icon ⚙️ in the top right corner).
+1.  Open the Roo Code settings (<Codicon name="gear" /> icon in the top right corner).
 2.  Go to the "Advanced Settings" section.
 3.  Find the "Experimental Features" section.
 4.  Check or uncheck the boxes for the features you want to enable or disable.

@@ -83,3 +83,9 @@
   line-height: 1.4;
   max-height: 2.8em; /* 2 lines * 1.4 line-height */
 }
+
+/* Basic Codicon styles */
+.codicon {
+  vertical-align: middle;
+  line-height: 1;
+}

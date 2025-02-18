@@ -29,7 +29,7 @@ To prevent accidental overuse of the API and to help you manage costs, Roo Code 
 
 **How to configure:**
 
-1.  Open the Roo Code settings (gear icon ⚙️ in the top right corner).
+1.  Open the Roo Code settings (<Codicon name="rocket" /> icon in the top right corner).
 2.  Go to the "Advanced Settings" section.
 3.  Find the "Rate Limit (seconds)" setting.
 4.  Enter the desired delay in seconds.  A value of 0 disables rate limiting.
