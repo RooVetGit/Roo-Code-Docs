@@ -40,6 +40,9 @@ const config: Config = {
           routeBasePath: '/',
           editUrl: 'https://github.com/RooVetGit/Roo-Code-Docs/edit/main/',
         },
+        sitemap: {
+          lastmod: 'datetime',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
