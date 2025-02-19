@@ -53,6 +53,7 @@ Roo Code currently supports two main local model providers:
 
 3. **Configure the Model:** by default, Ollama uses a context window size of 2048 tokens, which is too small for Roo Code requests. You need to have at least 12k to get decent results, ideally - 32k. To configure a model, you actually need to set its parameters and save a copy of it.
 
+    ##### Using Ollama runtime
    Load the model (we will use `qwen2.5-coder:32b` as an example):
    
     ```bash
@@ -70,13 +71,36 @@ Roo Code currently supports two main local model providers:
     ```bash
     /save your_model_name
     ```
-      
+    ##### Using Ollama command line
+    Alternatively, you can write all your settings into a text file and generate the model in the command-line.
+
+
+    Create a text file with model settings, and save it (~/qwen2.5-coder-32k.txt).  Here we've only used the `num_ctx` parameter, but you could include more parameters on the next line using the `PARAMETER name value` syntax.
+
+    ```text
+    FROM qwen2.5-coder:32b
+    # sets the context window size to 32768, this controls how many tokens the LLM can use as context to generate the next token
+    PARAMETER num_ctx 32768
+    ```
+    Change directory to the `.ollama/models` directory.  On most Macs, thats `~/.ollama/models` by default (`%HOMEPATH%\.ollama` on Windows).
+
+    ```bash
+    cd ~/.ollama/models
+    ```
+
+    Create your model from the settings text file you created.  The syntax is `ollama create (name of the model you want to see) -f (text file with settings)`
+
+    ```bash
+    ollama create qwen2.5-coder-32k -f ~/qwen2.5-coder-32k.txt
+    ```
+
+
 
 4.  **Configure Roo Code:**
     *   Open the Roo Code sidebar (<Codicon name="rocket" /> icon).
     *   Click the settings gear icon (<Codicon name="gear" />).
     *   Select "ollama" as the API Provider.
-    *   Enter the Model name from the previous step (e.g., `your_model_name`).
+    *   Enter the Model name from the previous step (e.g., `your_model_name`) or choose it from the radio button list that should appear below `Model ID` if Ollama is currently running.
     *   (Optional) You can configure the base URL if you're running Ollama on a different machine. The default is `http://localhost:11434`.
     *   (Optional) Configure Model context size in Advanced settings, so Roo Code knows how to manage its sliding window.
 
