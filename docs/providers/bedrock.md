@@ -7,7 +7,7 @@ Roo Code supports accessing models through Amazon Bedrock, a fully managed servi
 ## Prerequisites
 
 *   **AWS Account:** You need an active AWS account.
-*   **Bedrock Access:** You must request and be granted access to Amazon Bedrock.  See the [AWS Bedrock documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html) for details on requesting access.
+*   **Bedrock Access:** You must request and be granted access to Amazon Bedrock.  See the [AWS Bedrock documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/getting-started.html) for details on requesting access.
 *   **Model Access:** Within Bedrock, you need to request access to the specific models you want to use (e.g., Anthropic Claude).
 *   **Install AWS CLI:** Use AWS CLI to configure your account for authentication
     ```bash
@@ -49,7 +49,7 @@ Roo Code supports the following models through Bedrock:
     * `amazon.nova-lite-v1:0`
     * `amazon.nova-micro-v1:0`
 
-Refer to the [Amazon Bedrock documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids-arns.html) for the most up-to-date list of available models and their IDs. Make sure to use the *model ID* when configuring Roo Code, not the model name.
+Refer to the [Amazon Bedrock documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html) for the most up-to-date list of available models and their IDs. Make sure to use the *model ID* when configuring Roo Code, not the model name.
 
 ## Configuration in Roo Code
 
@@ -59,12 +59,8 @@ Refer to the [Amazon Bedrock documentation](https://docs.aws.amazon.com/bedrock/
     *   **AWS Credentials:**
         *   Enter your "AWS Access Key" and "AWS Secret Key."
         *   (Optional) Enter your "AWS Session Token" if you're using temporary credentials.
-        *   Leave "AWS Profile" *blank*.
-        *   Set "Use AWS Profile" to *unchecked*.
     *   **AWS Profile:**
         *   Enter your "AWS Profile" name (e.g., "default").
-        *   Set "Use AWS Profile" to *checked*.
-        *   Leave the Access Key, Secret Key, and Session Token fields *blank*.
 4.  **Select Region:** Choose the AWS region where your Bedrock service is available (e.g., "us-east-1").
 5.  **(Optional) Cross-Region Inference:** Check "Use cross-region inference" if you want to access models in a region different from your configured AWS region.
 6.  **Select Model:** Choose your desired model from the "Model" dropdown.
@@ -74,4 +70,3 @@ Refer to the [Amazon Bedrock documentation](https://docs.aws.amazon.com/bedrock/
 *   **Permissions:**  Ensure your IAM user or role has the necessary permissions to invoke Bedrock models.  The `bedrock:InvokeModel` permission is required.
 *   **Pricing:**  Refer to the [Amazon Bedrock pricing](https://aws.amazon.com/bedrock/pricing/) page for details on model costs.
 *   **Cross-Region Inference:**  Using cross-region inference may result in higher latency.
-* **Prompt Caching**: You can enable caching of prompts if you want to use AWS's implementation.
