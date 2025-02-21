@@ -4,7 +4,7 @@ sidebar_label: Welcome
 
 # Roo Code Docs
 
-Roo Code (formerly Roo Cline) is an AI-powered autonomous coding agent that lives in your editor, designed to help you code faster and smarter. Whether you're starting a new project, maintaining existing code, or learning new technologies, Roo Code is your intelligent coding companion.
+Roo Code (formerly Roo Cline) is an AI-powered autonomous coding agent that lives in your editor. It helps you code faster and smarter, whether you're starting a new project, maintaining existing code, or learning new technologies.
 
 ## What Can Roo Code Do?
 
@@ -28,13 +28,16 @@ Roo Code adapts to your needs with specialized [modes](basic-usage/modes):
 - **Code Mode:** For general-purpose coding tasks
 - **Architect Mode:** For planning and technical leadership
 - **Ask Mode:** For answering questions and providing information
+- **[Custom Modes](advanced-usage/custom-modes):** Create unlimited specialized personas for security auditing, performance optimization, documentation, or any other task
 
 ### Smart Tools
 Roo Code comes with powerful [tools](basic-usage/using-tools) that can:
 - Read and write files in your project
 - Execute commands in your VS Code terminal
-- Perform web browsing (if enabled)
-- Use external tools via MCP (Model Context Protocol)
+- Control a web browser
+- Use external tools via [MCP (Model Context Protocol)](advanced-usage/mcp)
+
+MCP extends Roo Code's capabilities by allowing you to add unlimited custom tools. Integrate with external APIs, connect to databases, or create specialized development tools - MCP provides the framework to expand Roo Code's functionality to meet your specific needs.
 
 ### Customization
 Make Roo Code work your way with:
