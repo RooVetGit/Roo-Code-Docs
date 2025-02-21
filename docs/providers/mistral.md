@@ -19,7 +19,7 @@ Roo Code supports accessing models through the Mistral AI API, including both st
 
 Roo Code supports the following Mistral models:
 
-| Model ID               | Model Default Temperature | Function Calling | Vision / Imagage support |
+| Model ID               | Model Default Temperature | Function Calling | Vision / Image support |
 |------------------------|-------------------------|------------------|--------|
 | codestral-latest      | 0.3                     | ✅               | ❌      |
 | mistral-large-latest  | 0.7                     | ✅               | ❌      |
