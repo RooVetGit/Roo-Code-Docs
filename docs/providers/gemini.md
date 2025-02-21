@@ -1,4 +1,8 @@
-# Google Gemini
+---
+sidebar_label: Google Gemini
+---
+
+# Using Google Gemini With Roo Code
 
 Roo Code supports Google's Gemini family of models through the Google AI Gemini API.
 

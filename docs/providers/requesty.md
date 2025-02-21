@@ -1,4 +1,8 @@
-# Requesty
+---
+sidebar_label: Requesty
+---
+
+# Using Requesty With Roo Code
 
 Roo Code supports accessing models through the [Requesty](https://www.requesty.ai/) AI platform. Requesty provides a unified API for interacting with various large language models (LLMs), including those from Anthropic and OpenAI, and offers features for testing, deploying, and monitoring LLM applications.  It's designed to simplify the process of integrating AI into applications.
 

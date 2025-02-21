@@ -1,4 +1,8 @@
-# Mistral AI
+---
+sidebar_label: Mistral AI
+---
+
+# Using Mistral AI With Roo Code
 
 Roo Code supports accessing models through the Mistral AI API, including both standard Mistral models and the code-specialized Codestral model.
 

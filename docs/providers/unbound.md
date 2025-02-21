@@ -1,4 +1,8 @@
-# Unbound
+---
+sidebar_label: Unbound
+---
+
+# Using Unbound With Roo Code
 
 Roo Code supports accessing models through [Unbound](https://getunbound.ai/), a platform that focuses on providing secure and reliable access to a variety of large language models (LLMs). Unbound acts as a gateway, allowing you to use models from providers like Anthropic and OpenAI without needing to manage multiple API keys and configurations directly.  They emphasize security and compliance features for enterprise use.
 

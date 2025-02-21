@@ -1,4 +1,8 @@
-# OpenAI
+---
+sidebar_label: OpenAI
+---
+
+# Using OpenAI With Roo Code
 
 Roo Code supports accessing models directly through the official OpenAI API.
 

@@ -1,4 +1,8 @@
-# LM Studio
+---
+sidebar_label: LM Studio
+---
+
+# Using LM Studio With Roo Code
 
 Roo Code supports running models locally using LM Studio.  LM Studio provides a user-friendly interface for downloading, configuring, and running local language models.  It also includes a built-in local inference server that emulates the OpenAI API, making it easy to integrate with Roo Code.
 

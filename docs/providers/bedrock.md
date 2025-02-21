@@ -1,4 +1,8 @@
-# AWS Bedrock
+---
+sidebar_label: AWS Bedrock
+---
+
+# Using AWS Bedrock With Roo Code
 
 Roo Code supports accessing models through Amazon Bedrock, a fully managed service that makes a selection of high-performing foundation models (FMs) from leading AI companies available via a single API.
 

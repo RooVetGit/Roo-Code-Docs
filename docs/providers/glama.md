@@ -1,4 +1,8 @@
-# Glama
+---
+sidebar_label: Glama
+---
+
+# Using Glama With Roo Code
 
 Glama provides access to a variety of language models through a unified API, including models from Anthropic, OpenAI, and others.  It offers features like prompt caching and cost tracking.
 

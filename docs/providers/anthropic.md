@@ -1,4 +1,8 @@
-# Anthropic
+---
+sidebar_label: Anthropic
+---
+
+# Using Anthropic With Roo Code
 
 Anthropic is an AI safety and research company that builds reliable, interpretable, and steerable AI systems.  Their Claude models are known for their strong reasoning abilities, helpfulness, and honesty.
 

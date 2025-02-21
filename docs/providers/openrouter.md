@@ -1,4 +1,8 @@
-# OpenRouter
+---
+sidebar_label: OpenRouter
+---
+
+# Using OpenRouter With Roo Code
 
 OpenRouter is an AI platform that provides access to a wide variety of language models from different providers, all through a single API.  This can simplify setup and allow you to easily experiment with different models.
 

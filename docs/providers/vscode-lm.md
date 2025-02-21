@@ -1,4 +1,8 @@
-# VS Code Language Model API
+---
+sidebar_label: VS Code Language Model API
+---
+
+# Using VS Code Language Model API With Roo Code
 
 Roo Code includes *experimental* support for the [VS Code Language Model API](https://code.visualstudio.com/api/language-extensions/language-model-access). This API allows extensions to provide access to language models directly within VS Code.  This means you can potentially use models from:
 
@@ -16,7 +20,7 @@ Roo Code includes *experimental* support for the [VS Code Language Model API](ht
 
 ## Configuration
 
-1.  **Open Roo Code Settings:** Click the gear icon (⚙️) in the Roo Code panel.
+1.  **Open Roo Code Settings:** Click the gear icon (<Codicon name="gear" />) in the Roo Code panel.
 2.  **Select Provider:** Choose "VS Code LM API" from the "API Provider" dropdown.
 3.  **Select Model:**  The "Language Model" dropdown will (eventually) list available models. The format is `vendor/family`. For example, if you have Copilot, you might see options like:
     *   `copilot - claude-3.5-sonnet`

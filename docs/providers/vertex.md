@@ -1,4 +1,8 @@
-# GCP Vertex AI
+---
+sidebar_label: GCP Vertex AI
+---
+
+# Using GCP Vertex AI With Roo Code
 
 Roo Code supports accessing models through Google Cloud Platform's Vertex AI, a managed machine learning platform that provides access to various foundation models, including Anthropic's Claude family.
 

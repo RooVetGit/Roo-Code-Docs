@@ -1,4 +1,8 @@
-# OpenAI Compatible
+---
+sidebar_label: OpenAI Compatible
+---
+
+# Using OpenAI Compatible Providers With Roo Code
 
 Roo Code supports a wide range of AI model providers that offer APIs compatible with the OpenAI API standard. This means you can use models from providers *other than* OpenAI, while still using a familiar API interface.  This includes providers like:
 

@@ -1,4 +1,8 @@
-# DeepSeek
+---
+sidebar_label: DeepSeek
+---
+
+# Using DeepSeek With Roo Code
 
 Roo Code supports accessing models through the DeepSeek API, including `deepseek-chat` and `deepseek-reasoner`.
 

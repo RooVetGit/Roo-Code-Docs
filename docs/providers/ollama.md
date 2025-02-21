@@ -1,4 +1,8 @@
-# Ollama
+---
+sidebar_label: Ollama
+---
+
+# Using Ollama With Roo Code
 
 Roo Code supports running models locally using Ollama. This provides privacy, offline access, and potentially lower costs, but requires more setup and a powerful computer.
 
