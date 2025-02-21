@@ -18,5 +18,5 @@ Check out the [Memory Bank project on GitHub](https://github.com/GreatScottyMac/
 
 Share and discover custom modes created by the community! Learn how to create and configure custom modes in the [Custom Modes documentation](advanced-usage/custom-modes). To add your own custom mode to the gallery, create a pull request from the "Edit this page" link below.
 
-&nbsp;
+<br>
 # &nbsp; &nbsp; &nbsp; &nbsp; <code>          </code> 📚  [Modes Gallery](modes.md)  📚 <code>          </code>
