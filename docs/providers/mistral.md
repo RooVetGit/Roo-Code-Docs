@@ -44,10 +44,10 @@ Refer to the [Mistral AI documentation](https://docs.mistral.ai/api/) and [Mistr
 
 [Codestral](https://docs.mistral.ai/capabilities/code_generation/) is a model specifically designed for code generation and interaction. 
 Only for Codestral you could use different endpoints (Default: codestral.mistral.ai). 
-For the Le Platforme API Key change the **Codestral Base Url** to: https://api.mistral.ai 
+For the La Platforme API Key change the **Codestral Base Url** to: https://api.mistral.ai 
 
 To use Codestral:
 
 1.  **Select "Mistral" as the API Provider.**
 2.  **Select a Codestral Model**
-3.  **Enter your Codestral (codestral.mistral.ai) or Le Plateforme (api.mistral.ai) API Key.** 
+3.  **Enter your Codestral (codestral.mistral.ai) or La Plateforme (api.mistral.ai) API Key.** 
