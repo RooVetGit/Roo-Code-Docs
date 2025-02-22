@@ -11,7 +11,6 @@ Roo Code allows you to create **custom modes** to tailor Roo's behavior to speci
 ## Why Use Custom Modes?
 
 *   **Specialization:** Create modes optimized for specific tasks, like "Documentation Writer," "Test Engineer," or "Refactoring Expert"
-*   **Default Modes Tool Access Customization:** Modify which tools are allowed for the default modes (Code, Architect, Ask). Note that restricting tools for default modes may cause unintended outcomes in Roo Code's performance
 *   **Safety:** Restrict a mode's access to sensitive files or commands. For example, a "Review Mode" could be limited to read-only operations
 *   **Experimentation:** Safely experiment with different prompts and configurations without affecting other modes
 *   **Team Collaboration:** Share custom modes with your team to standardize workflows

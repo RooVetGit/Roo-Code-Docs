@@ -16,6 +16,7 @@ Different tasks benefit from different temperature settings.  For example:
 *   **Code Mode (Low Temperature):** When writing code, you generally want precise and correct results.  A lower temperature (e.g., 0.0 - 0.3) is usually best.
 *   **Architect Mode (Medium Temperature):** When brainstorming architectural designs, you might want more creative suggestions.  A medium temperature (e.g., 0.4 - 0.7) can be helpful.
 *   **Ask Mode (Medium to High Temperature):** When asking open-ended questions or seeking explanations, a higher temperature (e.g., 0.7 - 1.0) can lead to more diverse and insightful responses.  You might even go higher for creative writing tasks.
+*   **Debug Mode (Low Temperature):** When tracking down bugs, you want precise and correct results.  A lower temperature (e.g., 0.0 - 0.3) is usually best.
 
 ## How to Adjust Temperature in Roo Code
 
@@ -32,7 +33,7 @@ Roo Code allows you to create multiple API configuration profiles.  This is *ver
 
 *   **Create a "Code - Low Temp" profile:** Configure this profile with your preferred API provider, a code-focused model (like Claude 3.5 Sonnet), and a low temperature (e.g., 0.1).
 *   **Create an "Ask - High Temp" profile:** Configure this profile with the same provider (or a different one), perhaps a model better suited for general knowledge, and a higher temperature (e.g., 0.8).
-*   **Switch Profiles:**  Use the "Configuration Profile" dropdown in the Roo Code settings to quickly switch between your saved configurations.  You can also set a default configuration for each mode (Code, Architect, Ask), so Roo Code automatically uses the appropriate settings when you switch modes.
+*   **Switch Profiles:**  Use the "Configuration Profile" dropdown in the Roo Code settings to quickly switch between your saved configurations.  You can also set a default configuration for each mode (Code, Architect, Ask, Debug), so Roo Code automatically uses the appropriate settings when you switch modes.
 
 This lets you tailor the AI's behavior to the specific task at hand without constantly adjusting settings.
 

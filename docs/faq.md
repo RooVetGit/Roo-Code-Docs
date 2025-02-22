@@ -90,6 +90,7 @@ Open the Roo Code panel (<Codicon name="rocket" />) and type your task in the ch
 *   **Code:** For general-purpose coding tasks.
 *   **Architect:** For planning and technical leadership.
 *   **Ask:** For answering questions and providing information.
+*   **Debug:** For systematic problem diagnosis.
 
 You can also create [Custom Modes](/advanced-usage/custom-modes).
 

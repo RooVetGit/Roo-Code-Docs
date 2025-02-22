@@ -28,6 +28,7 @@ Roo Code adapts to your needs with specialized [modes](basic-usage/modes):
 - **Code Mode:** For general-purpose coding tasks
 - **Architect Mode:** For planning and technical leadership
 - **Ask Mode:** For answering questions and providing information
+- **Debug Mode:** For systematic problem diagnosis
 - **[Custom Modes](advanced-usage/custom-modes):** Create unlimited specialized personas for security auditing, performance optimization, documentation, or any other task
 
 ### Smart Tools
