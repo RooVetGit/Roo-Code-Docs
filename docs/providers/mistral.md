@@ -12,7 +12,7 @@ Roo Code supports accessing models through the Mistral AI API, including both st
 
 1.  **Sign Up/Sign In:** Go to the [Mistral Platform](https://console.mistral.ai/). Create an account or sign in.  You may need to go through a verification process.
 2.  **Create an API Key:**  
-    - [La Plateforme API Key](https://console.mistral.ai/api-keys/) and/or 
+    - [La Plateforme API Key](https://console.mistral.ai/api-keys/) and/or
     - [Codestral API Key](https://console.mistral.ai/codestral)
 
 ## Supported Models
@@ -28,7 +28,7 @@ Roo Code supports the following Mistral models:
 | mistral-small-latest  | 0.3                     | ✅               | ❌      |
 | pixtral-large-latest  | 0.7                     | ✅               | ✅      |
 
-The default model temperature in Roo Code is 0.0, so you should consider experimenting with [temperature adjustments](/advanced-usage/model-temperature)!
+The default model temperature in Roo Code is **0.0**, so you should consider experimenting with [temperature adjustments](/advanced-usage/model-temperature)!
 
 **Note:**  Model availability and specifications may change.
 Refer to the [Mistral AI documentation](https://docs.mistral.ai/api/) and [Mistral Model Overview](https://docs.mistral.ai/getting-started/models/models_overview/) for the latest information.
@@ -50,4 +50,20 @@ To use Codestral:
 
 1.  **Select "Mistral" as the API Provider.**
 2.  **Select a Codestral Model**
-3.  **Enter your Codestral (codestral.mistral.ai) or La Plateforme (api.mistral.ai) API Key.** 
+3.  **Enter your Codestral (codestral.mistral.ai) or La Plateforme (api.mistral.ai) API Key.**
+
+### Enable streaming
+
+Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message (the Mistral SDK takes care of that). Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result.
+
+### Optional: Stop Token
+
+Stop generation (Mistral API) if this token is detected. Optional and only an option of the [Mistral API](https://docs.mistral.ai/api/#tag/chat/operation/chat_completion_v1_chat_completions_post).
+
+## Debug Output Channel
+
+If you need the protocol of the **Mistral SDK** (requests and responses) and the **Roo Code Mistral Handler**, this can be activated in the Visual Studio Code settings:
+
+![Debug Output setting](/img/roo-code-mistral-debug-setting.png)
+
+![Roo Code Mistral Output Channel](/img/roo-code-mistral-output.png)
