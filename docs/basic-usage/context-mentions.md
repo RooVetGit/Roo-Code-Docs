@@ -1,6 +1,6 @@
 # Context Mentions
 
-Context mentions are a powerful way to provide Roo Code with specific information about your project, allowing it to perform tasks more accurately and efficiently.  You can use mentions to refer to files, folders, problems, and Git commits.  Context mentions start with the `@` symbol.
+Context mentions are a powerful way to provide Roo Code with specific information about your project, allowing it to perform tasks more accurately and efficiently. You can use mentions to refer to files, folders, problems, and Git commits. Context mentions start with the `@` symbol. Effective use of context mentions can help manage your available [context window](../advanced-usage/managing-context-window) more efficiently.
 
 ## Types of Mentions
 
@@ -64,5 +64,48 @@ Use a URL to have Roo Code fetch and include the content of a website.
 *   **Be Specific:** The more specific your mentions are, the better Roo Code will understand your request.
 *   **Use Relative Paths:** When referring to files within your workspace, use paths relative to the workspace root.
 *   **Check for Typos:** Make sure the file paths and commit hashes are correct.
+
+## Advanced Usage Patterns
+
+### Combining Different Mention Types
+
+For more complex tasks, combine different types of mentions to give Roo comprehensive context:
+
+```
+I've implemented a new feature in @/src/features/auth.js but it's causing the errors in @problems when I run the test in @terminal. Can you help me fix it?
+```
+
+This gives Roo your code, the errors, and the test output all at once.
+
+### Debugging Complex Issues
+
+When debugging, use mentions to provide all relevant information:
+
+```
+The function in @/src/utils/api.js is throwing this error when called from @/src/components/Dashboard.js. The error shows up in @terminal and there's a related warning in @problems.
+```
+
+### Code Review Workflow
+
+For code reviews, use Git mentions effectively:
+
+```
+Can you review @git-changes and suggest improvements? Particularly focus on the changes in @/src/components/Form.js.
+```
+
+### Learning and Understanding
+
+When learning about a new codebase:
+
+```
+I'm new to this project. Can you explain how @/src/main.js works and how it interacts with @/src/api/index.js?
+```
+
+## Optimizing Mention Usage
+
+* **File Size Awareness**: For large files, mention specific sections when possible: "@/path/to/file.js:10-50"
+* **Clear Terminal**: Clear your terminal before running commands if you only want to see new output in @terminal
+* **Strategic Combinations**: Combine related mentions (like a file and its test) to give complete context
+* **Mention Order**: List the most important mentions first in your message
 
 Context mentions are a powerful tool for providing Roo Code with the information it needs to complete your tasks effectively.  Experiment with different types of mentions to see how they can improve your workflow.

@@ -32,6 +32,58 @@ Once an MCP server is connected, its tools and resources become available to Roo
 
 Roo Code will prompt you for any required parameters when using these tools.
 
+## Common MCP Server Types and Use Cases
+
+Here are some common types of MCP servers and how they can be used:
+
+### Database Servers
+
+Database servers allow Roo to interact with your databases:
+
+**Example use case:** "Can you query our MySQL database and create a report of all sales from last month?"
+
+With a database MCP server, Roo can:
+- Execute SQL queries
+- Analyze database schemas
+- Generate reports based on data
+- Help optimize queries
+
+### API Connectors
+
+API connectors let Roo access external web services:
+
+**Example use case:** "Use the weather-server to check the forecast for our upcoming event locations."
+
+With API connector servers, Roo can:
+- Fetch data from external APIs
+- Post data to services 
+- Transform data between formats
+- Create integrated workflows
+
+### File and Document Processors
+
+These servers help Roo work with specialized file formats:
+
+**Example use case:** "Can you extract the text from this PDF and summarize the key points?"
+
+With document processor servers, Roo can:
+- Extract text from PDFs
+- Analyze image content
+- Process spreadsheet data
+- Convert between document formats
+
+### Development Assistants
+
+These servers provide specialized development tools:
+
+**Example use case:** "Use the code-analyzer server to check this function for security vulnerabilities."
+
+With development assistant servers, Roo can:
+- Run code analysis tools
+- Generate test cases
+- Profile performance
+- Check security compliance
+
 ## Creating Your Own MCP Server
 
 You can create your own MCP server to add custom functionality to Roo Code.  This requires some programming knowledge.  See the [MCP documentation](https://github.com/modelcontextprotocol) for details on how to create an MCP server.
@@ -63,9 +115,45 @@ The file uses a JSON format:
 }
 ```
 
+### Configuration Options Explained
+
+- **command**: The executable to run (e.g., `python`, `node`, `java`)
+- **args**: Command line arguments for the server
+- **env**: Environment variables to pass to the server
+- **alwaysAllow**: List of tools that don't require permission prompts
+- **disabled**: Whether the server is temporarily disabled
+- **timeout**: Maximum time (in seconds) for tool operations
+
+## Troubleshooting MCP Servers
+
+If you encounter issues with your MCP servers:
+
+### Connection Problems
+
+If a server shows as "Disconnected":
+- Check that the server program exists at the specified path
+- Verify any required dependencies are installed
+- Look at the error message in the server status panel
+- Try restarting the server using the refresh button
+
+### Tool Execution Errors
+
+If a tool fails to execute:
+- Check that you're providing the correct parameters
+- Verify the server has necessary permissions and access
+- Look for error messages in the response
+- Check if the server's timeout setting is too short
+
+### Performance Issues
+
+If server operations are slow:
+- Increase the timeout setting for complex operations
+- Check network connectivity for API-dependent servers
+- Consider optimizing the server implementation
+
 ## Disabling MCP Features
 
-Roo Code provides two settings to control the use of MCP servers, to help you manage token usage and security:
+Roo Code provides two settings to control the use of MCP servers, to help you manage token usage and security. For a complete overview of all settings, see [Managing Preferences and Settings](managing-preferences):
 
 ### 1. Disable MCP Servers Entirely
 

@@ -26,7 +26,7 @@ Here's a brief overview of the core tools available in Roo Code:
 | `ask_followup_question`     | Asks you a clarifying question.                                              |
 | `attempt_completion`        | Indicates that Roo Code believes the task is complete.                       |
 
-**Note:**  The availability of some tools may depend on the current [mode](./modes.md) and your settings.
+**Note:**  The availability of some tools may depend on the current [mode](./modes) and your settings.
 
 ## How Tools are Used
 
