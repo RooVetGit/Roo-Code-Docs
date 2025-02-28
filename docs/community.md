@@ -14,9 +14,9 @@ The [Roo Code Memory Bank](https://github.com/GreatScottyMac/roo-code-memory-ban
 
 Check out the [Memory Bank project on GitHub](https://github.com/GreatScottyMac/roo-code-memory-bank) to get started!
 
-## Roo Code Tips & Tricks by [@Michaelzag](https://github.com/Michaelzag/RooCode-Tips-Tricks)
+## Roo Code Tips & Tricks by [@Michaelzag](https://github.com/Michaelzag)
 
-[Roo Code Tips & Tricks] is a collection of files designed to supercharge your Roo Code experience and maximize productivity. For those looking for a memory management system: check out the [Handoff System](https://github.com/Michaelzag/RooCode-Tips-Tricks?tab=readme-ov-file#handoff-system) which is a simple yet powerful way to maintain optimal LLM performance during extended projects while automatically creating valuable documentation. 
+[Roo Code Tips & Tricks](https://github.com/Michaelzag/RooCode-Tips-Tricks) is a collection of files designed to supercharge your Roo Code experience and maximize productivity. For those looking for a memory management system: check out the [Handoff System](https://github.com/Michaelzag/RooCode-Tips-Tricks?tab=readme-ov-file#handoff-system) which is a simple yet powerful way to maintain optimal LLM performance during extended projects while automatically creating valuable documentation. 
 
 ## Custom Modes Gallery
 
