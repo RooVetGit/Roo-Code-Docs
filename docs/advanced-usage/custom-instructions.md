@@ -1,4 +1,4 @@
-# Custom Instructions
+# Custom Instructions/Rules
 
 Roo Code allows you to customize its behavior using custom instructions at both global and workspace levels. These instructions are added to the system prompt and influence how Roo Code responds to your requests. You can define:
 
