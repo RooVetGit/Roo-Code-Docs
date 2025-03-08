@@ -29,7 +29,7 @@ You can adjust the temperature in the Roo Code settings:
 
 ## Per-API Configuration Profiles
 
-Roo Code allows you to create multiple API configuration profiles.  This is *very* useful for managing temperature settings. You can:
+Roo Code allows you to create multiple [API configuration profiles](api-configuration-profiles).  This is *very* useful for managing temperature settings. You can:
 
 *   **Create a "Code - Low Temp" profile:** Configure this profile with your preferred API provider, a code-focused model (like Claude 3.5 Sonnet), and a low temperature (e.g., 0.1).
 *   **Create an "Ask - High Temp" profile:** Configure this profile with the same provider (or a different one), perhaps a model better suited for general knowledge, and a higher temperature (e.g., 0.8).
