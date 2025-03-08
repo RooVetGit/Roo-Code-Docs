@@ -21,7 +21,7 @@ This lets you optimize your model configuration for different modes. For instanc
 
 ## Linking Profiles to Modes
 
-In the in the <Codicon name="notebook" /> Prompts tab, you can associate a Configuration Profile with each Mode.
+In the <Codicon name="notebook" /> Prompts tab, you can associate a Configuration Profile with each Mode.
 
 ## Benefits
 
