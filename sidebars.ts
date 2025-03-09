@@ -65,6 +65,9 @@ const sidebars: SidebarsConfig = {
       ]
     },
     'faq',
+    'tutorial-videos',
+    'tips-and-tricks',
+    'community',
     {
       type: 'category',
       label: 'Troubleshooting',
@@ -72,8 +75,6 @@ const sidebars: SidebarsConfig = {
         'troubleshooting/shell-integration',
       ],
     },
-    'tutorial-videos',
-    'community',
   ],
 };
 
