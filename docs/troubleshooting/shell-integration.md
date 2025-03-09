@@ -1,4 +1,4 @@
-# Terminal Shell Integration Guide
+# Terminal Shell Integration
 
 ## What is Shell Integration?
 
