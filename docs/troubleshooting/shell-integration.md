@@ -304,13 +304,10 @@ If you experience this issue, try:
 2. Running the command again
 3. If the problem persists, you may need to manually copy-paste relevant output to Roo Code
 
-For detailed troubleshooting guidance, refer to the [Cline Wiki - Troubleshooting Shell Integration](https://github.com/cline/cline/wiki/Troubleshooting-%E2%80%90-Shell-Integration-Unavailable) guide.
-
 ## Troubleshooting Resources
 
 - [VSCode Terminal Output Issue #237208](https://github.com/microsoft/vscode/issues/237208): Tracking the incomplete terminal output capture issue (ongoing as of March 8, 2025)
 - [VSCode Terminal Integration Test Repository](https://github.com/KJ7LNW/vsce-test-terminal-integration): A tool for validating shell integration functionality in your environment
-- [Cline Wiki - Troubleshooting Shell Integration](https://github.com/cline/cline/wiki/Troubleshooting-%E2%80%90-Shell-Integration-Unavailable): Comprehensive troubleshooting guide by Cline's original creator
 - [Shell Integration Improvements PR](https://github.com/cline/cline/pull/1089): Enhanced shell integration behavior (merged in Roo Code as of March 8, 2025, pending merge in Cline)
 - [Roo Code Shell Integration Architecture PR](https://github.com/RooVetGit/Roo-Code/pull/1365): Detailed discussion and proposed architectural changes for more reliable shell integration (pending as of March 8, 2025)
 
@@ -322,5 +319,3 @@ If you've followed these steps and are still experiencing problems, please:
 2. If not, create a new issue with details about your operating system, VSCode/Cursor version, and the steps you've tried
 
 For additional help, join our [Discord](https://discord.com/channels/1332146336664915968/1332212137568899162).
-
-_Content adapted from [Cline Wiki - Troubleshooting Shell Integration Unavailable](https://github.com/cline/cline/wiki/Troubleshooting-%E2%80%90-Shell-Integration-Unavailable)_
