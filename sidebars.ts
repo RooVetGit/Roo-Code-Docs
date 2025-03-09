@@ -65,6 +65,7 @@ const sidebars: SidebarsConfig = {
       ]
     },
     'faq',
+    'shell-integration',
     'tutorial-videos',
     'community',
   ],
