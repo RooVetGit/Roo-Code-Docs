@@ -80,7 +80,11 @@ First, make sure you're using the latest version of VSCode or Cursor:
 3. Type "Terminal: Select Default Profile" and choose it
 4. Select one of the supported shells: zsh, bash, fish, or PowerShell.
 
-### Step 3: Restart VSCode
+### Step 3: Configure PowerShell Execution Policy (Windows)
+
+Windows users **must** configure PowerShell execution policy before shell integration will work. Follow the instructions in the [Understanding PowerShell Execution Policies](#understanding-powershell-execution-policies) section to set up `RemoteSigned` policy, or another policy that works for you and meets your security requirements.
+
+### Step 4: Restart VSCode
 
 After making these changes:
 
