@@ -378,6 +378,20 @@ There is a potential memory leak in the upstream shell integration that can caus
 
 **Work-around:** there is no known workaround, but I do not hit this problem until gigabytes of terminal output, so it may not affect you.
 
+### PowerShell Command Output Issues
+
+PowerShell in Windows environments has two critical command execution issues:
+1. Output buffering: PowerShell may emit the ]633;D completion marker before command output is fully processed by VSCE, resulting in missing or truncated output
+2. Duplicate command bug: PowerShell fails to execute identical subsequent commands, treating them as duplicates even when they should run independently
+
+These issues affect command execution reliability in Windows environments using PowerShell.
+
+**Work-around:** Roo Code automatically handles both issues when [PR #1585](https://github.com/RooVetGit/Roo-Code/pull/1585) is merged by:
+- Adding a 150ms delay after command execution to ensure output capture
+- Appending a unique counter to each command to prevent duplicate command issues
+
+See [#1585](https://github.com/RooVetGit/Roo-Code/pull/1585) for implementation details.
+
 ## Troubleshooting Resources
 
 - [VSCode Terminal Output Issue #237208](https://github.com/microsoft/vscode/issues/237208): Tracking the incomplete terminal output capture issue (ongoing as of March 8, 2025)
