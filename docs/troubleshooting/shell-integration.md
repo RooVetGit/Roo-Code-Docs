@@ -316,7 +316,6 @@ The second `echo a` command produces no output in shell integration (only `\x1B]
 
 **Work-around to avoid this issue:** Always ensure your terminal prompt is clean (no partial commands or text) before letting Roo run commands. This prevents shell integration from thinking it needs to send a Ctrl+C.
 
-To avoid this issue, always ensure your terminal prompt is clean (no partial commands or text) before letting Roo run commands. This prevents shell integration from thinking it needs to send a Ctrl+C.
 
 ### Multi-line Command Output Issues
 
