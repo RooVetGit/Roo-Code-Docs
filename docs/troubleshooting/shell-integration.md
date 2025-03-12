@@ -367,6 +367,13 @@ If you experience this issue, try:
 1. Closing and reopening the terminal
 2. Running the command again
 3. If the problem persists, you may need to manually copy-paste relevant output to Roo Code
+
+### Memory Leak Leading to VSCode Crashes
+
+There is a potential memory leak in the upstream shell integration that can cause VSCode to crash unexpectedly. When this occurs, VSCode and all related windows will close completely without warning.
+
+**Work-around:** there is no known workaround, but I do not hit this problem until gigabytes of terminal output, so it may not affect you.
+
 ## Troubleshooting Resources
 
 - [VSCode Terminal Output Issue #237208](https://github.com/microsoft/vscode/issues/237208): Tracking the incomplete terminal output capture issue (ongoing as of March 8, 2025)
