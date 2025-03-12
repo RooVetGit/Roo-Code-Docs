@@ -350,7 +350,7 @@ Commit where version change was detected:
 
 The second invocation shows phantom text `hange was detected:"` that was not part of the actual command output.
 
-**Work-around:** If your model attempts this make sure you provide system instructions to ensure that it will not multiple commands across multiple lines, command should be chained like `echo a && echo b` and not as:
+**Work-around:** If your model attempts this make sure you provide system instructions to ensure that it does not split commands across multiple lines, command should be chained like `echo a && echo b` and not as:
 ```sh
 echo a
 echo b # because this one will not provide output.
