@@ -290,7 +290,72 @@ This often resolves temporary shell integration issues. However, if you experien
 
 This will help us investigate and fix the underlying issue.
 
-## Known Issues
+## Known Upstream VSCode Shell Integration Issues
+
+See also: https://github.com/microsoft/vscode/issues/237208
+
+### Ctrl+C Behavior Breaking Command Capture
+
+When shell integration believes there is a command that should be cancelled before running the requested command, the `^C` behavior breaks capture of the subsequent command output. Only `\x1B]633;C\x07` is received, with no actual command output.
+
+To reproduce:
+1. Run any command
+2. Type text in terminal (making shell integration think `^C` is needed)
+3. Run another command - output will not be captured
+
+Example:
+```
+~]$ echo a # first command works
+a
+~]$ <type anything here but do not press enter; VSCE will send control-c> ^C
+~]$ echo a
+a
+```
+
+The second `echo a` command produces no output in shell integration (only `\x1B]633;C\x07` is received) even though the terminal shows the output.
+
+**Work-around to avoid this issue:** Always ensure your terminal prompt is clean (no partial commands or text) before letting Roo run commands. This prevents shell integration from thinking it needs to send a Ctrl+C.
+
+To avoid this issue, always ensure your terminal prompt is clean (no partial commands or text) before letting Roo run commands. This prevents shell integration from thinking it needs to send a Ctrl+C.
+
+### Multi-line Command Output Issues
+
+Multi-line commands can produce unexpected behavior with shell integration escape codes:
+
+1. First command execution works correctly
+2. Second execution produces phantom/partial output from previous command
+3. Terminal displays spurious text unrelated to actual command output
+
+This occurs with:
+- Commands preceded by comments
+- Invalid commands followed by valid ones
+- Multiple valid commands in sequence
+
+The issue appears when two non-empty lines are passed to shell integration.
+
+If your AI model attempt to execute following two-line command:
+
+```sh
+# Get information about the commit
+echo "Commit where version change was detected:"
+```
+
+it will produce phantom output:
+
+```
+]$ # Get information about the commit
+hange was detected:"
+]$ echo "Commit where version change was detected:"
+Commit where version change was detected:
+```
+
+The second invocation shows phantom text `hange was detected:"` that was not part of the actual command output.
+
+**Work-around:** If your model attempts this make sure you provide system instructions to ensure that it will not multiple commands across multiple lines, command should be chained like `echo a && echo b` and not as:
+```sh
+echo a
+echo b # because this one will not provide output.
+```
 
 ### Incomplete Terminal Output
 
@@ -303,7 +368,6 @@ If you experience this issue, try:
 1. Closing and reopening the terminal
 2. Running the command again
 3. If the problem persists, you may need to manually copy-paste relevant output to Roo Code
-
 ## Troubleshooting Resources
 
 - [VSCode Terminal Output Issue #237208](https://github.com/microsoft/vscode/issues/237208): Tracking the incomplete terminal output capture issue (ongoing as of March 8, 2025)
