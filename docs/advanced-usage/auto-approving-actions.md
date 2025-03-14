@@ -1,38 +1,237 @@
 # Auto-Approving Actions
 
-Roo Code can automatically approve certain actions without needing your explicit confirmation each time. This speeds up your workflow, but it's important to use this feature carefully.  **Always be mindful of the actions you're auto-approving, as they give Roo Code more control.**
+> ⚠️ **SECURITY WARNING:** Auto-approve settings bypass confirmation prompts, giving Roo direct access to your system. This can result in **data loss, file corruption, or worse**. Command line access is particularly dangerous, as it can potentially execute harmful operations that could damage your system or compromise security. Only enable auto-approval for actions you fully trust.
 
-## The Auto-Approve Toolbar
+Auto-approve settings speed up your workflow by eliminating repetitive confirmation prompts, but they significantly increase security risks.
 
-The easiest way to manage auto-approval settings is through the **Auto-Approve Toolbar**, located in the toolbar directly above the chat input box:
+## Quick Start Guide
 
-1.  **Open the Auto-Approve Toolbar:** Click on the toolbar to expand it.
-2.  **Check/Uncheck Actions:**  A menu will appear with checkboxes for different action types. Check the actions you want Roo Code to perform automatically, and uncheck the ones you want to approve manually.
+1. Click the Auto-Approve Toolbar above the chat input
+2. Select which actions Roo can perform without asking permission
+3. Use the master toggle (leftmost checkbox) to quickly enable/disable all permissions
 
-The available auto-approval options are:
+## Auto-Approve Toolbar
 
-*   **Read Files:** Allows Roo Code to read files and directories without confirmation.
-*   **Edit Files:** Allows Roo Code to create, modify, and delete files. **Use with caution!**
-*   **Run Commands:** Allows Roo Code to execute terminal commands. **Use with caution!**  You can restrict this to a specific list of allowed commands in the settings.
-*   **Use Browser:** Allows Roo Code to perform actions in a headless browser, such as opening web pages and interacting with elements.
-*   **Use MCP:** Allows Roo Code to interact with configured MCP servers.
-*   **Switch Modes:** Allows Roo Code to switch modes automatically.
-*   **Retry Requests:** Allows Roo Code to automatically retry failed API requests.
+<img src="/img/auto-approving-actions/auto-approving-actions.png" alt="Auto-approve toolbar collapsed state" width="600" />
 
-**When an action is auto-approved, Roo Code will proceed without showing you a confirmation prompt.**
+*Prompt box and Auto-Approve Toolbar showing enabled permissions*
 
-## Top-Level Toggle
+Click the toolbar to expand it and configure individual permissions:
 
-At the top of the Auto-Approve Toolbar is a toggle to enable/disable auto-approval overall. When this is disabled, none of the actions will be auto-approved. You can use this to quickly disable auto-approval when you don't want Roo Code to take certain actions automatically.
+<img src="/img/auto-approving-actions/auto-approving-actions-1.png" alt="Auto-approve toolbar expanded state" width="600" />
 
-## Advanced Configuration (Settings)
+*Prompt text box and Expanded toolbar with all options*
 
-You can also find these auto-approval options in the Roo Code settings panel (<Codicon name="gear" /> in the top right corner).  The settings panel provides the same functionality as the auto-approve menu, but in a different location.  The auto-approve menu is generally the quickest way to change these settings.
+### Available Permissions
 
-## Security Considerations
+| Permission | What it does | Risk level |
+|------------|--------------|------------|
+| **Read files and directories** | Lets Roo access files without asking | Low |
+| **Edit files** | Lets Roo modify files without asking | **High** |
+| **Execute approved commands** | Runs whitelisted terminal commands automatically | **Very High** |
+| **Use the browser** | Allows headless browser interaction | Medium |
+| **Use MCP servers** | Lets Roo use configured MCP services | Medium-High |
+| **Switch modes** | Changes between Roo modes automatically | Low |
+| **Create & complete subtasks** | Manages subtasks without confirmation | Low |
+| **Retry failed requests** | Automatically retries failed API requests | Low |
 
-*   **Start Slowly:** Begin by auto-approving only read-only operations.  As you become more comfortable with Roo Code, you can gradually enable other actions.
-*   **Review Regularly:**  Periodically review your auto-approval settings to make sure they still align with your needs and security preferences.
-* **Allowed Commands:** You can limit which commands can be auto-executed. Go to `Settings > Auto-Approve Settings` to find and modify the list of allowed command prefixes.
+## Master Toggle for Quick Control
 
-By understanding and carefully configuring auto-approval, you can optimize Roo Code's performance while maintaining control over your system.
+The leftmost checkbox works as a master toggle:
+
+<img src="/img/auto-approving-actions/auto-approving-actions-14.png" alt="Master toggle in Auto-approve toolbar" width="600" />
+
+*Master toggle (checkbox) controls all auto-approve permissions at once*
+
+Use the master toggle when:
+- Working in sensitive code (turn off)
+- Doing rapid development (turn on)
+- Switching between exploration and editing tasks
+
+## Advanced Settings Panel
+
+The settings panel provides detailed control with important security context:
+
+> **Allow Roo to automatically perform operations without requiring approval. Enable these settings only if you fully trust the AI and understand the associated security risks.**
+
+To access these settings:
+
+1. Click <Codicon name="gear" /> in the top-right corner
+2. Navigate to Auto-Approve Settings
+
+<img src="/img/auto-approving-actions/auto-approving-actions-4.png" alt="Settings panel auto-approve options" width="550" />
+
+*Complete settings panel view*
+
+### Read Operations
+
+:::info Read Operations
+<img src="/img/auto-approving-actions/auto-approving-actions-6.png" alt="Read-only operations setting" width="550" />
+
+**Setting:** "Always approve read-only operations"
+
+**Description:** "When enabled, Roo will automatically view directory contents and read files without requiring you to click the Approve button."
+
+**Risk level:** Low
+
+This is the safest auto-approval setting as it only gives Roo the ability to read files, not modify them. Recommended as a starting point for most users, even in production environments.
+:::
+
+### Write Operations
+
+:::caution Write Operations
+<img src="/img/auto-approving-actions/auto-approving-actions-7.png" alt="Write operations setting with delay slider" width="550" />
+
+**Setting:** "Always approve write operations"
+
+**Description:** "Automatically create and edit files without requiring approval"
+
+**Delay slider:** "Delay after writes to allow diagnostics to detect potential problems" (Default: 1000ms)
+
+**Risk level:** High
+
+This setting allows Roo to modify your files without confirmation. The delay timer is crucial:
+- Higher values (2000ms+): Recommended for complex projects where diagnostics take longer
+- Default (1000ms): Suitable for most projects
+- Lower values: Use only when speed is critical and you're in a controlled environment
+- Zero: No delay for diagnostics (not recommended for critical code)
+
+#### Write Delay & Problems Pane Integration
+
+<img src="/img/auto-approving-actions/auto-approving-actions-5.png" alt="VSCode Problems pane showing diagnostic information" width="600" />
+
+*VSCode Problems pane that Roo checks during the write delay*
+
+When you enable auto-approval for writing files, the delay timer works with VSCode's Problems pane:
+
+1. Roo makes a change to your file
+2. VSCode's diagnostic tools analyze the change
+3. The Problems pane updates with any errors or warnings
+4. Roo notices these issues before continuing
+
+This works like a human developer pausing to check for errors after changing code. You can adjust the delay time based on:
+
+- Project complexity
+- Language server speed
+- How important error detection is for your workflow
+:::
+
+### Browser Actions
+
+:::info Browser Actions
+<img src="/img/auto-approving-actions/auto-approving-actions-8.png" alt="Browser actions setting" width="550" />
+
+**Setting:** "Always approve browser actions"
+
+**Description:** "Automatically perform browser actions without requiring approval"
+
+**Note:** "Only applies when the model supports computer use"
+
+**Risk level:** Medium
+
+Allows Roo to control a headless browser without confirmation. This can include:
+- Opening websites
+- Navigating pages
+- Interacting with web elements
+
+Consider the security implications of allowing automated browser access.
+:::
+
+### API Requests
+
+:::info API Requests
+<img src="/img/auto-approving-actions/auto-approving-actions-9.png" alt="API requests retry setting with delay slider" width="550" />
+
+**Setting:** "Always retry failed API requests"
+
+**Description:** "Automatically retry failed API requests when server returns an error response"
+
+**Delay slider:** "Delay before retrying the request" (Default: 5s)
+
+**Risk level:** Low
+
+This setting automatically retries API calls when they fail. The delay controls how long Roo waits before trying again:
+- Longer delays are gentler on API rate limits
+- Shorter delays give faster recovery from transient errors
+:::
+
+### MCP Tools
+
+:::caution MCP Tools
+<img src="/img/auto-approving-actions/auto-approving-actions-10.png" alt="MCP tools setting" width="550" />
+
+**Setting:** "Always approve MCP tools"
+
+**Description:** "Enable auto-approval of individual MCP tools in the MCP Servers view (requires both this setting and the tool's individual 'Always allow' checkbox)"
+
+**Risk level:** Medium-High (depends on configured MCP tools)
+
+This setting works in conjunction with individual tool permissions in the MCP Servers view. Both this global setting and the tool-specific permission must be enabled for auto-approval.
+:::
+
+### Mode Switching
+
+:::info Mode Switching
+<img src="/img/auto-approving-actions/auto-approving-actions-11.png" alt="Mode switching setting" width="550" />
+
+**Setting:** "Always approve mode switching"
+
+**Description:** "Automatically switch between different modes without requiring approval"
+
+**Risk level:** Low
+
+Allows Roo to change between different modes (Code, Architect, etc.) without asking for permission. This primarily affects the AI's behavior rather than system access.
+:::
+
+### Subtasks
+
+:::info Subtasks
+<img src="/img/auto-approving-actions/auto-approving-actions-12.png" alt="Subtasks setting" width="550" />
+
+**Setting:** "Always approve creation & completion of subtasks"
+
+**Description:** "Allow creation and completion of subtasks without requiring approval"
+
+**Risk level:** Low
+
+Enables Roo to create and complete subtasks automatically. This relates to workflow organization rather than system access.
+:::
+
+### Command Execution
+
+:::danger Command Execution
+<img src="/img/auto-approving-actions/auto-approving-actions-13.png" alt="Command execution setting with whitelist interface" width="550" />
+
+**Setting:** "Always approve allowed execute operations"
+
+**Description:** "Automatically execute allowed terminal commands without requiring approval"
+
+**Command management:** "Command prefixes that can be auto-executed when 'Always approve execute operations' is enabled. Add * to allow all commands (use with caution)."
+
+**Risk level:** Very High
+
+This is the highest-risk setting as it allows terminal command execution. Critical security features:
+
+- Whitelist specific command prefixes (recommended)
+- Never use * wildcard in production or with sensitive data
+- Consider security implications of each allowed command
+- Always verify commands that interact with external systems
+
+**Interface elements:**
+- Text field to enter command prefixes (e.g., 'git')
+- "Add" button to add new prefixes
+- Clickable command buttons with X to remove them
+:::
+
+## Security Recommendations
+
+Begin with minimal auto-approvals and add more as needed:
+
+| Level | Permissions | Use Case |
+|-------|------------|----------|
+| Level 1 | Read-only | Safe for any project |
+| Level 2 | Read + Mode Switch + Subtasks | General development |
+| Level 3 | Read + Edit (with delay) | Routine coding in trusted projects |
+| Level 4 | All options | Personal projects, sandbox environments, isolated test workspaces |
+
+> **Note:** Level 4 permissions (especially with command execution) should only be used in sandbox environments or isolated workspaces where potential mistakes won't affect critical systems or data.
