@@ -26,9 +26,9 @@ Click the toolbar to expand it and configure individual permissions:
 
 | Permission | What it does | Risk level |
 |------------|--------------|------------|
-| **Read files and directories** | Lets Roo access files without asking | Low |
+| **Read files and directories** | Lets Roo access files without asking | Medium |
 | **Edit files** | Lets Roo modify files without asking | **High** |
-| **Execute approved commands** | Runs whitelisted terminal commands automatically | **Very High** |
+| **Execute approved commands** | Runs whitelisted terminal commands automatically | **High** |
 | **Use the browser** | Allows headless browser interaction | Medium |
 | **Use MCP servers** | Lets Roo use configured MCP services | Medium-High |
 | **Switch modes** | Changes between Roo modes automatically | Low |
@@ -65,16 +65,16 @@ To access these settings:
 
 ### Read Operations
 
-:::info Read Operations
+:::caution Read Operations
 <img src="/img/auto-approving-actions/auto-approving-actions-6.png" alt="Read-only operations setting" width="550" />
 
 **Setting:** "Always approve read-only operations"
 
 **Description:** "When enabled, Roo will automatically view directory contents and read files without requiring you to click the Approve button."
 
-**Risk level:** Low
+**Risk level:** Medium
 
-This is the safest auto-approval setting as it only gives Roo the ability to read files, not modify them. Recommended as a starting point for most users, even in production environments.
+While this setting only allows reading files (not modifying them), it could potentially expose sensitive data. Still recommended as a starting point for most users, but be mindful of what files Roo can access.
 :::
 
 ### Write Operations
@@ -199,7 +199,7 @@ Enables Roo to create and complete subtasks automatically. This relates to workf
 
 ### Command Execution
 
-:::danger Command Execution
+:::caution Command Execution
 <img src="/img/auto-approving-actions/auto-approving-actions-13.png" alt="Command execution setting with whitelist interface" width="550" />
 
 **Setting:** "Always approve allowed execute operations"
@@ -208,9 +208,9 @@ Enables Roo to create and complete subtasks automatically. This relates to workf
 
 **Command management:** "Command prefixes that can be auto-executed when 'Always approve execute operations' is enabled. Add * to allow all commands (use with caution)."
 
-**Risk level:** Very High
+**Risk level:** High
 
-This is the highest-risk setting as it allows terminal command execution. Critical security features:
+This setting allows terminal command execution with controls. While risky, the whitelist feature limits what commands can run. Important security features:
 
 - Whitelist specific command prefixes (recommended)
 - Never use * wildcard in production or with sensitive data
