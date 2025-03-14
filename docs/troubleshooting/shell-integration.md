@@ -4,6 +4,40 @@
 
 Shell integration is a [new feature in VSCode 1.93](https://code.visualstudio.com/updates/v1_93#_terminal-shell-integration-api) that allows extensions like Roo Code to run commands in your terminal and read their output. Command output allows Roo Code to react to the result of the command on its own, without you having to handhold by copy-pasting the output in yourself. It's also quite powerful when running development servers as it allows Roo Code to fix errors as the server logs them.
 
+## Getting Started with Shell Integration
+
+If you're seeing "Shell Integration Unavailable" messages or Roo Code can't see command output, follow these quick steps:
+
+### For All Users
+
+1. **Update VSCode/Cursor** to the latest version
+2. **Select a supported shell**: Open Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`) → "Terminal: Select Default Profile" → Choose bash, zsh, PowerShell, or fish
+
+### For Windows Users
+
+**PowerShell users**: Set execution policy to RemoteSigned:
+   ```powershell
+   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+Then **Restart VSCode completely**
+
+### For WSL Users
+
+1. **Running VSCode From _Inside_ WSL**: Run `code .` or `code-insiders .` from your WSL terminal
+2. **Running VSCode From Windows with WSL Terminal**: Install WSL extension and add to your `~/.bashrc`:
+   ```bash
+   . "$(code --locate-shell-integration-path bash)"
+   ```
+or
+   ```bash
+   . "$(code-insiders --locate-shell-integration-path bash)"
+   ```
+
+Notice: if you have a very large `.bash_profile` or `.bashrc` then you might want to put the code/code-insiders script sourcing toward the top so that shell integration does not time out.
+
+If you're still having issues after these steps, see the detailed troubleshooting sections below.
+
+
 ## How Shell Integration Works
 
 Shell integration uses special terminal sequences (like ANSI escape codes) to mark different stages of command execution in your terminal. Here's how it works:
