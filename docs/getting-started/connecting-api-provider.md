@@ -14,15 +14,35 @@ Choose one of these options and follow the instructions below to obtain an API k
 
 ## Getting Your API Key
 
-### Option 1: OpenRouter
+### Option 1: Using an LLM router
+
+LLM routers allow you to use multiple models via a single provider, simplifying cost and API key management.
+
+#### OpenRouter
 
 1.  **Go to the OpenRouter website:** [https://openrouter.ai/](https://openrouter.ai/)
 2.  **Sign in** with your Google or GitHub account.
 3.  **Get an API Key:** Go to the [keys page](https://openrouter.ai/keys) and create a key.  Copy the key.
 
-### Option 2: Anthropic
+#### Requesty
+
+1.  **Go to the Requesty website:** [https://requesty.ai/](https://requesty.ai/)
+2.  **Sign in** with your Google or email account
+3.  **Get an API Key:** Go to the [API management page](https://app.requesty.ai/manage-api) and create a key.  **Important:** Copy the key immediately, as you won't be able to see it again.
+
+### Option 2: Using an LLM provider directly
+
+If you prefer to use a specific LLM provider directly, that is always an option.
+
+#### Anthropic
 
 1.  **Go to the Anthropic Console:** [https://console.anthropic.com/](https://console.anthropic.com/)
+2.  **Sign up** for an account or log in.
+3.  **Create an API Key:** Go to the API keys page (you may need to navigate through the dashboard) and create a new key.  **Important:** Copy the key immediately, as you won't be able to see it again.
+
+#### OpenAI
+
+1.  **Go to the OpenAI Console:** [https://platform.openai.com/](https://platform.openai.com/)
 2.  **Sign up** for an account or log in.
 3.  **Create an API Key:** Go to the API keys page (you may need to navigate through the dashboard) and create a new key.  **Important:** Copy the key immediately, as you won't be able to see it again.
 
