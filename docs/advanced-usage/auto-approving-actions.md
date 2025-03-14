@@ -222,16 +222,3 @@ This setting allows terminal command execution with controls. While risky, the w
 - "Add" button to add new prefixes
 - Clickable command buttons with X to remove them
 :::
-
-## Security Recommendations
-
-Begin with minimal auto-approvals and add more as needed:
-
-| Level | Permissions | Use Case |
-|-------|------------|----------|
-| Level 1 | Read-only | Safe for any project |
-| Level 2 | Read + Mode Switch + Subtasks | General development |
-| Level 3 | Read + Edit (with delay) | Routine coding in trusted projects |
-| Level 4 | All options | Personal projects, sandbox environments, isolated test workspaces |
-
-> **Note:** Level 4 permissions (especially with command execution) should only be used in sandbox environments or isolated workspaces where potential mistakes won't affect critical systems or data.
