@@ -4,6 +4,40 @@
 
 Shell integration is a [new feature in VSCode 1.93](https://code.visualstudio.com/updates/v1_93#_terminal-shell-integration-api) that allows extensions like Roo Code to run commands in your terminal and read their output. Command output allows Roo Code to react to the result of the command on its own, without you having to handhold by copy-pasting the output in yourself. It's also quite powerful when running development servers as it allows Roo Code to fix errors as the server logs them.
 
+## Getting Started with Shell Integration
+
+If you're seeing "Shell Integration Unavailable" messages or Roo Code can't see command output, follow these quick steps:
+
+### For All Users
+
+1. **Update VSCode/Cursor** to the latest version
+2. **Select a supported shell**: Open Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`) → "Terminal: Select Default Profile" → Choose bash, zsh, PowerShell, or fish
+
+### For Windows Users
+
+**PowerShell users**: Set execution policy to RemoteSigned:
+   ```powershell
+   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+Then **Restart VSCode completely**
+
+### For WSL Users
+
+1. **Running VSCode From _Inside_ WSL**: Run `code .` or `code-insiders .` from your WSL terminal
+2. **Running VSCode From Windows with WSL Terminal**: Install WSL extension and add to your `~/.bashrc`:
+   ```bash
+   . "$(code --locate-shell-integration-path bash)"
+   ```
+or
+   ```bash
+   . "$(code-insiders --locate-shell-integration-path bash)"
+   ```
+
+Notice: if you have a very large `.bash_profile` or `.bashrc` then you might want to put the code/code-insiders script sourcing toward the top so that shell integration does not time out.
+
+If you're still having issues after these steps, see the detailed troubleshooting sections below.
+
+
 ## How Shell Integration Works
 
 Shell integration uses special terminal sequences (like ANSI escape codes) to mark different stages of command execution in your terminal. Here's how it works:
@@ -80,7 +114,11 @@ First, make sure you're using the latest version of VSCode or Cursor:
 3. Type "Terminal: Select Default Profile" and choose it
 4. Select one of the supported shells: zsh, bash, fish, or PowerShell.
 
-### Step 3: Restart VSCode
+### Step 3: Configure PowerShell Execution Policy (Windows)
+
+Windows users **must** configure PowerShell execution policy before shell integration will work. Follow the instructions in the [Understanding PowerShell Execution Policies](#understanding-powershell-execution-policies) section to set up `RemoteSigned` policy, or another policy that works for you and meets your security requirements.
+
+### Step 4: Restart VSCode
 
 After making these changes:
 
@@ -290,7 +328,71 @@ This often resolves temporary shell integration issues. However, if you experien
 
 This will help us investigate and fix the underlying issue.
 
-## Known Issues
+## Known Upstream VSCode Shell Integration Issues
+
+See also: https://github.com/microsoft/vscode/issues/237208
+
+### Ctrl+C Behavior Breaking Command Capture
+
+When shell integration believes there is a command that should be cancelled before running the requested command, the `^C` behavior breaks capture of the subsequent command output. Only `\x1B]633;C\x07` is received, with no actual command output.
+
+To reproduce:
+1. Run any command
+2. Type text in terminal (making shell integration think `^C` is needed)
+3. Run another command - output will not be captured
+
+Example:
+```
+~]$ echo a # first command works
+a
+~]$ <type anything here but do not press enter; VSCE will send control-c> ^C
+~]$ echo a
+a
+```
+
+The second `echo a` command produces no output in shell integration (only `\x1B]633;C\x07` is received) even though the terminal shows the output.
+
+**Work-around to avoid this issue:** Always ensure your terminal prompt is clean (no partial commands or text) before letting Roo run commands. This prevents shell integration from thinking it needs to send a Ctrl+C.
+
+
+### Multi-line Command Output Issues
+
+Multi-line commands can produce unexpected behavior with shell integration escape codes:
+
+1. First command execution works correctly
+2. Second execution produces phantom/partial output from previous command
+3. Terminal displays spurious text unrelated to actual command output
+
+This occurs with:
+- Commands preceded by comments
+- Invalid commands followed by valid ones
+- Multiple valid commands in sequence
+
+The issue appears when two non-empty lines are passed to shell integration.
+
+If your AI model attempt to execute following two-line command:
+
+```sh
+# Get information about the commit
+echo "Commit where version change was detected:"
+```
+
+it will produce phantom output:
+
+```
+]$ # Get information about the commit
+hange was detected:"
+]$ echo "Commit where version change was detected:"
+Commit where version change was detected:
+```
+
+The second invocation shows phantom text `hange was detected:"` that was not part of the actual command output.
+
+**Work-around:** If your model attempts this make sure you provide system instructions to ensure that it does not split commands across multiple lines, command should be chained like `echo a && echo b` and not as:
+```sh
+echo a
+echo b # because this one will not provide output.
+```
 
 ### Incomplete Terminal Output
 
@@ -303,6 +405,26 @@ If you experience this issue, try:
 1. Closing and reopening the terminal
 2. Running the command again
 3. If the problem persists, you may need to manually copy-paste relevant output to Roo Code
+
+### Memory Leak Leading to VSCode Crashes
+
+There is a potential memory leak in the upstream shell integration that can cause VSCode to crash unexpectedly. When this occurs, VSCode and all related windows will close completely without warning.
+
+**Work-around:** there is no known workaround, but I do not hit this problem until gigabytes of terminal output, so it may not affect you.
+
+### PowerShell Command Output Issues
+
+PowerShell in Windows environments has two critical command execution issues:
+1. Output buffering: PowerShell may emit the ]633;D completion marker before command output is fully processed by VSCE, resulting in missing or truncated output
+2. Duplicate command bug: PowerShell fails to execute identical subsequent commands, treating them as duplicates even when they should run independently
+
+These issues affect command execution reliability in Windows environments using PowerShell.
+
+**Work-around:** Roo Code automatically handles both issues when [PR #1585](https://github.com/RooVetGit/Roo-Code/pull/1585) is merged by:
+- Adding a 150ms delay after command execution to ensure output capture
+- Appending a unique counter to each command to prevent duplicate command issues
+
+See [#1585](https://github.com/RooVetGit/Roo-Code/pull/1585) for implementation details.
 
 ## Troubleshooting Resources
 
