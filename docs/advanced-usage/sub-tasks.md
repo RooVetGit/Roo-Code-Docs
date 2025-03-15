@@ -47,7 +47,7 @@ Execute each of the following tasks using the `new_task` tool:
 Instead of listing tasks in the prompt, you can:
 
 1. Write each task in a separate text file (e.g., `task1.txt`, `task2.txt`).
-2. Store them in a folder  (e.g., `tasks`)..
+2. Store them in a folder  (e.g., `tasks`).
 3. Instruct Roo Code to loop through the folder and execute each task using `new_task`.
 
 **📌 Example Prompt:**
@@ -69,7 +69,7 @@ At this point you can review the task, make sure it went as planned, write furth
 
 <br/>
 
-Beside controlling the end sub-task (and return control to parent / calling task) from the 'Auto-Approve' panel, you can setup this checkbox from withing the Roo Code Settings panel, use the gear icon from the top right corner of the extension panel and scroll down to the 'Auto Approve' section.
+Beside controlling the end sub-task (and return control to parent / calling task) from the 'Auto-Approve' panel, you can setup this checkbox from within the Roo Code Settings panel, use the gear icon from the top right corner of the extension panel and scroll down to the 'Auto Approve' section.
 
 <br/>
 
