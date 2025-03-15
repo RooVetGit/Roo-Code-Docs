@@ -6,7 +6,7 @@ sidebar_label: Connecting To A Provider
 
 To get started, you'll need to connect Roo Code to an AI model provider. We recommend starting with one of these options, which all offer access to Anthropic's powerful **Claude 3.5 Sonnet** model:
 
-1.  **OpenRouter (Recommended):** A platform that provides access to multiple AI models, including Claude 3.5 Sonnet. This is often the easiest option for getting started.
+1.  **OpenRouter (Recommended):** A platform that provides access to multiple AI models, including Claude 3.7 Sonnet. This is often the easiest option for getting started.
 
 2.  **Anthropic:** Direct access to Claude models from Anthropic. Requires applying for API access, and may be rate limited depending on your tier.
 
