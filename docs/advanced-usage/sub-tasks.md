@@ -56,7 +56,7 @@ Instead of listing tasks in the prompt, you can:
 Loop through all task files in the folder `tasks` and execute each task using the `new_task` tool.
 ```
 
-<br>
+<br/>
 
 ## Persistent Execution with Review and Approval
 
@@ -67,11 +67,11 @@ At this point you can review the task, make sure it went as planned, write furth
 
 ![enable / disable end sub-task checkbox in the Auto-Approval panel](../../static/img/sub-task/sub-task-auto-approve.png)
 
-<br>
+<br/>
 
 Beside controlling the end sub-task (and return control to parent / calling task) from the 'Auto-Approve' panel, you can setup this checkbox from withing the Roo Code Settings panel, use the gear icon from the top right corner of the extension panel and scroll down to the 'Auto Approve' section.
 
-<br>
+<br/>
 
 ![enable / disable end sub-task checkbox in the Auto-Approval panel](../../static/img/sub-task/sub-task-settings-always-approve.png)
 
@@ -93,7 +93,7 @@ each sub-task should be created using `new_task` tool,
      - **Nested Sub-task 2.1** (Run Jest test and return results).
 ```
 
-<br>
+<br/>
 
 ```mermaid
 graph TD
@@ -105,9 +105,9 @@ graph TD
 ```
 
 ---
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 
 ## 📝 Side note:
 
