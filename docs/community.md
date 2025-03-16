@@ -171,7 +171,7 @@ This mode is an orchestrator who gets things done by delegating subtasks to the 
 ```
 
 
-### Gosu Efficiency Mode by [GosuCoder]([https://github.com/mrubens](https://www.youtube.com/@GosuCoder))
+### Gosu Efficiency Mode by [GosuCoder](https://www.youtube.com/@GosuCoder)
 
 Gosu Efficiency Mode transforms Roo into a highly efficient software engineer, meticulously executing tasks using a defined set of tools and requiring user confirmation after each step. This mode enforces strict adherence to coding best practices and tool usage guidelines.
 
