@@ -35,7 +35,7 @@ Choose one of these options and follow the instructions below to obtain an API k
 3.  **Enter your API Key:** Paste your API key into the "API Key" field.
 
 4. **Select your Model:**
-    * If you're using **OpenRouter**, select `anthropic/claude-3.5-sonnet:beta`.
-    * If you're using **Anthropic**, select `claude-3-5-sonnet-20241022`.
+    * If you're using **OpenRouter**, select `anthropic/claude-3.7-sonnet`.
+    * If you're using **Anthropic**, select `claude-3-7-sonnet-20250219`.
 
 5.  **Click "Let's go!":**  Roo Code will save your settings, and you'll be ready to start coding!
