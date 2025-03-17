@@ -25,6 +25,7 @@ Here's a brief overview of the core tools available in Roo Code:
 | `browser_action`            | Performs actions in a headless browser (if enabled).                         |
 | `ask_followup_question`     | Asks you a clarifying question.                                              |
 | `attempt_completion`        | Indicates that Roo Code believes the task is complete.                       |
+| `new_task`                  | Creates a sub-task with a fresh context, runs it as a separate LLM session, and returns the result to the parent task. |
 
 **Note:**  The availability of some tools may depend on the current [mode](./modes.md) and your settings.
 
