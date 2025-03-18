@@ -4,62 +4,73 @@ sidebar_label: Installing Roo Code
 
 # Installing Roo Code
 
-Roo Code is a VS Code extension that brings AI-powered coding assistance to your editor.  There are three main ways to install it:
+Roo Code is a VS Code extension that brings AI-powered coding assistance directly to your editor. Install using one of these methods:
 
-1.  **From the VS Code Marketplace (Recommended)**
-2.  **From the Open VSX Registry**
-3.  **From a VSIX file (Advanced)**
+1. **VS Code Marketplace (Recommended)** - fastest method for standard VS Code users
+2. **Open VSX Registry** - for VS Code-compatible editors like VSCodium
+3. **VSIX File (Advanced)** - offline installation or specific builds
 
-## 1. Installation from the VS Code Marketplace
+## VS Code Marketplace
 
-This is the easiest and recommended method for most users.
+1. Open VS Code
+2. Access Extensions: Click the Extensions icon in the Activity Bar or press `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (macOS)
+3. Search for "Roo Code"
+4. Select "Roo Code" by RooVeterinaryInc and click **Install**
+5. Reload VS Code if prompted
 
-1.  **Open VS Code.**
-2.  **Open the Extensions View:**
-    *   Click the Extensions icon in the Activity Bar on the side of VS Code.  (It looks like four squares, with one detached.)
-    *   Or, use the keyboard shortcut: `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (macOS).
-3.  **Search for Roo Code:** In the Extensions view search box, type `Roo Code`.
-4.  **Install:** Find "Roo Code" in the search results (by RooVeterinaryInc). Click the **Install** button.
-5.  **Reload (if required):**  VS Code may prompt you to reload.  If so, click the **Reload** button.
+After installation, find the Roo Code icon (<Codicon name="rocket" />) in the Activity Bar to open the Roo Code panel.
 
-Once installed, you'll see the Roo Code icon (<Codicon name="rocket" />) in the Activity Bar.  Click it to open the Roo Code panel.
+<img src="/img/installing/installing.png" alt="VS Code marketplace with Roo Code extension ready to install" width="400" />
+*VS Code marketplace with Roo Code extension ready to install*
 
-## 2. Installation from the Open VSX Registry
+## Open VSX Registry
 
-If you're using a VS Code-compatible editor that doesn't have access to the VS Code Marketplace (like VSCodium), you can install Roo Code from the Open VSX Registry.
+For VS Code-compatible editors without Marketplace access (like VSCodium):
 
-1.  **Open your editor.**
-2.  **Open the Extensions View.**
-3.  **Search for Roo Code:** Type `Roo Code` in the Extensions view search box.
-4.  **Install:** Find "Roo Code" in the search results (by RooVeterinaryInc). Click the **Install** button.
-5.  **Reload (if required):** Your editor may prompt you to reload. If so, click the reload button.
+1. Open your editor
+2. Access the Extensions view
+3. Search for "Roo Code"
+4. Select "Roo Code" by RooVeterinaryInc and click **Install**
+5. Reload if prompted
 
-## 3. Installation from a VSIX File (Advanced)
+<img src="/img/installing/installing-1.png" alt="Open VSX Registry with Roo Code extension ready to install" width="400" />
+*Open VSX Registry with Roo Code extension ready to install*
 
-This method is useful if you're developing Roo Code, testing a specific build, or need to install it offline.
+## VSIX File Installation
 
-1.  **Download the VSIX file:**
-    *   **Releases:**  You can find official releases on the [Roo Code GitHub Releases page](https://github.com/RooVetGit/Roo-Code/releases).  Download the `.vsix` file from the latest release.
-    *   **Development Builds:** If you're building the extension yourself, the `.vsix` file is located in the `bin/` directory after running `npm run package`.
+For offline installation, development testing, or specific builds:
 
-2.  **Open VS Code.**
-3.  **Open the Extensions View.**
-4.  **Install from VSIX:**
-    *   Click the **"..."** (Views and More Actions...) menu in the top-right corner of the Extensions view.
-    *   Select **"Install from VSIX..."**
-    *   Browse to the downloaded `.vsix` file and select it.
-5.  **Reload (if required):**  VS Code may prompt you to reload.  If so, click the **Reload** button.
+1. Get the VSIX file:
+   * Download from [GitHub Releases](https://github.com/RooVetGit/Roo-Code/releases)
+   * For development builds: find in `bin/` after running `npm run build`
+2. In VS Code, open Extensions view
+3. Click "..." menu (top-right) and select "Install from VSIX..."
+4. Browse to and select the downloaded or generated `.vsix` file
+5. Reload VS Code if prompted
 
-## Troubleshooting Installation
+<img src="/img/installing/installing-2.png" alt="VS Code's Install from VSIX dialog" width="400" />
+*VS Code's "Install from VSIX" dialog with Roo Code VSIX file selected*
 
-*   **Extension Doesn't Appear:**
-    *   Make sure you've restarted VS Code after installation.
-    *   Check the Extensions view to see if Roo Code is listed and enabled.
-    *   Try disabling and re-enabling the extension.
-    *   Check for any error messages in the VS Code Output panel (View -> Output, then select "Roo Code" from the dropdown).
-*   **Marketplace Issues:**
-    *   If you're having trouble with the VS Code Marketplace, try installing from a VSIX file (see instructions above).
-    *   Ensure you have a stable internet connection.
-* **Compatibility:** Roo Code requires VS Code version 1.84.0 or later.
+## Troubleshooting
 
-If you continue to experience problems, please visit our [GitHub Issues page](https://github.com/RooVetGit/Roo-Code/issues) or [Reddit community](https://www.reddit.com/r/RooCode) to report the issue or ask for help.
+<img src="/img/installing/installing-4.png" alt="VS Code Output panel showing Roo Code logs for troubleshooting" width="100%" />
+*VS Code Output panel showing Roo Code logs for troubleshooting*
+
+**Extension Not Visible**
+* Restart VS Code
+* Verify Roo Code is listed and enabled in Extensions
+* Try disabling and re-enabling
+* Check Output panel for errors (View → Output, select "Roo Code")
+
+**Installation Problems**
+* Try the VSIX installation method if Marketplace access fails
+* Ensure stable internet connection
+* Verify VS Code version 1.84.0 or later
+
+## Getting Support
+
+If you encounter issues not covered here:
+
+* Join our [Discord community](https://discord.gg/roocode) for real-time support
+* Submit issues on [GitHub](https://github.com/RooVetGit/Roo-Code/issues)
+* Visit our [Reddit community](https://www.reddit.com/r/RooCode)
