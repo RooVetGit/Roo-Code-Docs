@@ -4,58 +4,73 @@ sidebar_label: Connecting To A Provider
 
 # Connecting Your First AI Provider
 
-To get started, you'll need to connect Roo Code to an AI model provider. We recommend starting with one of these options, which all offer access to Anthropic's powerful **Claude 3.7 Sonnet** model:
+Roo Code requires an API key from an AI model provider to function. We recommend these options for accessing the powerful **Claude 3.7 Sonnet** model:
 
-1.  **OpenRouter (Recommended):** A platform that provides access to multiple AI models, including Claude 3.7 Sonnet. This is often the easiest option for getting started.
-
-2.  **Anthropic:** Direct access to Claude models from Anthropic. Requires applying for API access, and may be rate limited depending on your tier.
-
-Choose one of these options and follow the instructions below to obtain an API key.
+- **OpenRouter (Recommended):** Provides access to multiple AI models through a single API key. Ideal for getting started quickly with minimal setup. [View pricing](https://openrouter.ai/models?order=pricing-low-to-high).
+- **Anthropic:** Direct access to Claude models. Requires API access approval and may have [rate limits depending on your tier](https://docs.anthropic.com/en/api/rate-limits#requirements-to-advance-tier). See [Anthropic's pricing page](https://www.anthropic.com/pricing#anthropic-api) for details.
 
 ## Getting Your API Key
 
-### Option 1: Using an LLM router
+### Option 1: LLM Routers
 
-LLM routers allow you to use multiple models via a single provider, simplifying cost and API key management.
+LLM routers let you access multiple AI models with one API key, simplifying cost management and switching between models. They often offer [competitive pricing](https://openrouter.ai/models?order=pricing-low-to-high) compared to direct providers.
 
 #### OpenRouter
 
-1.  **Go to the OpenRouter website:** [https://openrouter.ai/](https://openrouter.ai/)
-2.  **Sign in** with your Google or GitHub account.
-3.  **Get an API Key:** Go to the [keys page](https://openrouter.ai/keys) and create a key.  Copy the key.
+1. Go to [openrouter.ai](https://openrouter.ai/)
+2. Sign in with your Google or GitHub account
+3. Navigate to the [API keys page](https://openrouter.ai/keys) and create a new key
+4. Copy your API key - you'll need this for Roo Code setup
+
+<img src="/img/connecting-api-provider/connecting-api-provider-4.png" alt="OpenRouter API keys page" width="600" />
+
+*OpenRouter dashboard with "Create key" button. Name your key and copy it after creation.*
 
 #### Requesty
 
-1.  **Go to the Requesty website:** [https://requesty.ai/](https://requesty.ai/)
-2.  **Sign in** with your Google or email account
-3.  **Get an API Key:** Go to the [API management page](https://app.requesty.ai/manage-api) and create a key.  **Important:** Copy the key immediately, as you won't be able to see it again.
+1. Go to [requesty.ai](https://requesty.ai/)
+2. Sign in with your Google account or email
+3. Navigate to the [API management page](https://app.requesty.ai/manage-api) and create a new key
+4. **Important:** Copy your API key immediately as it won't be displayed again
 
-### Option 2: Using an LLM provider directly
+<img src="/img/connecting-api-provider/connecting-api-provider-7.png" alt="Requesty API management page" width="600" />
 
-If you prefer to use a specific LLM provider directly, that is always an option.
+*Requesty API management page with "Create API Key" button. Copy your key immediately - it's shown only once.*
+
+### Option 2: Direct Providers
+
+For direct access to specific models from their original providers, with full access to their features and capabilities:
 
 #### Anthropic
 
-1.  **Go to the Anthropic Console:** [https://console.anthropic.com/](https://console.anthropic.com/)
-2.  **Sign up** for an account or log in.
-3.  **Create an API Key:** Go to the API keys page (you may need to navigate through the dashboard) and create a new key.  **Important:** Copy the key immediately, as you won't be able to see it again.
+1. Go to [console.anthropic.com](https://console.anthropic.com/)
+2. Sign up for an account or log in
+3. Navigate to the [API keys section](https://console.anthropic.com/settings/keys) and create a new key
+4. **Important:** Copy your API key immediately as it won't be displayed again
+
+<img src="/img/connecting-api-provider/connecting-api-provider-5.png" alt="Anthropic console API Keys section" width="600" />
+
+*Anthropic console API Keys section with "Create key" button. Name your key, set expiration, and copy it immediately.*
 
 #### OpenAI
 
-1.  **Go to the OpenAI Console:** [https://platform.openai.com/](https://platform.openai.com/)
-2.  **Sign up** for an account or log in.
-3.  **Create an API Key:** Go to the API keys page (you may need to navigate through the dashboard) and create a new key.  **Important:** Copy the key immediately, as you won't be able to see it again.
+1. Go to [platform.openai.com](https://platform.openai.com/)
+2. Sign up for an account or log in
+3. Navigate to the [API keys section](https://platform.openai.com/api-keys) and create a new key
+4. **Important:** Copy your API key immediately as it won't be displayed again
+
+<img src="/img/connecting-api-provider/connecting-api-provider-6.png" alt="OpenAI API keys page" width="600" />
+
+*OpenAI platform with "Create new secret key" button. Name your key and copy it immediately after creation.*
 
 ## Configuring Roo Code in VS Code
 
-1.  **Open the Roo Code Sidebar:** Click the Roo Code icon (<Codicon name="rocket" />) in the VS Code Activity Bar.  You should see the welcome screen.
+Once you have your API key:
 
-2.  **Select your API Provider:** In the "API Provider" dropdown, choose your API provider.
-
-3.  **Enter your API Key:** Paste your API key into the "API Key" field.
-
-4. **Select your Model:**
-    * If you're using **OpenRouter**, select `anthropic/claude-3.7-sonnet`.
-    * If you're using **Anthropic**, select `claude-3-7-sonnet-20250219`.
-
-5.  **Click "Let's go!":**  Roo Code will save your settings, and you'll be ready to start coding!
+1. Open the Roo Code sidebar by clicking the Roo Code icon (<Codicon name="rocket" />) in the VS Code Activity Bar
+2. In the welcome screen, select your API provider from the dropdown
+3. Paste your API key into the appropriate field
+4. Select your model:
+   - For **OpenRouter**: select `anthropic/claude-3.7-sonnet` ([model details](https://openrouter.ai/anthropic/claude-3.7-sonnet))
+   - For **Anthropic**: select `claude-3-7-sonnet-20250219` ([model details](https://www.anthropic.com/pricing#anthropic-api))
+5. Click "Let's go!" to save your settings and start using Roo Code
