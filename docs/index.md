@@ -32,7 +32,7 @@ Roo Code adapts to your needs with specialized [modes](basic-usage/modes):
 - **[Custom Modes](advanced-usage/custom-modes):** Create unlimited specialized personas for security auditing, performance optimization, documentation, or any other task
 
 ### Smart Tools
-Roo Code comes with powerful [tools](basic-usage/using-tools) that can:
+Roo Code comes with powerful [tools](basic-usage/how-tools-work) that can:
 - Read and write files in your project
 - Execute commands in your VS Code terminal
 - Control a web browser
