@@ -89,3 +89,10 @@
   vertical-align: middle;
   line-height: 1;
 }
+
+/* Ensure code blocks wrap instead of scrolling */
+pre {
+  white-space: pre-wrap !important;  /* Allows wrapping */
+  word-wrap: break-word !important;  /* Breaks long words */
+  overflow-x: auto;  /* Enables horizontal scrolling if necessary */
+}
