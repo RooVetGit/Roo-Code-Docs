@@ -44,4 +44,4 @@ explain the function `calculateTotal` in @/src/utils.ts
 | Assuming context | Explicitly reference files and functions |
 | Excessive technical jargon | Use clear, straightforward language |
 | Multiple unrelated tasks | Submit one focused request at a time |
-| Proceeding without confirmation | Check the code to make sure its complete |
+| Proceeding without confirmation | Check the code to make sure it's complete |
