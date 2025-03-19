@@ -33,6 +33,23 @@ For VS Code-compatible editors without Marketplace access (like VSCodium and Win
 
 <img src="/img/installing/installing-1.png" alt="Open VSX Registry with Roo Code extension ready to install" width="400" />
 *Open VSX Registry with Roo Code extension ready to install*
+## Manual Installation from VSIX
+
+If you prefer to download and install the VSIX file directly:
+
+1. **Download the VSIX file:**
+   * Find official releases on the [Roo Code GitHub Releases page](https://github.com/RooVetGit/Roo-Code/releases)
+   * Download the `.vsix` file from the latest release
+
+2. **Install in VS Code:**
+   * Open VS Code
+   * Access Extensions view
+   * Click the "..." menu in the Extensions view
+   * Select "Install from VSIX..."
+   * Browse to and select your downloaded `.vsix` file
+
+<img src="/img/installing/installing-2.png" alt="VS Code's Install from VSIX dialog" width="400" />
+*Installing Roo Code using VS Code's "Install from VSIX" dialog*
 
 ## Development Builds
 
