@@ -5,7 +5,7 @@ sidebar_label: Installing Roo Code
 # Installing Roo Code
 
 Roo Code is a VS Code extension that brings AI-powered coding assistance directly to your editor. Install using one of these methods:
-1. **VS Code Marketplace (Recommended)** - fastest method for standard VS Code users
+1. **VS Code Marketplace (Recommended)** - fastest method for standard VS Code and Cursor users
 2. **Open VSX Registry** - for VS Code-compatible editors like VSCodium
 
 ## VS Code Marketplace
