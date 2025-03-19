@@ -85,7 +85,7 @@ Open the Roo Code panel (<Codicon name="rocket" />) and type your task in the ch
 
 ### What are modes in Roo Code?
 
-[Modes](/basic-usage/modes) are different personas that Roo Code can adopt, each with a specific focus and set of capabilities. The built-in modes are:
+[Modes](/basic-usage/using-modes) are different personas that Roo Code can adopt, each with a specific focus and set of capabilities. The built-in modes are:
 
 *   **Code:** For general-purpose coding tasks.
 *   **Architect:** For planning and technical leadership.

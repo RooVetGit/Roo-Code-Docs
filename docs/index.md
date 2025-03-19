@@ -24,7 +24,7 @@ Roo Code (formerly Roo Cline) is an AI-powered autonomous coding agent that live
 ## Key Features
 
 ### Multiple Modes
-Roo Code adapts to your needs with specialized [modes](basic-usage/modes):
+Roo Code adapts to your needs with specialized [modes](basic-usage/using-modes):
 - **Code Mode:** For general-purpose coding tasks
 - **Architect Mode:** For planning and technical leadership
 - **Ask Mode:** For answering questions and providing information

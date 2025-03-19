@@ -20,7 +20,7 @@ const sidebars: SidebarsConfig = {
         'basic-usage/typing-your-requests',
         'basic-usage/how-tools-work',
         'basic-usage/context-mentions',
-        'basic-usage/modes',
+        'basic-usage/using-modes',
       ],
     },
     {
