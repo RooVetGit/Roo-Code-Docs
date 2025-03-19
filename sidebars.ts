@@ -18,7 +18,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'basic-usage/the-chat-interface',
         'basic-usage/typing-your-requests',
-        'basic-usage/using-tools',
+        'basic-usage/how-tools-work',
         'basic-usage/context-mentions',
         'basic-usage/modes',
       ],
