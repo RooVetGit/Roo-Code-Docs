@@ -23,7 +23,7 @@ After installation, find the Roo Code icon (<Codicon name="rocket" />) in the Ac
 
 ## Open VSX Registry
 
-For VS Code-compatible editors without Marketplace access (like VSCodium):
+For VS Code-compatible editors without Marketplace access (like VSCodium and Windsurf):
 
 1. Open your editor
 2. Access the Extensions view
