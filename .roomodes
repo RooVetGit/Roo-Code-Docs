@@ -13,7 +13,8 @@
             "fileRegex": "\\.md[x]?$",
             "description": "Markdown and MDX files only"
           }
-        ]
+        ],
+        "command"
       ],
       "source": "project"
     }
