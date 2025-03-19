@@ -64,4 +64,4 @@ You've now completed your first task with Roo Code! Through this process, you've
 * The approval-based workflow that keeps you in control
 * The iterative approach Roo Code uses to solve problems step-by-step
 
-This iterative, approval-based workflow is at the core of how Roo Code works—letting AI handle the tedious parts of coding while you maintain complete oversight. Now that you understand the basics, you're ready to tackle more complex tasks, explore different [modes](../basic-usage/modes) for specialized workflows, or try the [auto-approval feature](../advanced-usage/auto-approving-actions) to speed up repetitive tasks.
+This iterative, approval-based workflow is at the core of how Roo Code works—letting AI handle the tedious parts of coding while you maintain complete oversight. Now that you understand the basics, you're ready to tackle more complex tasks, explore different [modes](../basic-usage/using-modes) for specialized workflows, or try the [auto-approval feature](../advanced-usage/auto-approving-actions) to speed up repetitive tasks.
