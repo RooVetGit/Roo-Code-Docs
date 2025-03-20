@@ -120,6 +120,7 @@ When restoration executes, Roo Code:
 ### Storage Type
 
 Checkpoints are task-scoped, meaning they are specific to a single task.
+
 ### Diff Computation
 
 Checkpoint comparison uses Git's underlying diff capabilities to produce structured file differences:
