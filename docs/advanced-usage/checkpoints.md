@@ -27,20 +27,15 @@ Access checkpoint settings in Roo Code settings under the "Checkpoints" section:
 
 ## How Checkpoints Work
 
-Roo Code creates immutable snapshots of your project using a shadow Git repository that operates independently from your own version control system. These checkpoints capture the complete state of tracked files at specific points in your AI-assisted workflow.
+Roo Code captures snapshots of your project's state using a shadow Git repository, separate from your main version control system. These snapshots, called checkpoints, automatically record changes throughout your AI-assisted workflow—whenever tasks begin, files change, or commands run.
 
-Checkpoints are automatically created when:
-- A task begins (initial checkpoint)
-- Files are created, modified, or deleted
-- Commands are executed
+Checkpoints are stored as Git commits in the shadow repository, capturing:
 
-Each checkpoint is stored as a Git commit in the shadow repository, capturing:
 - File content changes
-- New files added to the workspace
+- New files added
 - Deleted files
 - Renamed files
 - Binary file changes
-
 
 ## Working with Checkpoints
 
