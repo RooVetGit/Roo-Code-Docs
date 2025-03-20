@@ -9,8 +9,8 @@ Roo Code allows you to create **custom modes** to tailor Roo's behavior to speci
 *   **Experimentation:** Safely experiment with different prompts and configurations without affecting other modes
 *   **Team Collaboration:** Share custom modes with your team to standardize workflows
 
-<img src="/img/custom-modes/custom-modes.png" alt="Overview of custom modes interface" width="400" />
-*Roo Code's interface for creating and managing custom modes.*
+    <img src="/img/custom-modes/custom-modes.png" alt="Overview of custom modes interface" width="400" />
+    *Roo Code's interface for creating and managing custom modes.*
 
 ## What's Included in a Custom Mode?
 
@@ -151,8 +151,8 @@ You can find this setting within the prompt settings by clicking the <Codicon na
 2.  **Create New Mode:** Click the <Codicon name="add" /> button to the right of the Modes heading
 3.  **Fill in Fields:**
 
-<img src="/img/custom-modes/custom-modes-3.png" alt="Custom mode creation interface in the Prompts tab" width="600" />
-*The custom mode creation interface showing fields for name, slug, save location, role definition, available tools, and custom instructions.*
+        <img src="/img/custom-modes/custom-modes-3.png" alt="Custom mode creation interface in the Prompts tab" width="600" />
+        *The custom mode creation interface showing fields for name, slug, save location, role definition, available tools, and custom instructions.*
 
     * **Name:** Enter a display name for the mode
     * **Slug:** Enter a lowercase identifier (letters, numbers, and hyphens only)
