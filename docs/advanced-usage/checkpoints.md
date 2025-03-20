@@ -112,7 +112,6 @@ The checkpoint system consists of:
 ### Restoration Process
 
 When restoration executes, Roo Code:
-- Runs `git clean` to remove any untracked files
 - Performs a hard reset to the specified checkpoint commit
 - Copies all files from the shadow repository to your workspace
 - Updates internal checkpoint tracking state
