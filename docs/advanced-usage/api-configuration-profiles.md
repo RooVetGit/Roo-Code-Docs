@@ -2,35 +2,67 @@
 
 API Configuration Profiles allow you to create and switch between different sets of AI settings. Each profile can have different configurations for each mode, letting you optimize your experience based on the task at hand.
 
+:::info
+Having multiple configuration profiles lets you quickly switch between different AI providers, models, and settings without reconfiguring everything each time you want to change your setup.
+:::
 ## How It Works
 
 Configuration profiles can have their own:
-- API providers (OpenAI, Anthropic, etc.)
-- API keys
-- Model selections
+- API providers (OpenAI, Anthropic, OpenRouter, Glama, etc.)
+- API keys and authentication details
+- Model selections (o3-mini-high, Claude 3.7 Sonnet, DeepSeek R1, etc.)
 - Temperature settings
 - Thinking budgets
+- Provider-specific settings
 
-This lets you optimize your model configuration for different modes. For instance, you might want Architect and Debug mode to use a more powerful/expensive model to come up with a great plan, while Code mode uses a more standard coding model.
+Note that available settings vary by provider and model. Each provider offers different configuration options, and even within the same provider, different models may support different parameter ranges or features.
 
-## Setting Up Profiles
+## Creating and Managing Profiles
 
-1. Open Settings → Providers
-2. Choose a Configuration Profile from the dropdown, or create a new one
-3. Configure the profile's provider, model, key, and parameters
+### Creating a Profile
+
+1. Open Settings by clicking the gear icon <Codicon name="gear" /> → Providers
+2. Click the "+" button next to the profile selector
+<img src="/img/api-configuration-profiles/api-configuration-profiles-1.png" alt="Profile selector with plus button" width="550" />
+3. Enter a name for your new profile
+<img src="/img/api-configuration-profiles/api-configuration-profiles.png" alt="Creating a new profile dialog" width="550" />
+4. Configure the profile settings:
+   - Select your API provider
+   <img src="/img/api-configuration-profiles/api-configuration-profiles-2.png" alt="Provider selection dropdown" width="550" />
+   - Enter API key
+   <img src="/img/api-configuration-profiles/api-configuration-profiles-3.png" alt="API key entry field" width="550" />
+   - Choose a model
+   <img src="/img/api-configuration-profiles/api-configuration-profiles-8.png" alt="Model selection interface" width="550" />
+   - Adjust model parameters
+   <img src="/img/api-configuration-profiles/api-configuration-profiles-5.png" alt="Model parameter adjustment controls" width="550" />
+
+### Switching Profiles
+
+Switch profiles in two ways:
+1. From Settings panel: Select a different profile from the dropdown
+<img src="/img/api-configuration-profiles/api-configuration-profiles-7.png" alt="Profile selection dropdown in Settings" width="550" />
+2. During chat: Access the API Configuration dropdown in the chat interface
+<img src="/img/api-configuration-profiles/api-configuration-profiles-9.png" alt="API Configuration dropdown in chat interface" width="550" />
+
+### Editing and Deleting Profiles
+
+<img src="/img/api-configuration-profiles/api-configuration-profiles-10.png" alt="Profile editing interface" width="550" />
+- Select the profile in Settings to modify any settings
+- Click the pencil icon to rename a profile
+- Click the trash icon to delete a profile (you cannot delete the only remaining profile)
 
 ## Linking Profiles to Modes
+In the <Codicon name="notebook" /> Prompts tab, you can explicitly associate a specific Configuration Profile with each Mode. The system also automatically remembers which profile you last used with each mode, making your workflow more efficient.
+<img src="/img/api-configuration-profiles/api-configuration-profiles-11.png" alt="Profile-Mode association interface in Prompts tab" width="550" />
 
-In the <Codicon name="notebook" /> Prompts tab, you can associate a Configuration Profile with each Mode.
+## Security Note
 
-## Benefits
-
-- **Cost optimization**: Use premium models only where they add the most value
-- **Performance tailoring**: Match model capabilities to each mode's specific needs
-- **Workflow optimization**: Seamless transitions between modes with appropriate settings
+API keys are stored securely in VSCode's Secret Storage and are never exposed in plain text.
 
 ## Related Features
 
-- Works with [custom modes](custom-modes)
+- Works with [custom modes](custom-modes) you create
 - Integrates with [local models](local-models) for offline work
 - Supports [temperature settings](model-temperature) per mode
+- Enhances cost management with [rate limits and usage tracking](rate-limits-costs)
+
