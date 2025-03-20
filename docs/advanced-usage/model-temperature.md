@@ -1,42 +1,85 @@
 # Adjusting Model Temperature
 
-Roo Code allows you to control the "temperature" setting for your AI models. Temperature is a crucial parameter that influences the randomness and creativity of the model's output.  Understanding and adjusting temperature is particularly useful for getting the best results from different modes, like **Architect** and **Ask**, where more creative or varied responses might be desired.
+Temperature controls the randomness of AI model outputs. Adjusting this setting optimizes results for different tasks - from precise code generation to creative brainstorming.
+
+:::info
+Temperature is one of the most powerful parameters for controlling AI behavior. A well-tuned temperature setting can dramatically improve the quality and appropriateness of responses for specific tasks.
+:::
 
 ## What is Temperature?
 
-Temperature is a parameter that controls the randomness of the model's predictions. It's a value, typically between 0.0 and 1.0 (though some providers might accept different value ranges).
+Temperature is a parameter that controls the randomness of the model's predictions. It's typically a value between 0.0 and 2.0, depending on the model.
 
-*   **Lower Temperature (closer to 0.0):** The model becomes more deterministic and focused. It will select the most probable, predictable outputs. This is good for tasks requiring precision and correctness, like code generation.
-*   **Higher Temperature (closer to 1.0):** The model becomes more creative and unpredictable. It will explore less likely, more diverse outputs. This is useful for brainstorming, generating different variations of text, or exploring different design options.
+*   **Lower Temperature (0.0-0.3):** The model becomes deterministic and focused, selecting the most probable outputs. Ideal for tasks requiring precision and correctness, like code generation.
+*   **Higher Temperature (0.7-1.0+):** The model becomes more creative and diverse, exploring less likely outputs. Useful for brainstorming, generating variations, or exploring different design options.
 
-## Why Adjust Temperature?
+Technically, temperature affects the probability distribution of the model's next-token predictions by dividing the logits (pre-softmax activation values) before they're converted to probabilities, altering how the model samples from its vocabulary.
 
-Different tasks benefit from different temperature settings.  For example:
+## Default Values in Roo Code
 
-*   **Code Mode (Low Temperature):** When writing code, you generally want precise and correct results.  A lower temperature (e.g., 0.0 - 0.3) is usually best.
-*   **Architect Mode (Medium Temperature):** When brainstorming architectural designs, you might want more creative suggestions.  A medium temperature (e.g., 0.4 - 0.7) can be helpful.
-*   **Ask Mode (Medium to High Temperature):** When asking open-ended questions or seeking explanations, a higher temperature (e.g., 0.7 - 1.0) can lead to more diverse and insightful responses.  You might even go higher for creative writing tasks.
-*   **Debug Mode (Low Temperature):** When tracking down bugs, you want precise and correct results.  A lower temperature (e.g., 0.0 - 0.3) is usually best.
+Roo Code uses a default temperature of 0.0 for most interactions, optimizing for maximum determinism and precision in code generation. There may be slight variances depending on the provider or model type - for instance, DeepSeek models default to 0.6 for slightly more creative outputs. Models with thinking capabilities (where the AI shows its reasoning process) require a fixed temperature of 1.0 which cannot be changed, as this setting ensures optimal performance of the thinking mechanism.
 
-## How to Adjust Temperature in Roo Code
+## When to Adjust Temperature
 
-You can adjust the temperature in the Roo Code settings:
+Here are some examples of temperature settings that might work well for different tasks:
 
-1.  **Open the Roo Code Panel:** Click the Roo Code icon (<Codicon name="rocket" />) in the VS Code Activity Bar.
-2.  **Open Settings:** Click the <Codicon name="gear" /> icon in the top right corner of the Roo Code panel.
-3.  **Find the Temperature Setting:** In the settings panel, you'll find a "Use custom temperature" setting within the API configuration section.
-4.  **Enter the Temperature Value:** Check the box and enter the temperature value you want to use. The range is typically from 0.0 to 1.0, but this may depend on the specific model and provider.
+*   **Code Mode (0.0-0.3):** For writing precise, correct code with consistent, deterministic results
+*   **Architect Mode (0.4-0.7):** For brainstorming architecture or design solutions with balanced creativity and structure
+*   **Ask Mode (0.7-1.0):** For explanations or open-ended questions requiring diverse and insightful responses
+*   **Debug Mode (0.0-0.3):** For troubleshooting bugs with consistent precision
 
-## Per-API Configuration Profiles
+These are starting points – it's important to [experiment with different settings](#experimentation) to find what works best for your specific needs and preferences.
 
-Roo Code allows you to create multiple [API configuration profiles](api-configuration-profiles).  This is *very* useful for managing temperature settings. You can:
+## How to Adjust Temperature
 
-*   **Create a "Code - Low Temp" profile:** Configure this profile with your preferred API provider, a code-focused model (like Claude 3.5 Sonnet), and a low temperature (e.g., 0.1).
-*   **Create an "Ask - High Temp" profile:** Configure this profile with the same provider (or a different one), perhaps a model better suited for general knowledge, and a higher temperature (e.g., 0.8).
-*   **Switch Profiles:**  Use the "Configuration Profile" dropdown in the Roo Code settings to quickly switch between your saved configurations.  You can also set a default configuration for each mode (Code, Architect, Ask, Debug), so Roo Code automatically uses the appropriate settings when you switch modes.
+1.  **Open the Roo Code Panel:** Click the Roo Code icon (<Codicon name="rocket" />) in the VS Code Activity Bar
+2.  **Open Settings:** Click the <Codicon name="gear" /> icon in the top right corner
+3.  **Find Temperature Control:** Navigate to the Providers section
+4.  **Enable Custom Temperature:** Check the "Use custom temperature" box
+5.  **Set Your Value:** Adjust the slider to your preferred value
 
-This lets you tailor the AI's behavior to the specific task at hand without constantly adjusting settings.
+    <img src="/img/model-temperature/model-temperature.png" alt="Temperature setting in Roo Code settings panel" width="550" />
+    *Temperature slider in Roo Code settings panel*
+
+## Using API Configuration Profiles for Temperature
+
+Create multiple [API configuration profiles](api-configuration-profiles) with different temperature settings:
+
+**How to set up task-specific temperature profiles:**
+
+1. Create specialized profiles like "Code - Low Temp" (0.1) and "Ask - High Temp" (0.8)
+2. Configure each profile with appropriate temperature settings
+3. Switch between profiles using the dropdown in settings or chat interface
+4. Set different profiles as defaults for each mode for automatic switching when changing modes
+
+This approach optimizes model behavior for specific tasks without manual adjustments.
+
+## Technical Implementation
+
+Roo Code implements temperature handling with these considerations:
+
+*   User-defined settings take priority over defaults
+*   Provider-specific behaviors are respected
+*   Model-specific limitations are enforced:
+    *   Thinking-enabled models require a fixed temperature of 1.0
+    *   Some models don't support temperature adjustments
 
 ## Experimentation
 
-The best way to understand the effect of temperature is to experiment. Try different values and see how they impact the model's output, or do some research online. You may find that different temperatures work best for different tasks or even for different parts of the same task.
+Experimenting with different temperature settings is the most effective way to discover what works best for your specific needs:
+
+### Effective Temperature Testing
+
+1. **Start with defaults** - Begin with Roo Code's preset values (0.0 for most tasks) as your baseline
+2. **Make incremental adjustments** - Change values in small steps (±0.1) to observe subtle differences
+3. **Test consistently** - Use the same prompt across different temperature settings for valid comparisons
+4. **Document results** - Note which values produce the best outcomes for specific types of tasks
+5. **Create profiles** - Save effective settings as [API configuration profiles](api-configuration-profiles) for quick access
+
+Remember that different models may respond differently to the same temperature values, and thinking-enabled models always use a fixed temperature of 1.0 regardless of your settings.
+
+## Related Features
+
+- Works with all [API providers](../providers/openai) supported by Roo Code
+- Complements [custom instructions](custom-instructions) for fine-tuning responses
+- Works alongside [custom modes](custom-modes) you create

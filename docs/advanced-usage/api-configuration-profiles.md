@@ -11,7 +11,7 @@ Configuration profiles can have their own:
 - API providers (OpenAI, Anthropic, OpenRouter, Glama, etc.)
 - API keys and authentication details
 - Model selections (o3-mini-high, Claude 3.7 Sonnet, DeepSeek R1, etc.)
-- Temperature settings
+- [Temperature settings](model-temperature) for controlling response randomness
 - Thinking budgets
 - Provider-specific settings
 
