@@ -40,6 +40,7 @@ const sidebars: SidebarsConfig = {
         'advanced-usage/code-actions',
         'advanced-usage/experimental-features',
         'advanced-usage/local-models',
+        'advanced-usage/remote-browser-connection',
       ],
     },
     {
