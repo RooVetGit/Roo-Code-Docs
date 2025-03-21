@@ -45,6 +45,21 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Model Context Protocol (MCP)',
+      items: [
+        {
+          type: 'doc',
+          id: 'mcp/overview',
+          label: 'MCP Overview'
+        },
+        'mcp/using-mcp-in-roo',
+        'mcp/what-is-mcp',
+        'mcp/server-transports',
+        'mcp/mcp-vs-api',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Model Providers',
       items: [
         'providers/anthropic',
