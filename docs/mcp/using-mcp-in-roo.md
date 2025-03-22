@@ -172,7 +172,7 @@ Roo Code does not come with any pre-installed MCP servers. You'll need to find a
 * **Ask Roo:** You can ask Roo Code to help you find or even create MCP servers (when "[Enable MCP Server Creation](#enabling-or-disabling-mcp-server-creation)" is enabled)
 * **Build Your Own:** Create custom MCP servers using the SDK to extend Roo Code with your own tools
 
-For full SDK documentation, visit the [MCP GitHub repository](https://github.com/modelcontextprotocol/sdk).
+For full SDK documentation, visit the [MCP GitHub repository](https://github.com/modelcontextprotocol/).
 
 ## Using MCP Tools in Your Workflow
 
