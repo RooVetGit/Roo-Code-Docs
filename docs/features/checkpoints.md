@@ -8,13 +8,13 @@ Checkpoints let you:
 - Compare different implementation approaches
 - Revert to previous project states without losing work
 
-::::info Important Notes
+:::info Important Notes
 - **Checkpoints are enabled by default.**
 - **Git must be installed** for checkpoints to function - [see installation instructions](#git-installation)
 - No GitHub account or repository is required
 - No Git personal information configuration is needed
 - The shadow Git repository operates independently from your project's existing Git configuration
-::::
+:::
 
 ## Configuration Options
 
