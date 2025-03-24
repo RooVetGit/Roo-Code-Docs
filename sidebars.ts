@@ -10,51 +10,59 @@ const sidebars: SidebarsConfig = {
         'getting-started/installing',
         'getting-started/connecting-api-provider',
         'getting-started/your-first-task',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Basic Usage',
-      items: [
         'basic-usage/the-chat-interface',
         'basic-usage/typing-your-requests',
         'basic-usage/how-tools-work',
         'basic-usage/context-mentions',
         'basic-usage/using-modes',
+        'tips-and-tricks',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Features',
+      items: [
+        'features/api-configuration-profiles',
+        'features/auto-approving-actions',
+        'features/checkpoints',
+        'features/code-actions',
+        'features/custom-instructions',
+        'features/custom-modes',
+        'features/enhance-prompt',
+        'features/model-temperature',
+        'features/tool-reference',
+        {
+          type: 'category',
+          label: 'MCP',
+          items: [
+            {
+              type: 'doc',
+              id: 'features/mcp/overview',
+              label: 'MCP Overview'
+            },
+            'features/mcp/using-mcp-in-roo',
+            'features/mcp/what-is-mcp',
+            'features/mcp/server-transports',
+            'features/mcp/mcp-vs-api',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Experimental',
+          items: [
+            'features/experimental/experimental-features',
+          ],
+        },
       ],
     },
     {
       type: 'category',
       label: 'Advanced Usage',
       items: [
-        'advanced-usage/auto-approving-actions',
-        'advanced-usage/api-configuration-profiles',
-        'advanced-usage/custom-modes',
-        'advanced-usage/custom-instructions',
-        'advanced-usage/large-projects',
         'advanced-usage/prompt-engineering',
-        'advanced-usage/model-temperature',
-        'advanced-usage/checkpoints',
+        'advanced-usage/large-projects',
         'advanced-usage/rate-limits-costs',
-        'advanced-usage/enhance-prompt',
-        'advanced-usage/code-actions',
-        'advanced-usage/experimental-features',
         'advanced-usage/local-models',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Model Context Protocol (MCP)',
-      items: [
-        {
-          type: 'doc',
-          id: 'mcp/overview',
-          label: 'MCP Overview'
-        },
-        'mcp/using-mcp-in-roo',
-        'mcp/what-is-mcp',
-        'mcp/server-transports',
-        'mcp/mcp-vs-api',
       ],
     },
     {
@@ -78,10 +86,21 @@ const sidebars: SidebarsConfig = {
         'providers/vscode-lm',
       ]
     },
-    'faq',
+    {
+      type: 'category',
+      label: 'FAQ',
+      items: [
+        'faq',
+      ],
+    },
     'tutorial-videos',
-    'tips-and-tricks',
-    'community',
+    {
+      type: 'category',
+      label: 'Community',
+      items: [
+        'community',
+      ],
+    },
     {
       type: 'category',
       label: 'Troubleshooting',

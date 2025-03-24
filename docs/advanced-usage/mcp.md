@@ -5,4 +5,4 @@ sidebar_label: MCP
 
 import {Redirect} from '@docusaurus/router';
 
-<Redirect to="/mcp/using-mcp-in-roo" />
+<Redirect to="../mcp/using-mcp-in-roo" />
