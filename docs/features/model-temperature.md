@@ -55,7 +55,7 @@ These are starting points – it's important to [experiment with different setti
 
 ## Using API Configuration Profiles for Temperature
 
-Create multiple [API configuration profiles](api-configuration-profiles) with different temperature settings:
+Create multiple [API configuration profiles](/features/api-configuration-profiles) with different temperature settings:
 
 **How to set up task-specific temperature profiles:**
 
@@ -86,12 +86,12 @@ Experimenting with different temperature settings is the most effective way to d
 2. **Make incremental adjustments** - Change values in small steps (±0.1) to observe subtle differences
 3. **Test consistently** - Use the same prompt across different temperature settings for valid comparisons
 4. **Document results** - Note which values produce the best outcomes for specific types of tasks
-5. **Create profiles** - Save effective settings as [API configuration profiles](api-configuration-profiles) for quick access
+5. **Create profiles** - Save effective settings as [API configuration profiles](/features/api-configuration-profiles) for quick access
 
 Remember that different models may respond differently to the same temperature values, and thinking-enabled models always use a fixed temperature of 1.0 regardless of your settings.
 
 ## Related Features
 
-- Works with all [API providers](../providers/openai) supported by Roo Code
-- Complements [custom instructions](custom-instructions) for fine-tuning responses
-- Works alongside [custom modes](custom-modes) you create
+- Works with all [API providers](/providers/openai) supported by Roo Code
+- Complements [custom instructions](/features/custom-instructions) for fine-tuning responses
+- Works alongside [custom modes](/features/custom-modes) you create

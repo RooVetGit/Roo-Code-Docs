@@ -53,7 +53,7 @@ MCP server configurations are stored in the `cline_mcp_settings.json` file. You 
   * Simpler setup (no HTTP server needed)
   * Runs as a child process on your machine
   
-  For more in-depth information about how STDIO transport works, see [STDIO Transport](server-transports#stdio-transport).
+  For more in-depth information about how STDIO transport works, see [STDIO Transport](/features/mcp/server-transports#stdio-transport).
   
   STDIO configuration example:
   ```json
@@ -82,7 +82,7 @@ MCP server configurations are stored in the `cline_mcp_settings.json` file. You 
   * Requires network access
   * Allows centralized deployment and management
   
-  For more in-depth information about how SSE transport works, see [SSE Transport](server-transports#sse-transport).
+  For more in-depth information about how SSE transport works, see [SSE Transport](/features/mcp/server-transports#sse-transport).
   
   SSE configuration example:
   
@@ -156,7 +156,7 @@ To set the maximum time to wait for a response after a tool call to the MCP serv
 
 MCP tool auto-approval works on a per-tool basis and is disabled by default. To configure auto-approval:
 
-1. First enable the global "Use MCP servers" auto-approval option in [auto-approving-actions](../advanced-usage/auto-approving-actions)
+1. First enable the global "Use MCP servers" auto-approval option in [auto-approving-actions](/features/auto-approving-actions)
 2. In the MCP server settings, locate the specific tool you want to auto-approve
 3. Check the `Always allow` checkbox next to the tool name
 

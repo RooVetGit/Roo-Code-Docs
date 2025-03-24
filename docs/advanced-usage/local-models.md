@@ -24,7 +24,6 @@ Roo Code currently supports two main local model providers:
 ## Setting Up Local Models
 
 For detailed setup instructions, see:
-
 * [Setting up Ollama](/providers/ollama)
 * [Setting up LM Studio](/providers/lmstudio)
 

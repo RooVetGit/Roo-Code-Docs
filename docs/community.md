@@ -24,7 +24,7 @@ Inspired by LangMem, this simple Rule allows you to define new rules and delete 
 
 ## Custom Modes Gallery
 
-Share and discover custom modes created by the community! Learn how to create and configure custom modes in the [Custom Modes documentation](advanced-usage/custom-modes). To add your own custom mode to the gallery, create a pull request from the "Edit this page" link below.
+Share and discover custom modes created by the community! Learn how to create and configure custom modes in the [Custom Modes documentation](/features/custom-modes). To add your own custom mode to the gallery, create a pull request from the "Edit this page" link below.
 
 ### Jest Test Engineer by [@mrubens](https://github.com/mrubens)
 

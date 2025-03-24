@@ -8,7 +8,7 @@ Prompt engineering is the art of crafting effective instructions for AI models l
     *   **Bad:** Fix the code.
     *   **Good:** Fix the bug in the `calculateTotal` function that causes it to return incorrect results.
 
-*   **Provide Context:** Use [Context Mentions](../basic-usage/context-mentions) to refer to specific files, folders, or problems.
+*   **Provide Context:** Use [Context Mentions](/basic-usage/context-mentions) to refer to specific files, folders, or problems.
     *   **Good:** `@/src/utils.ts` Refactor the `calculateTotal` function to use async/await.
 
 *   **Break Down Tasks:** Divide complex tasks into smaller, well-defined steps.
@@ -42,7 +42,7 @@ Custom instructions are added to the system prompt, providing persistent guidanc
 *   Define project-specific conventions.
 *   Adjust Roo Code's tone or personality.
 
-See the [Custom Instructions](./custom-instructions) section for more details.
+See the [Custom Instructions](/features/custom-instructions) section for more details.
 
 ## Handling Ambiguity
 

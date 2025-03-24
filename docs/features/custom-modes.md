@@ -286,5 +286,4 @@ Roo will generate the appropriate pattern with proper escaping for JSON configur
 :::
 
 ## Community Gallery
-
 Ready to explore more? Check out the [Custom Modes Gallery](/community#custom-modes-gallery) to discover and share custom modes created by the community!

@@ -11,7 +11,7 @@ Configuration profiles can have their own:
 - API providers (OpenAI, Anthropic, OpenRouter, Glama, etc.)
 - API keys and authentication details
 - Model selections (o3-mini-high, Claude 3.7 Sonnet, DeepSeek R1, etc.)
-- [Temperature settings](model-temperature) for controlling response randomness
+- [Temperature settings](/features/model-temperature) for controlling response randomness
 - Thinking budgets
 - Provider-specific settings
 
@@ -69,8 +69,8 @@ API keys are stored securely in VSCode's Secret Storage and are never exposed in
 
 ## Related Features
 
-- Works with [custom modes](custom-modes) you create
-- Integrates with [local models](local-models) for offline work
-- Supports [temperature settings](model-temperature) per mode
-- Enhances cost management with [rate limits and usage tracking](rate-limits-costs)
+- Works with [custom modes](/features/custom-modes) you create
+- Integrates with [local models](/advanced-usage/local-models) for offline work
+- Supports [temperature settings](/features/model-temperature) per mode
+- Enhances cost management with [rate limits and usage tracking](/advanced-usage/rate-limits-costs)
 

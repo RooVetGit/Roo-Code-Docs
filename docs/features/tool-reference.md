@@ -16,6 +16,6 @@ The upcoming tool reference will include:
 - Common troubleshooting scenarios
 - Performance considerations
 
-In the meantime, you can find basic information about tools in the [How Tools Work](../basic-usage/how-tools-work) documentation.
+In the meantime, you can find basic information about tools in the [How Tools Work](/basic-usage/how-tools-work) documentation.
 
 Check back soon for the complete reference guide.

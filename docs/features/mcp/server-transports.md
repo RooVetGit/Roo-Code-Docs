@@ -193,4 +193,4 @@ Some scenarios benefit from a hybrid approach:
 
 ## Configuring Transports in Roo Code
 
-For detailed information on configuring STDIO and SSE transports in Roo Code, including example configurations, see the [Understanding Transport Types](using-mcp-in-roo#understanding-transport-types) section in the Using MCP in Roo Code guide.
+For detailed information on configuring STDIO and SSE transports in Roo Code, including example configurations, see the [Understanding Transport Types](/features/mcp/using-mcp-in-roo#understanding-transport-types) section in the Using MCP in Roo Code guide.

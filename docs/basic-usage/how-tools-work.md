@@ -80,4 +80,4 @@ This safety mechanism ensures you maintain control over which files are modified
 
 ## Learn More About Tools
 
-For more detailed information about each tool, including complete parameter references and advanced usage patterns, see the [Advanced Tool Reference](../advanced-usage/tool-reference) documentation.
+For more detailed information about each tool, including complete parameter references and advanced usage patterns, see the [Advanced Tool Reference](/features/tool-reference) documentation.

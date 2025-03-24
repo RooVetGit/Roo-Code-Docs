@@ -93,4 +93,4 @@ When working in team environments, placing `.clinerules` files under version con
 
 ## Combining with Custom Modes
 
-For advanced customization, combine with [Custom Modes](custom-modes) to create specialized environments with specific tool access, file restrictions, and tailored instructions.
+For advanced customization, combine with [Custom Modes](/features/custom-modes) to create specialized environments with specific tool access, file restrictions, and tailored instructions.

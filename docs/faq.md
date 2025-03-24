@@ -48,12 +48,11 @@ Roo Code is a powerful tool, and it's important to use it responsibly.  Here are
 
 ### How do I install Roo Code?
 
-See the [Installation Guide](getting-started/installing) for detailed instructions.
+See the [Installation Guide](/getting-started/installing) for detailed instructions.
 
 ### Which API providers are supported?
 
 Roo Code supports a wide range of API providers, including:
-
 *   [Anthropic (Claude)](/providers/anthropic)
 *   [OpenAI](/providers/openai)
 *   [OpenRouter](/providers/openrouter)
@@ -70,40 +69,33 @@ Roo Code supports a wide range of API providers, including:
 *   [VS Code Language Model API](/providers/vscode-lm)
 
 ### How do I get an API key?
-
 Each API provider has its own process for obtaining an API key.  See the [Setting Up Your First AI Provider](/getting-started/connecting-api-provider) for links to the relevant documentation for each provider.
 
 ### Can I use Roo Code with local models?
-
 Yes, Roo Code supports running models locally using [Ollama](/providers/ollama) and [LM Studio](/providers/lmstudio).  See [Using Local Models](/advanced-usage/local-models) for instructions.
 
 ## Usage
 
 ### How do I start a new task?
-
 Open the Roo Code panel (<Codicon name="rocket" />) and type your task in the chat box. Be clear and specific about what you want Roo Code to do. See [Typing Your Requests](/basic-usage/typing-your-requests) for best practices.
 
 ### What are modes in Roo Code?
-
 [Modes](/basic-usage/using-modes) are different personas that Roo Code can adopt, each with a specific focus and set of capabilities. The built-in modes are:
 
 *   **Code:** For general-purpose coding tasks.
 *   **Architect:** For planning and technical leadership.
 *   **Ask:** For answering questions and providing information.
 *   **Debug:** For systematic problem diagnosis.
-
-You can also create [Custom Modes](/advanced-usage/custom-modes).
+You can also create [Custom Modes](/features/custom-modes).
 
 ### How do I switch between modes?
 
 Use the dropdown menu in the chat input area to select a different mode, or use the `/` command to switch to a specific mode.
 
 ### What are tools and how do I use them?
-
 [Tools](/basic-usage/how-tools-work) are how Roo Code interacts with your system.  Roo Code automatically selects and uses the appropriate tools to complete your tasks. You don't need to call tools directly. You will be prompted to approve or reject each tool use.
 
 ### What are context mentions?
-
 [Context mentions](/basic-usage/context-mentions) are a way to provide Roo Code with specific information about your project, such as files, folders, or problems. Use the "@" symbol followed by the item you want to mention (e.g., `@/src/file.ts`, `@problems`).
 
 ### Can Roo Code access the internet?
@@ -112,7 +104,7 @@ Yes, if you are using a provider with a model that support web browsing. Be mind
 
 ### Can Roo Code run commands in my terminal?
 
-Yes, Roo Code can execute commands in your VS Code terminal.  You will be prompted to approve each command before it's executed, unless you've enabled auto-approval for commands. Be extremely cautious about auto-approving commands. If you're experiencing issues with terminal commands, see the [Shell Integration Guide](troubleshooting/shell-integration) for troubleshooting.
+Yes, Roo Code can execute commands in your VS Code terminal.  You will be prompted to approve each command before it's executed, unless you've enabled auto-approval for commands. Be extremely cautious about auto-approving commands. If you're experiencing issues with terminal commands, see the [Shell Integration Guide](/troubleshooting/shell-integration) for troubleshooting.
 
 ### How do I provide feedback to Roo Code?
 
@@ -128,7 +120,7 @@ Yes, you can customize Roo Code in several ways:
 *   **Settings:** Adjust various settings, such as auto-approval, diff editing, and more.
 
 ### Does Roo Code have any auto approval settings?
-Yes, Roo Code has a few settings that when enabled will automatically approve actions. Find out more [here](/advanced-usage/auto-approving-actions).
+Yes, Roo Code has a few settings that when enabled will automatically approve actions. Find out more [here](/features/auto-approving-actions).
 
 ## Advanced Features
 
@@ -136,8 +128,7 @@ Yes, Roo Code has a few settings that when enabled will automatically approve ac
 Yes, if you use a [local model](/advanced-usage/local-models).
 
 ### What is MCP (Model Context Protocol)?
-
-[MCP](/advanced-usage/mcp) is a protocol that allows Roo Code to communicate with external servers, extending its capabilities with custom tools and resources.
+[MCP](/features/mcp/overview) is a protocol that allows Roo Code to communicate with external servers, extending its capabilities with custom tools and resources.
 
 ### Can I create my own MCP servers?
 

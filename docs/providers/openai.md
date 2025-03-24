@@ -40,4 +40,4 @@ Refer to the [OpenAI Models documentation](https://platform.openai.com/docs/mode
 ## Tips and Notes
 
 *   **Pricing:** Refer to the [OpenAI Pricing](https://openai.com/pricing) page for details on model costs.
-*   **Azure OpenAI Service:** If you'd like to use the Azure OpenAI service, please see our section on [OpenAI-compatible](./openai-compatible.md) providers.
+*   **Azure OpenAI Service:** If you'd like to use the Azure OpenAI service, please see our section on [OpenAI-compatible](/providers/openai-compatible) providers.

@@ -41,6 +41,7 @@ const config: Config = {
           editUrl: 'https://github.com/RooVetGit/Roo-Code-Docs/edit/main/',
           showLastUpdateTime: true,
         },
+        blog: false, // Disable blog feature
         sitemap: {
           lastmod: 'date',
           priority: null,
@@ -62,6 +63,79 @@ const config: Config = {
         highlightSearchTermsOnTargetPage: true,
         explicitSearchResultPath: true,
         docsRouteBasePath: "/",
+      },
+    ],
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          // Files moved from advanced-usage to features
+          {
+            to: '/features/checkpoints',
+            from: ['/advanced-usage/checkpoints'],
+          },
+          {
+            to: '/features/code-actions',
+            from: ['/advanced-usage/code-actions'],
+          },
+          {
+            to: '/features/custom-instructions',
+            from: ['/advanced-usage/custom-instructions'],
+          },
+          {
+            to: '/features/custom-modes',
+            from: ['/advanced-usage/custom-modes'],
+          },
+          {
+            to: '/features/enhance-prompt',
+            from: ['/advanced-usage/enhance-prompt'],
+          },
+          {
+            to: '/features/experimental/experimental-features',
+            from: ['/advanced-usage/experimental-features'],
+          },
+          {
+            to: '/features/model-temperature',
+            from: ['/advanced-usage/model-temperature'],
+          },
+          {
+            to: '/features/tool-reference',
+            from: ['/advanced-usage/tool-reference'],
+          },
+          {
+            to: '/features/auto-approving-actions',
+            from: ['/advanced-usage/auto-approving-actions'],
+          },
+          {
+            to: '/features/api-configuration-profiles',
+            from: ['/advanced-usage/api-configuration-profiles'],
+          },
+          
+          // MCP related redirects
+          {
+            to: '/features/mcp/overview',
+            from: ['/advanced-usage/mcp', '/mcp/overview'],
+          },
+          {
+            to: '/features/mcp/using-mcp-in-roo',
+            from: ['/mcp/using-mcp-in-roo'],
+          },
+          {
+            to: '/features/mcp/what-is-mcp',
+            from: ['/mcp/what-is-mcp'],
+          },
+          {
+            to: '/features/mcp/server-transports',
+            from: ['/mcp/server-transports'],
+          },
+          {
+            to: '/features/mcp/mcp-vs-api',
+            from: ['/mcp/mcp-vs-api'],
+          },
+        ],
       },
     ],
   ],

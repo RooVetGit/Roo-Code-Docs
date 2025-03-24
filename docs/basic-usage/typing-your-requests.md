@@ -11,7 +11,7 @@ Clearly state what you want Roo Code to do.  Avoid vague or ambiguous language.
 | Strategy | Implementation |
 |----------|----------------|
 | **Be specific** | "Fix the bug in `calculateTotal` that returns incorrect results" instead of "Fix the code" |
-| **Provide context** | Use @ [Context Mentions](./context-mentions) for file and code references |
+| **Provide context** | Use @ [Context Mentions](/basic-usage/context-mentions) for file and code references |
 | **Break down tasks** | Submit complex tasks in smaller manageable steps |
 | **Include examples** | Provide sample code when you need specific formatting or style |
 
