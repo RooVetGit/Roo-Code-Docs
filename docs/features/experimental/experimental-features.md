@@ -24,7 +24,7 @@ This is an alternate diff editing strategy to the standard search-and-replace al
 
 **Note:** You must have "Enable editing through diffs" checked to use this feature.
 
-### Multi-block diff Editing Strategy
+### Multi-block Diff Editing Strategy
 
 Multi-block diff strategy allows updating multiple code blocks in a file in one request.
 
