@@ -24,6 +24,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'features/api-configuration-profiles',
         'features/auto-approving-actions',
+        'features/browser-use',
         'features/checkpoints',
         'features/code-actions',
         'features/custom-instructions',
