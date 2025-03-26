@@ -14,6 +14,20 @@ The [Roo Code Memory Bank](https://github.com/GreatScottyMac/roo-code-memory-ban
 
 Check out the [Memory Bank project on GitHub](https://github.com/GreatScottyMac/roo-code-memory-bank) to get started!
 
+## Roo Flow Project by [@GreatScottyMac](https://github.com/GreatScottyMac)
+
+Building upon the concepts of the Roo Code Memory Bank, the [Roo Flow](https://github.com/GreatScottyMac/RooFlow.git) project enhances AI-assisted development in VS Code by providing persistent project context and optimized mode interactions, resulting in reduced token consumption and a more efficient workflow. RooFlow ensures your AI assistant maintains a deep understanding of your project across sessions, even after interruptions.
+
+**Key Improvements over Roo Code Memory Bank:**
+
+- **Reduced Token Consumption:** Optimized prompts and instructions minimize token usage.
+- **Five Integrated Modes:** Architect, Code, Test, Debug, and Ask modes work together seamlessly.
+- **Simplified Setup:** Easier installation and configuration.
+- **Streamlined Real-time Updates:** More efficient and targeted Memory Bank updates.
+- **Clearer Instructions:** Improved YAML-based rule files for better readability and maintainability.
+
+[Roo Flow GitHub Repository](https://github.com/GreatScottyMac/RooFlow.git)
+
 ## Roo Code Tips & Tricks by [@Michaelzag](https://github.com/Michaelzag)
 
 [Roo Code Tips & Tricks](https://github.com/Michaelzag/RooCode-Tips-Tricks) is a collection of files designed to supercharge your Roo Code experience and maximize productivity. For those looking for a memory management system: check out the [Handoff System](https://github.com/Michaelzag/RooCode-Tips-Tricks/blob/main/handoffs/handoff-system.md) which is a simple yet powerful way to maintain optimal LLM performance during extended projects while automatically creating valuable documentation. 

@@ -34,6 +34,8 @@ Roo Code includes *experimental* support for the [VS Code Language Model API](ht
 *   **Extension Dependent:**  This feature relies entirely on other extensions providing models.  Roo Code cannot directly control which models are available.
 *   **Limited Functionality:**  The VS Code Language Model API may not support all the features of other API providers (e.g., image input, streaming, detailed usage information).
 *   **No Direct Cost Control:**  You are subject to the pricing and terms of the extension providing the model.  Roo Code cannot directly track or limit costs.
+*   **GitHub Copilot Rate Limits:** When using the VS Code LM API with GitHub Copilot, be aware that GitHub may impose rate limits on Copilot usage. These limits are controlled by GitHub, not Roo Code.
+
 
 ## Troubleshooting
 

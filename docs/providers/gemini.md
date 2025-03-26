@@ -19,6 +19,7 @@ Roo Code supports Google's Gemini family of models through the Google AI Gemini 
 
 Roo Code supports the following Gemini models:
 
+* `gemini-2.5-pro-exp-03-25`
 * `gemini-2.0-flash-001`
 * `gemini-2.0-flash-lite-preview-02-05`
 * `gemini-2.0-pro-exp-02-05`
