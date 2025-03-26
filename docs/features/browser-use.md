@@ -102,7 +102,7 @@ To change this setting:
    - Small Desktop (900x600) - Default
    - Tablet (768x1024)
    - Mobile (360x640)
-2. The selected your desired resolution.
+2. Select your desired resolution.
 
    <img src="/img/browser-use/browser-use-3.png" alt="Viewport size setting" width="600" />
 
