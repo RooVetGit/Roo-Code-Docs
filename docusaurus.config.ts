@@ -141,7 +141,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/roo-code-logo-white.png',
+    image: 'img/roo-code-logo-white-stacked.png',
     navbar: {
       logo: {
         alt: 'Roo Code Logo',
