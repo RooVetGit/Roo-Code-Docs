@@ -32,6 +32,7 @@ const sidebars: SidebarsConfig = {
         'features/enhance-prompt',
         'features/model-temperature',
         'features/tool-reference',
+        'features/more-features',
         {
           type: 'category',
           label: 'MCP',
