@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Roo Code Docs',
   tagline: 'Roo Code Documentation',
-  favicon: 'img/roo-code-logo-white.png',
+  favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
   url: 'https://docs.roocode.com',
@@ -143,10 +143,10 @@ const config: Config = {
   themeConfig: {
     image: 'img/roo-code-logo-white.png',
     navbar: {
-      title: 'Roo Code Docs',
       logo: {
         alt: 'Roo Code Logo',
         src: 'img/roo-code-logo-white.png',
+        srcDark: 'img/roo-code-logo-dark.png',
       },
       items: [
         {
