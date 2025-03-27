@@ -41,8 +41,6 @@ These tools help Roo make changes to your code:
 
 - [apply_diff](/features/tools/apply-diff) - Makes precise, surgical changes to your code
 - [write_to_file](/features/tools/write-to-file) - Creates new files or completely rewrites existing ones
-- [insert_content](/features/tools/insert-content) - Adds new content to existing files
-- [search_and_replace](/features/tools/search-and-replace) - Replaces specific patterns across files
 
 ### Browser Tools
 These tools help Roo interact with web applications:
