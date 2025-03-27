@@ -31,8 +31,27 @@ const sidebars: SidebarsConfig = {
         'features/custom-modes',
         'features/enhance-prompt',
         'features/model-temperature',
-        'features/tool-reference',
-        'features/more-features',
+        {
+          type: 'category',
+          label: 'Tool Use',
+          items: [
+            'features/tools/tool-use-overview',
+            'features/tools/read-file',
+            'features/tools/search-files',
+            'features/tools/list-files',
+            'features/tools/list-code-definition-names',
+            'features/tools/apply-diff',
+            'features/tools/write-to-file',
+            'features/tools/execute-command',
+            'features/tools/browser-action',
+            'features/tools/ask-followup-question',
+            'features/tools/attempt-completion',
+            'features/tools/switch-mode',
+            'features/tools/new-task',
+            'features/tools/use-mcp-tool',
+            'features/tools/access-mcp-resource',
+          ],
+        },
         {
           type: 'category',
           label: 'MCP',
@@ -55,6 +74,7 @@ const sidebars: SidebarsConfig = {
             'features/experimental/experimental-features',
           ],
         },
+        'features/more-features'
       ],
     },
     {
