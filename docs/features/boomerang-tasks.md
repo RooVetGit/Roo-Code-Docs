@@ -4,12 +4,12 @@ sidebar_label: 'Boomerang Tasks'
 
 # Boomerang Tasks: Orchestrate Complex Workflows
 
-Boomerang Tasks (also known as subtasks or task orchestration) allow you to break down complex projects into smaller, manageable pieces. Think of it like delegating parts of your work to specialized assistants. Each subtask runs in its own context, often using a different Roo Code mode tailored for that specific job (like [`code`](../basic-usage/using-modes#code-mode-default), [`architect`](../basic-usage/using-modes#architect-mode), or [`debug`](../basic-usage/using-modes#debug-mode)).
+Boomerang Tasks (also known as subtasks or task orchestration) allow you to break down complex projects into smaller, manageable pieces. Think of it like delegating parts of your work to specialized assistants. Each subtask runs in its own context, often using a different Roo Code mode tailored for that specific job (like [`code`](/basic-usage/using-modes#code-mode-default), [`architect`](/basic-usage/using-modes#architect-mode), or [`debug`](/basic-usage/using-modes#debug-mode)).
 
 :::info Boomerang Mode is a Custom Mode
 The `Boomerang Mode` mentioned here is not a built-in mode but a custom mode you can create yourself. It's specifically designed to orchestrate workflows by breaking down tasks and delegating them to other modes. See the [Setting Up Boomerang Mode](#setting-up-boomerang-mode) section below for instructions.
 
-Learn more about [Built-in Modes](../basic-usage/using-modes#built-in-modes) or the general process of creating [Custom Modes](./custom-modes).
+Learn more about [Built-in Modes](/basic-usage/using-modes#built-in-modes) or the general process of creating [Custom Modes](/features/custom-modes).
 :::
 
 ## Why Use Boomerang Tasks?
@@ -21,10 +21,7 @@ Learn more about [Built-in Modes](../basic-usage/using-modes#built-in-modes) or 
 
 ## How It Works
 
-1.  Using a [Custom Mode](./custom-modes) configured for orchestration (like the [`Boomerang Mode` described below](#setting-up-boomerang-mode)), Roo can analyze a complex task and suggest breaking it down into a subtask[^1].
-
-    <!-- Image Placeholder: Screenshot of the subtask approval prompt in the chat -->
-    <img src="/img/boomerang-tasks/subtask-approval.png" alt="Roo asking for approval to start a new subtask" width="600" />
+1.  Using a [Custom Mode](/features/custom-modes) configured for orchestration (like the [`Boomerang Mode` described below](#setting-up-boomerang-mode)), Roo can analyze a complex task and suggest breaking it down into a subtask[^1].
 
 2.  The parent task pauses, and the new subtask begins in a different mode[^2].
 3.  When the subtask's goal is achieved, Roo signals completion.
@@ -32,14 +29,11 @@ Learn more about [Built-in Modes](../basic-usage/using-modes#built-in-modes) or 
 
 ## Key Considerations
 
--   **Approval Required:** By default, you must approve the creation and completion of each subtask. This can be automated via the [Auto-Approving Actions](./auto-approving-actions#subtasks) settings if desired.
+-   **Approval Required:** By default, you must approve the creation and completion of each subtask. This can be automated via the [Auto-Approving Actions](/features/auto-approving-actions#subtasks) settings if desired.
 -   **Context Isolation and Transfer:** Each subtask operates in complete isolation with its own conversation history. It does not automatically inherit the parent's context. Information must be explicitly passed:
     *   **Down:** Via the initial instructions provided when the subtask is created.
     *   **Up:** Via the final summary provided when the subtask finishes. Be mindful that only this summary returns to the parent.
 -   **Navigation:** Roo's interface helps you see the hierarchy of tasks (which task is the parent, which are children). You can typically navigate between active and paused tasks.
-
-    <!-- Image Placeholder: Screenshot of the task hierarchy/navigation UI element -->
-    <img src="/img/boomerang-tasks/task-navigation.png" alt="UI showing parent and child tasks for navigation" width="400" />
 
 Boomerang Tasks provide a powerful way to manage complex development workflows directly within Roo Code, leveraging specialized modes for maximum efficiency.
 
@@ -47,9 +41,9 @@ Boomerang Tasks provide a powerful way to manage complex development workflows d
 
 ## Setting Up Boomerang Mode
 
-You can create your own Boomerang Mode to manage complex workflows. Follow the steps in the [Custom Modes](./custom-modes) documentation, using the text below for the key configuration fields.
+You can create your own Boomerang Mode to manage complex workflows. Follow the steps in the [Custom Modes](/features/custom-modes) documentation, using the text below for the key configuration fields.
 
-**Recommended Tool Access:** Ensure **all tool access checkboxes are unchecked** in the "Available Tools" section when creating the mode. Boomerang Mode primarily uses the [`new_task`](./tools/new-task) capability (which doesn't require specific tool group permissions) to delegate work to other modes.
+**Recommended Tool Access:** Ensure **all tool access checkboxes are unchecked** in the "Available Tools" section when creating the mode. Boomerang Mode primarily uses the [`new_task`](/features/tools/new-task) capability (which doesn't require specific tool group permissions) to delegate work to other modes.
 
 **Role Definition:**
 ```text title="Copy this for the 'Role Definition' field"
@@ -66,7 +60,7 @@ Your role is to coordinate complex workflows by delegating tasks to specialized 
     *   All necessary context from the parent task or previous subtasks required to complete the work.
     *   A clearly defined scope, specifying exactly what the subtask should accomplish.
     *   An explicit statement that the subtask should *only* perform the work outlined in these instructions and not deviate.
-    *   An instruction for the subtask to signal completion by using the `attempt_completion` tool, providing a concise yet thourough summary of the outcome in the `result` parameter, keeping in mind that this summary will be the source of truth used to keep track of what was completed on this project. 
+    *   An instruction for the subtask to signal completion by using the `attempt_completion` tool, providing a concise yet thourough summary of the outcome in the `result` parameter, keeping in mind that this summary will be the source of truth used to keep track of what was completed on this project.
     *   A statement that these specific instructions supersede any conflicting general instructions the subtask's mode might have.
 
 3. Track and manage the progress of all subtasks. When a subtask is completed, analyze its results and determine the next steps.
@@ -86,6 +80,6 @@ A downloadable `.roomodes` file containing this configuration will be available 
 Use subtasks to maintain clarity. If a request significantly shifts focus or requires a different expertise (mode), consider creating a subtask rather than overloading the current one.
 :::
 
-[^1]: This context is passed via the `message` parameter of the [`new_task`](./tools/new-task) tool.
-[^2]: The mode for the subtask is specified via the `mode` parameter of the [`new_task`](./tools/new-task) tool during initiation.
-[^3]: This summary is passed via the `result` parameter of the [`attempt_completion`](./tools/attempt-completion) tool when the subtask finishes.
+[^1]: This context is passed via the `message` parameter of the [`new_task`](/features/tools/new-task) tool.
+[^2]: The mode for the subtask is specified via the `mode` parameter of the [`new_task`](/features/tools/new-task) tool during initiation.
+[^3]: This summary is passed via the `result` parameter of the [`attempt_completion`](/features/tools/attempt-completion) tool when the subtask finishes.
