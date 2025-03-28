@@ -1,6 +1,5 @@
 ---
 sidebar_label: 'Boomerang Tasks'
-sidebar_position: 10 # Adjust position as needed
 ---
 
 # Boomerang Tasks: Orchestrate Complex Workflows

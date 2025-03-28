@@ -24,6 +24,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'features/api-configuration-profiles',
         'features/auto-approving-actions',
+        'features/boomerang-tasks',
         'features/browser-use',
         'features/checkpoints',
         'features/code-actions',
@@ -31,7 +32,6 @@ const sidebars: SidebarsConfig = {
         'features/custom-modes',
         'features/enhance-prompt',
         'features/model-temperature',
-        'features/boomerang-tasks',
         {
           type: 'category',
           label: 'Tool Use',
