@@ -31,6 +31,7 @@ const sidebars: SidebarsConfig = {
         'features/custom-modes',
         'features/enhance-prompt',
         'features/model-temperature',
+        'features/boomerang-tasks',
         {
           type: 'category',
           label: 'Tool Use',
