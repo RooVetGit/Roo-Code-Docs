@@ -102,10 +102,6 @@ const config: Config = {
             from: ['/advanced-usage/model-temperature'],
           },
           {
-            to: '/features/tool-reference',
-            from: ['/advanced-usage/tool-reference'],
-          },
-          {
             to: '/features/auto-approving-actions',
             from: ['/advanced-usage/auto-approving-actions'],
           },
@@ -141,7 +137,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/roo-code-logo-white.png',
+    image: 'img/roo-code-logo-white-stacked.png',
     navbar: {
       logo: {
         alt: 'Roo Code Logo',
