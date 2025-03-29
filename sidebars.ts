@@ -31,6 +31,7 @@ const sidebars: SidebarsConfig = {
         'features/custom-instructions',
         'features/custom-modes',
         'features/enhance-prompt',
+        'features/footgun-prompting',
         'features/model-temperature',
         {
           type: 'category',
