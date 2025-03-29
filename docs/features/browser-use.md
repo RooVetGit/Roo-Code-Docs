@@ -7,6 +7,10 @@ Roo Code provides sophisticated browser automation capabilities that let you int
   Your browser does not support the video tag.
 </video>
 
+:::info Model Support Required
+Browser Use within Roo Code requires the use of Claude Sonnet 3.5 or 3.7
+:::
+
 ## How Browser Use Works
 
 By default, Roo Code uses a built-in browser that:
