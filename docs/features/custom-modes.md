@@ -73,10 +73,6 @@ Both global and project-specific configurations use the same JSON format. Each c
 
 ### Understanding File Restrictions
 
-<img src="/img/custom-modes/custom-modes-3.png" alt="File restriction pattern examples" width="600" />
-
-*Visual examples of file restriction patterns and which files they match/don't match.*
-
 The `fileRegex` property uses regular expressions to control which files a mode can edit:
 
 * `\\.md$` - Match files ending in ".md"
