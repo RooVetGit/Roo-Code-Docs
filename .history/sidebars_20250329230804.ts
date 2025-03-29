@@ -98,7 +98,6 @@ const sidebars: SidebarsConfig = {
         'providers/vertex',
         'providers/gemini',
         'providers/glama',
-        'providers/human-relay',
         'providers/lmstudio',
         'providers/mistral',
         'providers/ollama',
