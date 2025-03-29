@@ -81,12 +81,10 @@ Your role is to coordinate complex workflows by delegating tasks to specialized 
 Use subtasks to maintain clarity. If a request significantly shifts focus or requires a different expertise (mode), consider creating a subtask rather than overloading the current one.
 ```
 
-
 ### Download Configuration
 
 You can download the Boomerang Mode configuration file here: [Download boomerang-mode.roomodes](/downloads/boomerang-tasks/roomodes.json). Rename to `.roomodes` and place in the root directory of your project.
 :::
-
 
 
 [^1]: This context is passed via the `message` parameter of the [`new_task`](/features/tools/new-task) tool.
