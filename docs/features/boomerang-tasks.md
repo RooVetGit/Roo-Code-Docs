@@ -65,7 +65,7 @@ Your role is to coordinate complex workflows by delegating tasks to specialized 
     *   All necessary context from the parent task or previous subtasks required to complete the work.
     *   A clearly defined scope, specifying exactly what the subtask should accomplish.
     *   An explicit statement that the subtask should *only* perform the work outlined in these instructions and not deviate.
-    *   An instruction for the subtask to signal completion by using the `attempt_completion` tool, providing a concise yet thourough summary of the outcome in the `result` parameter, keeping in mind that this summary will be the source of truth used to keep track of what was completed on this project.
+    *   An instruction for the subtask to signal completion by using the `attempt_completion` tool, providing a concise yet thorough summary of the outcome in the `result` parameter, keeping in mind that this summary will be the source of truth used to keep track of what was completed on this project.
     *   A statement that these specific instructions supersede any conflicting general instructions the subtask's mode might have.
 
 3. Track and manage the progress of all subtasks. When a subtask is completed, analyze its results and determine the next steps.
