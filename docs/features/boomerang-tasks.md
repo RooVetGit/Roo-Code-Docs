@@ -46,7 +46,13 @@ Boomerang Tasks provide a powerful way to manage complex development workflows d
 
 ## Setting Up Boomerang Mode
 
-You can create your own Boomerang Mode to manage complex workflows. Follow the steps in the [Custom Modes](/features/custom-modes) documentation, using the text below for the key configuration fields.
+### Download Configuration
+
+You can download the Boomerang Mode configuration file here: [Download boomerang-mode.roomodes](/downloads/boomerang-tasks/roomodes.json). Rename to `.roomodes` and place in the root directory of your project.
+
+### Manual Configuration
+
+You can also create your own Boomerang Mode. Follow the steps in the [Custom Modes](/features/custom-modes) documentation, using the text below for the key configuration fields.
 
 **Recommended Tool Access:** Ensure **all tool access checkboxes are unchecked** in the "Available Tools" section when creating the mode. Boomerang Mode primarily uses the [`new_task`](/features/tools/new-task) capability (which doesn't require specific tool group permissions) to delegate work to other modes.
 
@@ -80,10 +86,6 @@ Your role is to coordinate complex workflows by delegating tasks to specialized 
 
 Use subtasks to maintain clarity. If a request significantly shifts focus or requires a different expertise (mode), consider creating a subtask rather than overloading the current one.
 ```
-
-### Download Configuration
-
-You can download the Boomerang Mode configuration file here: [Download boomerang-mode.roomodes](/downloads/boomerang-tasks/roomodes.json). Rename to `.roomodes` and place in the root directory of your project.
 :::
 
 
