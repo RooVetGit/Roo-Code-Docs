@@ -68,6 +68,16 @@ const config: Config = {
   ],
 
   plugins: [
+    ...(process.env.POSTHOG_API_KEY ? [
+      [
+        "posthog-docusaurus",
+        {
+          apiKey: process.env.POSTHOG_API_KEY,
+          appUrl: "https://us.i.posthog.com",
+          enableInDevelopment: true,
+        },
+      ],
+    ] : []),
     [
       '@docusaurus/plugin-client-redirects',
       {
@@ -200,6 +210,28 @@ const config: Config = {
             {
               label: 'Open VSX Registry',
               href: 'https://open-vsx.org/extension/RooVeterinaryInc/roo-cline',
+            },
+          ],
+        },
+        {
+          title: 'Company',
+          items: [
+            {
+              label: 'Contact',
+              href: 'mailto:support@roocode.com',
+              target: '_self',
+            },
+            {
+              label: 'Careers',
+              href: 'https://careers.roocode.com',
+            },
+            {
+              label: 'Website Privacy Policy',
+              href: 'https://roocode.com/privacy',
+            },
+            {
+              label: 'Extension Privacy Policy',
+              href: 'https://github.com/RooVetGit/Roo-Code/blob/main/PRIVACY.md',
             },
           ],
         },

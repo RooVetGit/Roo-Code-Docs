@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
+    "start": "node -r dotenv/config node_modules/.bin/docusaurus start",
+    "build": "node -r dotenv/config node_modules/.bin/docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -22,6 +22,7 @@
     "@mdx-js/react": "^3.0.0",
     "@vscode/codicons": "^0.0.36",
     "clsx": "^2.0.0",
+    "posthog-docusaurus": "^2.0.4",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
@@ -30,6 +31,7 @@
     "@docusaurus/module-type-aliases": "3.7.0",
     "@docusaurus/tsconfig": "3.7.0",
     "@docusaurus/types": "3.7.0",
+    "dotenv": "^16.4.7",
     "typescript": "~5.6.2"
   },
   "browserslist": {
