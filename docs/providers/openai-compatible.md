@@ -34,6 +34,22 @@ You'll find these settings in the Roo Code settings panel (click the <Codicon na
     - Input Price
     - Output Price
 
+## Supported Models (for OpenAI Native Endpoint)
+
+While this provider type allows connecting to various endpoints, if you are connecting directly to the official OpenAI API (or an endpoint mirroring it exactly), Roo Code recognizes the following model IDs based on the `openAiNativeModels` definition in its source code:
+
+*   `o3-mini`
+*   `o3-mini-high`
+*   `o3-mini-low`
+*   `o1`
+*   `o1-preview`
+*   `o1-mini`
+*   `gpt-4.5-preview`
+*   `gpt-4o`
+*   `gpt-4o-mini`
+
+**Note:** If you are using a different OpenAI-compatible provider (like Together AI, Anyscale, etc.), the available model IDs will vary. Always refer to your specific provider's documentation for their supported model names.
+
 ## Troubleshooting
 
 *   **"Invalid API Key":** Double-check that you've entered the API key correctly.

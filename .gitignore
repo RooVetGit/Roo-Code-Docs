@@ -25,3 +25,5 @@ yarn-error.log*
 
 .devcontainer
 TEMP/
+
+.history/

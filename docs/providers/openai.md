@@ -25,6 +25,7 @@ Roo Code supports a variety of OpenAI models, including:
 * `o1`
 * `o1-preview`
 *	`o1-mini`
+*   `gpt-4.5-preview`
 * `gpt-4o`
 * `gpt-4o-mini`
 

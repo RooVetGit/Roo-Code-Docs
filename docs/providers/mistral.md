@@ -23,8 +23,8 @@ Roo Code supports the following Mistral models:
 |------------------------|-------------------------|------------------|--------|
 | codestral-latest      | 0.3                     | ✅               | ❌      |
 | mistral-large-latest  | 0.7                     | ✅               | ❌      |
-| mistral-8b-latest   | 0.3                     | ✅               | ❌      |
-| mistral-3b-latest   | 0.3                     | ✅               | ❌      |
+| ministral-8b-latest   | 0.3                     | ✅               | ❌      |
+| ministral-3b-latest   | 0.3                     | ✅               | ❌      |
 | mistral-small-latest  | 0.3                     | ✅               | ❌      |
 | pixtral-large-latest  | 0.7                     | ✅               | ✅      |
 The default model temperature in Roo Code is 0.0, so you should consider experimenting with [temperature adjustments](/features/model-temperature)!

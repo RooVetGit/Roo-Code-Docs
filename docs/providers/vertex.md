@@ -19,15 +19,26 @@ Roo Code supports accessing models through Google Cloud Platform's Vertex AI, a 
 
 ## Supported Models
 
-Roo Code supports the following models through Vertex AI:
+Roo Code supports the following models through Vertex AI (based on source code):
 
-*   `claude-3-5-sonnet-v2@20241022` (Recommended): A powerful model balancing performance and cost. Supports image inputs.
-*	`claude-3-5-sonnet@20240620`
-*   `claude-3-5-haiku@20241022`
-*   `claude-3-opus@20240229`
-*   `claude-3-haiku@20240307`
+*   **Google Gemini Models:**
+    *   `gemini-2.0-flash-001`
+    *   `gemini-2.5-pro-exp-03-25`
+    *   `gemini-2.0-pro-exp-02-05`
+    *   `gemini-2.0-flash-lite-001`
+    *   `gemini-2.0-flash-thinking-exp-01-21`
+    *   `gemini-1.5-flash-002`
+    *   `gemini-1.5-pro-002`
+*   **Anthropic Claude Models:**
+    *   `claude-3-7-sonnet@20250219:thinking`
+    *   `claude-3-7-sonnet@20250219`
+    *   `claude-3-5-sonnet-v2@20241022`
+    *   `claude-3-5-sonnet@20240620`
+    *   `claude-3-5-haiku@20241022`
+    *   `claude-3-opus@20240229`
+    *   `claude-3-haiku@20240307`
 
-Refer to the [Google Cloud documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude) for the most up-to-date list of available models and their IDs.
+Refer to the [Google Cloud documentation on Vertex AI Models](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models) for the most up-to-date list of available models and their IDs.
 
 ## Configuration in Roo Code
 
