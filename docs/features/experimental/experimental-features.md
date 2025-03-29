@@ -28,12 +28,6 @@ This is an alternate diff editing strategy to the standard search-and-replace al
 
 Multi-block diff strategy allows updating multiple code blocks in a file in one request.
 
-### Checkpoints (Version Control)
-
-This will automatically save a checkpoint to git whenever you make changes to files.
-
-This lets you easily restore a previous state of the files if anything goes wrong.
-
 ### Search and Replace
 
 Adds a new tool for searching and replacing text in a file.
