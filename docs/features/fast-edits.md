@@ -1,8 +1,3 @@
----
-title: Fast Edits
-description: Learn how enabling diff-based editing speeds up file modifications and prevents errors in Roo Code.
----
-
 # Fast Edits
 
 :::info Default Setting
