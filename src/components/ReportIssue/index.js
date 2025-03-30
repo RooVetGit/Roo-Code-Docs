@@ -1,11 +1,12 @@
 import React from 'react';
 import {useLocation} from '@docusaurus/router';
+import {GITHUB_NEW_ISSUE_URL} from '@site/src/constants';
 import styles from './styles.module.css';
 
 export default function ReportIssue() {
   const {pathname} = useLocation();
   
-  const issueUrl = `https://github.com/RooVetGit/Roo-Code-Docs/issues/new?title=Documentation%20Issue:%20${encodeURIComponent(pathname)}`;
+  const issueUrl = `${GITHUB_NEW_ISSUE_URL}?title=Documentation%20Issue:%20${encodeURIComponent(pathname)}`;
   
   return (
     <div className={styles.reportContainer}>

@@ -1,6 +1,21 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import {
+  DISCORD_URL,
+  REDDIT_URL,
+  TWITTER_URL,
+  GITHUB_MAIN_REPO_URL,
+  GITHUB_ISSUES_MAIN_URL,
+  GITHUB_FEATURES_URL,
+  VSCODE_MARKETPLACE_URL,
+  OPEN_VSX_URL,
+  CONTACT_EMAIL,
+  CAREERS_URL,
+  WEBSITE_PRIVACY_URL,
+  EXTENSION_PRIVACY_URL,
+  GITHUB_REPO_URL
+} from './src/constants';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -38,7 +53,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/',
-          editUrl: 'https://github.com/RooVetGit/Roo-Code-Docs/edit/main/',
+          editUrl: `${GITHUB_REPO_URL}/edit/main/`,
           showLastUpdateTime: true,
         },
         blog: false, // Disable blog feature
@@ -156,12 +171,12 @@ const config: Config = {
       },
       items: [
         {
-          href: 'https://github.com/RooVetGit/Roo-Code',
+          href: GITHUB_MAIN_REPO_URL,
           label: 'GitHub',
           position: 'right',
         },
         {
-          href: 'https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline',
+          href: VSCODE_MARKETPLACE_URL,
           label: 'Install Extension',
           position: 'right',
         },
@@ -175,15 +190,15 @@ const config: Config = {
           items: [
             {
               label: 'Discord',
-              href: 'https://discord.gg/roocode',
+              href: DISCORD_URL,
             },
             {
               label: 'Reddit',
-              href: 'https://www.reddit.com/r/RooCode/',
+              href: REDDIT_URL,
             },
             {
               label: 'Twitter',
-              href: 'https://x.com/roo_code',
+              href: TWITTER_URL,
             },
           ],
         },
@@ -192,11 +207,11 @@ const config: Config = {
           items: [
             {
               label: 'Issues',
-              href: 'https://github.com/RooVetGit/Roo-Code/issues',
+              href: GITHUB_ISSUES_MAIN_URL,
             },
             {
               label: 'Feature Requests',
-              href: 'https://github.com/RooVetGit/Roo-Code/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop',
+              href: GITHUB_FEATURES_URL,
             },
           ],
         },
@@ -205,11 +220,11 @@ const config: Config = {
           items: [
             {
               label: 'VS Code Marketplace',
-              href: 'https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline',
+              href: VSCODE_MARKETPLACE_URL,
             },
             {
               label: 'Open VSX Registry',
-              href: 'https://open-vsx.org/extension/RooVeterinaryInc/roo-cline',
+              href: OPEN_VSX_URL,
             },
           ],
         },
@@ -218,20 +233,20 @@ const config: Config = {
           items: [
             {
               label: 'Contact',
-              href: 'mailto:support@roocode.com',
+              href: CONTACT_EMAIL,
               target: '_self',
             },
             {
               label: 'Careers',
-              href: 'https://careers.roocode.com',
+              href: CAREERS_URL,
             },
             {
               label: 'Website Privacy Policy',
-              href: 'https://roocode.com/privacy',
+              href: WEBSITE_PRIVACY_URL,
             },
             {
               label: 'Extension Privacy Policy',
-              href: 'https://github.com/RooVetGit/Roo-Code/blob/main/PRIVACY.md',
+              href: EXTENSION_PRIVACY_URL,
             },
           ],
         },
