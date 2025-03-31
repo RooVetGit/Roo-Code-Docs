@@ -2,7 +2,7 @@
 
 ## Documentation Links
 - Do not include .md extensions in documentation links
-- Use relative paths for internal documentation links
-- Example: [link text](basic-usage/how-tools-work) NOT [link text](basic-usage/how-tools-work.md)
+- Use absolute paths starting from the `/docs/` root for internal documentation links
+- Example: [link text](/basic-usage/how-tools-work) NOT [link text](basic-usage/how-tools-work.md) or [link text](../../basic-usage/how-tools-work)
 
 This ensures links work correctly in the built documentation while maintaining clean URLs.
