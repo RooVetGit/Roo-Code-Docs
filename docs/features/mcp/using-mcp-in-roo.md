@@ -7,20 +7,31 @@ sidebar_label: Using MCP in Roo Code
 
 Model Context Protocol (MCP) extends Roo Code's capabilities by connecting to external tools and services. This guide covers everything you need to know about using MCP with Roo Code.
 
-> **Note:** All MCP-related settings are global across all workspaces. Any changes you make to MCP configurations will affect all your Roo Code projects.
+## Configuring MCP Servers
 
-## Installing/Editing Your MCP Servers
+MCP server configurations can be managed at two levels:
 
-MCP server configurations are stored in the `cline_mcp_settings.json` file. You can access it by:
+1.  **Global Configuration**: Stored in the `mcp_settings.json` file, accessible via VS Code settings (see below). These settings apply across all your workspaces unless overridden by a project-level configuration.
+2.  **Project-level Configuration**: Defined in a `.roo/mcp.json` file within your project's root directory. This allows you to set up project-specific servers and share configurations with your team by committing the file to version control. Roo Code automatically detects and loads this file if it exists.
 
-1. Click the <Codicon name="server" /> icon in the top navigation of the Roo Code pane
+**Precedence**: If a server name exists in both global and project configurations, the **project-level configuration takes precedence**.
 
-  <img src="/img/using-mcp-in-roo/using-mcp-in-roo.png" alt="MCP Servers interface in Roo Code" width="400" />
-2. Click the `Edit MCP Settings` button. This will open `cline_mcp_settings.json`
+### Editing MCP Settings Files
 
-  <img src="/img/using-mcp-in-roo/using-mcp-in-roo-1.png" alt="Edit MCP Settings button" width="400" />
+You can edit both global and project-level MCP configuration files directly from the Roo Code MCP settings view:
 
-  The file uses a JSON format with a `mcpServers` object containing named server configurations:
+1. Click the <Codicon name="server" /> icon in the top navigation of the Roo Code pane.
+
+  <img src="/img/using-mcp-in-roo/using-mcp-in-roo-10.png" alt="MCP Servers interface in Roo Code" width="400" />
+
+2. Scroll to the bottom of the MCP settings view.
+3. Click the appropriate button:
+    *   **`Edit Global MCP`**: Opens the global `mcp_settings.json` file.
+    *   **`Edit Project MCP`**: Opens the project-specific `.roo/mcp.json` file. If this file doesn't exist, Roo Code will create it for you.
+
+  <img src="/img/using-mcp-in-roo/using-mcp-in-roo-9.png" alt="Edit Global MCP and Edit Project MCP buttons" width="600" />
+
+Both files use a JSON format with a `mcpServers` object containing named server configurations:
 
   ```json
   {
@@ -189,6 +200,6 @@ Example: "Analyze the performance of my API" might use an MCP tool that tests AP
 Common issues and solutions:
 
 * **Server Not Responding:** Check if the server process is running and verify network connectivity
-* **Permission Errors:** Ensure proper API keys and credentials are configured in your `cline_mcp_settings.json`
+* **Permission Errors:** Ensure proper API keys and credentials are configured in your `mcp_settings.json` (for global settings) or `.roo/mcp.json` (for project settings).
 * **Tool Not Available:** Confirm the server is properly implementing the tool and it's not disabled in settings
 * **Slow Performance:** Try adjusting the network timeout value for the specific MCP server

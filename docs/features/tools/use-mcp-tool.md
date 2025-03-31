@@ -44,6 +44,16 @@ This tool allows Roo to access specialized functionality provided by external MC
 - Requires user approval before execution (unless in the "always allow" list)
 - Cannot execute multiple MCP tool operations simultaneously
 
+## Server Configuration
+
+MCP servers can be configured globally or at the project level:
+
+- **Global Configuration**: Managed through the Roo Code extension settings in VS Code. These apply across all projects unless overridden.
+- **Project-level Configuration**: Defined in a `.roo/mcp.json` file within your project's root directory.
+ - This allows project-specific server setups.
+ - Project-level servers take precedence over global servers if they share the same name.
+ - Since `.roo/mcp.json` can be committed to version control, it simplifies sharing configurations with your team.
+
 ## How It Works
 
 When the `use_mcp_tool` tool is invoked, it follows this process:
