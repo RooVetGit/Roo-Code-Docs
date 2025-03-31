@@ -16,10 +16,25 @@ Clicking the lightbulb, right-clicking and selecting "Roo Code", or using the ke
 
 Roo Code provides the following Code Actions:
 
-*   **Explain Code:** Asks Roo Code to explain the selected code. This is useful for understanding unfamiliar code or for getting a high-level overview of a function or class.
-*   **Fix Code:** Asks Roo Code to fix problems in the selected code. This action is available when there are diagnostics (errors or warnings) on the selected lines. Roo Code will analyze the diagnostics and propose a fix.
-*   **Improve Code:** Asks Roo Code to suggest improvements to the selected code. This can include suggestions for better readability, performance, or adherence to best practices.
-*   **Add to Context:** Adds the selected code to the current Roo Code conversation, allowing you to refer to it in subsequent messages.
+*   **Add to Context:** Quickly adds the selected code to your chat with Roo, including line numbers so Roo knows exactly where the code is from. It's listed first in the menu for easy access. (More details below).
+*   **Explain Code:** Asks Roo Code to explain the selected code.
+*   **Fix Code:** Asks Roo Code to fix problems in the selected code (available when diagnostics are present).
+*   **Improve Code:** Asks Roo Code to suggest improvements to the selected code.
+
+### Add to Context Deep Dive
+
+The **Add to Context** action is listed first in the Code Actions menu so you can quickly add code snippets to your conversation. When you use it, Roo Code includes the filename and line numbers along with the code.
+
+This helps Roo understand the exact context of your code within the project, allowing it to provide more relevant and accurate assistance.
+
+**Example Chat Input:**
+
+```
+Can you explain this function?
+@myFile.js:15:25
+```
+
+*(Where `@myFile.js:15:25` represents the code added via "Add to Context")*
 
 Each of these actions can be performed "in a new task" or "in the current task."
 
