@@ -201,7 +201,7 @@ Replacement content
 ## Integration
 
 ### RooIgnore
-- The tool respects `.rooignore` files. If a file path matches a pattern in `.rooignore`, `apply_diff` will be blocked. See [Advanced Usage -> Large Projects](../advanced-usage/large-projects) for more on `.rooignore`.
+- The tool respects `.rooignore` files. If a file path matches a pattern in `.rooignore`, `apply_diff` will be blocked. See [Advanced Usage -> Large Projects](/advanced-usage/large-projects) for more on `.rooignore`.
 
 ### Cline Integration
 - `apply_diff` is integrated into the core `Cline` class, ensuring it respects overall tool permissions and settings like "Enable editing through diffs".
