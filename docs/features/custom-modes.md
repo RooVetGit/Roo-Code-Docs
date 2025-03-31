@@ -118,7 +118,7 @@ Note: If both `.clinerules-{mode-slug}` and the `customInstructions` property ex
 Mode configurations are applied in this order:
 
 1. Project-level mode configurations (from `.roomodes`)
-2. Global mode configurations (from `cline_custom_modes.json`)
+2. Global mode configurations (from `custom_modes.json`)
 3. Default mode configurations
 
 This means that project-specific configurations will override global configurations, which in turn override default configurations.
@@ -152,7 +152,7 @@ You can find this setting within the prompt settings by clicking the <Codicon na
 
     * **Name:** Enter a display name for the mode
     * **Slug:** Enter a lowercase identifier (letters, numbers, and hyphens only)
-    * **Save Location:** Choose Global (via `cline_custom_modes.json`, available across all workspaces) or Project-specific (via `.roomodes` file in project root)
+    * **Save Location:** Choose Global (via `custom_modes.json`, available across all workspaces) or Project-specific (via `.roomodes` file in project root)
     * **Role Definition:** Define Roo's expertise and personality for this mode (appears at the start of the system prompt)
     * **Available Tools:** Select which tools this mode can use
     * **Custom Instructions:** (Optional) Add behavioral guidelines specific to this mode (appears at the end of the system prompt)
@@ -169,7 +169,7 @@ Both global and project-specific configurations can be edited through the Prompt
 1.  **Open Prompts Tab:** Click the <Codicon name="notebook" /> icon in the Roo Code top menu bar
 2.  **Access Settings Menu:** Click the <Codicon name="bracket" /> button to the right of the Modes heading
 3.  **Choose Configuration:**
-    * Select "Edit Global Modes" to edit `cline_custom_modes.json` (available across all workspaces)
+    * Select "Edit Global Modes" to edit `custom_modes.json` (available across all workspaces)
     * Select "Edit Project Modes" to edit `.roomodes` file (in project root)
 4.  **Edit Configuration:** Modify the JSON file that opens
 5.  **Save Changes:** Roo Code will automatically detect the changes
