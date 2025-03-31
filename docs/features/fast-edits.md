@@ -10,10 +10,11 @@ Roo Code offers an advanced setting to change how it edits files, using diffs (d
 
 Open Settings by clicking the gear icon <Codicon name="gear" /> → Advanced
 
-<img src="/img/fast-edits/fast-edits.png" alt="Roo Code settings showing Enable editing through diffs, Diff strategy dropdown, and Match precision slider" width="500" />
+
 
 When **Enable editing through diffs** is checked:
 
+    <img src="/img/fast-edits/fast-edits-5.png" alt="alt text" width="500" />
 1.  **Faster File Editing**: Roo modifies files more quickly by applying only the necessary changes.
 2.  **Prevents Truncated Writes**: The system automatically detects and rejects attempts by the AI to write incomplete file content, which can happen with large files or complex instructions. This helps prevent corrupted files.
 
@@ -21,19 +22,11 @@ When **Enable editing through diffs** is checked:
 If you uncheck **Enable editing through diffs**, Roo will revert to writing the entire file content for every edit using the [`write_to_file`](/features/tools/write-to-file) tool, instead of applying targeted changes with [`apply_diff`](/features/tools/apply-diff). This full-write approach is generally slower for modifying existing files and leads to higher token usage.
 :::
 
-## Diff Strategy
-
-This setting determines the method Roo uses to calculate and apply changes:
-
-*   **Multi-block diff** (Default since v3.11): Allows updating multiple, separate code blocks within the same file in a single operation. More efficient for widespread changes. (Uses `MultiSearchReplaceDiffStrategy` internally).
-*   **Single block**: Applies changes to one code block at a time. Reliable for most common edits. (Uses `SearchReplaceDiffStrategy` internally).
-*   **Unified diff**: A more sophisticated strategy that analyzes the changes and selects the best approach, potentially using different matching techniques. (Uses `NewUnifiedDiffStrategy` internally).
-
-Choose the strategy that best suits the complexity of the edits you typically perform. The experimental options offer potential efficiency gains but may behave differently.
-
 ## Match Precision
 
 This slider controls how closely the code sections identified by the AI must match the actual code in your file before a change is applied.
+
+    <img src="/img/fast-edits/fast-edits-4.png" alt="Roo Code settings showing Enable editing through diffs checkbox and Match precision slider" width="500" />
 
 *   **100% (Default)**: Requires an exact match. This is the safest option, minimizing the risk of incorrect changes.
 *   **Lower Values (80%-99%)**: Allows for "fuzzy" matching. Roo can apply changes even if the code section has minor differences from what the AI expected. This can be useful if the file has been slightly modified, but **increases the risk** of applying changes in the wrong place.
@@ -42,6 +35,11 @@ This slider controls how closely the code sections identified by the AI must mat
 
 Internally, this setting adjusts a `fuzzyMatchThreshold` used with algorithms like Levenshtein distance to compare code similarity.
 
-## Model Recommendation
 
-The setting description notes that diff-based editing "Works best with the latest Claude 3.7 Sonnet model." This is likely because newer, more capable models can generate the precise diff formats required for this feature more reliably.
+## Experimental Features
+
+Under the "Experimental Features" section, you will find this option:
+
+    <img src="/img/fast-edits/fast-edits-2.png" alt="Roo Code settings showing the Experimental Features section with the experimental unified diff strategy checkbox" width="500" />
+
+*   **Use experimental unified diff strategy**: This checkbox might appear to enable specific variations or optimizations of the `UnifiedDiffStrategy`. Enabling this could potentially reduce retries caused by model errors but might also introduce unexpected behavior or incorrect edits. Enable only if you understand the risks and are prepared to carefully review all changes.
