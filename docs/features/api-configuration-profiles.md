@@ -50,7 +50,21 @@ Switch profiles in two ways:
    <img src="/img/api-configuration-profiles/api-configuration-profiles-7.png" alt="Profile selection dropdown in Settings" width="550" />
 2. During chat: Access the API Configuration dropdown in the chat interface
 
-   <img src="/img/api-configuration-profiles/api-configuration-profiles-9.png" alt="API Configuration dropdown in chat interface" width="550" />
+   <img src="/img/api-configuration-profiles/api-configuration-profiles-6.png" alt="API Configuration dropdown in chat interface" width="550" />
+### Pinning and Sorting Profiles
+
+The API configuration dropdown now supports pinning your favorite profiles for quicker access:
+
+1. Hover over any profile in the dropdown to reveal the pin icon
+2. Click the pin icon to add the profile to your pinned list
+3. Pinned profiles appear at the top of the dropdown, sorted alphabetically
+4. Unpinned profiles appear below a separator, also sorted alphabetically
+5. You can unpin a profile by clicking the same icon again
+
+<img src="/img/api-configuration-profiles/api-configuration-profiles-4.png" alt="Pinning API configuration profiles" width="550" />
+
+This feature makes it easier to navigate between commonly used profiles, especially when you have many configurations.
+
 
 ### Editing and Deleting Profiles
 
