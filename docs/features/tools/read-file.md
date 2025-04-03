@@ -85,15 +85,33 @@ The tool uses a clear decision hierarchy to determine how to read a file:
 
 ## Usage Examples
 
-Reading an entire file:
-```
+Here are several scenarios demonstrating how the `read_file` tool is used and the typical output you might receive.
+
+### 1. Reading an Entire File
+
+To read the complete content of a file:
+
+**Input:**
+```xml
 <read_file>
 <path>src/app.js</path>
 </read_file>
 ```
 
-Reading specific lines (46-68) of a file:
+**Simulated Output (for a small file like `example_small.txt`):**
 ```
+1 | This is the first line.
+2 | This is the second line.
+3 | This is the third line.
+```
+*(Output will vary based on the actual file content)*
+
+### 2. Reading Specific Lines
+
+To read only a specific range of lines (e.g., 46-68):
+
+**Input:**
+```xml
 <read_file>
 <path>src/app.js</path>
 <start_line>46</start_line>
@@ -101,10 +119,63 @@ Reading specific lines (46-68) of a file:
 </read_file>
 ```
 
-Reading a large file with auto-truncation:
+**Simulated Output (for lines 2-3 of `example_five_lines.txt`):**
 ```
+2 | Content of line two.
+3 | Content of line three.
+```
+*(Output shows only the requested lines with their original line numbers)*
+
+### 3. Reading a Large File (Auto-Truncation)
+
+When reading a large file without specifying lines and `auto_truncate` is enabled (or defaults to true based on settings):
+
+**Input:**
+```xml
 <read_file>
 <path>src/large-module.js</path>
-<auto_truncate>true</auto_truncate>
+<auto_truncate>true</auto_truncate> <!-- Optional if default is true -->
 </read_file>
+```
+
+**Simulated Output (for `large_file.log` with 1500 lines, limit 1000):**
+```
+1 | Log entry 1...
+2 | Log entry 2...
+...
+1000 | Log entry 1000...
+[... truncated 500 lines ...]
+```
+*(Output is limited to the configured maximum lines, with a truncation notice)*
+
+### 4. Attempting to Read a Non-Existent File
+
+If the specified file does not exist:
+
+**Input:**
+```xml
+<read_file>
+<path>non_existent_file.txt</path>
+</read_file>
+```
+
+**Simulated Output (Error):**
+```
+Error: File not found at path 'non_existent_file.txt'.
+```
+
+### 5. Attempting to Read a Blocked File (.rooignore)
+
+If the file is excluded by rules in a `.rooignore` file:
+
+**Input:**
+```xml
+<read_file>
+<path>.env</path>
+</read_file>
+```
+
+**Simulated Output (Error):**
+```
+Error: Access denied to file '.env' due to .rooignore rules.
 ```
