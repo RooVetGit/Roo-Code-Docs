@@ -18,16 +18,6 @@ To enable or disable experimental features:
 
 The following experimental features are currently available:
 
-### Unified Diff Editing Strategy
-
-This is an alternate diff editing strategy to the standard search-and-replace algorithm. It evaluates multiple different approaches to applying a unified diff to a file, and selects the best approach for the given file.
-
-**Note:** You must have "Enable editing through diffs" checked to use this feature.
-
-### Multi-block Diff Editing Strategy
-
-Multi-block diff strategy allows updating multiple code blocks in a file in one request.
-
 ### Search and Replace
 
 Adds a new tool for searching and replacing text in a file.
