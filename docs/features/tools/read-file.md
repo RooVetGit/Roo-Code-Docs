@@ -87,7 +87,7 @@ The tool uses a clear decision hierarchy to determine how to read a file:
 
 Here are several scenarios demonstrating how the `read_file` tool is used and the typical output you might receive.
 
-### 1. Reading an Entire File
+### Reading an Entire File
 
 To read the complete content of a file:
 
@@ -106,7 +106,7 @@ To read the complete content of a file:
 ```
 *(Output will vary based on the actual file content)*
 
-### 2. Reading Specific Lines
+### Reading Specific Lines
 
 To read only a specific range of lines (e.g., 46-68):
 
@@ -126,7 +126,7 @@ To read only a specific range of lines (e.g., 46-68):
 ```
 *(Output shows only the requested lines with their original line numbers)*
 
-### 3. Reading a Large File (Auto-Truncation)
+### Reading a Large File (Auto-Truncation)
 
 When reading a large file without specifying lines and `auto_truncate` is enabled (or defaults to true based on settings):
 
@@ -148,7 +148,7 @@ When reading a large file without specifying lines and `auto_truncate` is enable
 ```
 *(Output is limited to the configured maximum lines, with a truncation notice)*
 
-### 4. Attempting to Read a Non-Existent File
+### Attempting to Read a Non-Existent File
 
 If the specified file does not exist:
 
@@ -164,7 +164,7 @@ If the specified file does not exist:
 Error: File not found at path 'non_existent_file.txt'.
 ```
 
-### 5. Attempting to Read a Blocked File (.rooignore)
+### Attempting to Read a Blocked File
 
 If the file is excluded by rules in a `.rooignore` file:
 
