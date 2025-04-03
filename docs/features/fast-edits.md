@@ -34,12 +34,3 @@ This slider controls how closely the code sections identified by the AI must mat
 **Use values below 100% with extreme caution.** Lower precision might be necessary occasionally, but always review the proposed changes carefully.
 
 Internally, this setting adjusts a `fuzzyMatchThreshold` used with algorithms like Levenshtein distance to compare code similarity.
-
-
-## Experimental Features
-
-Under the "Experimental Features" section, you will find this option:
-
-    <img src="/img/fast-edits/fast-edits-2.png" alt="Roo Code settings showing the Experimental Features section with the experimental unified diff strategy checkbox" width="500" />
-
-*   **Use experimental unified diff strategy**: This checkbox might appear to enable specific variations or optimizations of the `UnifiedDiffStrategy`. Enabling this could potentially reduce retries caused by model errors but might also introduce unexpected behavior or incorrect edits. Enable only if you understand the risks and are prepared to carefully review all changes.
