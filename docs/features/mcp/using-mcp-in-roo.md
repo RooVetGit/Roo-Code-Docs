@@ -203,3 +203,51 @@ Common issues and solutions:
 * **Permission Errors:** Ensure proper API keys and credentials are configured in your `mcp_settings.json` (for global settings) or `.roo/mcp.json` (for project settings).
 * **Tool Not Available:** Confirm the server is properly implementing the tool and it's not disabled in settings
 * **Slow Performance:** Try adjusting the network timeout value for the specific MCP server
+
+## Platform-Specific MCP Configuration Examples
+
+### Windows Configuration Example
+
+When setting up MCP servers on Windows, you'll need to use the Windows Command Prompt (`cmd`) to execute commands. Here's an example of configuring a Puppeteer MCP server on Windows:
+
+```json
+{
+  "mcpServers": {
+    "puppeteer": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ]
+    }
+  }
+}
+```
+
+This Windows-specific configuration:
+- Uses the `cmd` command to access the Windows Command Prompt
+- Uses `/c` to tell cmd to execute the command and then terminate
+- Uses `npx` to run the package without installing it permanently
+- The `-y` flag automatically answers "yes" to any prompts during installation
+- Runs the `@modelcontextprotocol/server-puppeteer` package which provides browser automation capabilities
+
+:::note
+For macOS or Linux, you would use a different configuration:
+```json
+{
+  "mcpServers": {
+    "puppeteer": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ]
+    }
+  }
+}
+```
+:::
+
+The same approach can be used for other MCP servers on Windows, adjusting the package name as needed for different server types.
