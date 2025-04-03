@@ -251,3 +251,69 @@ For macOS or Linux, you would use a different configuration:
 :::
 
 The same approach can be used for other MCP servers on Windows, adjusting the package name as needed for different server types.
+
+### Runtime Version Manager Configuration
+
+When working with multiple versions of programming languages or runtimes, you may use version managers like [asdf](https://asdf-vm.com/) or [mise](https://mise.jdx.dev/) (formerly rtx). These tools help manage multiple runtime versions on a single system. Here's how to configure MCP servers to work with these version managers:
+
+#### mise Configuration Example
+
+[mise](https://mise.jdx.dev/) is a fast, modern runtime version manager that can be used to specify which version of Node.js, Python, or other runtimes to use for your MCP server:
+
+```json
+{
+  "mcpServers": {
+    "mcp-batchit": {
+      "command": "mise",
+      "args": [
+        "x",
+        "--",
+        "node",
+        "/Users/myself/workspace/mcp-batchit/build/index.js"
+      ],
+      "disabled": false,
+      "alwaysAllow": [
+        "search",
+        "batch_execute"
+      ]
+    }
+  }
+}
+```
+
+This configuration:
+- Uses the `mise` command to manage runtime versions
+- The `x` subcommand executes a command with the configured runtime version
+- The `--` separates mise arguments from the command to run
+- Runs `node` with the specific version configured in your mise settings
+- Points to the MCP server JavaScript file
+- Automatically allows the "search" and "batch_execute" tools
+
+#### asdf Configuration Example
+
+[asdf](https://asdf-vm.com/) is a popular tool for managing multiple runtime versions. Here's how to configure an MCP server to use a specific Node.js version managed by asdf:
+
+```json
+{
+  "mcpServers": {
+    "appsignal": {
+      "command": "/Users/myself/.asdf/installs/nodejs/22.2.0/bin/node",
+      "args": [
+        "/Users/myself/Code/Personal/my-mcp/build/index.js"
+      ],
+      "env": {
+        "ASDF_NODE_VERSION": "22.2.0"
+      },
+      "disabled": false,
+      "alwaysAllow": []
+    }
+  }
+}
+```
+
+This configuration:
+- Directly references the Node.js executable from the asdf installations directory
+- Sets the `ASDF_NODE_VERSION` environment variable to ensure consistent version use
+- Points to the MCP server JavaScript file
+
+Using version managers ensures that your MCP servers run with the correct runtime version, regardless of the system's default version, providing consistency across different environments and preventing version conflicts.
