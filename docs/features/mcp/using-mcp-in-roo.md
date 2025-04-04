@@ -233,8 +233,10 @@ This Windows-specific configuration:
 - The `-y` flag automatically answers "yes" to any prompts during installation
 - Runs the `@modelcontextprotocol/server-puppeteer` package which provides browser automation capabilities
 
-:::note
-For macOS or Linux, you would use a different configuration:
+### macOS and Linux Configuration Example
+
+When setting up MCP servers on macOS or Linux, you can use a simpler configuration since you don't need the Windows Command Prompt. Here's an example of configuring a Puppeteer MCP server on macOS or Linux:
+
 ```json
 {
   "mcpServers": {
@@ -248,15 +250,19 @@ For macOS or Linux, you would use a different configuration:
   }
 }
 ```
-:::
+
+This configuration:
+- Directly uses `npx` without needing a shell wrapper
+- Uses the `-y` flag to automatically answer "yes" to any prompts during installation
+- Runs the `@modelcontextprotocol/server-puppeteer` package which provides browser automation capabilities
 
 The same approach can be used for other MCP servers on Windows, adjusting the package name as needed for different server types.
 
-### Runtime Version Manager Configuration
+## Runtime Version Manager Configuration
 
 When working with multiple versions of programming languages or runtimes, you may use version managers like [asdf](https://asdf-vm.com/) or [mise](https://mise.jdx.dev/) (formerly rtx). These tools help manage multiple runtime versions on a single system. Here's how to configure MCP servers to work with these version managers:
 
-#### mise Configuration Example
+### mise Configuration Example
 
 [mise](https://mise.jdx.dev/) is a fast, modern runtime version manager that can be used to specify which version of Node.js, Python, or other runtimes to use for your MCP server:
 
@@ -289,7 +295,7 @@ This configuration:
 - Points to the MCP server JavaScript file
 - Automatically allows the "search" and "batch_execute" tools
 
-#### asdf Configuration Example
+### asdf Configuration Example
 
 [asdf](https://asdf-vm.com/) is a popular tool for managing multiple runtime versions. Here's how to configure an MCP server to use a specific Node.js version managed by asdf:
 
