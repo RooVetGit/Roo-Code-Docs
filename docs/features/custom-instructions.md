@@ -26,7 +26,7 @@ These instructions only apply within your current workspace, allowing you to cus
 
 #### Workspace-Wide Instructions
 
-Workspace-wide instructions can be defined in the Prompts tab or through a `.roorules` file in your workspace root.
+Workspace-wide instructions can be defined in a `.roorules` file in your workspace root.
 
 #### Mode-Specific Instructions
 
