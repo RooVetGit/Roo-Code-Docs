@@ -18,7 +18,7 @@ Custom modes allow you to define:
 
 *   **A unique name and slug:** For easy identification
 *   **A role definition:** Placed at the beginning of the system prompt, this defines Roo's core expertise and personality for the mode. This placement is crucial as it shapes Roo's fundamental understanding and approach to tasks
-*   **Custom instructions:** Added at the end of the system prompt, these provide specific guidelines that modify or refine Roo's behavior. Unlike `.clinerules` files (which only add rules at the end), this structured placement of role and instructions allows for more nuanced control over Roo's responses
+*   **Custom instructions:** Added at the end of the system prompt, these provide specific guidelines that modify or refine Roo's behavior. Unlike `.roorules` files (which only add rules at the end), this structured placement of role and instructions allows for more nuanced control over Roo's responses
 *   **Allowed tools:** Which Roo Code tools the mode can use (e.g., read files, write files, execute commands)
 *   **File restrictions:** (Optional) Limit file access to specific file types or patterns (e.g., only allow editing `.md` files)
 
@@ -101,8 +101,8 @@ Common regex patterns:
 
 In addition to the `customInstructions` property in JSON, you can use a dedicated file for mode-specific instructions:
 
-1. Create a file named `.clinerules-{mode-slug}` in your workspace root
-   * Replace `{mode-slug}` with your mode's slug (e.g., `.clinerules-docs-writer`)
+1. Create a file named `.roorules-{mode-slug}` in your workspace root
+   * Replace `{mode-slug}` with your mode's slug (e.g., `.roorules-docs-writer`)
 2. Add your custom instructions to this file
 3. Roo Code will automatically apply these instructions to the specified mode
 
@@ -111,7 +111,7 @@ This approach is particularly useful for:
 * Managing instructions with version control
 * Allowing non-technical team members to modify instructions without editing JSON
 
-Note: If both `.clinerules-{mode-slug}` and the `customInstructions` property exist, they will be combined, with the file contents appended after the JSON property.
+Note: If both `.roorules-{mode-slug}` and the `customInstructions` property exist, they will be combined, with the file contents appended after the JSON property.
 
 ## Configuration Precedence
 

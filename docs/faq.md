@@ -116,7 +116,7 @@ Yes, you can customize Roo Code in several ways:
 
 *   **Custom Instructions:** Provide general instructions that apply to all modes, or mode-specific instructions.
 *   **Custom Modes:** Create your own modes with tailored prompts and tool permissions.
-*   **`.clinerules` Files:** Create `.clinerules` files in your project to provide additional guidelines.
+*   **`.roorules` Files:** Create `.roorules` files in your project to provide additional guidelines.
 *   **Settings:** Adjust various settings, such as auto-approval, diff editing, and more.
 
 ### Does Roo Code have any auto approval settings?

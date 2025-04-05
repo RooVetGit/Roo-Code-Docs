@@ -5,9 +5,6 @@ Custom Instructions allow you to personalize how Roo behaves, providing specific
 ## What Are Custom Instructions?
 
 Custom Instructions define specific behaviors, preferences, and constraints beyond Roo's basic role definition. Examples include coding style, documentation standards, testing requirements, and workflow guidelines.
-:::info Rules Files
-Custom Instructions are simply .rules files. They use the common convention of `.clinerules`, `.cursorrules`, and `.windsurfrules` files, which can be placed in your workspace root for version control or configured through the UI.
- :::
 
 ## Setting Custom Instructions
 
@@ -29,7 +26,7 @@ These instructions only apply within your current workspace, allowing you to cus
 
 #### Workspace-Wide Instructions
 
-Workspace-wide instructions are defined through rule files in your workspace root, primarily using `.clinerules`. Additional support for `.cursorrules` and `.windsurfrules` is available for editor compatibility.
+Workspace-wide instructions can be defined in the Prompts tab or through a `.roorules` file in your workspace root.
 
 #### Mode-Specific Instructions
 
@@ -47,7 +44,7 @@ Mode-specific instructions can be set in two independent ways that can be used s
         If the mode itself is global (not workspace-specific), any custom instructions you set for it will also apply globally for that mode across all workspaces.
         :::
 
-2.  **Using Rule Files:** Create a `.clinerules-[mode]` file in your workspace root (e.g., `.clinerules-code`)
+2.  **Using Rule Files:** Create a `.roorules-[mode]` file in your workspace root (e.g., `.roorules-code`)
 
 When both tab instructions and rule files are set for a mode, both sets of instructions will be included in the system prompt.
 
@@ -64,10 +61,8 @@ The following additional instructions are provided by the user, and should be fo
 [Mode-specific Instructions]
 
 Rules:
-[.clinerules-{mode} rules]
-[.clinerules rules]
-[.cursorrules rules]
-[.windsurfrules rules]
+[.roorules-{mode} rules]
+[.roorules rules]
 ```
 
 ## Rules about .rules files
@@ -88,7 +83,7 @@ Rules:
 * "When adding new features to websites, ensure they are responsive and accessible"
 
 :::tip Pro Tip: File-Based Team Standards
-When working in team environments, placing `.clinerules` files under version control allows you to standardize Roo's behavior across your entire development team. This ensures consistent code style, documentation practices, and development workflows for everyone on the project.
+When working in team environments, placing `.roorules` files under version control allows you to standardize Roo's behavior across your entire development team. This ensures consistent code style, documentation practices, and development workflows for everyone on the project.
 :::
 
 ## Combining with Custom Modes
