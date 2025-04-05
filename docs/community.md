@@ -36,6 +36,12 @@ Building upon the concepts of the Roo Code Memory Bank, the [Roo Flow](https://g
 
 Inspired by LangMem, this simple Rule allows you to define new rules and delete them on the fly simply by writing `RULE/NORULE: (your new rule)` in your message. Roo Code will then add it to or remove it from the `.clinerules` file. This way you can quickly define project specific rules on the fly and build them up step by step. Check out [Roo Code Dynamic Rules](https://github.com/cannuri/roo-code-dynamic-rules) on Github.
 
+## Roo Commander Project by [@jezweb](https://github.com/jezweb)
+
+The [Roo Commander](https://github.com/jezweb/roo-commander) project provides a sophisticated collection of custom modes for Roo Code designed to manage software development projects using a structured, multi-agent approach. It introduces a virtual, specialized software development team orchestrated by the **👑 Roo Commander** mode, leveraging specialized roles and a structured project journal for enhanced context management and workflow organization.
+
+
+
 ## Custom Modes Gallery
 
 Share and discover custom modes created by the community! Learn how to create and configure custom modes in the [Custom Modes documentation](/features/custom-modes). To add your own custom mode to the gallery, create a pull request from the "Edit this page" link below.
