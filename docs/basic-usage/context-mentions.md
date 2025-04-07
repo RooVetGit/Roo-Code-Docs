@@ -15,7 +15,7 @@ Context mentions are a powerful way to provide Roo Code with specific informatio
 | Mention Type | Format | Description | Example Usage |
 |--------------|--------|-------------|--------------|
 | **File** | `@/path/to/file.ts` | Includes file contents in request context | "Explain the function in @/src/utils.ts" |
-| **Folder** | `@/path/to/folder/` | Provides directory structure in tree format | "What files are in @/src/components/?" |
+| **Folder** | `@/path/to/folder` | Includes contents of all files directly in the folder (non-recursive) | "Analyze the code in @/src/components" |
 | **Problems** | `@problems` | Includes VS Code Problems panel diagnostics | "@problems Fix all errors in my code" |
 | **Terminal** | `@terminal` | Includes recent terminal command and output | "Fix the errors shown in @terminal" |
 | **Git Commit** | `@a1b2c3d` | References specific commit by hash | "What changed in commit @a1b2c3d?" |
@@ -39,14 +39,14 @@ Context mentions are a powerful way to provide Roo Code with specific informatio
 
 <img src="/img/context-mentions/context-mentions-2.png" alt="Folder mention example showing directory contents being referenced in the chat" width="600" />
 
-*Folder mentions display directory structure in a readable tree format.*
+*Folder mentions include the content of all files within the specified directory.*
 | Capability | Details |
 |------------|---------|
-| **Format** | `@/path/to/folder/` (note trailing slash) |
-| **Provides** | Hierarchical tree display with ├── and └── prefixes |
-| **Includes** | Immediate child files and directories (not recursive) |
-| **Best for** | Understanding project structure |
-| **Tip** | Use with file mentions to check specific file contents |
+| **Format** | `@/path/to/folder` (no trailing slash) |
+| **Provides** | Complete contents of all files within the directory |
+| **Includes** | Contents of all files directly within the folder (not recursive) |
+| **Best for** | Providing context from multiple files in a directory |
+| **Tip** | Be mindful of context window limits when mentioning large directories |
 
 ### Problems Mention
 
