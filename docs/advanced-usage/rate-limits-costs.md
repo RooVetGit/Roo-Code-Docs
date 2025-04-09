@@ -1,6 +1,6 @@
 # Rate Limits and Costs
 
-Understanding and managing API usage is crucial for a smooth and cost-effective experience with Roo Code. This section explains how to track your token usage and costs. Rate limits, which default to 0 (disabled) and typically don't need adjustment, are now configured per profile; see the [API Configuration Profiles](/features/api-configuration-profiles#configuring-rate-limits-per-profile) documentation for details on how to set them if needed.
+Understanding and managing API usage is crucial for a smooth and cost-effective experience with Roo Code. This section explains how to track your token usage and costs. Rate limits, which default to 0 (disabled) and typically don't need adjustment, are now configured per profile; see the [API Configuration Profiles](/features/api-configuration-profiles#creating-a-profile) documentation for details on how to set them if needed.
 
 ## Token Usage
 

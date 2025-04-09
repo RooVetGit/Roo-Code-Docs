@@ -2,10 +2,23 @@
 
 Roo Code provides sophisticated browser automation capabilities that let you interact with websites directly from VS Code. This feature enables testing web applications, automating browser tasks, and capturing screenshots without leaving your development environment.
 
-<video width="100%" controls>
-  <source src="/img/browser-use/Roo-Code-Browser-Use.mp4#t=0.001" type="video/mp4"></source>
-  Your browser does not support the video tag.
-</video>
+
+
+<div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
+  <iframe
+    src="https://www.youtube.com/embed/SJae206swxA"
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+    }}
+    frameBorder="0"
+    allow="autoplay; encrypted-media"
+    allowFullScreen
+  ></iframe>
+</div>
 
 :::info Model Support Required
 Browser Use within Roo Code requires the use of Claude Sonnet 3.5 or 3.7
