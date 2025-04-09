@@ -2,6 +2,10 @@
 
 Modes in Roo Code are specialized personas that tailor the assistant's behavior to your current task. Each mode offers different capabilities, expertise, and access levels to help you accomplish specific goals.
 
+:::info Model Persistence
+Each mode remembers the last model you used with it. When switching modes, Roo automatically selects the model you previously set for that mode—allowing you to maintain different preferred models for different types of tasks without manual reconfiguration.
+:::
+
 ## Why Use Different Modes?
 
 - **Task specialization:** Get precisely the type of assistance you need for your current task
