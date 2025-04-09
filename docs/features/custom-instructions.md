@@ -2,6 +2,45 @@
 
 Custom Instructions allow you to personalize how Roo behaves, providing specific guidance that shapes responses, coding style, and decision-making processes.
 
+:::info Instruction File Locations
+You can provide custom instructions using dedicated files or directories within your workspace. This allows for better organization and version control.
+
+**Workspace-Wide Instructions:** Apply to all modes in the project.
+*   **Preferred Method: Directory (`.roo/rules/`)**
+    ```
+    .
+    ├── .roo/
+    │   └── rules/          # Workspace-wide rules
+    │       ├── 01-general.md
+    │       └── 02-coding-style.txt
+    └── ... (other project files)
+    ```
+*   **Fallback Method: Single File (`.roorules`)**
+    ```
+    .
+    ├── .roorules           # Workspace-wide rules (single file)
+    └── ... (other project files)
+    ```
+
+**Mode-Specific Instructions:** Apply only to a specific mode (e.g., `code`).
+*   **Preferred Method: Directory (`.roo/rules-{modeSlug}/`)**
+    ```
+    .
+    ├── .roo/
+    │   └── rules-code/     # Rules for "code" mode
+    │       ├── 01-js-style.md
+    │       └── 02-ts-style.md
+    └── ... (other project files)
+    ```
+*   **Fallback Method: Single File (`.roorules-{modeSlug}`)**
+    ```
+    .
+    ├── .roorules-code      # Rules for "code" mode (single file)
+    └── ... (other project files)
+    ```
+The directory methods take precedence if they exist and contain files. See [Workspace-Level Instructions](#workspace-level-instructions) and [Mode-Specific Instructions](#mode-specific-instructions) for details.
+:::
+
 ## What Are Custom Instructions?
 
 Custom Instructions define specific behaviors, preferences, and constraints beyond Roo's basic role definition. Examples include coding style, documentation standards, testing requirements, and workflow guidelines.

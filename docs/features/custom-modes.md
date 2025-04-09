@@ -2,6 +2,28 @@
 
 Roo Code allows you to create **custom modes** to tailor Roo's behavior to specific tasks or workflows. Custom modes can be either **global** (available across all projects) or **project-specific** (defined within a single project).
 
+:::info Mode-Specific Instruction File Locations
+You can provide instructions for custom modes using dedicated files or directories within your workspace. This allows for better organization and version control compared to only using the JSON `customInstructions` property.
+
+**Preferred Method: Directory (`.roo/rules-{mode-slug}/`)**
+```
+.
+├── .roo/
+│   └── rules-docs-writer/  # Example for mode slug "docs-writer"
+│       ├── 01-style-guide.md
+│       └── 02-formatting.txt
+└── ... (other project files)
+```
+
+**Fallback Method: Single File (`.roorules-{mode-slug}`)**
+```
+.
+├── .roorules-docs-writer  # Example for mode slug "docs-writer"
+└── ... (other project files)
+```
+The directory method takes precedence if it exists and contains files. See [Mode-Specific Instructions via Files/Directories](#mode-specific-instructions-via-filesdirectories) for details.
+:::
+
 ## Why Use Custom Modes?
 
 *   **Specialization:** Create modes optimized for specific tasks, like "Documentation Writer," "Test Engineer," or "Refactoring Expert"
