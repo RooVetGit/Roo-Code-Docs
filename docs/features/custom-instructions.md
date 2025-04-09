@@ -24,9 +24,17 @@ These instructions apply across all workspaces and maintain your preferences reg
 
 These instructions only apply within your current workspace, allowing you to customize Roo Code's behavior for specific projects.
 
-#### Workspace-Wide Instructions
+#### Workspace-Wide Instructions via Files/Directories
 
-Workspace-wide instructions can be defined in a `.roorules` file in your workspace root.
+Workspace-wide instructions apply to all modes within the current project and can be defined using files:
+
+*   **Preferred Method: Directory-Based (`.roo/rules/`)**
+    *   Create a directory named `.roo/rules/` in your workspace root.
+    *   Place instruction files (e.g., `.md`, `.txt`) inside. Roo Code reads files recursively, appending their content to the system prompt in **alphabetical order** based on filename.
+    *   This method takes precedence if the directory exists and contains files.
+*   **Fallback Method: File-Based (`.roorules`)**
+    *   If `.roo/rules/` doesn't exist or is empty, Roo Code looks for a single `.roorules` file in the workspace root.
+    *   If found, its content is loaded.
 
 #### Mode-Specific Instructions
 
@@ -44,9 +52,16 @@ Mode-specific instructions can be set in two independent ways that can be used s
         If the mode itself is global (not workspace-specific), any custom instructions you set for it will also apply globally for that mode across all workspaces.
         :::
 
-2.  **Using Rule Files:** Create a `.roorules-[mode]` file in your workspace root (e.g., `.roorules-code`)
+2.  **Using Rule Files/Directories:** Provide mode-specific instructions via files:
+    *   **Preferred Method: Directory-Based (`.roo/rules-{modeSlug}/`)**
+        *   Create a directory named `.roo/rules-{modeSlug}/` (e.g., `.roo/rules-docs-writer/`) in your workspace root.
+        *   Place instruction files inside (recursive loading). Files are read and appended to the system prompt in **alphabetical order** by filename.
+        *   This method takes precedence over the fallback file method for the specific mode if the directory exists and contains files.
+    *   **Fallback Method: File-Based (`.roorules-{modeSlug}`)**
+        *   If `.roo/rules-{modeSlug}/` doesn't exist or is empty, Roo Code looks for a single `.roorules-{modeSlug}` file (e.g., `.roorules-code`) in the workspace root.
+        *   If found, its content is loaded for that mode.
 
-When both tab instructions and rule files are set for a mode, both sets of instructions will be included in the system prompt.
+Instructions from the Prompts tab, the mode-specific directory/file, and the workspace-wide directory/file are all combined. See the section below for the exact order.
 
 ## How Instructions are Combined
 
@@ -55,19 +70,31 @@ Instructions are placed in the system prompt in this exact format:
 ```
 ====
 USER'S CUSTOM INSTRUCTIONS
-The following additional instructions are provided by the user, and should be followed to the best of your ability without interfering with the TOOL USE guidelines.
-[Language Preference (if set)]
-[Global Instructions]
-[Mode-specific Instructions]
 
-Rules:
-[.roorules-{mode} rules]
-[.roorules rules]
+The following additional instructions are provided by the user, and should be followed to the best of your ability without interfering with the TOOL USE guidelines.
+
+[Language Preference (if set)]
+
+[Global Instructions (from Prompts Tab)]
+
+[Mode-specific Instructions (from Prompts Tab for the current mode)]
+
+Mode-Specific Instructions (from Files/Directories):
+[Contents of files in .roo/rules-{modeSlug}/ (if directory exists and is not empty)]
+[Contents of .roorules-{modeSlug} file (if .roo/rules-{modeSlug}/ does not exist or is empty, and file exists)]
+
+Workspace-Wide Instructions (from Files/Directories):
+[Contents of files in .roo/rules/ (if directory exists and is not empty)]
+[Contents of .roorules file (if .roo/rules/ does not exist or is empty, and file exists)]
+
+====
 ```
+
+*Note: The exact order ensures that more specific instructions (mode-level) appear before more general ones (workspace-wide), and directory-based rules take precedence over file-based fallbacks within each level.*
 
 ## Rules about .rules files
 
-* **File Location:** All rule files must be placed in the workspace root directory
+* **File Location:** The preferred method uses directories within `.roo/` (`.roo/rules/` and `.roo/rules-{modeSlug}/`). The fallback method uses single files (`.roorules` and `.roorules-{modeSlug}`) located directly in the workspace root.
 * **Empty Files:** Empty or missing rule files are silently skipped
 * **Source Headers:** Each rule file's contents are included with a header indicating its source
 * **Rule Interaction:** Mode-specific rules complement global rules rather than replacing them
@@ -83,7 +110,7 @@ Rules:
 * "When adding new features to websites, ensure they are responsive and accessible"
 
 :::tip Pro Tip: File-Based Team Standards
-When working in team environments, placing `.roorules` files under version control allows you to standardize Roo's behavior across your entire development team. This ensures consistent code style, documentation practices, and development workflows for everyone on the project.
+When working in team environments, using the `.roo/rules/` directory structure (and potentially `.roo/rules-{modeSlug}/` directories for specific modes) under version control is the recommended way to standardize Roo's behavior across your team. This allows for better organization of multiple instruction files and ensures consistent code style, documentation practices, and development workflows. The older `.roorules` file method can still be used but offers less flexibility.
 :::
 
 ## Combining with Custom Modes

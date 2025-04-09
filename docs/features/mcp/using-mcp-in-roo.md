@@ -66,13 +66,23 @@ Both files use a JSON format with a `mcpServers` object containing named server 
   
   For more in-depth information about how STDIO transport works, see [STDIO Transport](/features/mcp/server-transports#stdio-transport).
   
+  STDIO configuration parameters:
+
+  *   `command` (required): The executable to run (e.g., `node`, `python`, `npx`, or an absolute path).
+  *   `args` (optional): An array of string arguments to pass to the command.
+  *   `cwd` (optional): The working directory from which to launch the server process. If omitted, defaults to the first workspace folder path or the main process's working directory. Useful if the server script relies on relative paths.
+  *   `env` (optional): An object containing environment variables to set for the server process.
+  *   `alwaysAllow` (optional): An array of tool names from this server to automatically approve.
+  *   `disabled` (optional): Set to `true` to disable this server configuration.
+
   STDIO configuration example:
   ```json
   {
     "mcpServers": {
       "local-server": {
         "command": "node",
-        "args": ["/path/to/server.js"],
+        "args": ["server.js"],
+        "cwd": "/path/to/project/root", // Optional: Specify working directory
         "env": {
           "API_KEY": "your_api_key"
         },
@@ -95,15 +105,21 @@ Both files use a JSON format with a `mcpServers` object containing named server 
   
   For more in-depth information about how SSE transport works, see [SSE Transport](/features/mcp/server-transports#sse-transport).
   
+  SSE configuration parameters:
+
+  *   `url` (required): The full URL endpoint of the remote MCP server (e.g., `https://your-server.com/mcp`).
+  *   `headers` (optional): An object containing custom HTTP headers to send with requests (e.g., for authentication tokens).
+  *   `alwaysAllow` (optional): An array of tool names from this server to automatically approve.
+  *   `disabled` (optional): Set to `true` to disable this server configuration.
+
   SSE configuration example:
-  
   ```json
   {
     "mcpServers": {
       "remote-server": {
         "url": "https://your-server-url.com/mcp",
         "headers": {
-          "Authorization": "Bearer your-token"
+          "Authorization": "Bearer your-token" // Example: Authentication header
         },
         "alwaysAllow": ["tool3"],
         "disabled": false

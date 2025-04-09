@@ -18,7 +18,7 @@ Custom modes allow you to define:
 
 *   **A unique name and slug:** For easy identification
 *   **A role definition:** Placed at the beginning of the system prompt, this defines Roo's core expertise and personality for the mode. This placement is crucial as it shapes Roo's fundamental understanding and approach to tasks
-*   **Custom instructions:** Added at the end of the system prompt, these provide specific guidelines that modify or refine Roo's behavior. Unlike `.roorules` files (which only add rules at the end), this structured placement of role and instructions allows for more nuanced control over Roo's responses
+*   **Custom instructions:** Added near the end of the system prompt, these provide specific guidelines that modify or refine Roo's behavior for the mode. You can define these using the `customInstructions` JSON property, and/or by adding instruction files to a dedicated directory (see below). The preferred method for file-based instructions is now using a **`.roo/rules-{mode-slug}/` directory**, which allows for better organization and takes precedence over the older `.roorules-{mode-slug}` file method. This structured placement allows for more nuanced control over Roo's responses.
 *   **Allowed tools:** Which Roo Code tools the mode can use (e.g., read files, write files, execute commands)
 *   **File restrictions:** (Optional) Limit file access to specific file types or patterns (e.g., only allow editing `.md` files)
 
@@ -97,21 +97,36 @@ Common regex patterns:
 * Allows optimizing the model selection for specific tasks
 * Example: `{"model": "gpt-4", "temperature": 0.2}`
 
-### Mode-Specific Custom Instructions Files
+### Mode-Specific Instructions via Files/Directories
 
-In addition to the `customInstructions` property in JSON, you can use a dedicated file for mode-specific instructions:
+In addition to the `customInstructions` property in JSON, you can provide mode-specific instructions via files in your workspace. This is particularly useful for:
 
-1. Create a file named `.roorules-{mode-slug}` in your workspace root
-   * Replace `{mode-slug}` with your mode's slug (e.g., `.roorules-docs-writer`)
-2. Add your custom instructions to this file
-3. Roo Code will automatically apply these instructions to the specified mode
+*   Organizing lengthy or complex instructions into multiple, manageable files.
+*   Managing instructions easily with version control.
+*   Allowing non-technical team members to modify instructions without editing JSON.
 
-This approach is particularly useful for:
-* Keeping lengthy instructions separate from your mode configuration
-* Managing instructions with version control
-* Allowing non-technical team members to modify instructions without editing JSON
+There are two ways Roo Code loads these instructions, with a clear preference for the newer directory-based method:
 
-Note: If both `.roorules-{mode-slug}` and the `customInstructions` property exist, they will be combined, with the file contents appended after the JSON property.
+**1. Preferred Method: Directory-Based Instructions (`.roo/rules-{mode-slug}/`)**
+
+*   **Structure:** Create a directory named `.roo/rules-{mode-slug}/` in your workspace root. Replace `{mode-slug}` with your mode's slug (e.g., `.roo/rules-docs-writer/`).
+*   **Content:** Place one or more files (e.g., `.md`, `.txt`) containing your instructions inside this directory. You can organize instructions further using subdirectories; Roo Code reads files recursively, appending their content to the system prompt in **alphabetical order** based on filename.
+*   **Loading:** All instruction files found within this directory structure will be loaded and applied to the specified mode.
+
+**2. Fallback (Backward Compatibility): File-Based Instructions (`.roorules-{mode-slug}`)**
+
+*   **Structure:** If the `.roo/rules-{mode-slug}/` directory **does not exist or is empty**, Roo Code will look for a single file named `.roorules-{mode-slug}` in your workspace root (e.g., `.roorules-docs-writer`).
+*   **Loading:** If found, the content of this single file will be loaded as instructions for the mode.
+
+**Precedence:**
+
+*   The **directory-based method (`.roo/rules-{mode-slug}/`) takes precedence**. If this directory exists and contains files, any corresponding root-level `.roorules-{mode-slug}` file will be **ignored** for that mode.
+*   This ensures that projects migrated to the new directory structure behave predictably, while older projects using the single-file method remain compatible.
+
+**Combining with JSON `customInstructions`:**
+
+*   Instructions loaded from either the directory or the fallback file are combined with the `customInstructions` property defined in the mode's JSON configuration.
+*   Typically, the content from the files/directories is appended after the content from the JSON `customInstructions` property.
 
 ## Configuration Precedence
 
@@ -122,6 +137,7 @@ Mode configurations are applied in this order:
 3. Default mode configurations
 
 This means that project-specific configurations will override global configurations, which in turn override default configurations.
+*   **Note on Instruction Files:** Within the loading of mode-specific instructions from the filesystem, the directory `.roo/rules-{mode-slug}/` takes precedence over the single file `.roorules-{mode-slug}` found in the workspace root.
 
 ## Creating Custom Modes
 

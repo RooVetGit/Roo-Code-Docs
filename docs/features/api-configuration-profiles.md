@@ -14,6 +14,7 @@ Configuration profiles can have their own:
 - [Temperature settings](/features/model-temperature) for controlling response randomness
 - Thinking budgets
 - Provider-specific settings
+- Rate limit settings
 
 Note that available settings vary by provider and model. Each provider offers different configuration options, and even within the same provider, different models may support different parameter ranges or features.
 
@@ -38,10 +39,14 @@ Note that available settings vary by provider and model. Each provider offers di
    - Choose a model
    
       <img src="/img/api-configuration-profiles/api-configuration-profiles-8.png" alt="Model selection interface" width="550" />
-   - Adjust model parameters
-   
-      <img src="/img/api-configuration-profiles/api-configuration-profiles-5.png" alt="Model parameter adjustment controls" width="550" />
+   - Configure the **Rate Limit** for this profile:
+     - **Default is 0 (disabled), which is suitable for most users.** If needed, you can set a minimum time (in seconds) between API requests *for this profile* to help manage costs or avoid provider rate limits.
+     - A value of 0 disables rate limiting (default).
+     - Requests using other profiles follow their own rate limits.
 
+         <img src="/img/api-configuration-profiles/api-configuration-profiles-12.png" alt="Rate limit slider control within API profile settings" width="550" />
+   - Adjust model parameters (like [temperature](/features/model-temperature))
+   
 ### Switching Profiles
 
 Switch profiles in two ways:
@@ -86,5 +91,5 @@ API keys are stored securely in VSCode's Secret Storage and are never exposed in
 - Works with [custom modes](/features/custom-modes) you create
 - Integrates with [local models](/advanced-usage/local-models) for offline work
 - Supports [temperature settings](/features/model-temperature) per mode
-- Enhances cost management with [rate limits and usage tracking](/advanced-usage/rate-limits-costs)
+- Supports per-profile rate limits (configured here) and general [usage tracking/cost info](/advanced-usage/rate-limits-costs)
 
