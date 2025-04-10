@@ -172,12 +172,6 @@ You can quickly create a basic custom mode by asking Roo Code to do it for you. 
 Create a new mode called "Documentation Writer". It should only be able to read files and write Markdown files.
 ```
 Roo Code will guide you through the process. However, for fine-tuning modes or making specific adjustments, you'll want to use the Prompts tab or manual configuration methods described below.
-:::info
-#### Custom Mode Creation Settings
-When enabled, Roo allows you to create custom modes using prompts like 'Make me a custom mode that...'. Disabling this reduces your system prompt by about 700 tokens when this feature isn't needed. When disabled you can still manually create custom modes using the + button above or by editing the related config JSON. 
-<img src="/img/custom-modes/custom-modes-1.png" alt="Enable Custom Mode Creation Through Prompts setting" width="600" />
-You can find this setting within the prompt settings by clicking the <Codicon name="notebook" /> icon in the Roo Code top menu bar.
-:::
 
 ### 2. Using the Prompts Tab
 
