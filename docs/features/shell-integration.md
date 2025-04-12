@@ -32,7 +32,7 @@ Roo Code provides several settings to fine-tune shell integration. Access these 
 
 #### Terminal Output Limit
 <img src="/img/shell-integration/shell-integration.png" alt="Terminal output limit slider set to 500" width="600" />
-
+Controls the maximum number of lines captured from terminal output. When exceeded, it keeps 20% of the beginning and 80% of the end with a truncation message in between. This prevents excessive token usage while maintaining context. Default: 500 lines.
 Controls the maximum number of lines captured from terminal output. When exceeded, lines are removed from the middle to save tokens. Default: 500 lines.
 
 #### Terminal Shell Integration Timeout
