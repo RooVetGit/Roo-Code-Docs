@@ -114,11 +114,6 @@ Common regex patterns:
 * Additional behavioral guidelines for the mode
 * Example: `"Focus on explaining concepts and providing examples"`
 
-#### `apiConfiguration`
-* Optional settings to customize the AI model and parameters for this mode
-* Allows optimizing the model selection for specific tasks
-* Example: `{"model": "gpt-4", "temperature": 0.2}`
-
 ### Mode-Specific Instructions via Files/Directories
 
 In addition to the `customInstructions` property in JSON, you can provide mode-specific instructions via files in your workspace. This is particularly useful for:

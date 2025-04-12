@@ -104,7 +104,7 @@ Yes, if you are using a provider with a model that support web browsing. Be mind
 
 ### Can Roo Code run commands in my terminal?
 
-Yes, Roo Code can execute commands in your VS Code terminal.  You will be prompted to approve each command before it's executed, unless you've enabled auto-approval for commands. Be extremely cautious about auto-approving commands. If you're experiencing issues with terminal commands, see the [Shell Integration Guide](/troubleshooting/shell-integration) for troubleshooting.
+Yes, Roo Code can execute commands in your VS Code terminal.  You will be prompted to approve each command before it's executed, unless you've enabled auto-approval for commands. Be extremely cautious about auto-approving commands. If you're experiencing issues with terminal commands, see the [Shell Integration Guide](/features/shell-integration) for troubleshooting.
 
 ### How do I provide feedback to Roo Code?
 

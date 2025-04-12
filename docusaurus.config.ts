@@ -152,6 +152,10 @@ const config: Config = {
             to: '/features/mcp/mcp-vs-api',
             from: ['/mcp/mcp-vs-api'],
           },
+          {
+            to: '/features/shell-integration',
+            from: ['/troubleshooting/shell-integration'],
+          },
         ],
       },
     ],

@@ -36,6 +36,7 @@ const sidebars: SidebarsConfig = {
         'features/model-temperature',
         'features/settings-management',
         'features/suggested-responses',
+        'features/shell-integration',
         {
           type: 'category',
           label: 'Tool Use',
@@ -79,7 +80,7 @@ const sidebars: SidebarsConfig = {
             'features/experimental/experimental-features',
           ],
         },
-        'features/more-features'
+        'features/more-features',
       ],
     },
     {
@@ -131,13 +132,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Troubleshooting',
-      items: [
-        'troubleshooting/shell-integration',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Update Notes',
       items: [
         'update-notes/index',
@@ -145,6 +139,9 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '3.11',
           items: [
+            { type: 'doc', id: 'update-notes/v3.11.13', label: '3.11.13' },
+            { type: 'doc', id: 'update-notes/v3.11.12', label: '3.11.12' },
+            { type: 'doc', id: 'update-notes/v3.11.11', label: '3.11.11' },
             { type: 'doc', id: 'update-notes/v3.11.10', label: '3.11.10' },
             { type: 'doc', id: 'update-notes/v3.11.9', label: '3.11.9' },
             { type: 'doc', id: 'update-notes/v3.11.8', label: '3.11.8' },
