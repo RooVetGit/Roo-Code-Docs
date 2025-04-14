@@ -117,6 +117,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Evals',
+      items: [
+        'evals/evals',
+      ],
+    },
+    {
+      type: 'category',
       label: 'FAQ',
       items: [
         'faq',
