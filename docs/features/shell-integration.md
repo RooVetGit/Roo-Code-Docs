@@ -43,7 +43,17 @@ Maximum time to wait for shell integration to initialize before executing comman
 #### Terminal Command Delay
 <img src="/img/shell-integration/shell-integration-2.png" alt="Terminal command delay slider set to 0ms" width="600" />
 
-Adds a small pause after running commands to help Roo capture all output correctly. This is helpful if Roo seems to miss parts of command output or reacts before commands finish. Default: 0ms (disabled).
+Adds a small pause after running commands to help Roo capture all output correctly. This setting can significantly impact shell integration reliability due to VSCode's implementation of terminal integration across different operating systems and shell configurations:
+
+- **Default**: 0ms (as of Roo v3.11.13)
+- **Common Values**:
+  * 0ms: Works best for some users with newer VSCode versions
+  * 50ms: Historical default, still effective for many users
+  * 150ms: Recommended for PowerShell users
+- **Note**: Different values may work better depending on your:
+  * VSCode version
+  * Shell customizations (oh-my-zsh, powerlevel10k, etc.)
+  * Operating system and environment
 
 ### Advanced Settings
 
@@ -187,6 +197,59 @@ Visual indicators of active shell integration:
 3. Working directory updates in terminal title
 4. Command duration and exit code reporting
 
+## WSL Terminal Integration Methods
+
+When using Windows Subsystem for Linux (WSL), there are two distinct ways to use VSCode with WSL, each with different implications for shell integration:
+
+### Method 1: VSCode Windows with WSL Terminal
+
+In this setup:
+- VSCode runs natively in Windows
+- You use the WSL terminal integration feature in VSCode
+- Shell commands are executed through the WSL bridge
+- May experience additional latency due to Windows-WSL communication
+- Shell integration markers may be affected by the WSL-Windows boundary: you must make sure that `source "$(code --locate-shell-integration-path <shell>)"` is loaded for your shell within the WSL environment because it may not get automatically loaded; see above.
+
+### Method 2: VSCode Running Within WSL
+
+In this setup:
+- You launch VSCode directly from within WSL using `code .`
+- VSCode server runs natively in the Linux environment
+- Direct access to Linux filesystem and tools
+- Better performance and reliability for shell integration
+- Shell integration is loaded automatically since VSCode runs natively in the Linux environment
+- Recommended approach for WSL development
+
+For optimal shell integration with WSL, we recommend:
+1. Open your WSL distribution
+2. Navigate to your project directory
+3. Launch VSCode using `code .`
+4. Use the integrated terminal within VSCode
+
+## Known Issues and Workarounds
+
+### Shell Integration Failures After VSCode 1.98
+
+**Issue**: After VSCode updates beyond version 1.98, shell integration may fail with the error "VSCE output start escape sequence (]633;C or ]133;C) not received".
+
+**Solutions**:
+1. **Set Terminal Command Delay**:
+   - Set the Terminal Command Delay to 50ms in Roo Code settings
+   - Restart all terminals after changing this setting
+   - This matches older default behavior and may resolve the issue, however some users have reported that a value of 0ms works better. This is a workaround for upstream VSCode problems.
+
+2. **Roll Back VSCode Version**:
+   - Download VSCode v1.98 from [VSCode Updates](https://code.visualstudio.com/updates/v1_98)
+   - Replace your current VSCode installation
+   - No backup of Roo settings needed
+
+3. **WSL-Specific Workaround**:
+   - If using WSL, ensure you launch VSCode from within WSL using `code .`
+
+4. **ZSH Users**:
+   - Try enabling some or all ZSH-related workarounds in Roo settings
+   - These settings can help regardless of your operating system
+
 ## Known Issues and Workarounds
 
 ### Ctrl+C Behavior
@@ -215,6 +278,41 @@ Visual indicators of active shell integration:
 **Workaround**: If you notice missing output, try closing and reopening the terminal tab, then run the command again. This refreshes the terminal connection.
 
 ## Troubleshooting Resources
+
+### Checking Debug Logs
+When shell integration issues occur, check the debug logs:
+1. Open Help → Toggle Developer Tools → Console
+2. Set "Show All Levels" to see all log messages
+3. Look for messages containing `[Terminal Process]`
+4. Check `preOutput` content in error messages:
+   - Empty preOutput (`''`) means VSCode sent no data
+   - This indicates a potential VSCode shell integration issue, or an upstream bug that is out of our control
+   - The absence of shell integration markers may require adjusting settings to work around possible upstream bugs or local workstation configuration issues related to shell initialization and VSCode's loading of special shell integration hooks
+
+### Using the VSCode Terminal Integration Test Extension
+The [VSCode Terminal Integration Test Extension](https://github.com/KJ7LNW/vsce-test-terminal-integration) helps diagnose shell integration issues by testing different settings combinations:
+
+
+1. **When Commands Stall**:
+   - If you see "command already running" warnings, click "Reset Stats" to reset the terminal state
+   - These warnings indicate shell integration is not working
+   - Try different settings combinations until you find one that works
+   - If it really gets stuck, restart the extension by closing the window and pressing F5
+
+2. **Testing Settings**:
+   - Systematically try different combinations of:
+     * Terminal Command Delay
+     * Shell Integration settings
+   - Document which combinations succeed or fail
+   - This helps identify patterns in shell integration issues
+
+3. **Reporting Issues**:
+   - Once you find a problematic configuration
+   - Document the exact settings combination
+   - Note your environment (OS, VSCode version, shell, and any shell prompt customization)
+   - Open an issue with these details to help improve shell integration
+
+### Additional Resources
 
 - [VSCode Terminal Output Issue #237208](https://github.com/microsoft/vscode/issues/237208)
 - [VSCode Terminal Integration Test Repository](https://github.com/KJ7LNW/vsce-test-terminal-integration)
