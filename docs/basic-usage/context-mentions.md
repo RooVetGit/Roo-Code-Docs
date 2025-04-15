@@ -44,7 +44,7 @@ Context mentions are a powerful way to provide Roo Code with specific informatio
 |------------|---------|
 | **Format** | `@/path/to/folder` (no trailing slash) |
 | **Provides** | Complete contents of all files within the directory |
-| **Includes** | Contents of all files directly within the folder (not recursive) |
+| **Includes** | Contents of non-binary text files directly within the folder (not recursive) |
 | **Best for** | Providing context from multiple files in a directory |
 | **Tip** | Be mindful of context window limits when mentioning large directories |
 
@@ -110,13 +110,16 @@ The dropdown automatically suggests:
 - Recent git commits
 - Special keywords (`problems`, `terminal`, `git-changes`)
 
-## Best Practices
+The dropdown automatically filters out common directories like `node_modules`, `.git`, `dist`, and `out` to reduce noise, even though their content could be included if manually typed.
 
-| Practice | Description |
+## Important Behaviors
+
+### Ignore File Interactions
+
+| Behavior | Description |
 |----------|-------------|
-| **Use specific paths** | Reference exact files rather than describing them |
-| **Use relative paths** | Always start from workspace root: `@/src/file.ts` not `@C:/Projects/src/file.ts` |
-| **Verify references** | Ensure paths and commit hashes are correct |
-| **Click mentions** | Click mentions in chat history to open files or view content |
-| **Eliminate copy-pasting** | Use mentions instead of manually copying code or errors |
-| **Combine mentions** | "Fix @problems in @/src/component.ts using the pattern from commit @a1b2c3d" |
+| **`.rooignore` bypass** | File and folder `@mentions` bypass `.rooignore` checks when fetching content for context. Content from ignored files will be included if directly mentioned. |
+| **`.gitignore` bypass** | Similarly, file and folder `@mentions` do not respect `.gitignore` rules when fetching content. |
+| **Git command respect** | Git-related mentions (`@git-changes`, `@commit-hash`) do respect `.gitignore` since they rely on Git commands. |
+
+
