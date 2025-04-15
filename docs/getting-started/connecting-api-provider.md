@@ -73,4 +73,11 @@ Once you have your API key:
 4. Select your model:
    - For **OpenRouter**: select `anthropic/claude-3.7-sonnet` ([model details](https://openrouter.ai/anthropic/claude-3.7-sonnet))
    - For **Anthropic**: select `claude-3-7-sonnet-20250219` ([model details](https://www.anthropic.com/pricing#anthropic-api))
+
+:::info Model Selection Advice
+We strongly recommend **Claude 3.7 Sonnet** for the best experience—it "just works" out of the box. Roo Code has been extensively optimized for this model's capabilities and instruction-following behavior.
+
+Selecting alternative models is an advanced feature that introduces complexity. Different models vary significantly in how they follow tool instructions, parse formats, and maintain context through multi-step operations. If you do experiment with other models, choose ones specifically designed for structured reasoning and tool use.
+:::
+
 5. Click "Let's go!" to save your settings and start using Roo Code
