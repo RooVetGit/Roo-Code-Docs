@@ -46,6 +46,7 @@ You can find the option and instructions within the Roo Code UI:
 -   **Impact on Functionality:** Custom prompts override standard instructions, including those for tool usage and response consistency. This can cause unexpected behavior or errors if not managed carefully.
 -   **Mode-Specific:** Each override file applies only to the mode specified in its filename (`{mode-slug}`).
 -   **No File, No Override:** If the `.roo/system-prompt-{mode-slug}` file doesn't exist, Roo Code uses the standard system prompt generation process for that mode.
+-   **Blank Files Ignored:** If the override file exists but is empty (blank), it will be ignored and the default system prompt will be used.
 -   **Directory Creation:** Roo Code ensures the `.roo` directory exists before attempting to read or create the override file.
 
 Use this feature cautiously. While powerful for customization, incorrect implementation can significantly degrade Roo Code's performance and reliability for the affected mode.
