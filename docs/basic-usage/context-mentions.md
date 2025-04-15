@@ -109,6 +109,7 @@ The dropdown automatically suggests:
 - Visible folders
 - Recent git commits
 - Special keywords (`problems`, `terminal`, `git-changes`)
+- **All currently open files** (regardless of ignore settings or directory filters)
 
 The dropdown automatically filters out common directories like `node_modules`, `.git`, `dist`, and `out` to reduce noise, even though their content could be included if manually typed.
 
