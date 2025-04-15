@@ -139,6 +139,10 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '3.11',
           items: [
+            { type: 'doc', id: 'update-notes/v3.11.17', label: '3.11.17' },
+            { type: 'doc', id: 'update-notes/v3.11.16', label: '3.11.16' },
+            { type: 'doc', id: 'update-notes/v3.11.15', label: '3.11.15' },
+            { type: 'doc', id: 'update-notes/v3.11.14', label: '3.11.14' },
             { type: 'doc', id: 'update-notes/v3.11.13', label: '3.11.13' },
             { type: 'doc', id: 'update-notes/v3.11.12', label: '3.11.12' },
             { type: 'doc', id: 'update-notes/v3.11.11', label: '3.11.11' },

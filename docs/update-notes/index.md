@@ -4,6 +4,10 @@ This section contains notes about recent updates to Roo Code, listed by version 
 
 ## Version 3.11
 
+*   [3.11.17](/update-notes/v3.11.17) (2025-04-14)
+*   [3.11.16](/update-notes/v3.11.16) (2025-04-14)
+*   [3.11.15](/update-notes/v3.11.15) (2025-04-13)
+*   [3.11.14](/update-notes/v3.11.14) (2025-04-11)
 *   [3.11.13](/update-notes/v3.11.13) (2025-04-11)
 *   [3.11.12](/update-notes/v3.11.12) (2025-04-09)
 *   [3.11.11](/update-notes/v3.11.11) (2025-04-09)
