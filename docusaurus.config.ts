@@ -162,7 +162,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/roo-code-logo-white-stacked.png',
+    image: 'img/social-share.png',
     navbar: {
       logo: {
         alt: 'Roo Code Logo',
