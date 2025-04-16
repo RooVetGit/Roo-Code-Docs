@@ -14,6 +14,7 @@ Configuration profiles can have their own:
 - [Temperature settings](/features/model-temperature) for controlling response randomness
 - Thinking budgets
 - Provider-specific settings
+- Diff editing configuration
 - Rate limit settings
 
 Note that available settings vary by provider and model. Each provider offers different configuration options, and even within the same provider, different models may support different parameter ranges or features.
@@ -92,4 +93,5 @@ API keys are stored securely in VSCode's Secret Storage and are never exposed in
 - Integrates with [local models](/advanced-usage/local-models) for offline work
 - Supports [temperature settings](/features/model-temperature) per mode
 - Supports per-profile rate limits (configured here) and general [usage tracking/cost info](/advanced-usage/rate-limits-costs)
+- Supports per-profile diff editing configuration (v3.12+) for tailored code editing behavior
 
