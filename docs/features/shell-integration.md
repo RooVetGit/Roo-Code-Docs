@@ -232,7 +232,7 @@ For optimal shell integration with WSL, we recommend:
 
 For fellow Windows users running Fish terminal within a Cygwin environment, here's how VS Code's shell integration works:
 
-1.  **Locate the Shell Integration Script:**
+1.  **(Optional) Locate the Shell Integration Script:**
     Open your Fish terminal *within VS Code* and run the following command:
     ```bash
     code --locate-shell-integration-path fish
@@ -246,11 +246,14 @@ For fellow Windows users running Fish terminal within a Cygwin environment, here
     # Example config.fish structure
     if status is-interactive
         # Your other interactive shell configurations...
+        # automatic locate integration script:
+        string match -q "$TERM_PROGRAM" "vscode"; and . (code --locate-shell-integration-path fish)
 
+        # Or if the above fails for you:
         # Source the VS Code shell integration script
         # IMPORTANT: Replace the example path below with the actual path you found in Step 1.
         # Make sure the path is in a format Cygwin can understand (e.g., using /cygdrive/c/...).
-        source "/cygdrive/c/Users/YourUser/.vscode/extensions/..../shellIntegration.fish"
+        # source "/cygdrive/c/Users/YourUser/.vscode/extensions/..../shellIntegration.fish"
     end
     ```
     *Remember to replace the example path with the actual path from Step 1, correctly formatted for Cygwin.*
