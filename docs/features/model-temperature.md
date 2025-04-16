@@ -1,3 +1,5 @@
+import KangarooIcon from '@site/src/components/KangarooIcon';
+
 # Model Temperature
 
 Temperature controls the randomness of AI model outputs. Adjusting this setting optimizes results for different tasks - from precise code generation to creative brainstorming. Temperature is one of the most powerful parameters for controlling AI behavior. A well-tuned temperature setting can dramatically improve the quality and appropriateness of responses for specific tasks.
