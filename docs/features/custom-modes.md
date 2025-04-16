@@ -153,7 +153,8 @@ Mode configurations are applied in this order:
 2. Global mode configurations (from `custom_modes.json`)
 3. Default mode configurations
 
-This means that project-specific configurations will override global configurations, which in turn override default configurations.
+This means that project-specific configurations will override global configurations, which in turn override default configurations. You can override any default mode (like "code", "debug", etc.) by including a mode with the same slug in either your global or project-specific configuration.
+
 *   **Note on Instruction Files:** Within the loading of mode-specific instructions from the filesystem, the directory `.roo/rules-{mode-slug}/` takes precedence over the single file `.roorules-{mode-slug}` found in the workspace root.
 
 ## Creating Custom Modes
@@ -236,7 +237,45 @@ Each example shows different aspects of mode configuration:
 }
 ```
 
+## Overriding Default Modes
+
+You can override Roo Code's built-in modes (like "code", "debug", "ask") with customized versions that better suit your workflow. This is done by creating a custom mode with the same slug as a default mode.
+
+### Overriding Modes Globally
+
+To customize a default mode across all your projects:
+
+1. **Open Prompts Tab:** Click the <Codicon name="notebook" /> icon in the Roo Code top menu bar
+2. **Access Settings Menu:** Click the <Codicon name="bracket" /> button to the right of the Modes heading
+3. **Edit Global Modes:** Select "Edit Global Modes" to edit `custom_modes.json`
+4. **Add Your Override:** Create an entry with the same slug as the built-in mode you want to override
+
+```json
+{
+  "customModes": [{
+    "slug": "code",
+    "name": "Code",
+    "roleDefinition": "You are a software engineer with global-specific constraints",
+    "groups": [
+      "read",
+      ["edit", { "fileRegex": "\\.(js|ts)$", "description": "JS/TS files only" }]
+    ],
+    "customInstructions": "Focus on project-specific JS/TS development"
+  }]
+}
+```
+
+This example replaces the default "Code" mode with a custom version that can only edit JavaScript and TypeScript files.
+
 ### Project-Specific Mode Override
+
+To override a default mode for just one project:
+
+1. **Open Prompts Tab:** Click the <Codicon name="notebook" /> icon in the Roo Code top menu bar
+2. **Access Settings Menu:** Click the <Codicon name="bracket" /> button to the right of the Modes heading
+3. **Edit Project Modes:** Select "Edit Project Modes" to edit the `.roomodes` file
+4. **Add Your Override:** Create an entry with the same slug as the built-in mode you want to override
+
 ```json
 {
   "customModes": [{
@@ -251,7 +290,23 @@ Each example shows different aspects of mode configuration:
   }]
 }
 ```
-By following these instructions, you can create and manage custom modes to enhance your workflow with Roo-Code.
+
+Project-specific overrides take precedence over global overrides, which in turn override the built-in defaults.
+
+### Common Use Cases for Overriding Default Modes
+
+Common reasons to override built-in modes include:
+
+* **Restricting file access:** Limit a mode to specific file types for safety (e.g., restricting "Code" mode to only edit non-production files)
+* **Specializing behavior:** Customize a mode's expertise for your tech stack (e.g., making "Debug" mode focus on your framework)
+* **Adding custom instructions:** Integrate project standards or team guidelines directly into modes
+* **Changing available tools:** Remove certain tools from modes to prevent unwanted operations
+
+:::tip
+When overriding default modes, test your configuration carefully. Small changes to core modes can significantly impact functionality. Consider creating a backup of your original configuration before making substantial changes.
+:::
+
+By following these instructions, you can create and manage custom modes to enhance your workflow with Roo Code.
 
 ## Understanding Regex in Custom Modes
 
