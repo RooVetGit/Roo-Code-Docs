@@ -8,13 +8,12 @@ The Roo Code interface supports keyboard shortcuts to streamline your workflow a
 
 ## Available Keyboard Commands
 
-Roo Code offers several keyboard commands to enhance your workflow. This page focuses on the `roo.acceptInput` command, but here's a quick reference to all keyboard commands:
+Roo Code offers keyboard commands to enhance your workflow. This page focuses on the `roo.acceptInput` command, but here's a quick reference to all keyboard commands:
 
 | Command | Description | Default Shortcut |
 |---------|-------------|-----------------|
 | `roo.acceptInput` | Submit text or accept the primary suggestion | None (configurable) |
 | `roo.focus` | Focus the Roo input box | None (configurable) |
-| `roo.openChat` | Open Roo sidebar | Ctrl+Shift+R (⌘+Shift+R on Mac) |
 
 ### Key Benefits of Keyboard Commands
 
@@ -29,9 +28,10 @@ The `roo.acceptInput` command lets you submit text or accept suggestions with ke
 
 ### What It Does
 
-When triggered, the command:
-- Clicks the primary (first) button when suggestion buttons are visible (see [Suggested Responses](/features/suggested-responses))
-- Submits your current text input when in regular text input mode
+The `roo.acceptInput` command is a general-purpose input submission command. When triggered, it:
+
+- Submits your current text or image input when in the text input area (equivalent to pressing Enter)
+- Clicks the primary (first) button when action buttons are visible (such as confirm/cancel buttons or any other action buttons)
 
 ### Detailed Setup Guide
 
@@ -45,7 +45,6 @@ When triggered, the command:
 6. Press your desired key combination (e.g., `Ctrl+Enter` or `Alt+Enter`)
 7. Press Enter to confirm
 
-<img src="/img/keyboard-shortcuts/keyboard-shortcut-setup.png" alt="Setting up the roo.acceptInput keyboard shortcut in VS Code's Keyboard Shortcuts UI" width="700" />
 
 #### Method 2: Editing keybindings.json directly
 
@@ -57,7 +56,16 @@ When triggered, the command:
 {
   "key": "ctrl+enter",  // or your preferred key combination
   "command": "roo.acceptInput",
-  "when": "rooViewFocused"
+  "when": "rooViewFocused"  // This is a context condition that ensures the command only works when Roo is focused
+}
+```
+
+You can also use a more specific condition:
+```json
+{
+  "key": "ctrl+enter",
+  "command": "roo.acceptInput",
+  "when": "webviewViewFocus && webviewViewId == 'roo-cline.SidebarProvider'"
 }
 ```
 
@@ -74,10 +82,10 @@ Choose a key combination that doesn't conflict with existing VS Code shortcuts:
 
 #### Quick Development Workflows
 
-- **Multi-Step Code Generation**: When Roo asks clarifying questions during code generation, accept the primary suggestion without breaking your flow
-- **Rapid Prototyping**: Quickly move through a series of inputs when creating a prototype
-- **Confirmations**: Accept default confirmation options during processes like creating files, running terminal commands, or applying diffs
-- **Consecutive Tasks**: Chain multiple small tasks together with minimal interruption
+- **Text Submission**: Send messages to Roo without moving your hands from the keyboard
+- **Action Confirmations**: Accept operations like saving files, running commands, or applying diffs
+- **Multi-Step Processes**: Move quickly through steps that require confirmation or input
+- **Consecutive Tasks**: Chain multiple tasks together with minimal interruption
 
 #### Keyboard-Centric Development
 
@@ -109,7 +117,7 @@ Here are some complete workflow examples showing how to effectively use keyboard
 #### Development Workflow Example
 
 1. Open VS Code and navigate to your project
-2. Open Roo (`Ctrl+Shift+R` or via sidebar)
+2. Open Roo via the sidebar
 3. Type your request: "Create a REST API endpoint for user registration"
 4. When Roo asks for framework preferences, use your `roo.acceptInput` shortcut to select the first suggestion
 5. Continue using the shortcut to accept code generation suggestions
@@ -131,7 +139,7 @@ Here are some complete workflow examples showing how to effectively use keyboard
 | Wrong suggestion selected | The command always selects the first (primary) button; use mouse if you need a different option |
 | Conflicts with existing shortcuts | Try a different key combination in VS Code keyboard settings |
 | No visual feedback when used | This is normal - the command silently activates the function without visual confirmation |
-| Shortcut works inconsistently | Make sure the `when: "rooViewFocused"` clause is in your keybindings.json |
+| Shortcut works inconsistently | Make sure the `when` clause is properly configured in your keybindings.json (either `rooViewFocused` or the webview-specific condition) |
 
 ### Technical Implementation
 
@@ -139,13 +147,13 @@ The `roo.acceptInput` command is implemented as follows:
 
 - Command registered as `roo.acceptInput` with display title "Roo: Accept Input/Suggestion" in the command palette
 - When triggered, it sends an "acceptInput" message to the active Roo webview
-- The webview determines the appropriate action based on the current UI state
-- Designed to work with the `rooViewFocused` context condition
+- The webview determines the appropriate action based on the current UI state:
+  - Clicks the primary action button if action buttons are visible and enabled
+  - Sends the message if the text area is enabled and contains text/images
 - No default key binding - users assign their preferred shortcut
 
 ### Limitations
 
 - Works only when the Roo interface is active
 - Has no effect if no inputs or suggestions are currently available
-- Prioritizes the primary (first) button when multiple suggestions are shown
-- Cannot be used to select specific suggestions (always picks the first one)
+- Prioritizes the primary (first) button when multiple options are shown
