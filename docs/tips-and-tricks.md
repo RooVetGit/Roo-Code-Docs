@@ -14,3 +14,4 @@ A collection of quick tips to help you get the most out of Roo Code.
 - When using Debug mode, ask Roo to "start a new task in Debug mode with all of the necessary context needed to figure out X" so that the debugging process uses its own context window and doesn't pollute the main task
 - Add your own tips by clicking "Edit this page" below!
 - To manage large files and reduce context/resource usage, adjust the `File read auto-truncate threshold` setting. This setting controls the number of lines read from a file in one batch. Lower values can improve performance when working with very large files, but may require more read operations. You can find this setting in the Roo Code settings under 'Advanced Settings'.
+- Set up a keyboard shortcut for the [`roo.acceptInput` command](/features/keyboard-shortcuts) to accept suggestions or submit text input without using the mouse. Perfect for keyboard-focused workflows and reducing hand strain.

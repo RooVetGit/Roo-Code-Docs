@@ -22,13 +22,18 @@ Suggested Responses appear as clickable buttons directly below Roo's question in
 
 ## Interacting with Suggestions
 
-You have two options for using suggested responses:
+You have three options for using suggested responses:
 
 1.  **Direct Selection**:
     *   **Action**: Simply click the button containing the answer you want to provide.
     *   **Result**: The selected answer is immediately sent back to Roo as your response. This is the quickest way to reply if one of the suggestions perfectly matches your intent.
 
-2.  **Edit Before Sending**:
+2.  **Keyboard Shortcut**:
+    *   **Action**: Use the `roo.acceptInput` command with your configured keyboard shortcut.
+    *   **Result**: The primary (first) suggestion button is automatically selected.
+    *   **Note**: For setup details, see [Keyboard Shortcuts](/features/keyboard-shortcuts).
+
+3.  **Edit Before Sending**:
     *   **Action**:
         *   Hold down `Shift` and click the suggestion button.
         *   *Alternatively*, hover over the suggestion button and click the pencil icon (<Codicon name="edit" />) that appears.

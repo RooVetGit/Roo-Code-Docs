@@ -33,6 +33,7 @@ const sidebars: SidebarsConfig = {
         'features/enhance-prompt',
         'features/fast-edits',
         'features/footgun-prompting',
+        'features/keyboard-shortcuts',
         'features/model-temperature',
         'features/settings-management',
         'features/suggested-responses',
@@ -136,6 +137,15 @@ const sidebars: SidebarsConfig = {
       label: 'Update Notes',
       items: [
         'update-notes/index',
+        {
+          type: 'category',
+          label: '3.12',
+          items: [
+            { type: 'doc', id: 'update-notes/v3.12.2', label: '3.12.2' },
+            { type: 'doc', id: 'update-notes/v3.12.1', label: '3.12.1' },
+            { type: 'doc', id: 'update-notes/v3.12.0', label: '3.12.0' },
+          ],
+        },
         {
           type: 'category',
           label: '3.11',
