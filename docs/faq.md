@@ -1,3 +1,5 @@
+import KangarooIcon from '@site/src/components/KangarooIcon';
+
 # Frequently Asked Questions
 
 This page answers some common questions about Roo Code.
@@ -77,7 +79,7 @@ Yes, Roo Code supports running models locally using [Ollama](/providers/ollama) 
 ## Usage
 
 ### How do I start a new task?
-Open the Roo Code panel (<Codicon name="rocket" />) and type your task in the chat box. Be clear and specific about what you want Roo Code to do. See [Typing Your Requests](/basic-usage/typing-your-requests) for best practices.
+Open the Roo Code panel (<KangarooIcon />) and type your task in the chat box. Be clear and specific about what you want Roo Code to do. See [Typing Your Requests](/basic-usage/typing-your-requests) for best practices.
 
 ### What are modes in Roo Code?
 [Modes](/basic-usage/using-modes) are different personas that Roo Code can adopt, each with a specific focus and set of capabilities. The built-in modes are:

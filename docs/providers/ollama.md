@@ -1,6 +1,7 @@
 ---
 sidebar_label: Ollama
 ---
+import KangarooIcon from '@site/src/components/KangarooIcon';
 
 # Using Ollama With Roo Code
 
@@ -59,7 +60,7 @@ Roo Code supports running models locally using Ollama. This provides privacy, of
     ```
 
 4.  **Configure Roo Code:**
-    *   Open the Roo Code sidebar (<Codicon name="rocket" /> icon).
+    *   Open the Roo Code sidebar (<KangarooIcon /> icon).
     *   Click the settings gear icon (<Codicon name="gear" />).
     *   Select "ollama" as the API Provider.
     *   Enter the Model name from the previous step (e.g., `your_model_name`).

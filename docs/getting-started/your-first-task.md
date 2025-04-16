@@ -1,6 +1,7 @@
 ---
 sidebar_label: Your First Task
 ---
+import KangarooIcon from '@site/src/components/KangarooIcon';
 
 # Starting Your First Task with Roo Code
 
@@ -8,7 +9,7 @@ Now that you've [configured your AI provider and model](/getting-started/connect
 
 ## Step 1: Open the Roo Code Panel
 
-Click the Roo Code icon (<Codicon name="rocket" />) in the VS Code Activity Bar (vertical bar on the side of the window) to open the chat interface. If you don't see the icon, verify the extension is installed and enabled.
+Click the Roo Code icon (<KangarooIcon />) in the VS Code Activity Bar (vertical bar on the side of the window) to open the chat interface. If you don't see the icon, verify the extension is installed and enabled.
 
 <img src="/img/your-first-task/your-first-task.png" alt="Roo Code icon in VS Code Activity Bar" width="800" />
 
