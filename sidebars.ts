@@ -113,6 +113,7 @@ const sidebars: SidebarsConfig = {
         'providers/requesty',
         'providers/unbound',
         'providers/vscode-lm',
+        'providers/xai',
       ]
     },
     {
