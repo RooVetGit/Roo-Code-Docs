@@ -1,5 +1,5 @@
 ---
-sidebar_label: Connecting To A Provider
+sidebar_label: Connecting To AI Provider
 ---
 import KangarooIcon from '@site/src/components/KangarooIcon';
 
