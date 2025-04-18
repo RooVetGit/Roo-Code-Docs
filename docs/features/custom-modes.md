@@ -1,6 +1,6 @@
 # Custom Modes
 
-Roo Code allows you to create **custom modes** to tailor Roo's behavior to specific tasks or workflows. Custom modes can be either **global** (available across all projects) or **project-specific** (defined within a single project). Each mode—including custom ones—remembers the last model you used with it, automatically selecting that model when you switch to the mode. This lets you maintain different preferred models for different types of tasks without manual reconfiguration.
+Roo Code allows you to create **custom modes** to tailor Roo's behavior to specific tasks or workflows. Custom modes can be either **global** (available across all projects) or **project-specific** (defined within a single project). Each mode—including custom ones—features **Sticky Models**, automatically remembering and selecting the last model you used with it. This lets you assign different preferred models to different tasks without reconfiguration, as Roo switches between models when you change modes.
 
 :::info Mode-Specific Instruction File Locations
 You can provide instructions for custom modes using dedicated files or directories within your workspace. This allows for better organization and version control compared to only using the JSON `customInstructions` property.
