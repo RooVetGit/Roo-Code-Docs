@@ -44,6 +44,7 @@ const sidebars: SidebarsConfig = {
           items: [
             'features/tools/tool-use-overview',
             'features/tools/access-mcp-resource',
+            'features/tools/append-to-file',
             'features/tools/apply-diff',
             'features/tools/ask-followup-question',
             'features/tools/attempt-completion',
@@ -137,6 +138,14 @@ const sidebars: SidebarsConfig = {
       label: 'Update Notes',
       items: [
         'update-notes/index',
+        {
+          type: 'category',
+          label: '3.13',
+          items: [
+            { type: 'doc', id: 'update-notes/v3.13.1', label: '3.13.1' },
+            { type: 'doc', id: 'update-notes/v3.13.0', label: '3.13.0' },
+          ],
+        },
         {
           type: 'category',
           label: '3.12',
