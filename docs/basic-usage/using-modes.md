@@ -3,7 +3,7 @@
 Modes in Roo Code are specialized personas that tailor the assistant's behavior to your current task. Each mode offers different capabilities, expertise, and access levels to help you accomplish specific goals.
 
 :::info Sticky Models
-Each mode remembers your last-used model. When switching modes, Roo automatically selects that model—no manual selection needed. Assign different models to different tasks (Claude for Architect mode, GPT-4 for Code mode) and Roo will switch models automatically when you change modes.
+Each mode remembers your last-used model. When switching modes, Roo automatically selects that model—no manual selection needed. Assign different models to different tasks (Gemini 2.5 Flash thinking for architect mode, Claude Sonnet 3.7 for code mode) and Roo will switch models automatically when you change modes.
 :::
 
 ## Why Use Different Modes?
