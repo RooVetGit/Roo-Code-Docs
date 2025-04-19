@@ -228,6 +228,83 @@ For optimal shell integration with WSL, we recommend:
 
 ## Known Issues and Workarounds
 
+### VS Code Shell Integration for Fish + Cygwin on Windows
+
+For fellow Windows users running Fish terminal within a Cygwin environment, here's how VS Code's shell integration works:
+
+1.  **(Optional) Locate the Shell Integration Script:**
+    Open your Fish terminal *within VS Code* and run the following command:
+    ```bash
+    code --locate-shell-integration-path fish
+    ```
+    This will output the path to the `shellIntegration.fish` script. Note down this path.
+
+2.  **Update Your Fish Configuration:**
+    Edit your `config.fish` file (usually located at `~/.config/fish/config.fish` within your Cygwin home directory). Add the following line, preferably within an `if status is-interactive` block or at the very end of the file:
+
+    ```fish
+    # Example config.fish structure
+    if status is-interactive
+        # Your other interactive shell configurations...
+        # automatic locate integration script:
+        string match -q "$TERM_PROGRAM" "vscode"; and . (code --locate-shell-integration-path fish)
+
+        # Or if the above fails for you:
+        # Source the VS Code shell integration script
+        # IMPORTANT: Replace the example path below with the actual path you found in Step 1.
+        # Make sure the path is in a format Cygwin can understand (e.g., using /cygdrive/c/...).
+        # source "/cygdrive/c/Users/YourUser/.vscode/extensions/..../shellIntegration.fish"
+    end
+    ```
+    *Remember to replace the example path with the actual path from Step 1, correctly formatted for Cygwin.*
+
+3.  **Configure VS Code Terminal Profile:**
+    Open your VS Code `settings.json` file (Ctrl+Shift+P -> "Preferences: Open User Settings (JSON)"). Update or add the Fish profile under `terminal.integrated.profiles.windows` like this:
+
+    ```json
+    {
+      // ... other settings ...
+
+      "terminal.integrated.profiles.windows": {
+        // ... other profiles ...
+
+        // Recommended: Use bash.exe to launch fish as a login shell
+        "fish": {
+          "path": "C:\\cygwin64\\bin\\bash.exe", // Or your Cygwin bash path
+          "args": [
+            "--login", // Ensures login scripts run (important for Cygwin environment)
+            "-i",      // Ensures bash runs interactively
+            "-c",
+            "exec fish" // Replace bash process with fish
+          ],
+          "icon": "terminal-bash" // Optional: Use a recognizable icon
+        }
+        // Alternative (if the above fails): Launch fish directly
+        "fish-direct": {
+          "path": "C:\\cygwin64\\bin\\fish.exe", // Ensure this is in your Windows PATH or provide full path
+          // Use 'options' here instead of 'args'; otherwise, you might encounter the error "terminal process terminated exit code 1".
+          "options": ["-l", "-c"], // Example: login and interactive flags.
+          "icon": "terminal-fish" // Optional: Use a fish icon
+        }
+      },
+
+      // Optional: Set fish as your default if desired
+      // "terminal.integrated.defaultProfile.windows": "fish", // or "fish-direct" depending what you use.
+
+      // ... other settings ...
+    }
+    ```
+    *Note: Using `bash.exe --login -i -c "exec fish"` is often more reliable in Cygwin environments for ensuring the correct environment setup before `fish` starts. However, if that approach doesn't work, try the `fish-direct` profile configuration.*
+
+4.  **Restart VS Code:**
+    Close and reopen Visual Studio Code completely to apply the changes.
+
+5.  **Verify:**
+    Open a new Fish terminal in VS Code. The shell integration features (like command decorations, better command history navigation, etc.) should now be active. You can test basic functionality by running simple commands like `echo "Hello from integrated Fish!"`. <img src="/img/shell-integration/shell-integration-8.png" alt="Fish Cygwin Integration Example" width="600" />
+
+This setup works reliably on Windows systems using Cygwin, Fish, and the Starship prompt, and should assist users with similar configurations.
+
+
 ### Shell Integration Failures After VSCode 1.98
 
 **Issue**: After VSCode updates beyond version 1.98, shell integration may fail with the error "VSCE output start escape sequence (]633;C or ]133;C) not received".
