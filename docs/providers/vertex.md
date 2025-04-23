@@ -16,6 +16,7 @@ Roo Code supports accessing models through Google Cloud Platform's Vertex AI, a 
 *   **Application Default Credentials (ADC):**  Roo Code uses Application Default Credentials to authenticate with Vertex AI. The easiest way to set this up is to:
     1.  Install the Google Cloud CLI: [https://cloud.google.com/sdk/docs/install](https://cloud.google.com/sdk/docs/install)
     2.  Authenticate using: `gcloud auth application-default login`
+*   **Service Account Key (Alternative):** Alternatively, you can authenticate using a Google Cloud Service Account key file. You'll need to generate this key in your GCP project. See the [Google Cloud documentation on creating service account keys](https://cloud.google.com/iam/docs/creating-managing-service-account-keys).
 
 ## Supported Models
 
@@ -44,10 +45,14 @@ Refer to the [Google Cloud documentation on Vertex AI Models](https://cloud.goog
 
 1.  **Open Roo Code Settings:** Click the gear icon (<Codicon name="gear" />) in the Roo Code panel.
 2.  **Select Provider:** Choose "GCP Vertex AI" from the "API Provider" dropdown.
-3.  **Enter Project ID:** Enter your Google Cloud Project ID.
-4.  **Select Region:** Choose the region where your Vertex AI resources are located (e.g., `us-east5`).
-5.  **Select Model:** Choose your desired model from the "Model" dropdown.
-
+3.  **Configure Authentication:**
+    *   **If using Application Default Credentials (ADC):** No further action is needed here. ADC will be used automatically if configured correctly (see Prerequisites).
+    *   **If *not* using ADC (Service Account Key):**
+        *   **Option A: Paste JSON Content:** Paste the entire content of your Service Account JSON key file into the **Google Cloud Credentials** field.
+        *   **Option B: Provide File Path:** Enter the absolute path to your downloaded Service Account JSON key file in the **Google Cloud Key File Path** field.
+4.  **Enter Project ID:** Enter your Google Cloud Project ID.
+5.  **Select Region:** Choose the region where your Vertex AI resources are located (e.g., `us-east5`).
+6.  **Select Model:** Choose your desired model from the "Model" dropdown.
 ## Tips and Notes
 
 *   **Permissions:**  Ensure your Google Cloud account has the necessary permissions to access Vertex AI and the specific models you want to use.
