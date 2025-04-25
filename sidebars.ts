@@ -44,16 +44,17 @@ const sidebars: SidebarsConfig = {
           items: [
             'features/tools/tool-use-overview',
             'features/tools/access-mcp-resource',
-            'features/tools/append-to-file',
             'features/tools/apply-diff',
             'features/tools/ask-followup-question',
             'features/tools/attempt-completion',
             'features/tools/browser-action',
             'features/tools/execute-command',
+'features/tools/insert-content',
             'features/tools/list-code-definition-names',
             'features/tools/list-files',
             'features/tools/new-task',
             'features/tools/read-file',
+'features/tools/search-and-replace',
             'features/tools/search-files',
             'features/tools/switch-mode',
             'features/tools/use-mcp-tool',
@@ -140,8 +141,17 @@ const sidebars: SidebarsConfig = {
         'update-notes/index',
         {
           type: 'category',
+          label: '3.14',
+          items: [
+            { type: 'doc', id: 'update-notes/v3.14.1', label: '3.14.1' },
+            { type: 'doc', id: 'update-notes/v3.14.0', label: '3.14.0' },
+          ],
+        },
+        {
+          type: 'category',
           label: '3.13',
           items: [
+            { type: 'doc', id: 'update-notes/v3.13.2', label: '3.13.2' },
             { type: 'doc', id: 'update-notes/v3.13.1', label: '3.13.1' },
             { type: 'doc', id: 'update-notes/v3.13.0', label: '3.13.0' },
           ],

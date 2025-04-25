@@ -11,7 +11,7 @@ Tools are organized into logical groups based on their functionality:
 | Category | Purpose | Tools | Common Use |
 |----------|---------|-------|------------|
 | **Read Group** | File system reading and searching | [read_file](/features/tools/read-file), [search_files](/features/tools/search-files), [list_files](/features/tools/list-files), [list_code_definition_names](/features/tools/list-code-definition-names) | Code exploration and analysis |
-| **Edit Group** | File system modifications | [apply_diff](/features/tools/apply-diff), [write_to_file](/features/tools/write-to-file) | Code changes and file manipulation |
+| **Edit Group** | File system modifications | [apply_diff](/features/tools/apply-diff), [insert_content](/features/tools/insert-content), [search_and_replace](/features/tools/search-and-replace), [write_to_file](/features/tools/write-to-file) | Code changes and file manipulation |
 | **Browser Group** | Web automation | [browser_action](/features/tools/browser-action) | Web testing and interaction |
 | **Command Group** | System command execution | [execute_command](/features/tools/execute-command) | Running scripts, building projects |
 | **MCP Group** | External tool integration | [use_mcp_tool](/features/tools/use-mcp-tool), [access_mcp_resource](/features/tools/access-mcp-resource) | Specialized functionality through external servers |
@@ -40,6 +40,8 @@ These tools help Roo understand your code and project:
 These tools help Roo make changes to your code:
 
 - [apply_diff](/features/tools/apply-diff) - Makes precise, surgical changes to your code
+- [insert_content](/features/tools/insert-content) - Adds new lines of content without modifying existing lines
+- [search_and_replace](/features/tools/search-and-replace) - Finds and replaces text or regex patterns within a file
 - [write_to_file](/features/tools/write-to-file) - Creates new files or completely rewrites existing ones
 
 ### Browser Tools

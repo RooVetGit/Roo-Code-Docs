@@ -4,7 +4,11 @@ sidebar_label: 'Footgun Prompting'
 
 # Footgun Prompting: Override System Prompts
 
-Footgun Prompting, AKA Overriding System Prompt, allows advanced users to completely replace the default system prompt for a specific Roo Code mode. This provides granular control over the AI's behavior but bypasses built-in safeguards.
+Footgun Prompting (System Prompt Override) lets you replace the default system prompt for a specific Roo Code mode. This offers granular control but bypasses built-in safeguards. Use with caution.
+
+<img src="/img/footgun-prompting/footgun-prompting-1.png" alt="Warning indicator for active system prompt override" width="600" />
+**Warning Indicator:** When a system prompt override is active for the current mode, Roo Code will display a warning icon in the chat input area to remind you that the default behavior has been modified.
+
 
 :::info **footgun** _(noun)_
 
@@ -32,7 +36,7 @@ Footgun Prompting, AKA Overriding System Prompt, allows advanced users to comple
 
 ## Accessing the Feature
 
-You can find the option and instructions within the Roo Code UI:
+Find the option and instructions in the Roo Code UI:
 
 1.  Click the <Codicon name="notebook" /> icon in the Roo Code top menu bar.
 2.  Expand the **"Advanced: Override System Prompt"** section.
@@ -63,7 +67,7 @@ The project is located at: {{workspace}}.
 Please respond in {{language}}.
 ```
 
-Roo Code will substitute these placeholders before sending the prompt to the AI model.
+Roo Code substitutes these placeholders before sending the prompt to the model.
 
 ## Key Considerations & Warnings
 
@@ -73,5 +77,4 @@ Roo Code will substitute these placeholders before sending the prompt to the AI 
 - **No File, No Override:** If the `.roo/system-prompt-{mode-slug}` file doesn't exist, Roo Code uses the standard system prompt generation process for that mode.
 - **Blank Files Ignored:** If the override file exists but is empty (blank), it will be ignored and the default system prompt will be used.
 - **Directory Creation:** Roo Code ensures the `.roo` directory exists before attempting to read or create the override file.
-
-Use this feature cautiously. While powerful for customization, incorrect implementation can significantly degrade Roo Code's performance and reliability for the affected mode.
+Use this feature cautiously. Incorrect implementation can significantly degrade Roo Code's performance and reliability for the affected mode.
