@@ -26,6 +26,8 @@ OpenRouter supports a large and growing number of models.  Roo Code automaticall
 4.  **Select Model:** Choose your desired model from the "Model" dropdown.
 5.  **(Optional) Custom Base URL:** If you need to use a custom base URL for the OpenRouter API, check "Use custom base URL" and enter the URL. Leave this blank for most users.
 
+6.  **(Optional) Enable Prompt Caching (Supported Models):** For models accessed via OpenRouter that support caching (like Gemini 2.5), check the "Enable Prompt Caching" box if you wish to activate it. See the note below for important details specific to this provider.
+    <img src="/img/v3.14.2/v3.14.2.png" alt="Prompt Caching Checkbox for OpenRouter Provider" width="600" />
 ## Supported Transforms
 
 OpenRouter provides an [optional "middle-out" message transform](https://openrouter.ai/docs/features/message-transforms) to help with prompts that exceed the maximum context size of a model. You can enable it by checking the "Compress prompts and message chains to the context size" box.
@@ -34,4 +36,8 @@ OpenRouter provides an [optional "middle-out" message transform](https://openrou
 
 * **Model Selection:** OpenRouter offers a wide range of models. Experiment to find the best one for your needs.
 * **Pricing:**  OpenRouter charges based on the underlying model's pricing.  See the [OpenRouter Models page](https://openrouter.ai/models) for details.
-* **Prompt Caching:** Some providers support prompt caching. See the OpenRouter documentation for supported models.
+*   **Prompt Caching:**
+    *   OpenRouter passes caching requests to underlying models that support it. Check the [OpenRouter Models page](https://openrouter.ai/models) to see which models offer caching.
+    *   For most models, caching should activate automatically if supported by the model itself (similar to how Requesty works).
+    *   **Exception for Gemini Models via OpenRouter:** Due to potential response delays sometimes observed with Google's caching mechanism when accessed via OpenRouter, a manual activation step is required *specifically for Gemini models*.
+    *   If using a **Gemini model** via OpenRouter, you **must manually check** the "Enable Prompt Caching" box in the provider settings to activate caching for that model. This checkbox serves as a temporary workaround. For non-Gemini models on OpenRouter, this checkbox is not necessary for caching.
