@@ -2,6 +2,31 @@
 
 Welcome to the Roo Code community section! Here you'll find community projects that extend Roo Code's capabilities and a gallery of custom modes shared by other users to enhance your development workflow.
 
+
+## 🔥 SPARC by [@ruvnet](https://github.com/ruvnet)
+
+SPARC orchestrates set and forget agentic development workflows through a structured framework using Roo Code Boomerang Tasks. It automates complex code development while maintaining complete developer control.
+The framework is [open-source](https://github.com/ruvnet/rUv-dev) with comprehensive documentation and examples, supporting everything from simple applications to complex systems.
+
+## Key Features
+
+- **Scaffolding**: Generate complete project structures by running `npx create-sparc init` in your root folder, including sub directories, configurations, and boilerplate code
+- **Prompting**: Optimized templates for consistent, high-quality code generation
+- **Boomerang Mode**: Define requirements → generate code → review → refine in a continuous feedback loop
+- **Boomerang Tasks**: Define specific development tasks that can be "thrown" to Roo and returned with implementations, enabling focused problem-solving
+- **Workflow Orchestration**: Coordinate complex development sequences with predefined task chains and dependency management
+- **MCP Services**: Extend Roo's capabilities with specialized tools and resources through Model Context Protocol integration
+- **Mode Management**: Context-aware settings that optimize behavior for specific development phases
+
+#### Quick Start
+You don't need to install this [package directly](https://www.npmjs.com/package/create-sparc). Just run npx from your root directory to install it:
+
+```bash
+ npx create-sparc init
+ npx create-sparc --help
+```
+
+
 ## Memory Bank Project by [@GreatScottyMac](https://github.com/GreatScottyMac)
 
 The [Roo Code Memory Bank](https://github.com/GreatScottyMac/roo-code-memory-bank) project solves a critical challenge in AI-assisted development: **maintaining context across sessions**. By providing a structured memory system integrated with VS Code, it ensures your AI assistant maintains a deep understanding of your project across sessions.
