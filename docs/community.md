@@ -95,7 +95,7 @@ This mode integrates Perplexity API for web search and Lynx for page analysis, e
     "browser",
     "mcp"
   ],
-  "source": "global" // Or set to "workspace" if preferred
+  "source": "global"
 }
 ```
 
