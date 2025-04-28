@@ -68,6 +68,7 @@ const sidebars: SidebarsConfig = {
       label: 'Advanced Usage',
       items: [
         'advanced-usage/prompt-engineering',
+        'advanced-usage/prompt-structure',
         'advanced-usage/large-projects',
         'advanced-usage/rate-limits-costs',
         'advanced-usage/local-models',
