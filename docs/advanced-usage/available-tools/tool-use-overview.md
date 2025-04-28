@@ -10,63 +10,63 @@ Tools are organized into logical groups based on their functionality:
 
 | Category | Purpose | Tools | Common Use |
 |----------|---------|-------|------------|
-| **Read Group** | File system reading and searching | [read_file](/features/tools/read-file), [search_files](/features/tools/search-files), [list_files](/features/tools/list-files), [list_code_definition_names](/features/tools/list-code-definition-names) | Code exploration and analysis |
-| **Edit Group** | File system modifications | [apply_diff](/features/tools/apply-diff), [insert_content](/features/tools/insert-content), [search_and_replace](/features/tools/search-and-replace), [write_to_file](/features/tools/write-to-file) | Code changes and file manipulation |
-| **Browser Group** | Web automation | [browser_action](/features/tools/browser-action) | Web testing and interaction |
-| **Command Group** | System command execution | [execute_command](/features/tools/execute-command) | Running scripts, building projects |
-| **MCP Group** | External tool integration | [use_mcp_tool](/features/tools/use-mcp-tool), [access_mcp_resource](/features/tools/access-mcp-resource) | Specialized functionality through external servers |
-| **Workflow Group** | Mode and task management | [switch_mode](/features/tools/switch-mode), [new_task](/features/tools/new-task), [ask_followup_question](/features/tools/ask-followup-question), [attempt_completion](/features/tools/attempt-completion) | Context switching and task organization |
+| **Read Group** | File system reading and searching | [read_file](/advanced-usage/available-tools/read-file), [search_files](/advanced-usage/available-tools/search-files), [list_files](/advanced-usage/available-tools/list-files), [list_code_definition_names](/advanced-usage/available-tools/list-code-definition-names) | Code exploration and analysis |
+| **Edit Group** | File system modifications | [apply_diff](/advanced-usage/available-tools/apply-diff), [insert_content](/advanced-usage/available-tools/insert-content), [search_and_replace](/advanced-usage/available-tools/search-and-replace), [write_to_file](/advanced-usage/available-tools/write-to-file) | Code changes and file manipulation |
+| **Browser Group** | Web automation | [browser_action](/advanced-usage/available-tools/browser-action) | Web testing and interaction |
+| **Command Group** | System command execution | [execute_command](/advanced-usage/available-tools/execute-command) | Running scripts, building projects |
+| **MCP Group** | External tool integration | [use_mcp_tool](/advanced-usage/available-tools/use-mcp-tool), [access_mcp_resource](/advanced-usage/available-tools/access-mcp-resource) | Specialized functionality through external servers |
+| **Workflow Group** | Mode and task management | [switch_mode](/advanced-usage/available-tools/switch-mode), [new_task](/advanced-usage/available-tools/new-task), [ask_followup_question](/advanced-usage/available-tools/ask-followup-question), [attempt_completion](/advanced-usage/available-tools/attempt-completion) | Context switching and task organization |
 
 ### Always Available Tools
 
 Certain tools are accessible regardless of the current mode:
 
-- [ask_followup_question](/features/tools/ask-followup-question): Gather additional information from users
-- [attempt_completion](/features/tools/attempt-completion): Signal task completion
-- [switch_mode](/features/tools/switch-mode): Change operational modes
-- [new_task](/features/tools/new-task): Create subtasks
+- [ask_followup_question](/advanced-usage/available-tools/ask-followup-question): Gather additional information from users
+- [attempt_completion](/advanced-usage/available-tools/attempt-completion): Signal task completion
+- [switch_mode](/advanced-usage/available-tools/switch-mode): Change operational modes
+- [new_task](/advanced-usage/available-tools/new-task): Create subtasks
 
 ## Available Tools
 
 ### Read Tools
 These tools help Roo understand your code and project:
 
-- [read_file](/features/tools/read-file) - Examines the contents of files
-- [search_files](/features/tools/search-files) - Finds patterns across multiple files
-- [list_files](/features/tools/list-files) - Maps your project's file structure
-- [list_code_definition_names](/features/tools/list-code-definition-names) - Creates a structural map of your code
+- [read_file](/advanced-usage/available-tools/read-file) - Examines the contents of files
+- [search_files](/advanced-usage/available-tools/search-files) - Finds patterns across multiple files
+- [list_files](/advanced-usage/available-tools/list-files) - Maps your project's file structure
+- [list_code_definition_names](/advanced-usage/available-tools/list-code-definition-names) - Creates a structural map of your code
 
 ### Edit Tools
 These tools help Roo make changes to your code:
 
-- [apply_diff](/features/tools/apply-diff) - Makes precise, surgical changes to your code
-- [insert_content](/features/tools/insert-content) - Adds new lines of content without modifying existing lines
-- [search_and_replace](/features/tools/search-and-replace) - Finds and replaces text or regex patterns within a file
-- [write_to_file](/features/tools/write-to-file) - Creates new files or completely rewrites existing ones
+- [apply_diff](/advanced-usage/available-tools/apply-diff) - Makes precise, surgical changes to your code
+- [insert_content](/advanced-usage/available-tools/insert-content) - Adds new lines of content without modifying existing lines
+- [search_and_replace](/advanced-usage/available-tools/search-and-replace) - Finds and replaces text or regex patterns within a file
+- [write_to_file](/advanced-usage/available-tools/write-to-file) - Creates new files or completely rewrites existing ones
 
 ### Browser Tools
 These tools help Roo interact with web applications:
 
-- [browser_action](/features/tools/browser-action) - Automates browser interactions
+- [browser_action](/advanced-usage/available-tools/browser-action) - Automates browser interactions
 
 ### Command Tools
 These tools help Roo execute commands:
 
-- [execute_command](/features/tools/execute-command) - Runs system commands and programs
+- [execute_command](/advanced-usage/available-tools/execute-command) - Runs system commands and programs
 
 ### MCP Tools
 These tools help Roo connect with external services:
 
-- [use_mcp_tool](/features/tools/use-mcp-tool) - Uses specialized external tools
-- [access_mcp_resource](/features/tools/access-mcp-resource) - Accesses external data sources
+- [use_mcp_tool](/advanced-usage/available-tools/use-mcp-tool) - Uses specialized external tools
+- [access_mcp_resource](/advanced-usage/available-tools/access-mcp-resource) - Accesses external data sources
 
 ### Workflow Tools
 These tools help manage the conversation and task flow:
 
-- [ask_followup_question](/features/tools/ask-followup-question) - Gets additional information from you
-- [attempt_completion](/features/tools/attempt-completion) - Presents final results
-- [switch_mode](/features/tools/switch-mode) - Changes to a different mode for specialized tasks
-- [new_task](/features/tools/new-task) - Creates a new subtask
+- [ask_followup_question](/advanced-usage/available-tools/ask-followup-question) - Gets additional information from you
+- [attempt_completion](/advanced-usage/available-tools/attempt-completion) - Presents final results
+- [switch_mode](/advanced-usage/available-tools/switch-mode) - Changes to a different mode for specialized tasks
+- [new_task](/advanced-usage/available-tools/new-task) - Creates a new subtask
 
 ## Tool Calling Mechanism
 
@@ -196,17 +196,17 @@ Tools are made available based on the current mode:
 
 1. **Information Gathering**
    ```
-   [ask_followup_question](/features/tools/ask-followup-question) → [read_file](/features/tools/read-file) → [search_files](/features/tools/search-files)
+   [ask_followup_question](/advanced-usage/available-tools/ask-followup-question) → [read_file](/advanced-usage/available-tools/read-file) → [search_files](/advanced-usage/available-tools/search-files)
    ```
 
 2. **Code Modification**
    ```
-   [read_file](/features/tools/read-file) → [apply_diff](/features/tools/apply-diff) → [attempt_completion](/features/tools/attempt-completion)
+   [read_file](/advanced-usage/available-tools/read-file) → [apply_diff](/advanced-usage/available-tools/apply-diff) → [attempt_completion](/advanced-usage/available-tools/attempt-completion)
    ```
 
 3. **Task Management**
    ```
-   [new_task](/features/tools/new-task) → [switch_mode](/features/tools/switch-mode) → [execute_command](/features/tools/execute-command)
+   [new_task](/advanced-usage/available-tools/new-task) → [switch_mode](/advanced-usage/available-tools/switch-mode) → [execute_command](/advanced-usage/available-tools/execute-command)
    ```
 
 ## Error Handling and Recovery

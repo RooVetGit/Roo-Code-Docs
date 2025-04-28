@@ -79,7 +79,7 @@ Four ways to switch modes:
 | **Ideal For** | Tracking down bugs, diagnosing errors, and resolving complex issues |
 | **Special Features** | Uses a methodical approach of analyzing, narrowing possibilities, and fixing issues. Includes custom instructions to reflect, distill possibilities, add logs, and confirm before fixing. |
 
-### Orchestrator Mode (aka [Boomerang Mode](/features/boomerang-tasks))
+### Orchestrator Mode (aka Boomerang Mode)
 
 | Aspect | Details |
 |--------|---------|
@@ -87,7 +87,7 @@ Four ways to switch modes:
 | **Description** | A strategic workflow orchestrator (aka Boomerang Mode) that breaks down complex tasks and delegates them to specialized modes |
 | **Tool Access** | Access to `read`, `browser`, `command`, `mcp`, and restricted `edit` (mode configuration files only: `.roomodes`, `custom_modes.json`) |
 | **Ideal For** | Managing multi-step projects, coordinating work across different modes, and automating complex workflows |
-| **Special Features** | Uses the [`new_task`](/features/tools/new-task) tool to delegate subtasks to other modes. See [Boomerang Tasks](/features/boomerang-tasks) for details. |
+| **Special Features** | Uses the [`new_task`](/advanced-usage/available-tools/new-task) tool to delegate subtasks to other modes. |
 
 ## Custom Modes
 

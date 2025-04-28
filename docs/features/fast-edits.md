@@ -19,7 +19,7 @@ When **Enable editing through diffs** is checked:
 2.  **Prevents Truncated Writes**: The system automatically detects and rejects attempts by the AI to write incomplete file content, which can happen with large files or complex instructions. This helps prevent corrupted files.
 
 :::note Disabling Fast Edits
-If you uncheck **Enable editing through diffs**, Roo will revert to writing the entire file content for every edit using the [`write_to_file`](/features/tools/write-to-file) tool, instead of applying targeted changes with [`apply_diff`](/features/tools/apply-diff). This full-write approach is generally slower for modifying existing files and leads to higher token usage.
+If you uncheck **Enable editing through diffs**, Roo will revert to writing the entire file content for every edit using the [`write_to_file`](/advanced-usage/available-tools/write-to-file) tool, instead of applying targeted changes with [`apply_diff`](/advanced-usage/available-tools/apply-diff). This full-write approach is generally slower for modifying existing files and leads to higher token usage.
 :::
 
 ## Match Precision

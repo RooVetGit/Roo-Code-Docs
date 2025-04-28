@@ -29,7 +29,7 @@ Roo Code adapts to your needs with specialized [modes](/basic-usage/using-modes)
 - **Architect Mode:** For planning and technical leadership
 - **Ask Mode:** For answering questions and providing information
 - **Debug Mode:** For systematic problem diagnosis
-- **Orchestrator Mode:** For managing complex tasks and delegating work (see [Boomerang Tasks](/features/boomerang-tasks))
+- **Orchestrator Mode:** For managing complex tasks and delegating work
 - **[Custom Modes](/features/custom-modes):** Create unlimited specialized personas for security auditing, performance optimization, documentation, or any other task
 
 ### Smart Tools
