@@ -1,3 +1,4 @@
+- [3.15](/update-notes/v3.15) (2025-04-30)
 # Update Notes
 
 This section contains notes about recent updates to Roo Code, listed by version number.

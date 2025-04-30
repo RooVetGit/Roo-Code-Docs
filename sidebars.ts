@@ -166,6 +166,13 @@ const sidebars: SidebarsConfig = {
       label: 'Update Notes',
       items: [
         'update-notes/index',
+{
+          type: 'category',
+          label: '3.15',
+          items: [
+            { type: 'doc', id: 'update-notes/v3.15', label: '3.15 Combined' },
+          ],
+        },
         {
           type: 'category',
           label: '3.14',
