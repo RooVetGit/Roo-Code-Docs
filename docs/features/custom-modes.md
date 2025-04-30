@@ -364,7 +364,7 @@ Roo will generate the appropriate pattern with proper escaping for JSON configur
 :::
 
 ## Community Gallery
-Ready to explore more? Check out the [Custom Modes Gallery](/community/custom-modes/) to discover and share custom modes created by the community!
+Ready to explore more? Check out the [Custom Modes Gallery](/community/#custom-modes-gallery) section on the main community page to discover and share custom modes created by the community!
 
 :::note
 Links to the previous location at `/community#custom-modes-gallery` will continue to work for backward compatibility.
