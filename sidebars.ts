@@ -131,7 +131,34 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Community',
       items: [
-        'community',
+        'community/index',
+        {
+          type: 'category',
+          label: 'Projects',
+          items: [
+            'community/sparc',
+            'community/memory-bank',
+            'community/tips-and-tricks',
+            'community/dynamic-rules',
+            'community/roo-commander',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Custom Modes Gallery', // Renamed label
+          items: [
+            // Removed index file reference and nested category
+            'community/custom-modes/jest-test-engineer',
+            'community/custom-modes/research-mode',
+            'community/custom-modes/vibe-mode',
+            'community/custom-modes/documentation-writer',
+            'community/custom-modes/user-story-creator',
+            'community/custom-modes/junior-developer-code-reviewer',
+            'community/custom-modes/senior-developer-code-reviewer',
+            'community/custom-modes/orchestrator',
+            'community/custom-modes/advanced-orchestrator',
+          ],
+        },
       ],
     },
     {
