@@ -12,7 +12,9 @@ Shell integration is automatically enabled in Roo Code and connects directly to 
 - Observe command exit codes to determine success or failure
 - Track working directory changes as you navigate your project
 - React intelligently to terminal output without user intervention
+- Stop running commands directly from the chat interface using the stop button that appears next to the command execution message.
 
+  <img src="/img/v3.15/v3.15.png" alt="Stop Command Button in Chat UI" width="600" />
 When you ask Roo to perform tasks like installing dependencies, starting a development server, or analyzing build errors, shell integration works behind the scenes to make these interactions smooth and effective.
 
 ## Troubleshooting Shell Integration
@@ -25,6 +27,16 @@ Shell integration is built into Roo Code and works automatically in most cases. 
 4. **WSL users**: Add `. "$(code --locate-shell-integration-path bash)"` to your `~/.bashrc`
 
 ## Terminal Integration Settings
+### Command Execution Fallback
+
+Roo Code includes a fallback mechanism to ensure commands can still run even if VSCode's native shell integration fails or is unavailable.
+
+- **How it works**: If Roo Code cannot connect to the terminal using standard shell integration, it will automatically attempt to execute the command directly using a background process.
+- **Notification**: You'll see a notification in the chat if this fallback is used, indicating that the command is running without full shell integration features (like real-time output streaming or exit code detection might be limited).
+- **Resolution**: The notification will include links to help you troubleshoot the underlying shell integration issue if you wish to restore full functionality. Often, following the steps in this document resolves the problem.
+
+  <img src="/img/v3.15.0/v3.15.0.png" alt="Stop Command Button in Chat UI" width="600" />
+
 
 Roo Code provides several settings to fine-tune shell integration. Access these in the Roo Code sidebar under Settings → Terminal.
 
