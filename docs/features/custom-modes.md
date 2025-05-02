@@ -1,4 +1,4 @@
-# Custom Modes
+# Customizing Modes
 
 Roo Code allows you to create **custom modes** to tailor Roo's behavior to specific tasks or workflows. Custom modes can be either **global** (available across all projects) or **project-specific** (defined within a single project). Each mode—including custom ones—features **Sticky Models**, automatically remembering and selecting the last model you used with it. This lets you assign different preferred models to different tasks without reconfiguration, as Roo switches between models when you change modes.
 
@@ -40,6 +40,9 @@ Custom modes allow you to define:
 
 *   **A unique name and slug:** For easy identification
 *   **A role definition:** Placed at the beginning of the system prompt, this defines Roo's core expertise and personality for the mode. This placement is crucial as it shapes Roo's fundamental understanding and approach to tasks
+:::info Role Definition's First Sentence in System Prompt
+The first sentence of the `roleDefinition` (up to the first period `.`) serves a dual purpose. When a mode is active, the *entire* definition appears at the beginning of the system prompt. Additionally, this first sentence is *always* included in a separate section of the system prompt that lists all available modes, providing Roo with context about each mode's capabilities even when it's not the active one.
+:::
 *   **Custom instructions:** Added near the end of the system prompt, these provide specific guidelines that modify or refine Roo's behavior for the mode. You can define these using the `customInstructions` JSON property, and/or by adding instruction files to a dedicated directory (see below). The preferred method for file-based instructions is now using a **`.roo/rules-{mode-slug}/` directory**, which allows for better organization and takes precedence over the older `.roorules-{mode-slug}` file method. This structured placement allows for more nuanced control over Roo's responses.
 *   **Allowed tools:** Which Roo Code tools the mode can use (e.g., read files, write files, execute commands)
 *   **File restrictions:** (Optional) Limit file access to specific file types or patterns (e.g., only allow editing `.md` files)
