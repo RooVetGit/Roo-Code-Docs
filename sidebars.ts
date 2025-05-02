@@ -171,6 +171,7 @@ const sidebars: SidebarsConfig = {
           label: '3.15',
           items: [
             { type: 'doc', id: 'update-notes/v3.15', label: '3.15 Combined' },
+{ type: 'doc', id: 'update-notes/v3.15.2', label: '3.15.2' },
             { type: 'doc', id: 'update-notes/v3.15.1', label: '3.15.1' },
             { type: 'doc', id: 'update-notes/v3.15.0', label: '3.15.0' },
           ],
