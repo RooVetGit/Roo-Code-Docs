@@ -28,7 +28,7 @@ This tool lists all files and directories in a specified location, providing a c
 - Intelligently ignores common large directories like `node_modules` and `.git` in recursive mode
 - Respects `.gitignore` rules when in recursive mode
 - Marks files ignored by `.rooignore` with a lock symbol (🔒) when `showRooIgnoredFiles` is enabled
-- Optimizes performance with level-by-level directory traversal
+- Optimizes file listing performance by leveraging the `ripgrep` tool.
 - Sorts results to show directories before their contents, maintaining a logical hierarchy
 - Presents results in a clean, organized format
 - Automatically creates a mental map of your project structure
@@ -36,7 +36,7 @@ This tool lists all files and directories in a specified location, providing a c
 ## Limitations
 
 - File listing is capped at about 200 files by default to prevent performance issues
-- Has a 10-second timeout for directory traversal to prevent hanging on complex directory structures
+- The underlying `ripgrep` file listing process has a 10-second timeout; if exceeded, partial results may be returned.
 - When the file limit is hit, it adds a note suggesting to use `list_files` on specific subdirectories
 - Not designed for confirming the existence of files you've just created
 - May have reduced performance in very large directory structures
@@ -49,10 +49,10 @@ When the `list_files` tool is invoked, it follows this process:
 1. **Parameter Validation**: Validates the required `path` parameter and optional `recursive` parameter
 2. **Path Resolution**: Resolves the relative path to an absolute path
 3. **Security Checks**: Prevents listing files in sensitive locations like root or home directories
-4. **Directory Scanning**:
-   - For non-recursive mode: Lists only the top-level contents
-   - For recursive mode: Traverses the directory structure level by level with a 10-second timeout
-   - If timeout occurs, returns partial results collected up to that point
+4. **Directory/File Scanning**:
+   - Uses the `ripgrep` tool to efficiently list files, applying a 10-second timeout.
+   - Uses Node.js `fs` module to list directories.
+   - Applies different filtering logic for recursive vs. non-recursive modes.
 5. **Result Filtering**:
    - In recursive mode, skips common large directories like `node_modules`, `.git`, etc.
    - Respects `.gitignore` rules when in recursive mode

@@ -31,7 +31,7 @@ LLM routers let you access multiple AI models with one API key, simplifying cost
 
 1. Go to [requesty.ai](https://requesty.ai/)
 2. Sign in with your Google account or email
-3. Navigate to the [API management page](https://app.requesty.ai/manage-api) and create a new key
+3. Navigate to the [API management page](https://app.requesty.ai/api-keys) and create a new key
 4. **Important:** Copy your API key immediately as it won't be displayed again
 
 <img src="/img/connecting-api-provider/connecting-api-provider-7.png" alt="Requesty API management page" width="600" />

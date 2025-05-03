@@ -3,7 +3,7 @@
 Modes in Roo Code are specialized personas that tailor the assistant's behavior to your current task. Each mode offers different capabilities, expertise, and access levels to help you accomplish specific goals.
 
 :::info Sticky Models
-Each mode remembers your last-used model. When switching modes, Roo automatically selects that model—no manual selection needed. Assign different models to different modes (Gemini 2.5 Flash thinking for architect mode, Claude Sonnet 3.7 for code mode) and Roo will switch models automatically when you change modes.
+Each mode remembers your last-used model. When switching modes, Roo automatically selects that model—no manual selection needed. Assign different models to different modes (e.g., Gemini 2.5 Preview for `🏗️ Architect` mode, Claude Sonnet 3.7 for `💻 Code` mode) and Roo will switch models automatically when you change modes.
 :::
 
 ## Why Use Different Modes?
@@ -21,7 +21,7 @@ Four ways to switch modes:
    
    <img src="/img/modes/modes.png" alt="Using the dropdown menu to switch modes" width="400" />
 
-2. **Slash command:** Type `/architect`, `/ask`, `/debug`, or `/code` in the chat input
+2. **Slash command:** Type `/architect`, `/ask`, `/debug`, `/code`, or `/orchestrator` in the chat input
    
    <img src="/img/modes/modes-1.png" alt="Using slash commands to switch modes" width="400" />
 
@@ -43,6 +43,7 @@ Four ways to switch modes:
 
 | Aspect | Details |
 |--------|---------|
+| **Name** | `💻 Code` |
 | **Description** | A skilled software engineer with expertise in programming languages, design patterns, and best practices |
 | **Tool Access** | Full access to all tool groups: `read`, `edit`, `browser`, `command`, `mcp` |
 | **Ideal For** | Writing code, implementing features, debugging, and general development |
@@ -52,6 +53,7 @@ Four ways to switch modes:
 
 | Aspect | Details |
 |--------|---------|
+| **Name** | `❓ Ask` |
 | **Description** | A knowledgeable technical assistant focused on answering questions without changing your codebase |
 | **Tool Access** | Limited access: `read`, `browser`, `mcp` only (cannot edit files or run commands) |
 | **Ideal For** | Code explanation, concept exploration, and technical learning |
@@ -61,6 +63,7 @@ Four ways to switch modes:
 
 | Aspect | Details |
 |--------|---------|
+| **Name** | `🏗️ Architect` |
 | **Description** | An experienced technical leader and planner who helps design systems and create implementation plans |
 | **Tool Access** | Access to `read`, `browser`, `mcp`, and restricted `edit` (markdown files only) |
 | **Ideal For** | System design, high-level planning, and architecture discussions |
@@ -70,10 +73,21 @@ Four ways to switch modes:
 
 | Aspect | Details |
 |--------|---------|
+| **Name** | `🪲 Debug` |
 | **Description** | An expert problem solver specializing in systematic troubleshooting and diagnostics |
 | **Tool Access** | Full access to all tool groups: `read`, `edit`, `browser`, `command`, `mcp` |
 | **Ideal For** | Tracking down bugs, diagnosing errors, and resolving complex issues |
-| **Special Features** | Uses a methodical approach of analyzing, narrowing possibilities, and fixing issues |
+| **Special Features** | Uses a methodical approach of analyzing, narrowing possibilities, and fixing issues. Includes custom instructions to reflect, distill possibilities, add logs, and confirm before fixing. |
+
+### Orchestrator Mode (aka Boomerang Mode)
+
+| Aspect | Details |
+|--------|---------|
+| **Name** | `🪃 Orchestrator` |
+| **Description** | A strategic workflow orchestrator (aka Boomerang Mode) that breaks down complex tasks and delegates them to specialized modes |
+| **Tool Access** | Access to `read`, `browser`, `command`, `mcp`, and restricted `edit` (mode configuration files only: `.roomodes`, `custom_modes.json`) |
+| **Ideal For** | Managing multi-step projects, coordinating work across different modes, and automating complex workflows |
+| **Special Features** | Uses the [`new_task`](/advanced-usage/available-tools/new-task) tool to delegate subtasks to other modes. |
 
 ## Custom Modes
 

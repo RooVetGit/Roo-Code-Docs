@@ -1,9 +1,22 @@
+- [3.15](/update-notes/v3.15) (2025-04-30)
+*   [3.15.2](/update-notes/v3.15.2) (2025-05-02)
+*   [3.15.1](/update-notes/v3.15.1) (2025-04-30)
+*   [3.15.0](/update-notes/v3.15.0) (2025-04-30)
 # Update Notes
 
 This section contains notes about recent updates to Roo Code, listed by version number.
 
+## Version 3.14
+
+*   [3.14](/update-notes/v3.14) (2025-04-24)
+*   [3.14.3](/update-notes/v3.14.3) (2025-04-25)
+*   [3.14.2](/update-notes/v3.14.2) (2025-04-24)
+*   [3.14.1](/update-notes/v3.14.1) (2025-04-24)
+*   [3.14.0](/update-notes/v3.14.0) (2025-04-23)
+
 ## Version 3.13
 
+*   [3.13.2](/update-notes/v3.13.2) (2025-04-18)
 *   [3.13.1](/update-notes/v3.13.1) (2025-04-18)
 *   [3.13.0](/update-notes/v3.13.0) (2025-04-17)
 

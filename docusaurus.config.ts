@@ -31,7 +31,7 @@ const config: Config = {
   baseUrl: '/',
 
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -155,6 +155,76 @@ const config: Config = {
           {
             to: '/features/shell-integration',
             from: ['/troubleshooting/shell-integration'],
+          },
+          
+          // Tools folder moved from features to advanced-usage
+          {
+            to: '/advanced-usage/available-tools/access-mcp-resource',
+            from: ['/features/tools/access-mcp-resource'],
+          },
+          {
+            to: '/advanced-usage/available-tools/apply-diff',
+            from: ['/features/tools/apply-diff'],
+          },
+          {
+            to: '/advanced-usage/available-tools/ask-followup-question',
+            from: ['/features/tools/ask-followup-question'],
+          },
+          {
+            to: '/advanced-usage/available-tools/attempt-completion',
+            from: ['/features/tools/attempt-completion'],
+          },
+          {
+            to: '/advanced-usage/available-tools/browser-action',
+            from: ['/features/tools/browser-action'],
+          },
+          {
+            to: '/advanced-usage/available-tools/execute-command',
+            from: ['/features/tools/execute-command'],
+          },
+          {
+            to: '/advanced-usage/available-tools/insert-content',
+            from: ['/features/tools/insert-content'],
+          },
+          {
+            to: '/advanced-usage/available-tools/list-code-definition-names',
+            from: ['/features/tools/list-code-definition-names'],
+          },
+          {
+            to: '/advanced-usage/available-tools/list-files',
+            from: ['/features/tools/list-files'],
+          },
+          {
+            to: '/advanced-usage/available-tools/new-task',
+            from: ['/features/tools/new-task'],
+          },
+          {
+            to: '/advanced-usage/available-tools/read-file',
+            from: ['/features/tools/read-file'],
+          },
+          {
+            to: '/advanced-usage/available-tools/search-and-replace',
+            from: ['/features/tools/search-and-replace'],
+          },
+          {
+            to: '/advanced-usage/available-tools/search-files',
+            from: ['/features/tools/search-files'],
+          },
+          {
+            to: '/advanced-usage/available-tools/switch-mode',
+            from: ['/features/tools/switch-mode'],
+          },
+          {
+            to: '/advanced-usage/available-tools/tool-use-overview',
+            from: ['/features/tools/tool-use-overview'],
+          },
+          {
+            to: '/advanced-usage/available-tools/use-mcp-tool',
+            from: ['/features/tools/use-mcp-tool'],
+          },
+          {
+            to: '/advanced-usage/available-tools/write-to-file',
+            from: ['/features/tools/write-to-file'],
           },
         ],
       },

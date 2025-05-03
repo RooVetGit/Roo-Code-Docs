@@ -42,6 +42,13 @@ Refer to the [Gemini documentation](https://ai.google.dev/models/gemini) for mor
 3.  **Enter API Key:** Paste your Gemini API key into the "Gemini API Key" field.
 4.  **Select Model:** Choose your desired Gemini model from the "Model" dropdown.
 
+5.  **(Optional) Enable Prompt Caching (Gemini 2.5 Models):** For supported Gemini 2.5 models, check the "Enable Prompt Caching" box if you wish to activate prompt caching. See the note below for important details specific to this provider.
+    <img src="/img/v3.14.2/v3.14.2.png" alt="Prompt Caching Checkbox for Gemini Provider" width="600" />
 ## Tips and Notes
 
+*   **Prompt Caching (Manual Activation Required):**
+    *   Prompt caching is available for supported Gemini 2.5 models.
+    *   However, for the **Google Gemini provider**, caching is **not enabled by default**.
+    *   You **must manually check** the "Enable Prompt Caching" box in the provider settings to activate it.
+    *   **Reason:** This manual step is a temporary workaround due to potential response delays sometimes observed with Google's caching mechanism when accessed directly via this provider.
 *   **Pricing:**  Gemini API usage is priced based on input and output tokens. Refer to the [Gemini pricing page](https://ai.google.dev/pricing) for detailed information.

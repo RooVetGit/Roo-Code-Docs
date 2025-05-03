@@ -48,6 +48,7 @@ When the `write_to_file` tool is invoked, it follows this process:
 
 1. **Parameter Validation**: Validates the required parameters and permissions
    - Checks that `path`, `content`, and `line_count` are provided
+   - If `line_count` is missing/invalid, reverts any diff view changes and returns an error suggesting alternative tools (`apply_diff`, `insert_content`, etc.) if modifying an existing file.
    - Validates the file is allowed (not restricted by `.rooignore`)
    - Ensures the path is within the workspace boundaries
    - Tracks consecutive mistake counts for missing parameters

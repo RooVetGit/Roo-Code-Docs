@@ -37,6 +37,7 @@ Refer to the [OpenAI Models documentation](https://platform.openai.com/docs/mode
 2.  **Select Provider:** Choose "OpenAI" from the "API Provider" dropdown.
 3.  **Enter API Key:** Paste your OpenAI API key into the "OpenAI API Key" field.
 4.  **Select Model:** Choose your desired model from the "Model" dropdown.
+5.  **(Optional) Base URL:** If you need to use a custom base URL, enter the URL. Most people won't need to adjust this.
 
 ## Tips and Notes
 

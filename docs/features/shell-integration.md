@@ -6,13 +6,15 @@ Terminal Shell Integration is a key feature that enables Roo Code to execute com
 
 Shell integration is automatically enabled in Roo Code and connects directly to your terminal's command execution lifecycle without requiring any setup from you. This built-in feature allows Roo to:
 
-- Execute commands on your behalf through the [`execute_command`](/features/tools/execute-command) tool
+- Execute commands on your behalf through the [`execute_command`](/advanced-usage/available-tools/execute-command) tool
 - Read command output in real-time without manual copy-pasting
 - Automatically detect and fix errors in running applications
 - Observe command exit codes to determine success or failure
 - Track working directory changes as you navigate your project
 - React intelligently to terminal output without user intervention
+- Stop running commands directly from the chat interface using the stop button that appears next to the command execution message.
 
+  <img src="/img/v3.15/v3.15.png" alt="Stop Command Button in Chat UI" width="600" />
 When you ask Roo to perform tasks like installing dependencies, starting a development server, or analyzing build errors, shell integration works behind the scenes to make these interactions smooth and effective.
 
 ## Troubleshooting Shell Integration
@@ -25,6 +27,16 @@ Shell integration is built into Roo Code and works automatically in most cases. 
 4. **WSL users**: Add `. "$(code --locate-shell-integration-path bash)"` to your `~/.bashrc`
 
 ## Terminal Integration Settings
+### Command Execution Fallback
+
+Roo Code includes a fallback mechanism to ensure commands can still run even if VSCode's native shell integration fails or is unavailable.
+
+- **How it works**: If Roo Code cannot connect to the terminal using standard shell integration, it will automatically attempt to execute the command directly using a background process.
+- **Notification**: You'll see a notification in the chat if this fallback is used, indicating that the command is running without full shell integration features (like real-time output streaming or exit code detection might be limited).
+- **Resolution**: The notification will include links to help you troubleshoot the underlying shell integration issue if you wish to restore full functionality. Often, following the steps in this document resolves the problem.
+
+  <img src="/img/v3.15.0/v3.15.0.png" alt="Stop Command Button in Chat UI" width="600" />
+
 
 Roo Code provides several settings to fine-tune shell integration. Access these in the Roo Code sidebar under Settings → Terminal.
 
@@ -54,6 +66,11 @@ Adds a small pause after running commands to help Roo capture all output correct
   * VSCode version
   * Shell customizations (oh-my-zsh, powerlevel10k, etc.)
   * Operating system and environment
+
+#### Disable Terminal Shell Integration
+<img src="/img/shell-integration/shell-integration-9.png" alt="Disable terminal shell integration checkbox" width="600" />
+
+Enable this setting if terminal commands aren't working correctly or you encounter 'Shell Integration Unavailable' errors. When enabled, Roo Code uses a simpler, fallback method to execute commands, which bypasses some advanced terminal integration features but can improve reliability in problematic environments.
 
 ### Advanced Settings
 
@@ -227,6 +244,83 @@ For optimal shell integration with WSL, we recommend:
 4. Use the integrated terminal within VSCode
 
 ## Known Issues and Workarounds
+
+### VS Code Shell Integration for Fish + Cygwin on Windows
+
+For fellow Windows users running Fish terminal within a Cygwin environment, here's how VS Code's shell integration works:
+
+1.  **(Optional) Locate the Shell Integration Script:**
+    Open your Fish terminal *within VS Code* and run the following command:
+    ```bash
+    code --locate-shell-integration-path fish
+    ```
+    This will output the path to the `shellIntegration.fish` script. Note down this path.
+
+2.  **Update Your Fish Configuration:**
+    Edit your `config.fish` file (usually located at `~/.config/fish/config.fish` within your Cygwin home directory). Add the following line, preferably within an `if status is-interactive` block or at the very end of the file:
+
+    ```fish
+    # Example config.fish structure
+    if status is-interactive
+        # Your other interactive shell configurations...
+        # automatic locate integration script:
+        string match -q "$TERM_PROGRAM" "vscode"; and . (code --locate-shell-integration-path fish)
+
+        # Or if the above fails for you:
+        # Source the VS Code shell integration script
+        # IMPORTANT: Replace the example path below with the actual path you found in Step 1.
+        # Make sure the path is in a format Cygwin can understand (e.g., using /cygdrive/c/...).
+        # source "/cygdrive/c/Users/YourUser/.vscode/extensions/..../shellIntegration.fish"
+    end
+    ```
+    *Remember to replace the example path with the actual path from Step 1, correctly formatted for Cygwin.*
+
+3.  **Configure VS Code Terminal Profile:**
+    Open your VS Code `settings.json` file (Ctrl+Shift+P -> "Preferences: Open User Settings (JSON)"). Update or add the Fish profile under `terminal.integrated.profiles.windows` like this:
+
+    ```json
+    {
+      // ... other settings ...
+
+      "terminal.integrated.profiles.windows": {
+        // ... other profiles ...
+
+        // Recommended: Use bash.exe to launch fish as a login shell
+        "fish": {
+          "path": "C:\\cygwin64\\bin\\bash.exe", // Or your Cygwin bash path
+          "args": [
+            "--login", // Ensures login scripts run (important for Cygwin environment)
+            "-i",      // Ensures bash runs interactively
+            "-c",
+            "exec fish" // Replace bash process with fish
+          ],
+          "icon": "terminal-bash" // Optional: Use a recognizable icon
+        }
+        // Alternative (if the above fails): Launch fish directly
+        "fish-direct": {
+          "path": "C:\\cygwin64\\bin\\fish.exe", // Ensure this is in your Windows PATH or provide full path
+          // Use 'options' here instead of 'args'; otherwise, you might encounter the error "terminal process terminated exit code 1".
+          "options": ["-l", "-c"], // Example: login and interactive flags.
+          "icon": "terminal-fish" // Optional: Use a fish icon
+        }
+      },
+
+      // Optional: Set fish as your default if desired
+      // "terminal.integrated.defaultProfile.windows": "fish", // or "fish-direct" depending what you use.
+
+      // ... other settings ...
+    }
+    ```
+    *Note: Using `bash.exe --login -i -c "exec fish"` is often more reliable in Cygwin environments for ensuring the correct environment setup before `fish` starts. However, if that approach doesn't work, try the `fish-direct` profile configuration.*
+
+4.  **Restart VS Code:**
+    Close and reopen Visual Studio Code completely to apply the changes.
+
+5.  **Verify:**
+    Open a new Fish terminal in VS Code. The shell integration features (like command decorations, better command history navigation, etc.) should now be active. You can test basic functionality by running simple commands like `echo "Hello from integrated Fish!"`. <img src="/img/shell-integration/shell-integration-8.png" alt="Fish Cygwin Integration Example" width="600" />
+
+This setup works reliably on Windows systems using Cygwin, Fish, and the Starship prompt, and should assist users with similar configurations.
+
 
 ### Shell Integration Failures After VSCode 1.98
 

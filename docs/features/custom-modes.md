@@ -1,4 +1,4 @@
-# Custom Modes
+# Customizing Modes
 
 Roo Code allows you to create **custom modes** to tailor Roo's behavior to specific tasks or workflows. Custom modes can be either **global** (available across all projects) or **project-specific** (defined within a single project). Each mode—including custom ones—features **Sticky Models**, automatically remembering and selecting the last model you used with it. This lets you assign different preferred models to different tasks without reconfiguration, as Roo switches between models when you change modes.
 
@@ -40,6 +40,9 @@ Custom modes allow you to define:
 
 *   **A unique name and slug:** For easy identification
 *   **A role definition:** Placed at the beginning of the system prompt, this defines Roo's core expertise and personality for the mode. This placement is crucial as it shapes Roo's fundamental understanding and approach to tasks
+:::info Role Definition's First Sentence in System Prompt
+The first sentence of the `roleDefinition` (up to the first period `.`) serves a dual purpose. When a mode is active, the *entire* definition appears at the beginning of the system prompt. Additionally, this first sentence is *always* included in a separate section of the system prompt that lists all available modes, providing Roo with context about each mode's capabilities even when it's not the active one.
+:::
 *   **Custom instructions:** Added near the end of the system prompt, these provide specific guidelines that modify or refine Roo's behavior for the mode. You can define these using the `customInstructions` JSON property, and/or by adding instruction files to a dedicated directory (see below). The preferred method for file-based instructions is now using a **`.roo/rules-{mode-slug}/` directory**, which allows for better organization and takes precedence over the older `.roorules-{mode-slug}` file method. This structured placement allows for more nuanced control over Roo's responses.
 *   **Allowed tools:** Which Roo Code tools the mode can use (e.g., read files, write files, execute commands)
 *   **File restrictions:** (Optional) Limit file access to specific file types or patterns (e.g., only allow editing `.md` files)
@@ -153,7 +156,7 @@ Mode configurations are applied in this order:
 2. Global mode configurations (from `custom_modes.json`)
 3. Default mode configurations
 
-This means that project-specific configurations will override global configurations, which in turn override default configurations. You can override any default mode (like "code", "debug", etc.) by including a mode with the same slug in either your global or project-specific configuration.
+This means that project-specific configurations will override global configurations, which in turn override default configurations. You can override any default mode (like `code`, `debug`, `architect`, `ask`, `orchestrator` (aka Boomerang Mode)) by including a mode with the same slug in either your global or project-specific configuration.
 
 *   **Note on Instruction Files:** Within the loading of mode-specific instructions from the filesystem, the directory `.roo/rules-{mode-slug}/` takes precedence over the single file `.roorules-{mode-slug}` found in the workspace root.
 
@@ -239,7 +242,7 @@ Each example shows different aspects of mode configuration:
 
 ## Overriding Default Modes
 
-You can override Roo Code's built-in modes (like "code", "debug", "ask") with customized versions that better suit your workflow. This is done by creating a custom mode with the same slug as a default mode.
+You can override Roo Code's built-in modes (like `💻 Code`, `🪲 Debug`, `❓ Ask`, `🏗️ Architect`, `🪃 Orchestrator` (aka Boomerang Mode)) with customized versions that better suit your workflow. This is done by creating a custom mode with the same slug as a default mode (e.g., `code`, `debug`, `orchestrator`).
 
 ### Overriding Modes Globally
 
@@ -253,8 +256,8 @@ To customize a default mode across all your projects:
 ```json
 {
   "customModes": [{
-    "slug": "code",
-    "name": "Code",
+    "slug": "code", // Matches the default 'code' mode slug
+    "name": "💻 Code (Global Override)", // Custom display name
     "roleDefinition": "You are a software engineer with global-specific constraints",
     "groups": [
       "read",
@@ -265,7 +268,7 @@ To customize a default mode across all your projects:
 }
 ```
 
-This example replaces the default "Code" mode with a custom version that can only edit JavaScript and TypeScript files.
+This example replaces the default `💻 Code` mode with a custom version that can only edit JavaScript and TypeScript files.
 
 ### Project-Specific Mode Override
 
@@ -279,8 +282,8 @@ To override a default mode for just one project:
 ```json
 {
   "customModes": [{
-    "slug": "code",
-    "name": "Code (Project-Specific)",
+    "slug": "code", // Matches the default 'code' mode slug
+    "name": "💻 Code (Project-Specific)", // Custom display name
     "roleDefinition": "You are a software engineer with project-specific constraints",
     "groups": [
       "read",
@@ -297,8 +300,8 @@ Project-specific overrides take precedence over global overrides, which in turn 
 
 Common reasons to override built-in modes include:
 
-* **Restricting file access:** Limit a mode to specific file types for safety (e.g., restricting "Code" mode to only edit non-production files)
-* **Specializing behavior:** Customize a mode's expertise for your tech stack (e.g., making "Debug" mode focus on your framework)
+* **Restricting file access:** Limit a mode to specific file types for safety (e.g., restricting `💻 Code` mode to only edit non-production files)
+* **Specializing behavior:** Customize a mode's expertise for your tech stack (e.g., making `🪲 Debug` mode focus on your framework)
 * **Adding custom instructions:** Integrate project standards or team guidelines directly into modes
 * **Changing available tools:** Remove certain tools from modes to prevent unwanted operations
 
@@ -364,4 +367,8 @@ Roo will generate the appropriate pattern with proper escaping for JSON configur
 :::
 
 ## Community Gallery
-Ready to explore more? Check out the [Custom Modes Gallery](/community#custom-modes-gallery) to discover and share custom modes created by the community!
+Ready to explore more? Check out the [Custom Modes Gallery](/community/#custom-modes-gallery) section on the main community page to discover and share custom modes created by the community!
+
+:::note
+Links to the previous location at `/community#custom-modes-gallery` will continue to work for backward compatibility.
+:::

@@ -4,7 +4,7 @@ sidebar_label: 'Boomerang Tasks'
 
 # Boomerang Tasks: Orchestrate Complex Workflows
 
-Boomerang Tasks (also known as subtasks or task orchestration) allow you to break down complex projects into smaller, manageable pieces. Think of it like delegating parts of your work to specialized assistants. Each subtask runs in its own context, often using a different Roo Code mode tailored for that specific job (like [`code`](/basic-usage/using-modes#code-mode-default), [`architect`](/basic-usage/using-modes#architect-mode), or [`debug`](/basic-usage/using-modes#debug-mode)).
+Boomerang Tasks (also known as subtasks or task orchestration) allow you to break down complex projects into smaller, manageable pieces using the built-in **`🪃 Orchestrator` Mode (aka Boomerang Mode)**. Think of it like delegating parts of your work to specialized assistants. Each subtask runs in its own context, often using a different Roo Code mode tailored for that specific job (like [`💻 Code`](/basic-usage/using-modes#code-mode-default), [`🏗️ Architect`](/basic-usage/using-modes#architect-mode), or [`🪲 Debug`](/basic-usage/using-modes#debug-mode)). The Orchestrator mode manages this process.
 
 <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
   <iframe
@@ -24,12 +24,10 @@ Boomerang Tasks (also known as subtasks or task orchestration) allow you to brea
 
 <br />
 
-:::info Boomerang Mode is a Custom Mode
-The `Boomerang Mode` mentioned here is not a built-in mode but a custom mode you can create yourself. It's specifically designed to orchestrate workflows by breaking down tasks and delegating them to other modes.
+:::info Orchestrator Mode is Built-In
+The `🪃 Orchestrator` mode (previously achieved via a custom "Boomerang Mode") is now a built-in mode specifically designed to orchestrate workflows by breaking down tasks and delegating them to other modes. You no longer need to create a custom mode for this functionality.
 
-[**Jump to Boomerang Mode Setup & Download**](#setting-up-boomerang-mode)
-
-Learn more about [Built-in Modes](/basic-usage/using-modes#built-in-modes) or the general process of creating [Custom Modes](/features/custom-modes).
+Learn more about [Built-in Modes](/basic-usage/using-modes#built-in-modes).
 :::
 
 ## Why Use Boomerang Tasks?
@@ -41,9 +39,9 @@ Learn more about [Built-in Modes](/basic-usage/using-modes#built-in-modes) or th
 
 ## How It Works
 
-1.  Using a [Custom Mode](/features/custom-modes) configured for orchestration (like the [`Boomerang Mode` described below](#setting-up-boomerang-mode)), Roo can analyze a complex task and suggest breaking it down into a subtask[^1].
+1.  When in the [`🪃 Orchestrator`](/basic-usage/using-modes#orchestrator-mode-aka-boomerang-mode) mode (aka Boomerang Mode), Roo analyzes a complex task and suggests breaking it down into a subtask[^1].
 
-2.  The parent task pauses, and the new subtask begins in a different mode[^2].
+2.  The parent task (in Orchestrator mode) pauses, and the new subtask begins in a different, specialized mode[^2].
 3.  When the subtask's goal is achieved, Roo signals completion.
 4.  The parent task resumes with only the summary[^3] of the subtask. The parent uses this summary to continue the main workflow.
 
@@ -58,54 +56,10 @@ Learn more about [Built-in Modes](/basic-usage/using-modes#built-in-modes) or th
 Boomerang Tasks provide a powerful way to manage complex development workflows directly within Roo Code, leveraging specialized modes for maximum efficiency.
 
 :::tip Keep Tasks Focused
-
-## Setting Up Boomerang Mode
-
-### Download Configuration
-
-You can download the Boomerang Mode configuration file below. Rename the downloaded file to `.roomodes` and place it in the root directory of your project.
-
-[**Download boomerang-mode.roomodes**](/downloads/boomerang-tasks/roomodes.json)
-
-### Manual Configuration
-
-You can also create your own Boomerang Mode. Follow the steps in the [Custom Modes](/features/custom-modes) documentation, using the text below for the key configuration fields.
-
-**Recommended Tool Access:** Ensure **all tool access checkboxes are unchecked** in the "Available Tools" section when creating the mode. Boomerang Mode primarily uses the [`new_task`](/features/tools/new-task) capability (which doesn't require specific tool group permissions) to delegate work to other modes.
-
-**Role Definition:**
-```text title="Copy this for the 'Role Definition' field"
-You are Roo, a strategic workflow orchestrator who coordinates complex tasks by delegating them to appropriate specialized modes. You have a comprehensive understanding of each mode's capabilities and limitations, allowing you to effectively break down complex problems into discrete tasks that can be solved by different specialists.
-```
-
-**Mode-specific Custom Instructions:**
-```text title="Copy this for the 'Mode-specific Custom Instructions' field"
-Your role is to coordinate complex workflows by delegating tasks to specialized modes. As an orchestrator, you should:
-
-1. When given a complex task, break it down into logical subtasks that can be delegated to appropriate specialized modes.
-
-2. For each subtask, use the `new_task` tool to delegate. Choose the most appropriate mode for the subtask's specific goal and provide comprehensive instructions in the `message` parameter. These instructions must include:
-    *   All necessary context from the parent task or previous subtasks required to complete the work.
-    *   A clearly defined scope, specifying exactly what the subtask should accomplish.
-    *   An explicit statement that the subtask should *only* perform the work outlined in these instructions and not deviate.
-    *   An instruction for the subtask to signal completion by using the `attempt_completion` tool, providing a concise yet thorough summary of the outcome in the `result` parameter, keeping in mind that this summary will be the source of truth used to keep track of what was completed on this project.
-    *   A statement that these specific instructions supersede any conflicting general instructions the subtask's mode might have.
-
-3. Track and manage the progress of all subtasks. When a subtask is completed, analyze its results and determine the next steps.
-
-4. Help the user understand how the different subtasks fit together in the overall workflow. Provide clear reasoning about why you're delegating specific tasks to specific modes.
-
-5. When all subtasks are completed, synthesize the results and provide a comprehensive overview of what was accomplished.
-
-6. Ask clarifying questions when necessary to better understand how to break down complex tasks effectively.
-
-7. Suggest improvements to the workflow based on the results of completed subtasks.
-
-Use subtasks to maintain clarity. If a request significantly shifts focus or requires a different expertise (mode), consider creating a subtask rather than overloading the current one.
-```
+Use subtasks (delegated via Orchestrator mode) to maintain clarity. If a request significantly shifts focus or requires a different expertise (mode), consider creating a subtask rather than overloading the current one.
 :::
 
 
-[^1]: This context is passed via the `message` parameter of the [`new_task`](/features/tools/new-task) tool.
-[^2]: The mode for the subtask is specified via the `mode` parameter of the [`new_task`](/features/tools/new-task) tool during initiation.
-[^3]: This summary is passed via the `result` parameter of the [`attempt_completion`](/features/tools/attempt-completion) tool when the subtask finishes.
+[^1]: This context is passed via the `message` parameter of the [`new_task`](/advanced-usage/available-tools/new-task) tool when the Orchestrator mode delegates the task.
+[^2]: The mode for the subtask is specified via the `mode` parameter of the [`new_task`](/advanced-usage/available-tools/new-task) tool during initiation by the Orchestrator mode.
+[^3]: This summary is passed via the `result` parameter of the [`attempt_completion`](/advanced-usage/available-tools/attempt-completion) tool when the subtask finishes.
