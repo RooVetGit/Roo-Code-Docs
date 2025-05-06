@@ -94,6 +94,7 @@ const sidebars: SidebarsConfig = {
         'advanced-usage/rate-limits-costs',
         'advanced-usage/local-models',
         'advanced-usage/large-projects',
+        'advanced-usage/context-poisoning',
       ],
     },
     {
