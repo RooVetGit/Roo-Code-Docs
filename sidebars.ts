@@ -103,9 +103,10 @@ const sidebars: SidebarsConfig = {
         'providers/anthropic',
         'providers/bedrock',
         'providers/deepseek',
-        'providers/vertex',
+        'providers/chutes',
         'providers/gemini',
         'providers/glama',
+        'providers/groq',
         'providers/human-relay',
         'providers/lmstudio',
         'providers/mistral',
@@ -166,6 +167,13 @@ const sidebars: SidebarsConfig = {
       label: 'Update Notes',
       items: [
         'update-notes/index',
+        {
+          type: 'category',
+          label: '3.16',
+          items: [
+            { type: 'doc', id: 'update-notes/v3.16', label: '3.16 Combined' },
+          ],
+        },
 {
           type: 'category',
           label: '3.15',
