@@ -129,6 +129,7 @@ const sidebars: SidebarsConfig = {
       ],
     },
     'tutorial-videos',
+    'contributing',
     {
       type: 'category',
       label: 'Community',
