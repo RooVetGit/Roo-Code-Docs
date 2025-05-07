@@ -98,7 +98,10 @@ We welcome various contributions:
 -   **Find or Create an Issue**:
     -   Before starting any work, search [GitHub Issues](https://github.com/RooVetGit/Roo-Code/issues) to see if an issue for your intended contribution already exists.
     -   If it exists and is unassigned, comment on the issue to express your interest in taking it on. A maintainer will then assign it to you.
-    -   If no issue exists, create a new one, detailing the bug or feature. For new features, await approval from a maintainer (especially @hannesrudolph) before proceeding.
+    -   If no issue exists, create a new one using the appropriate template:
+        -   For bugs, use the "Bug Report" template.
+        -   For new features, use the "Detailed Feature Proposal" template. Await approval from a maintainer (especially @hannesrudolph) before proceeding with implementation.
+        -   **Note**: General ideas or preliminary discussions for features can start in [GitHub Discussions](https://github.com/RooVetGit/Roo-Code/discussions/categories/feature-requests). Once an idea is more concrete, a "Detailed Feature Proposal" issue should be created.
 -   **Claiming and Assignment**:
     -   Clearly state your intention to work on an issue by commenting on it.
     -   Wait for a maintainer to officially assign the issue to you in GitHub. This prevents multiple people from working on the same thing.
@@ -111,7 +114,9 @@ This approach helps us track work, ensure changes are desired, and coordinate ef
 
 -   **Good First Issues**: Check the "Issue [Unassigned]" section of our [Roo Code Issues](https://github.com/orgs/RooVetGit/projects/1) GitHub Project.
 -   **Documentation**: Contribute to our [docs](https://docs.roocode.com/) via the "Edit this page" link or the [Roo Code Docs repository](https://github.com/RooVetGit/Roo-Code-Docs).
--   **Proposing New Features**: For significant features, create a [feature request](https://github.com/RooVetGit/Roo-Code/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop) for discussion before implementation. This aligns with our **Issue-First Approach** detailed in the PR Policy.
+-   **Proposing New Features**:
+    1.  **Initial Idea/Discussion**: For broad or initial feature ideas, start a conversation in [GitHub Discussions](https://github.com/RooVetGit/Roo-Code/discussions/categories/feature-requests).
+    2.  **Formal Proposal**: For specific, actionable feature proposals ready for consideration and potential approval, create a "Detailed Feature Proposal" issue using the provided template. This is a key part of our **Issue-First Approach**.
 
 ### 3. Reporting Bugs or Issues
 
