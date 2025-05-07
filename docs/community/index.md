@@ -11,6 +11,7 @@ Welcome to the Roo Code community section! Here you'll find community projects t
 | [Tips & Tricks](/community/tips-and-tricks) | Collection of files designed to supercharge your Roo Code experience and maximize productivity |
 | [Dynamic Rules](/community/dynamic-rules) | Define new rules and delete them on the fly with simple syntax in your messages |
 | [Roo Commander](/community/roo-commander) | Sophisticated collection of custom modes designed to manage software development projects |
+| [Maestro Project](/community/maestro) | Orchestrates a team of specialized modes for comprehensive software development lifecycle management |
 
 ## Custom Modes Gallery {#custom-modes-gallery}
 
