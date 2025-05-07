@@ -51,6 +51,7 @@ const sidebars: SidebarsConfig = {
             'features/mcp/what-is-mcp',
             'features/mcp/server-transports',
             'features/mcp/mcp-vs-api',
+            'features/mcp/recommended-mcp-servers',
           ],
         },
         {
