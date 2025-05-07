@@ -129,7 +129,11 @@ const sidebars: SidebarsConfig = {
       ],
     },
     'tutorial-videos',
-    'contributing',
+    {
+      type: 'link',
+      label: 'Contributing (GitHub)',
+      href: 'https://github.com/RooVetGit/Roo-Code/blob/main/CONTRIBUTING.md',
+    },
     {
       type: 'category',
       label: 'Community',
