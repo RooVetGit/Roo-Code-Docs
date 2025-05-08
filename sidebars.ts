@@ -111,6 +111,7 @@ const sidebars: SidebarsConfig = {
         'providers/groq',
         'providers/human-relay',
         'providers/lmstudio',
+        'providers/litellm',
         'providers/mistral',
         'providers/ollama',
         'providers/openai',
