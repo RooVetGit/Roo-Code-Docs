@@ -85,6 +85,7 @@ const sidebars: SidebarsConfig = {
             'advanced-usage/available-tools/new-task',
             'advanced-usage/available-tools/read-file',
             'advanced-usage/available-tools/search-files',
+'advanced-usage/available-tools/search-and-replace',
             'advanced-usage/available-tools/switch-mode',
             'advanced-usage/available-tools/use-mcp-tool',
             'advanced-usage/available-tools/write-to-file',
@@ -111,6 +112,7 @@ const sidebars: SidebarsConfig = {
         'providers/groq',
         'providers/human-relay',
         'providers/lmstudio',
+        'providers/litellm',
         'providers/mistral',
         'providers/ollama',
         'providers/openai',
@@ -118,6 +120,7 @@ const sidebars: SidebarsConfig = {
         'providers/openrouter',
         'providers/requesty',
         'providers/unbound',
+        'providers/vertex',
         'providers/vscode-lm',
         'providers/xai',
       ]
