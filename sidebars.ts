@@ -51,6 +51,7 @@ const sidebars: SidebarsConfig = {
             'features/mcp/what-is-mcp',
             'features/mcp/server-transports',
             'features/mcp/mcp-vs-api',
+            'features/mcp/recommended-mcp-servers',
           ],
         },
         {
@@ -84,6 +85,7 @@ const sidebars: SidebarsConfig = {
             'advanced-usage/available-tools/new-task',
             'advanced-usage/available-tools/read-file',
             'advanced-usage/available-tools/search-files',
+'advanced-usage/available-tools/search-and-replace',
             'advanced-usage/available-tools/switch-mode',
             'advanced-usage/available-tools/use-mcp-tool',
             'advanced-usage/available-tools/write-to-file',
@@ -110,6 +112,7 @@ const sidebars: SidebarsConfig = {
         'providers/groq',
         'providers/human-relay',
         'providers/lmstudio',
+        'providers/litellm',
         'providers/mistral',
         'providers/ollama',
         'providers/openai',
@@ -117,6 +120,7 @@ const sidebars: SidebarsConfig = {
         'providers/openrouter',
         'providers/requesty',
         'providers/unbound',
+        'providers/vertex',
         'providers/vscode-lm',
         'providers/xai',
       ]
@@ -129,6 +133,11 @@ const sidebars: SidebarsConfig = {
       ],
     },
     'tutorial-videos',
+    {
+      type: 'link',
+      label: 'Contributing (GitHub)',
+      href: 'https://github.com/RooVetGit/Roo-Code/blob/main/CONTRIBUTING.md',
+    },
     {
       type: 'category',
       label: 'Community',
@@ -174,6 +183,9 @@ const sidebars: SidebarsConfig = {
           label: '3.16',
           items: [
             { type: 'doc', id: 'update-notes/v3.16', label: '3.16 Combined' },
+            { type: 'doc', id: 'update-notes/v3.16.3', label: '3.16.3' },
+            { type: 'doc', id: 'update-notes/v3.16.2', label: '3.16.2' },
+            { type: 'doc', id: 'update-notes/v3.16.1', label: '3.16.1' },
             { type: 'doc', id: 'update-notes/v3.16.0', label: '3.16.0' },
           ],
         },
