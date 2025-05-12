@@ -70,6 +70,21 @@ These tools help manage the conversation and task flow:
 
 ## Tool Calling Mechanism
 
+### Handling Complex Tasks
+
+For certain complex operations that require multiple steps, Roo doesn't just figure them out on the fly. Instead, it follows predefined, internal plans to ensure consistency and accuracy.
+
+A prime example is creating a new MCP server, identified internally by `create_mcp_server`. **This identifier does not represent a tool you will see being called.** Rather, when you ask Roo to create a server, it triggers this known, multi-step workflow.
+
+This specific workflow is initiated by Roo using its internal `fetch_instructions` tool (with the task `create_mcp_server`) to retrieve a detailed plan. This plan then guides Roo to make calls to several standard, documented tools in sequence, such as:
+
+*   [`execute_command`](/advanced-usage/available-tools/execute-command) for running setup scripts (e.g., `npx @modelcontextprotocol/create-server`).
+*   [`write_to_file`](/advanced-usage/available-tools/write-to-file) or [`apply_diff`](/advanced-usage/available-tools/apply-diff) for creating or modifying server code and configuration files.
+*   [`ask_followup_question`](/advanced-usage/available-tools/ask-followup-question) to gather necessary information like API keys from you.
+*   Other standard tools as needed for steps like determining file locations or updating configuration entries.
+
+So, while the overall task (like `create_mcp_server`) is complex, it's ultimately accomplished by intelligently orchestrating the standard tools available in your environment. This approach allows Roo to reliably perform complex operations by leveraging the tools documented here.
+
 ### When Tools Are Called
 
 Tools are invoked under specific conditions:

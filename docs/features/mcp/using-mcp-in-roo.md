@@ -5,6 +5,13 @@ sidebar_label: Using MCP in Roo Code
 
 # Using MCP in Roo Code
 
+:::info Confused about MCP Servers?
+
+An MCP (Model Context Protocol) server acts as a bridge, giving Roo Code access to a wider range of **tools** and external services like databases, APIs, or custom scripts. It uses a standard communication method, allowing Roo to leverage these external capabilities.
+
+For a deeper dive, check out [What is MCP?](/features/mcp/what-is-mcp).
+:::
+
 Model Context Protocol (MCP) extends Roo Code's capabilities by connecting to external tools and services. This guide covers everything you need to know about using MCP with Roo Code.
 
 ## Configuring MCP Servers
@@ -145,6 +152,31 @@ Disabling your MCP Server Creation here will just remove the instructions from y
 2. Check/Uncheck `Enable MCP Server Creation` 
 
   <img src="/img/using-mcp-in-roo/using-mcp-in-roo-3.png" alt="Enable MCP Server Creation toggle" width="400" />
+
+## How to Use Roo to Create an MCP Server
+
+If you need a specific tool or capability that isn't available through existing MCP servers, you can ask Roo Code to build a new one for you.
+
+**Prerequisite:** Ensure the **[Enable MCP Server Creation](#enabling-or-disabling-mcp-server-creation)** setting is checked ON in the MCP settings panel. If this is disabled, Roo will not have the necessary instructions to build a server.
+
+**How to Initiate:**
+
+1.  **Make a Request:** Clearly ask Roo for the new tool or capability. For example:
+    *   "Create an MCP tool that gets the current price of Bitcoin."
+    *   "I need a tool that connects to my company's internal user database via its API."
+    *   "Build an MCP server to interact with the GitHub Gist API."
+
+2.  **Roo's Process (Simplified):** Once you make the request (and the setting is enabled), Roo will:
+    *   Fetch internal instructions for server creation.
+    *   Scaffold a basic server project (usually TypeScript) in the default MCP directory (e.g., `~/Documents/Cline/MCP` on macOS) unless you specify otherwise.
+    *   Write the code to implement the requested tool, including handling necessary API calls.
+    *   **Handle Secrets:** If the tool requires API keys or other credentials, Roo will ask you for them using the [`ask_followup_question`](/advanced-usage/available-tools/ask-followup-question) tool to ensure they are configured securely as environment variables for the server.
+    *   **Configure:** Automatically add the new server's configuration to your global `mcp_settings.json` or project `.roo/mcp.json` file.
+    *   **Activate:** Attempt to connect to the newly configured server so its tools are immediately available.
+
+3.  **Outcome:** If successful, Roo will confirm the creation, and the new server and its tools will appear in your MCP server list, ready for use.
+
+This feature allows you to tailor Roo's capabilities by having it build the specific integrations you need directly from your requests. For a deeper look into the internal mechanics, see the [Tool Calling Mechanism](/advanced-usage/available-tools/tool-use-overview#tool-calling-mechanism).
 
 ## Managing Individual MCP Servers
 
