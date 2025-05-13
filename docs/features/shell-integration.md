@@ -14,7 +14,8 @@ Shell integration is automatically enabled in Roo Code and connects directly to 
 - React intelligently to terminal output without user intervention
 - Stop running commands directly from the chat interface using the stop button that appears next to the command execution message.
 
-  <img src="/img/v3.15/v3.15.png" alt="Stop Command Button in Chat UI" width="600" />
+<img src="/img/v3.15/v3.15.png" alt="Stop Command Button in Chat UI" width="600" />
+
 When you ask Roo to perform tasks like installing dependencies, starting a development server, or analyzing build errors, shell integration works behind the scenes to make these interactions smooth and effective.
 
 ## Troubleshooting Shell Integration
@@ -35,8 +36,7 @@ Roo Code includes a fallback mechanism to ensure commands can still run even if 
 - **Notification**: You'll see a notification in the chat if this fallback is used, indicating that the command is running without full shell integration features (like real-time output streaming or exit code detection might be limited).
 - **Resolution**: The notification will include links to help you troubleshoot the underlying shell integration issue if you wish to restore full functionality. Often, following the steps in this document resolves the problem.
 
-  <img src="/img/v3.15.0/v3.15.0.png" alt="Stop Command Button in Chat UI" width="600" />
-
+<img src="/img/v3.15.0/v3.15.0.png" alt="Stop Command Button in Chat UI" width="600" />
 
 Roo Code provides several settings to fine-tune shell integration. Access these in the Roo Code sidebar under Settings → Terminal.
 
@@ -44,33 +44,11 @@ Roo Code provides several settings to fine-tune shell integration. Access these 
 
 #### Terminal Output Limit
 <img src="/img/shell-integration/shell-integration.png" alt="Terminal output limit slider set to 500" width="600" />
-Controls the maximum number of lines captured from terminal output. When exceeded, it keeps 20% of the beginning and 80% of the end with a truncation message in between. This prevents excessive token usage while maintaining context. Default: 500 lines.
-Controls the maximum number of lines captured from terminal output. When exceeded, lines are removed from the middle to save tokens. Default: 500 lines.
+Maximum number of lines to include in terminal output when executing commands. When exceeded lines will be removed from the middle, saving tokens. Default: 500 lines.
 
-#### Terminal Shell Integration Timeout
-<img src="/img/shell-integration/shell-integration-1.png" alt="Terminal shell integration timeout slider set to 15s" width="600" />
-
-Maximum time to wait for shell integration to initialize before executing commands. Increase this value if you experience "Shell Integration Unavailable" errors. Default: 15 seconds.
-
-#### Terminal Command Delay
-<img src="/img/shell-integration/shell-integration-2.png" alt="Terminal command delay slider set to 0ms" width="600" />
-
-Adds a small pause after running commands to help Roo capture all output correctly. This setting can significantly impact shell integration reliability due to VSCode's implementation of terminal integration across different operating systems and shell configurations:
-
-- **Default**: 0ms (as of Roo v3.11.13)
-- **Common Values**:
-  * 0ms: Works best for some users with newer VSCode versions
-  * 50ms: Historical default, still effective for many users
-  * 150ms: Recommended for PowerShell users
-- **Note**: Different values may work better depending on your:
-  * VSCode version
-  * Shell customizations (oh-my-zsh, powerlevel10k, etc.)
-  * Operating system and environment
-
-#### Disable Terminal Shell Integration
-<img src="/img/shell-integration/shell-integration-9.png" alt="Disable terminal shell integration checkbox" width="600" />
-
-Enable this setting if terminal commands aren't working correctly or you encounter 'Shell Integration Unavailable' errors. When enabled, Roo Code uses a simpler, fallback method to execute commands, which bypasses some advanced terminal integration features but can improve reliability in problematic environments.
+#### Compress progress bar output
+<img src="/img/shell-integration/shell-integration-10.png" alt="Compress progress bar output checkbox" width="600" />
+When enabled, processes terminal output with carriage returns (\\r) to simulate how a real terminal would display content like progress bars. This removes intermediate progress bar states, retaining only the final state, which conserves context space for more relevant information.
 
 ### Advanced Settings
 
@@ -85,30 +63,43 @@ Changes to advanced terminal settings only take effect after restarting your ter
 Always restart all open terminals after changing any of these settings.
 :::
 
-#### PowerShell Counter Workaround
-<img src="/img/shell-integration/shell-integration-3.png" alt="PowerShell counter workaround checkbox" width="600" />
+#### Inherit environment variables
+<img src="/img/shell-integration/shell-integration-11.png" alt="Inherit environment variables checkbox" width="600" />
+When enabled, the terminal will inherit environment variables from VSCode's parent process, such as user-profile-defined shell integration settings. This directly toggles the VSCode global setting [`terminal.integrated.inheritEnv`](https://code.visualstudio.com/docs/editor/integrated-terminal#_inherit-environment-variables).
 
-Helps PowerShell run the same command multiple times in a row. Enable this if you notice Roo can't run identical commands consecutively in PowerShell.
+#### Disable terminal shell integration
+<img src="/img/shell-integration/shell-integration-9.png" alt="Disable terminal shell integration checkbox" width="600" />
+Enable this if terminal commands aren't working correctly or you see 'Shell Integration Unavailable' errors. This uses a simpler method to run commands, bypassing some advanced terminal features.
 
-#### Clear ZSH EOL Mark
+The following settings are applicable when "Disable terminal shell integration" is **unchecked** (i.e., shell integration is enabled):
+
+##### a. Terminal shell integration timeout
+<img src="/img/shell-integration/shell-integration-1.png" alt="Terminal shell integration timeout slider set to 15s" width="600" />
+Maximum time to wait for shell integration to initialize before executing commands. For users with long shell startup times, this value may need to be increased if you see 'Shell Integration Unavailable' errors in the terminal. Default: 15s (as shown in UI).
+
+##### b. Terminal command delay
+<img src="/img/shell-integration/shell-integration-2.png" alt="Terminal command delay slider set to 0ms" width="600" />
+Delay in milliseconds to add after command execution. The default setting of 0 disables the delay completely. This can help ensure command output is fully captured in terminals with timing issues. In most terminals, it is implemented by setting `PROMPT_COMMAND='sleep N'` and Powershell appends `start-sleep` to the end of each command. Originally was workaround for VSCode bug [#237208](https://github.com/microsoft/vscode/issues/237208) and may not be needed. Default: 0ms.
+
+##### c. Enable PowerShell counter workaround
+<img src="/img/shell-integration/shell-integration-3.png" alt="Enable PowerShell counter workaround checkbox" width="600" />
+When enabled, adds a counter to PowerShell commands to ensure proper command execution. This helps with PowerShell terminals that might have issues with command output capture.
+
+##### d. Clear ZSH EOL mark
 <img src="/img/shell-integration/shell-integration-4.png" alt="Clear ZSH EOL mark checkbox" width="600" />
+When enabled, clears the ZSH end-of-line mark by setting `PROMPT_EOL_MARK=''`. This prevents issues with command output interpretation when output ends with special characters like '%'.
 
-Prevents ZSH from adding special characters at the end of output lines that can confuse Roo when reading terminal results.
-
-#### Oh My Zsh Integration
+##### e. Enable Oh My Zsh integration
 <img src="/img/shell-integration/shell-integration-5.png" alt="Enable Oh My Zsh integration checkbox" width="600" />
+When enabled, sets `ITERM_SHELL_INTEGRATION_INSTALLED=Yes` to enable Oh My Zsh shell integration features. Applying this setting might require restarting the IDE.
 
-Makes Roo work better with the popular Oh My Zsh shell customization framework. Turn this on if you use Oh My Zsh and experience terminal issues.
-
-#### Powerlevel10k Integration
+##### f. Enable Powerlevel10k integration
 <img src="/img/shell-integration/shell-integration-6.png" alt="Enable Powerlevel10k integration checkbox" width="600" />
+When enabled, sets `POWERLEVEL9K_TERM_SHELL_INTEGRATION=true` to enable Powerlevel10k shell integration features.
 
-Improves compatibility if you use the Powerlevel10k theme for ZSH. Turn this on if your fancy terminal prompt causes issues with Roo.
-
-#### ZDOTDIR Handling
+##### g. Enable ZDOTDIR handling
 <img src="/img/shell-integration/shell-integration-7.png" alt="Enable ZDOTDIR handling checkbox" width="600" />
-
-Helps Roo work with custom ZSH configurations without interfering with your personal shell settings and customizations.
+When enabled, creates a temporary directory for ZDOTDIR to handle zsh shell integration properly. This ensures VSCode shell integration works correctly with zsh while preserving your zsh configuration.
 
 ## How Shell Integration Works
 
