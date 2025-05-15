@@ -3,7 +3,7 @@
  */
 
 // GitHub repository information
-export const GITHUB_REPO_URL = 'https://github.com/RooVetGit/Roo-Code-Docs';
+export const GITHUB_REPO_URL = 'https://github.com/RooCodeInc/Roo-Code-Docs';
 export const GITHUB_ISSUES_URL = `${GITHUB_REPO_URL}/issues`;
 export const GITHUB_NEW_ISSUE_URL = `${GITHUB_ISSUES_URL}/new`;
 
