@@ -180,8 +180,20 @@ const sidebars: SidebarsConfig = {
         'update-notes/index',
         {
           type: 'category',
+          label: '3.17',
+          items: [
+            { type: 'doc', id: 'update-notes/v3.17', label: '3.17 Combined' },
+            { type: 'doc', id: 'update-notes/v3.17.0', label: '3.17.0' },
+          ],
+        },
+        {
+          type: 'category',
           label: '3.16',
           items: [
+          items: [
+            { type: 'doc', id: 'update-notes/v3.16.6', label: '3.16.6' },
+            { type: 'doc', id: 'update-notes/v3.16.5', label: '3.16.5' },
+            { type: 'doc', id: 'update-notes/v3.16.4', label: '3.16.4' },
             { type: 'doc', id: 'update-notes/v3.16', label: '3.16 Combined' },
             { type: 'doc', id: 'update-notes/v3.16.3', label: '3.16.3' },
             { type: 'doc', id: 'update-notes/v3.16.2', label: '3.16.2' },
