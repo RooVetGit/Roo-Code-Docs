@@ -59,6 +59,8 @@ const sidebars: SidebarsConfig = {
           label: 'Experimental',
           items: [
             'features/experimental/experimental-features',
+            'features/experimental/intelligent-context-condensation',
+            'features/experimental/power-steering',
           ],
         },
         'features/more-features',
@@ -189,7 +191,6 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '3.16',
-          items: [
           items: [
             { type: 'doc', id: 'update-notes/v3.16.6', label: '3.16.6' },
             { type: 'doc', id: 'update-notes/v3.16.5', label: '3.16.5' },

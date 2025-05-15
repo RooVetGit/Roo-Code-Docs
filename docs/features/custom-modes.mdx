@@ -31,7 +31,7 @@ Each mode—including custom ones—features **Sticky Models**. This means Roo C
 *   **Experimentation:** Safely experiment with different prompts and configurations without affecting other modes
 *   **Team Collaboration:** Share custom modes with your team to standardize workflows
 
-<img src="/img/custom-modes/custom-modes-1.png" alt="Overview of custom modes interface" width="400" />
+<img src="/img/custom-modes/custom-modes-3.png" alt="Overview of custom modes interface" width="500" />
 
     *Roo Code's interface for creating and managing custom modes.*
 
@@ -39,13 +39,14 @@ Each mode—including custom ones—features **Sticky Models**. This means Roo C
 
 Custom modes are defined by several key properties. Understanding these concepts will help you tailor Roo's behavior effectively before diving into the JSON configuration.
 
-| Property             | Conceptual Description                                                                                                                                                                                                                                                                                                                                                                                       |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `slug`               | A **unique internal identifier** for the mode. It's used by Roo Code to reference the mode, especially for associating [mode-specific instruction files](#mode-specific-instructions-via-filesdirectories).                                                                                                                                                                                                   |
-| `name`               | The **display name** for the mode as it appears in the Roo Code user interface. This should be human-readable and descriptive.                                                                                                                                                                                                                                                                               |
-| `roleDefinition`     | The **core identity and expertise** of the mode. This text is placed at the beginning of the system prompt to define Roo's personality and primary function for this mode.<br />- **Critical First Sentence:** The first sentence (up to the first period `.`) is vital. It serves as a concise summary for Roo to understand the mode's purpose, even when it's not the active one. The entire definition is used when the mode is active. |
-| `groups`             | Defines the **allowed toolsets and file access permissions** for the mode. You can specify which general categories of tools (like reading files, editing files, browsing, or executing commands) the mode can use. For editing, you can also specify restrictions on which file types are permissible.                                                                                                    |
-| `customInstructions` | **Specific behavioral guidelines** or rules for the mode. These instructions are added near the end of the system prompt to further refine Roo's behavior beyond the `roleDefinition`. This can be provided directly in the configuration or via separate instruction files.                                                                                                                               |
+| UI Field / JSON Property                 | Conceptual Description                                                                                                                                                                                                                                                                                                                                                                                       |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Slug (`slug`)                            | A **unique internal identifier** for the mode. It's used by Roo Code to reference the mode, especially for associating [mode-specific instruction files](#mode-specific-instructions-via-filesdirectories).                                                                                                                                                                                                   |
+| Name (`name`)                            | The **display name** for the mode as it appears in the Roo Code user interface. This should be human-readable and descriptive.                                                                                                                                                                                                                                                                               |
+| Role Definition (`roleDefinition`)       | Defines the **core identity and expertise** of the mode. This text is placed at the beginning of the system prompt.<br />- Its primary function is to define Roo's personality and behavior when this mode is active.<br />- The **first sentence** (up to the first period `.`) serves as a default concise summary for Roo to understand the mode's general purpose. <br />- **However, if the `whenToUse` property is defined, `whenToUse` takes precedence** for summarizing the mode's function, especially in contexts like task orchestration or mode switching. In such cases, the first sentence of `roleDefinition` is less critical for this specific summarization task, though the entire `roleDefinition` is still used when the mode is active to guide its overall behavior. |
+| Available Tools (`groups`)               | Defines the **allowed toolsets and file access permissions** for the mode.<br />- In the UI, this corresponds to selecting which general categories of tools (like reading files, editing files, browsing, or executing commands) the mode can use.<br />- File type restrictions for the "edit" group are typically managed via manual JSON configuration or by asking Roo to set them up, as detailed in the [JSON Property Details for `groups`](#groups). |
+| When to Use (optional) (`whenToUse`)     | (Optional) Provides **guidance for Roo to understand the mode's purpose**, especially for automated decisions.<br />- This text is used by Roo, particularly the [`🪃 Orchestrator`](/basic-usage/using-modes#orchestrator-mode-aka-boomerang-mode) mode, for [orchestrating tasks](/features/boomerang-tasks) (e.g., via the [`new_task`](/advanced-usage/available-tools/new-task) tool).<br />- It also helps Roo decide which mode is appropriate when [switching modes](/basic-usage/using-modes#switching-between-modes) (e.g., via the [`switch_mode`](/advanced-usage/available-tools/switch-mode) tool).<br />- If populated, this description is used by Roo to understand the mode's function; otherwise, the first sentence of the `roleDefinition` is used by default. |
+| Custom Instructions (optional) (`customInstructions`) | **Specific behavioral guidelines** or rules for the mode.<br />- These instructions are added near the end of the system prompt to further refine Roo's behavior beyond the `roleDefinition`.<br />- This can be provided directly in the configuration or via separate instruction files.                                                                                                                               |
 
 ## Methods for Creating and Configuring Custom Modes
 
@@ -65,10 +66,11 @@ Roo Code will guide you through the process, prompting for necessary information
 2.  **Create New Mode:** Click the <Codicon name="add" /> button to the right of the Modes heading.
 3.  **Fill in Fields:**
 
-<img src="/img/custom-modes/custom-modes-2.png" alt="Custom mode creation interface in the Prompts tab" width="600" />
-*The custom mode creation interface showing fields for name, slug, save location, role definition, available tools, and custom instructions.*
+<img src="/img/custom-modes/custom-modes-4.png" alt="Custom mode creation interface in the Prompts tab" width="600" />
 
-    The interface provides fields for `Name`, `Slug`, `Save Location`, `Role Definition`, `Available Tools`, and `Custom Instructions`. After filling these, click the "Create Mode" button.
+*The custom mode creation interface showing fields for name, slug, save location, role definition, available tools, custom instructions.*
+
+    The interface provides fields for `Name`, `Slug`, `Save Location`, `Role Definition`, `When to Use (optional)`, `Available Tools`, and `Custom Instructions`. After filling these, click the "Create Mode" button.
 
 *Refer to the [What's Included in a Custom Mode?](#whats-included-in-a-custom-mode) table for conceptual explanations of each property. File type restrictions for the "edit" tool group can be added by asking Roo or through manual JSON configuration.*
 
@@ -88,11 +90,15 @@ Both files use the same JSON format. Each configuration file contains a `customM
       "slug": "mode-slug-example",
       "name": "Example Mode Display Name",
       "roleDefinition": "This mode's role and capabilities are defined here.",
+      "whenToUse": "Describe when this mode is most appropriate here.",
+      "customInstructions": "Additional guidelines for this example mode.",
       "groups": [
         "read",
-        ["edit", { "fileRegex": "\\.txt$", "description": "Text files only" }]
-      ],
-      "customInstructions": "Additional guidelines for this example mode."
+        "edit", // Can also be ["edit", { "fileRegex": "\\.md$", "description": "Markdown only" }]
+        "browser",
+        "command",
+        "mcp"
+      ]
     }
   ]
 }
@@ -115,7 +121,7 @@ Both files use the same JSON format. Each configuration file contains a `customM
 ##### `roleDefinition`
 *   **Purpose:** Detailed description of the mode's role, expertise, and personality.
 *   **Placement:** This text is placed at the beginning of the system prompt when the mode is active.
-*   **Critical First Sentence:** As noted in the table above, the first sentence is crucial for summarizing the mode's function.
+*   **Important First Sentence:** The first sentence (up to the first period `.`) serves as a default concise summary for Roo to understand the mode's general purpose. **However, if the `whenToUse` property is defined, `whenToUse` takes precedence** for summarizing the mode's function, especially in contexts like task orchestration or mode selection. In such cases, the first sentence of `roleDefinition` is less critical for this specific summarization task, though the entire `roleDefinition` is still used when the mode is active to guide its overall behavior.
 *   *JSON Example:* `"roleDefinition": "You are a technical writer specializing in clear documentation."`
 
 ##### `groups`
@@ -134,6 +140,12 @@ Both files use the same JSON format. Each configuration file contains a `customM
       ["edit", { "fileRegex": "\\.md$", "description": "Markdown files only" }]
     ]
     ```
+
+##### `whenToUse`
+*   **Purpose:** (Optional) Provides guidance for Roo to understand what this mode does. This is primarily used by the [`🪃 Orchestrator`](/basic-usage/using-modes#orchestrator-mode-aka-boomerang-mode) mode for [orchestrating tasks](/features/boomerang-tasks) (e.g., via the [`new_task`](/advanced-usage/available-tools/new-task) tool) and for determining the appropriate mode when [switching modes](/basic-usage/using-modes#switching-between-modes) (e.g., via the [`switch_mode`](/advanced-usage/available-tools/switch-mode) tool).
+*   **Format:** A string describing ideal scenarios or task types for this mode.
+*   **Usage:** If populated, Roo uses this description to understand the mode's function. Otherwise, the first sentence of the `roleDefinition` is used by default.
+*   **JSON Example:** `"whenToUse": "This mode is best for refactoring Python code to improve performance and readability."`
 
 ##### `customInstructions`
 *   **Purpose:** A string containing additional behavioral guidelines for the mode.
@@ -225,11 +237,12 @@ To customize a default mode across all your projects:
     "slug": "code", // Matches the default 'code' mode slug
     "name": "💻 Code (Global Override)", // Custom display name
     "roleDefinition": "You are a software engineer with global-specific constraints",
+    "whenToUse": "This globally overridden code mode is for JS/TS tasks.",
+    "customInstructions": "Focus on project-specific JS/TS development",
     "groups": [
       "read",
       ["edit", { "fileRegex": "\\.(js|ts)$", "description": "JS/TS files only" }]
-    ],
-    "customInstructions": "Focus on project-specific JS/TS development"
+    ]
   }]
 }
 ```
@@ -251,11 +264,12 @@ To override a default mode for just one project:
     "slug": "code", // Matches the default 'code' mode slug
     "name": "💻 Code (Project-Specific)", // Custom display name
     "roleDefinition": "You are a software engineer with project-specific constraints",
+    "whenToUse": "This project-specific code mode is for JS/TS tasks within this project.",
+    "customInstructions": "Focus on project-specific JS/TS development",
     "groups": [
       "read",
       ["edit", { "fileRegex": "\\.(js|ts)$", "description": "JS/TS files only" }]
-    ],
-    "customInstructions": "Focus on project-specific JS/TS development"
+    ]
   }]
 }
 ```
@@ -325,41 +339,6 @@ Before applying a regex pattern:
 1.  Test it on sample file paths to ensure it behaves as expected. Online regex testers can be helpful.
 2.  Remember the double backslash rule for JSON.
 3.  Start with simpler patterns and build complexity gradually.
-
-## Example Configurations
-
-Each example shows different aspects of mode configuration:
-
-### Basic Documentation Writer
-```json
-{
-  "customModes": [{
-    "slug": "docs-writer",
-    "name": "Documentation Writer",
-    "roleDefinition": "You are a technical writer specializing in clear documentation",
-    "groups": [
-      "read",
-      ["edit", { "fileRegex": "\\.md$", "description": "Markdown files only" }]
-    ],
-    "customInstructions": "Focus on clear explanations and examples"
-  }]
-}
-```
-
-### Test Engineer with File Restrictions
-```json
-{
-  "customModes": [{
-    "slug": "test-engineer",
-    "name": "Test Engineer",
-    "roleDefinition": "You are a test engineer focused on code quality",
-    "groups": [
-      "read",
-      ["edit", { "fileRegex": "\\.(test|spec)\\.(js|ts)$", "description": "Test files only" }]
-    ]
-  }]
-}
-```
 
 ## Community Gallery
 Ready to explore more? Check out the [Custom Modes Gallery](/community/#custom-modes-gallery) section on the main community page to discover and share custom modes created by the community!
