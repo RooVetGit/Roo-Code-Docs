@@ -1,8 +1,8 @@
 # Experimental Features
 
-Roo Code includes experimental features that are still under development.  These features may be unstable, change significantly, or be removed in future versions.  Use them with caution and be aware that they may not work as expected.
+Roo Code includes experimental features that are still under development. These features may be unstable, change significantly, or be removed in future versions. Use them with caution and be aware that they may not work as expected.
 
-**Warning:** Experimental features may have unexpected behavior, including potential data loss or security vulnerabilities.  Enable them at your own risk.
+**Warning:** Experimental features may have unexpected behavior, including potential data loss or security vulnerabilities. Enable them at your own risk.
 
 ## Enabling Experimental Features
 
@@ -11,22 +11,13 @@ To enable or disable experimental features:
 1.  Open the Roo Code settings (<Codicon name="gear" /> icon in the top right corner).
 2.  Go to the "Advanced Settings" section.
 3.  Find the "Experimental Features" section.
-4.  Check or uncheck the boxes for the features you want to enable or disable.
-5.  Click "Done" to save your changes.
 
 ## Current Experimental Features
 
 The following experimental features are currently available:
 
-### Intelligently condense the context window
-
-If enabled, Roo uses an LLM to summarize the past conversation when the context window is almost full. This summary attempts to dramatically shrink the number of tokens in the context while preserving useful information. If disabled, Roo drops past messages using a sliding window when the context window is full.
-
-**Disclaimer**: Currently the costs associated with summarizing the conversation are not included in the cost displayed in the UI.
-
-### Power Steering
-
-When enabled, Roo will remind the model about the details of its current mode definition more frequently. This will lead to stronger adherence to role definitions and custom instructions, but will use more tokens per message.
+- [Intelligently Condense the Context Window](/features/experimental/intelligent-context-condensation)
+- [Power Steering](/features/experimental/power-steering)
 
 ## Providing Feedback
 

@@ -19,11 +19,11 @@ Four ways to switch modes:
 
 1. **Dropdown menu:** Click the selector to the left of the chat input
    
-   <img src="/img/modes/modes.png" alt="Using the dropdown menu to switch modes" width="400" />
+   <img src="/img/using-modes/using-modes.png" alt="Using the dropdown menu to switch modes" width="400" />
 
 2. **Slash command:** Type `/architect`, `/ask`, `/debug`, `/code`, or `/orchestrator` in the chat input
    
-   <img src="/img/modes/modes-1.png" alt="Using slash commands to switch modes" width="400" />
+   <img src="/img/using-modes/using-modes-1.png" alt="Using slash commands to switch modes" width="400" />
 
 3. **Toggle command/Keyboard shortcut:** Use the keyboard shortcut below, applicable to your operating system. Each press cycles through the available modes in sequence, wrapping back to the first mode after reaching the end.
        
@@ -35,7 +35,7 @@ Four ways to switch modes:
 
 4. **Accept suggestions:** Click on mode switch suggestions that Roo offers when appropriate
    
-    <img src="/img/modes/modes-2.png" alt="Accepting a mode switch suggestion from Roo" width="400" />
+    <img src="/img/using-modes/using-modes-2.png" alt="Accepting a mode switch suggestion from Roo" width="400" />
 
 ## Built-in Modes
 
@@ -54,10 +54,10 @@ Four ways to switch modes:
 | Aspect | Details |
 |--------|---------|
 | **Name** | `❓ Ask` |
-| **Description** | A knowledgeable technical assistant focused on answering questions without changing your codebase |
+| **Description** | A knowledgeable technical assistant focused on providing thorough and complete answers. It's less inclined to switch to implementing code unless explicitly requested and may use diagrams for clarification. |
 | **Tool Access** | Limited access: `read`, `browser`, `mcp` only (cannot edit files or run commands) |
 | **Ideal For** | Code explanation, concept exploration, and technical learning |
-| **Special Features** | Optimized for informative responses without modifying your project |
+| **Special Features** | Optimized for detailed, informative responses, often using diagrams for clarity, without modifying your project. |
 
 ### Architect Mode
 
@@ -84,11 +84,11 @@ Four ways to switch modes:
 | Aspect | Details |
 |--------|---------|
 | **Name** | `🪃 Orchestrator` |
-| **Description** | A strategic workflow orchestrator (aka Boomerang Mode) that breaks down complex tasks and delegates them to specialized modes |
+| **Description** | A strategic workflow orchestrator (aka Boomerang Mode) that breaks down complex tasks and delegates them to specialized modes. Learn more about [Boomerang Tasks](/features/boomerang-tasks). |
 | **Tool Access** | Access to `read`, `browser`, `command`, `mcp`, and restricted `edit` (mode configuration files only: `.roomodes`, `custom_modes.json`) |
 | **Ideal For** | Managing multi-step projects, coordinating work across different modes, and automating complex workflows |
 | **Special Features** | Uses the [`new_task`](/advanced-usage/available-tools/new-task) tool to delegate subtasks to other modes. |
 
-## Custom Modes
+## Customizing Modes
 
-Create your own specialized assistants by defining tool access, file permissions, and behavior instructions. Custom modes help enforce team standards or create purpose-specific assistants. See [Custom Modes documentation](/features/custom-modes) for setup instructions.
+Tailor Roo Code's behavior by customizing existing modes or creating new specialized assistants. Define tool access, file permissions, and behavior instructions to enforce team standards or create purpose-specific assistants. See [Custom Modes documentation](/features/custom-modes) for setup instructions.
