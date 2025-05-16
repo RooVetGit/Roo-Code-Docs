@@ -35,6 +35,7 @@ const sidebars: SidebarsConfig = {
         'features/footgun-prompting',
         'features/keyboard-shortcuts',
         'features/model-temperature',
+        'features/rooignore',
         'features/settings-management',
         'features/shell-integration',
         'features/suggested-responses',
