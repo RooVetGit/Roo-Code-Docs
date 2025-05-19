@@ -1,20 +1,24 @@
 {
   "videos": [
     {
-      "id": "qgqceCuhlRA",
-      "title": "Custom Modes in Roo Code | Official Tutorial "
-    },
-    {
       "id": "Mcq3r1EPZ-4",
       "title": "Installing Roo Code in VS Code"
+    },
+    {
+      "id": "eEJErgZBqLE",
+      "title": "Configuring Profiles | Detailed Tutorial"
     },
     {
       "id": "QDy3dm1xJ6Y",
       "title": "Setting up MCP server in Roo"
     },
     {
-      "id": "eEJErgZBqLE",
-      "title": "Configuring Profiles | Detailed Tutorial"
+      "id": "jW4_PPyRXCs",
+      "title": "Auto Approve in Roo Code Explained | Detailed Tutorial"
+    },
+    {
+      "id": "qgqceCuhlRA",
+      "title": "Custom Modes in Roo Code | Official Tutorial "
     }
   ]
 }
