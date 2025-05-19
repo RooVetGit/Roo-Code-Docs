@@ -186,6 +186,8 @@ const sidebars: SidebarsConfig = {
           label: '3.17',
           items: [
             { type: 'doc', id: 'update-notes/v3.17', label: '3.17 Combined' },
+{ type: 'doc', id: 'update-notes/v3.17.2', label: '3.17.2' },
+            { type: 'doc', id: 'update-notes/v3.17.1', label: '3.17.1' },
             { type: 'doc', id: 'update-notes/v3.17.0', label: '3.17.0' },
           ],
         },
@@ -231,6 +233,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '3.13',
           items: [
+{ type: 'doc', id: 'update-notes/v3.13', label: '3.13 Combined' },
             { type: 'doc', id: 'update-notes/v3.13.2', label: '3.13.2' },
             { type: 'doc', id: 'update-notes/v3.13.1', label: '3.13.1' },
             { type: 'doc', id: 'update-notes/v3.13.0', label: '3.13.0' },
@@ -240,6 +243,8 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '3.12',
           items: [
+{ type: 'doc', id: 'update-notes/v3.12', label: '3.12 Combined' },
+            { type: 'doc', id: 'update-notes/v3.12.3', label: '3.12.3' },
             { type: 'doc', id: 'update-notes/v3.12.2', label: '3.12.2' },
             { type: 'doc', id: 'update-notes/v3.12.1', label: '3.12.1' },
             { type: 'doc', id: 'update-notes/v3.12.0', label: '3.12.0' },
@@ -262,16 +267,19 @@ const sidebars: SidebarsConfig = {
             { type: 'doc', id: 'update-notes/v3.11.7', label: '3.11.7' },
             { type: 'doc', id: 'update-notes/v3.11.6', label: '3.11.6' },
             { type: 'doc', id: 'update-notes/v3.11.5', label: '3.11.5' },
+{ type: 'doc', id: 'update-notes/v3.11.4', label: '3.11.4' },
             { type: 'doc', id: 'update-notes/v3.11.3', label: '3.11.3' },
             { type: 'doc', id: 'update-notes/v3.11.2', label: '3.11.2' },
             { type: 'doc', id: 'update-notes/v3.11.1', label: '3.11.1' },
-            { type: 'doc', id: 'update-notes/v3.11', label: '3.11.0' },
+            { type: 'doc', id: 'update-notes/v3.11', label: '3.11 Combined' },
+            { type: 'doc', id: 'update-notes/v3.11.0', label: '3.11.0' },
           ],
         },
         {
           type: 'category',
           label: '3.10',
           items: [
+{ type: 'doc', id: 'update-notes/v3.10', label: '3.10 Combined' },
             { type: 'doc', id: 'update-notes/v3.10.5', label: '3.10.5' },
             { type: 'doc', id: 'update-notes/v3.10.4', label: '3.10.4' },
             { type: 'doc', id: 'update-notes/v3.10.3', label: '3.10.3' },
@@ -284,6 +292,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '3.9',
           items: [
+{ type: 'doc', id: 'update-notes/v3.9', label: '3.9 Combined' },
             { type: 'doc', id: 'update-notes/v3.9.2', label: '3.9.2' },
             { type: 'doc', id: 'update-notes/v3.9.1', label: '3.9.1' },
             { type: 'doc', id: 'update-notes/v3.9.0', label: '3.9.0' },
@@ -293,6 +302,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '3.8',
           items: [
+{ type: 'doc', id: 'update-notes/v3.8', label: '3.8 Combined' },
             { type: 'doc', id: 'update-notes/v3.8.6', label: '3.8.6' },
             { type: 'doc', id: 'update-notes/v3.8.5', label: '3.8.5' },
             { type: 'doc', id: 'update-notes/v3.8.4', label: '3.8.4' },
@@ -306,6 +316,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '3.7',
           items: [
+{ type: 'doc', id: 'update-notes/v3.7', label: '3.7 Combined' },
             { type: 'doc', id: 'update-notes/v3.7.12', label: '3.7.12' },
             { type: 'doc', id: 'update-notes/v3.7.11', label: '3.7.11' },
             { type: 'doc', id: 'update-notes/v3.7.10', label: '3.7.10' },
@@ -325,6 +336,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '3.3',
           items: [
+{ type: 'doc', id: 'update-notes/v3.3', label: '3.3 Combined' },
             { type: 'doc', id: 'update-notes/v3.3.26', label: '3.3.26' },
             { type: 'doc', id: 'update-notes/v3.3.25', label: '3.3.25' },
             { type: 'doc', id: 'update-notes/v3.3.24', label: '3.3.24' },
@@ -358,6 +370,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '3.1',
           items: [
+{ type: 'doc', id: 'update-notes/v3.1', label: '3.1 Combined' },
             { type: 'doc', id: 'update-notes/v3.1.7', label: '3.1.7' },
             { type: 'doc', id: 'update-notes/v3.1.6', label: '3.1.6' },
             { type: 'doc', id: 'update-notes/v3.1.4', label: '3.1.4' }, // Includes 3.1.5 fix
@@ -371,6 +384,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '3.0',
           items: [
+{ type: 'doc', id: 'update-notes/v3.0', label: '3.0 Combined' },
             { type: 'doc', id: 'update-notes/v3.0.3', label: '3.0.3' },
             { type: 'doc', id: 'update-notes/v3.0.2', label: '3.0.2' },
             { type: 'doc', id: 'update-notes/v3.0.1', label: '3.0.1' },
@@ -381,6 +395,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '3.2',
           items: [
+{ type: 'doc', id: 'update-notes/v3.2', label: '3.2 Combined' },
             { type: 'doc', id: 'update-notes/v3.2.8', label: '3.2.8' },
             { type: 'doc', id: 'update-notes/v3.2.7', label: '3.2.7' },
             { type: 'doc', id: 'update-notes/v3.2.6', label: '3.2.6' },
@@ -394,6 +409,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '2.2',
           items: [
+{ type: 'doc', id: 'update-notes/v2.2', label: '2.2 Combined' },
             { type: 'doc', id: 'update-notes/v2.2.46', label: '2.2.46' },
             { type: 'doc', id: 'update-notes/v2.2.45', label: '2.2.45' },
             { type: 'doc', id: 'update-notes/v2.2.44', label: '2.2.44' },
@@ -441,6 +457,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '2.1',
           items: [
+{ type: 'doc', id: 'update-notes/v2.1', label: '2.1 Combined' },
             { type: 'doc', id: 'update-notes/v2.1.21', label: '2.1.21' },
             { type: 'doc', id: 'update-notes/v2.1.20', label: '2.1.20' },
             { type: 'doc', id: 'update-notes/v2.1.19', label: '2.1.19' },
