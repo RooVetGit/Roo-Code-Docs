@@ -252,13 +252,44 @@ For full SDK documentation, visit the [MCP GitHub repository](https://github.com
 
 ## Using MCP Tools in Your Workflow
 
-After configuring an MCP server, Roo will automatically detect available tools and resources. To use them:
+After configuring an MCP server, Roo automatically detects its available tools and resources. Effectively leveraging these tools involves understanding the core interaction steps and, crucially, how Roo interprets the tools you provide.
 
-1. Type your request in the Roo Code chat interface
-2. Roo will identify when an MCP tool can help with your task
-3. Approve the tool use when prompted (or use auto-approval)
+### Core Workflow Steps
 
-Example: "Analyze the performance of my API" might use an MCP tool that tests API endpoints.
+Your interaction with MCP tools typically follows this sequence:
+
+#### 1. Initiate a Task
+Begin by typing your request in the Roo Code chat interface.
+
+#### 2. Tool Identification by Roo
+Roo analyzes your request to determine if an available MCP tool can assist. This stage is highly dependent on the quality of your MCP tool definitions.
+
+##### The Critical Role of Descriptions
+Roo's ability to:
+*   Identify the *correct* tool for the job,
+*   Understand how to structure the necessary parameters, and
+*   Avoid misinterpreting a tool's capabilities,
+all hinge on clear, concise, and informative descriptions for both the tools themselves and their parameters. Vague or missing information, especially for parameters, can significantly hinder Roo's ability to select or use a tool effectively.
+
+For instance, a request like "Analyze the performance of my API" might lead Roo to consider an MCP tool designed for API endpoint testing. Whether Roo successfully identifies and utilizes this tool as intended is directly influenced by the quality of its description.
+
+##### Best Practices for Defining MCP Tools
+To ensure Roo can leverage your MCP tools efficiently, consider the following when defining them in your server:
+
+*   **Tool Name:** Choose a descriptive and unambiguous name that clearly indicates the tool's primary function.
+*   **Tool Description:** Provide a comprehensive summary of what the tool does, its purpose, and any important context or prerequisites for its use. Explain the outcome or result of using the tool.
+*   **Parameter Descriptions:** This is critical. For each parameter:
+    *   Clearly state its purpose and what kind of data it expects (e.g., "User ID for lookup," "File path to process," "Search query string").
+    *   Specify any formatting requirements, constraints, or an example of a valid value if applicable.
+    *   Indicate if the parameter is optional or required (though the MCP schema usually handles this, a note can be helpful).
+*   **Clarity for the AI:** Write descriptions as if you are explaining the tool to another developer (or an AI). The more context Roo has, the better it can integrate the tool into its problem-solving workflows. If a tool is intended to be used in a specific sequence or in conjunction with other tools, mentioning this can also be beneficial.
+*   **Augment with Custom Instructions:** Beyond the descriptions embedded in the MCP server, you can further guide Roo's usage of specific MCP tools by providing [Custom Instructions](/features/custom-instructions). This allows you to define preferred approaches, outline complex workflows involving multiple tools, or specify when a particular MCP tool should be prioritized or avoided.
+
+#### 3. Tool Invocation
+If Roo, guided by the tool descriptions, identifies a suitable tool, it will propose its use. You then approve this (unless [auto-approval](#auto-approve-tools) is configured for trusted tools).
+
+### Maximizing Synergy with MCP Servers
+By investing effort in crafting detailed descriptions and potentially augmenting them with custom instructions, you significantly improve the synergy between Roo Code and your MCP servers. This unlocks their full potential for more reliable and efficient task completion.
 
 ## Troubleshooting MCP Servers
 
