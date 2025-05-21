@@ -13,7 +13,7 @@ export const REDDIT_URL = 'https://www.reddit.com/r/RooCode/';
 export const TWITTER_URL = 'https://x.com/roo_code';
 
 // GitHub links
-export const GITHUB_MAIN_REPO_URL = 'https://github.com/RooVetGit/Roo-Code';
+export const GITHUB_MAIN_REPO_URL = 'https://github.com/RooCodeInc/Roo-Code';
 export const GITHUB_ISSUES_MAIN_URL = `${GITHUB_MAIN_REPO_URL}/issues`;
 export const GITHUB_FEATURES_URL = `${GITHUB_MAIN_REPO_URL}/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop`;
 

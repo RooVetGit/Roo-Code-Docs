@@ -50,4 +50,4 @@ For general information on experimental features, see [Experimental Features Ove
 
 ## Feedback
 
-Please report any issues or suggestions regarding this feature on the [Roo Code GitHub Issues page](https://github.com/RooVetGit/Roo-Code/issues). Your feedback is crucial for improving Roo Code.
+Please report any issues or suggestions regarding this feature on the [Roo Code GitHub Issues page](https://github.com/RooCodeInc/Roo-Code/issues). Your feedback is crucial for improving Roo Code.

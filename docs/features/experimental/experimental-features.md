@@ -21,6 +21,6 @@ The following experimental features are currently available:
 
 ## Providing Feedback
 
-If you encounter any issues with experimental features, or if you have suggestions for improvements, please report them on the [Roo Code GitHub Issues page](https://github.com/RooVetGit/Roo-Code/issues).
+If you encounter any issues with experimental features, or if you have suggestions for improvements, please report them on the [Roo Code GitHub Issues page](https://github.com/RooCodeInc/Roo-Code/issues).
 
 Your feedback is valuable and helps us improve Roo Code!

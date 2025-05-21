@@ -139,7 +139,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'link',
       label: 'Contributing (GitHub)',
-      href: 'https://github.com/RooVetGit/Roo-Code/blob/main/CONTRIBUTING.md',
+      href: 'https://github.com/RooCodeInc/Roo-Code/blob/main/CONTRIBUTING.md',
     },
     {
       type: 'category',

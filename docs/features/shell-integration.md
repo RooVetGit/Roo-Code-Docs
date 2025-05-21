@@ -414,13 +414,13 @@ The [VSCode Terminal Integration Test Extension](https://github.com/KJ7LNW/vsce-
 
 - [VSCode Terminal Output Issue #237208](https://github.com/microsoft/vscode/issues/237208)
 - [VSCode Terminal Integration Test Repository](https://github.com/KJ7LNW/vsce-test-terminal-integration)
-- [Roo Code Shell Integration Architecture PR](https://github.com/RooVetGit/Roo-Code/pull/1365)
+- [Roo Code Shell Integration Architecture PR](https://github.com/RooCodeInc/Roo-Code/pull/1365)
 
 ## Support
 
 If you're still having issues:
 
-1. Check [Roo Code GitHub Issues](https://github.com/RooVetGit/Roo-Code/issues)
+1. Check [Roo Code GitHub Issues](https://github.com/RooCodeInc/Roo-Code/issues)
 2. Create a new issue with:
    - OS and VSCode version
    - Shell type
