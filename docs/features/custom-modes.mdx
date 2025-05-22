@@ -470,7 +470,7 @@ When you specify `fileRegex`, you're creating a pattern that file paths must mat
 | -------------------------------- | ------------------------------- | ----------------------------------------- | ------------------------------------- |
 | `\.md$`                          | `"\\.md$"`                      | `readme.md`, `docs/guide.md`              | `script.js`, `readme.md.bak`          |
 | `^src/.*`                        | `"^src/.*"`                     | `src/app.js`, `src/components/button.tsx` | `lib/utils.js`, `test/src/mock.js`    |
-| `\.(css|scss)$`                  | `"\\.(css\|scss)$"`             | `styles.css`, `theme.scss`                | `styles.less`, `styles.css.map`       |
+| `\.(css|scss)$`                  | "\\.(css|scss)$"             | `styles.css`, `theme.scss`                | `styles.less`, `styles.css.map`       |
 | `docs/.*\.md$`                   | `"docs/.*\\.md$"`               | `docs/guide.md`, `docs/api/reference.md`  | `guide.md`, `src/docs/notes.md`       |
 | `^(?!.*(test\|spec))\.(js\|ts)$`  | `"^(?!.*(test\|spec))\\.(js\|ts)$"` | `app.js`, `utils.ts`                      | `app.test.js`, `utils.spec.js`, `app.jsx` |
 
