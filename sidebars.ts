@@ -60,7 +60,7 @@ const sidebars: SidebarsConfig = {
           label: 'Experimental',
           items: [
             'features/experimental/experimental-features',
-            'features/experimental/intelligent-context-condensation',
+            'features/experimental/intelligent-context-condensing',
             'features/experimental/power-steering',
           ],
         },
@@ -183,10 +183,17 @@ const sidebars: SidebarsConfig = {
         'update-notes/index',
         {
           type: 'category',
+          label: '3.18',
+          items: [
+            { type: 'doc', id: 'update-notes/v3.18.0', label: '3.18.0' },
+          ],
+        },
+        {
+          type: 'category',
           label: '3.17',
           items: [
             { type: 'doc', id: 'update-notes/v3.17', label: '3.17 Combined' },
-{ type: 'doc', id: 'update-notes/v3.17.2', label: '3.17.2' },
+            { type: 'doc', id: 'update-notes/v3.17.2', label: '3.17.2' },
             { type: 'doc', id: 'update-notes/v3.17.1', label: '3.17.1' },
             { type: 'doc', id: 'update-notes/v3.17.0', label: '3.17.0' },
           ],

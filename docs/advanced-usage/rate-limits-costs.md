@@ -23,6 +23,19 @@ Roo Code automatically calculates the estimated cost of each API request based o
 *   Some providers may offer free tiers or credits. Check your provider's documentation for details.
 *   Some providers offer prompt caching which greatly lowers cost.
 
+### Limiting Auto-Approved Requests
+
+To further help manage API costs and prevent unexpected expenses, Roo Code includes a "Max Requests" setting for auto-approved actions. This allows you to define a specific limit on how many consecutive API calls Roo Code can make without requiring your explicit re-approval during a task.
+
+*   **How it works:** If you set a limit (e.g., 5 requests), Roo Code will perform up to 5 auto-approved API calls. Before making the 6th call, it will pause and prompt you to "Reset and Continue," as shown below.
+    <img src="/img/v3.18.0/v3.18.0-1.png" alt="Warning message indicating the auto-approved request limit has been reached." width="600" />
+    *Notification when the auto-approved request limit is met.*
+*   **Configuration:** This limit is configured within the "Auto-approve actions" settings. You can set a specific number or choose "Unlimited." For detailed steps on configuring this and other auto-approval settings, see the [Auto-Approving Actions documentation](/features/auto-approving-actions).
+    <img src="/img/v3.18.0/v3.18.0.png" alt="Setting the Max Requests limit for auto-approved actions in Roo Code settings." width="600" />
+    *Setting the "Max Requests" for auto-approved actions.*
+
+This feature provides an additional safeguard, particularly for complex or long-running tasks where multiple API calls might be involved.
+
 ## Tips for Optimizing Token Usage
 
 *   **Be Concise:** Use clear and concise language in your prompts. Avoid unnecessary words or details.

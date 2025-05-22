@@ -130,6 +130,10 @@ const config: Config = {
             to: '/features/api-configuration-profiles',
             from: ['/advanced-usage/api-configuration-profiles'],
           },
+          {
+            to: '/features/experimental/intelligent-context-condensing',
+            from: ['/features/experimental/intelligent-context-condensation'],
+          },
           
           // MCP related redirects
           {

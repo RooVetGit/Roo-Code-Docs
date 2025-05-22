@@ -16,7 +16,7 @@ To enable or disable experimental features:
 
 The following experimental features are currently available:
 
-- [Intelligently Condense the Context Window](/features/experimental/intelligent-context-condensation)
+- [Intelligently Condense the Context Window](/features/experimental/intelligent-context-condensing)
 - [Power Steering](/features/experimental/power-steering)
 
 ## Providing Feedback

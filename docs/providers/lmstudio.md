@@ -38,3 +38,5 @@ Roo Code supports running models locally using LM Studio.  LM Studio provides a 
 *   **Local Server:**  The LM Studio local server must be running for Roo Code to connect to it.
 *   **LM Studio Documentation:** Refer to the [LM Studio documentation](https://lmstudio.ai/docs) for more information.
 *   **Troubleshooting:** If you see a "Please check the LM Studio developer logs to debug what went wrong" error, you may need to adjust the context length settings in LM Studio.
+*   **Token Tracking:** Roo Code tracks token usage for models run via LM Studio, helping you monitor consumption.
+*   **Reasoning Support:** For models that support it, Roo Code can parse "think" tags or similar reasoning indicators in LM Studio responses, offering more insight into the model's process.

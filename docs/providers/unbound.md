@@ -28,3 +28,4 @@ Unbound allows you configure a list of supported models in your application, and
 ## Tips and Notes
 
 * **Security Focus:** Unbound emphasizes security features for enterprise use. If your organization has strict security requirements for AI usage, Unbound might be a good option.
+*   **Model List Refresh:** Roo Code includes a refresh button specifically for the Unbound provider in the settings. This allows you to easily update the list of available models from your Unbound application and get immediate feedback on your API key's validity.
