@@ -230,6 +230,10 @@ const config: Config = {
             to: '/advanced-usage/available-tools/write-to-file',
             from: ['/features/tools/write-to-file'],
           },
+          {
+            to: '/advanced-usage/roo-code-nightly',
+            from: ['/advanced-usage/prerelease-build'],
+          },
         ],
       },
     ],

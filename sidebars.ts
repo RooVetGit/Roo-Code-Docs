@@ -98,10 +98,10 @@ const sidebars: SidebarsConfig = {
         'advanced-usage/large-projects',
         'advanced-usage/local-models',
         'advanced-usage/local-development-setup',
-        'advanced-usage/prerelease-build',
         'advanced-usage/prompt-engineering',
         'advanced-usage/prompt-structure',
         'advanced-usage/rate-limits-costs',
+        'advanced-usage/roo-code-nightly',
       ],
     },
     {
