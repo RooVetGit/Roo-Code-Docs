@@ -97,6 +97,8 @@ const sidebars: SidebarsConfig = {
         'advanced-usage/context-poisoning',
         'advanced-usage/large-projects',
         'advanced-usage/local-models',
+        'advanced-usage/local-development-setup',
+        'advanced-usage/prerelease-build',
         'advanced-usage/prompt-engineering',
         'advanced-usage/prompt-structure',
         'advanced-usage/rate-limits-costs',
