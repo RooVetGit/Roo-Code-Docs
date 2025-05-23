@@ -19,7 +19,11 @@ Anthropic is an AI safety and research company that builds reliable, interpretab
 
 Roo Code supports the following Anthropic Claude models:
 
-*   `claude-3-7-sonnet-20250219` (Recommended)
+*   `claude-opus-4-20250514`
+*   `claude-opus-4-20250514:thinking` (Extended Thinking variant)
+*   `claude-sonnet-4-20250514` (Recommended)
+*   `claude-sonnet-4-20250514:thinking` (Extended Thinking variant)
+*   `claude-3-7-sonnet-20250219`
 *   `claude-3-7-sonnet-20250219:thinking` (Extended Thinking variant)
 *   `claude-3-5-sonnet-20241022`
 *   `claude-3-5-haiku-20241022`

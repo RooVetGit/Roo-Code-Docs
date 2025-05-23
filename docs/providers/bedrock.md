@@ -43,6 +43,8 @@ Roo Code supports the following models through Bedrock (based on source code):
     *   `amazon.titan-text-embeddings-v1:0`
     *   `amazon.titan-text-embeddings-v2:0`
 *   **Anthropic:**
+    *   `anthropic.claude-opus-4-20250514-v1:0`
+    *   `anthropic.claude-sonnet-4-20250514-v1:0`
     *   `anthropic.claude-3-7-sonnet-20250219-v1:0`
     *   `anthropic.claude-3-5-sonnet-20241022-v2:0`
     *   `anthropic.claude-3-5-haiku-20241022-v1:0`
