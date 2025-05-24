@@ -10,7 +10,8 @@ Tools are organized into logical groups based on their functionality:
 
 | Category | Purpose | Tools | Common Use |
 |----------|---------|-------|------------|
-| **Read Group** | File system reading and searching | [read_file](/advanced-usage/available-tools/read-file), [search_files](/advanced-usage/available-tools/search-files), [list_files](/advanced-usage/available-tools/list-files), [list_code_definition_names](/advanced-usage/available-tools/list-code-definition-names) | Code exploration and analysis |
+| **Read Group** | File system reading and exploration | [read_file](/advanced-usage/available-tools/read-file), [list_files](/advanced-usage/available-tools/list-files), [list_code_definition_names](/advanced-usage/available-tools/list-code-definition-names) | Code exploration and analysis |
+| **Search Group** | Pattern and semantic searching | [search_files](/advanced-usage/available-tools/search-files), [codebase_search](/advanced-usage/available-tools/codebase-search) | Finding code patterns and functionality |
 | **Edit Group** | File system modifications | [apply_diff](/advanced-usage/available-tools/apply-diff), [insert_content](/advanced-usage/available-tools/insert-content), [search_and_replace](/advanced-usage/available-tools/search-and-replace), [write_to_file](/advanced-usage/available-tools/write-to-file) | Code changes and file manipulation |
 | **Browser Group** | Web automation | [browser_action](/advanced-usage/available-tools/browser-action) | Web testing and interaction |
 | **Command Group** | System command execution | [execute_command](/advanced-usage/available-tools/execute-command) | Running scripts, building projects |
@@ -32,9 +33,14 @@ Certain tools are accessible regardless of the current mode:
 These tools help Roo understand your code and project:
 
 - [read_file](/advanced-usage/available-tools/read-file) - Examines the contents of files
-- [search_files](/advanced-usage/available-tools/search-files) - Finds patterns across multiple files
 - [list_files](/advanced-usage/available-tools/list-files) - Maps your project's file structure
 - [list_code_definition_names](/advanced-usage/available-tools/list-code-definition-names) - Creates a structural map of your code
+
+### Search Tools
+These tools help Roo find patterns and functionality across your codebase:
+
+- [search_files](/advanced-usage/available-tools/search-files) - Finds patterns across multiple files using regex
+- [codebase_search](/advanced-usage/available-tools/codebase-search) - Performs semantic searches across your indexed codebase
 
 ### Edit Tools
 These tools help Roo make changes to your code:
@@ -211,7 +217,7 @@ Tools are made available based on the current mode:
 
 1. **Information Gathering**
    ```
-   [ask_followup_question](/advanced-usage/available-tools/ask-followup-question) → [read_file](/advanced-usage/available-tools/read-file) → [search_files](/advanced-usage/available-tools/search-files)
+   [ask_followup_question](/advanced-usage/available-tools/ask-followup-question) → [read_file](/advanced-usage/available-tools/read-file) → [codebase_search](/advanced-usage/available-tools/codebase-search)
    ```
 
 2. **Code Modification**

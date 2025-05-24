@@ -82,6 +82,7 @@ const sidebars: SidebarsConfig = {
             'advanced-usage/available-tools/ask-followup-question',
             'advanced-usage/available-tools/attempt-completion',
             'advanced-usage/available-tools/browser-action',
+            'advanced-usage/available-tools/codebase-search',
             'advanced-usage/available-tools/execute-command',
             'advanced-usage/available-tools/insert-content',
             'advanced-usage/available-tools/list-code-definition-names',
