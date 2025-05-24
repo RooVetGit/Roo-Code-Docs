@@ -136,6 +136,14 @@ Yes, if you use a [local model](/advanced-usage/local-models).
 
 Yes, you can create your own MCP servers to add custom functionality to Roo Code. See the [MCP documentation](https://github.com/modelcontextprotocol) for details.
 
+### What is Codebase Indexing?
+
+[Codebase Indexing](/features/experimental/codebase-indexing) is an experimental feature that creates a semantic search index of your project using AI embeddings. This enables Roo Code to better understand and navigate large codebases by finding relevant code based on meaning rather than just keywords.
+
+### How much does Codebase Indexing cost?
+
+Codebase Indexing requires an OpenAI API key for generating embeddings and a Qdrant vector database for storage. Costs depend on your project size and the embedding model used. Initial indexing is the most expensive part; subsequent updates are incremental and much cheaper.
+
 ## Troubleshooting
 
 ### Roo Code isn't responding. What should I do?
@@ -148,7 +156,7 @@ Yes, you can create your own MCP servers to add custom functionality to Roo Code
 
 ### I'm seeing an error message. What does it mean?
 
-The error message should provide some information about the problem. If you're unsure how to resolve it, seek help in the community forums.
+The error message should provide some information about the problem. If you're unsure how to resolve it, seek help in [Discord](https://discord.gg/roocode).
 
 ### Roo Code made changes I didn't want. How do I undo them?
 

@@ -5,7 +5,7 @@ Roo Code includes experimental features that are still under development. These 
 **Warning:** Experimental features may have unexpected behavior, including potential data loss or security vulnerabilities. Enable them at your own risk.
 
 ## Enabling Experimental Features
-
+![alt text](../../../static/img/experimental-features/experimental-features.png)
 To enable or disable experimental features:
 
 1.  Open the Roo Code settings (<Codicon name="gear" /> icon in the top right corner).
@@ -16,6 +16,7 @@ To enable or disable experimental features:
 
 The following experimental features are currently available:
 
+- [Codebase Indexing](/features/experimental/codebase-indexing) - Semantic search through AI-powered codebase indexing
 - [Intelligently Condense the Context Window](/features/experimental/intelligent-context-condensing)
 - [Power Steering](/features/experimental/power-steering)
 

@@ -60,6 +60,7 @@ const sidebars: SidebarsConfig = {
           label: 'Experimental',
           items: [
             'features/experimental/experimental-features',
+            'features/experimental/codebase-indexing',
             'features/experimental/intelligent-context-condensing',
             'features/experimental/power-steering',
           ],
