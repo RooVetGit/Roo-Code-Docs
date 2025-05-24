@@ -6,7 +6,7 @@ import Codicon from '@site/src/components/Codicon';
 
 Codebase Indexing enables semantic code search across your entire project using AI embeddings. Instead of searching for exact text matches, it understands the *meaning* of your queries, helping Roo Code find relevant code even when you don't know specific function names or file locations.
 
-<img src="/img/experimental-features/experimental-features.png" alt="Codebase Indexing Settings" width="800" />
+<img src="/img/codebase-indexing/codebase-indexing.png" alt="Codebase Indexing Settings" width="800" />
 
 ## What It Does
 
@@ -15,7 +15,7 @@ When enabled, the indexing system:
 1. **Parses your code** using Tree-sitter to identify semantic blocks (functions, classes, methods)
 2. **Creates embeddings** of each code block using AI models
 3. **Stores vectors** in a Qdrant database for fast similarity search
-4. **Provides the `codebase_search` tool** to Roo for intelligent code discovery
+4. **Provides the [`codebase_search`](/advanced-usage/available-tools/codebase-search) tool** to Roo for intelligent code discovery
 
 This enables natural language queries like "user authentication logic" or "database connection handling" to find relevant code across your entire project.
 
@@ -155,7 +155,7 @@ The indexer automatically excludes:
 
 ## Using the Search Feature
 
-Once indexed, Roo can use the `codebase_search` tool to find relevant code:
+Once indexed, Roo can use the [`codebase_search`](/advanced-usage/available-tools/codebase-search) tool to find relevant code:
 
 **Example Queries:**
 - "How is user authentication handled?"
